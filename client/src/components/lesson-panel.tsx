@@ -934,6 +934,84 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
               lessonTitle={lesson.title}
             />
           )}
+          
+          {processedContent.componentType === 'fraction-simplification' && (
+            <FractionSimplificationComponent
+              key={`fraction-simplification-${lesson.id}-${safeIndex}`}
+              fractionText={processedContent.fractionText!}
+              correctAnswer={processedContent.correctAnswer as string}
+              onAnswer={(answer) => {
+                const correctAnswer = processedContent.correctAnswer;
+                const isCorrect = answer.toString().trim() === correctAnswer.toString().trim();
+                
+                // UNIVERSAL SYSTEM: Use new universal answer handler
+                const inputKey = `lesson-${lesson.id}`;
+                const currentAttempts = attemptCounts[inputKey] || 0;
+                const correctCount = correctAnswerCount[inputKey] || 0;
+                
+                handleUniversalAnswer({
+                  lessonId: lesson.id,
+                  isCorrect,
+                  currentAttempts,
+                  correctCount,
+                  onSuccess: (animationType) => {
+                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
+                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
+                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
+                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
+                  },
+                  onError: (attemptMessage) => {
+                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
+                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
+                  },
+                  onAIHelp: (question, context) => {
+                    setAiHelpData({ question, context });
+                    setShowAiHelpPopup(true);
+                    requestAiHelp(lesson.id, correctAnswer);
+                  },
+                  onAdvanceExample: () => {
+                    // Advance to next example
+                    const nextIndex = currentIndex + 1;
+                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
+                    
+                    // Check if all examples are completed
+                    if (nextIndex >= examples.length) {
+                      // Set completion state for tab checkmarks
+                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
+                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
+                    } else {
+                      // Clear feedback for next example
+                      setShowFeedback(prev => {
+                        const newState = { ...prev };
+                        delete newState[inputKey];
+                        return newState;
+                      });
+                    }
+                    
+                    setShowAnimation(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                  },
+                  onResetLesson: () => {
+                    // Reset lesson state after AI help
+                    setShowFeedback(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setAttemptCounts(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setResetTrigger(prev => prev + 1);
+                  }
+                });
+              }}
+            />
+          )}
 
           {/* Progress indicator */}
           <div className="text-center mt-4">
