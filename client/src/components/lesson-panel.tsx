@@ -410,9 +410,9 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
   // REMOVED: isUsingUniversalSystem - now using pure universal analysis via analyzeLessonType
 
   const renderInteractiveContent = (lesson: Lesson) => {
-    const explanation = lesson.explanation || '';
+    const explanation = (lesson as any).explanation || lesson.description || '';
     const currentIndex = currentExampleIndex[lesson.id] || 0;
-    const examples = lesson.examples || [];
+    const examples = (lesson as any).examples || [];
     
     // If we've completed all examples, stay on the last example
     const safeIndex = Math.min(currentIndex, examples.length - 1);
