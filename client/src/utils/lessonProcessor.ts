@@ -993,7 +993,7 @@ function processFractionConversion(originalExample: string): ProcessedLessonCont
   if (improperToMixedMatch) {
     correctAnswer = `${improperToMixedMatch[2]} ${improperToMixedMatch[3]}`;
     interactiveText = `Convert ${improperToMixedMatch[1]} to a mixed number.`;
-    console.log('✅ DEBUG processFractionConversion: Matched improper to mixed:', { originalExample, match: improperToMixedMatch, correctAnswer, interactiveText });
+    // Successfully matched improper to mixed number pattern
   }
   
   // Decimal to fraction
