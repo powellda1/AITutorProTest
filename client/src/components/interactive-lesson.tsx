@@ -13,7 +13,6 @@ import PerfectSquareComponent from "./PerfectSquareComponent";
 import FractionOperationComponent from "./FractionOperationComponent";
 import ScalingComponent from "./ScalingComponent";
 import GridComponent from "./GridComponent";
-import FractionSimplificationComponent from "./FractionSimplificationComponent";
 import { generateUniversalCardHeader, generateUniversalComponentJSX, generateUniversalPrompt, UniversalPromptConfig, universalInputStyles, universalButtonStyles } from '../utils/universalRenderer';
 
 // StripComponent for strip model visualization
@@ -2214,34 +2213,6 @@ const InteractivePracticeRenderer = ({
               type={processedContent.conversionType!}
               value={processedContent.value!}
               description={processedContent.interactiveText}
-              onAnswer={handleAnswer}
-              onRequestHelp={onRequestHelp || (() => {})}
-            />
-          </div>
-        );
-      }
-      
-      if (processedContent && processedContent.componentType === 'fraction-simplification') {
-        return (
-          <div className="text-center mb-4">
-            <FractionSimplificationComponent
-              key={`fraction-simplification-${actualLesson.id}-${subLessonIndex}`}
-              fractionToSimplify={processedContent.fractionToSimplify!}
-              correctAnswer={processedContent.correctAnswer as string}
-              interactiveText={processedContent.interactiveText}
-              onAnswer={handleAnswer}
-            />
-          </div>
-        );
-      }
-      
-      if (processedContent && processedContent.componentType === 'fraction-operation') {
-        return (
-          <div className="text-center mb-4">
-            <FractionOperationComponent
-              key={`fraction-operation-${actualLesson.id}-${subLessonIndex}`}
-              problem={processedContent.interactiveText}
-              correctAnswer={processedContent.correctAnswer}
               onAnswer={handleAnswer}
               onRequestHelp={onRequestHelp || (() => {})}
             />

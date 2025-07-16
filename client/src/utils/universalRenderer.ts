@@ -6,14 +6,10 @@ import React from 'react';
  */
 
 export interface UniversalPromptConfig {
-  type: 'grid-percentage' | 'strip-percentage' | 'number-line' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'ordering' | 'decimal-percent-conversion' | 'text-input';
+  type: 'grid-percentage' | 'strip-percentage' | 'number-line' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'ordering' | 'decimal-percent-conversion';
   standardCode?: string;
   lessonTitle?: string;
   context?: any;
-  // Text input specific properties
-  componentType?: 'text-input';
-  interactiveText?: string;
-  inputType?: 'text' | 'number';
 }
 
 export interface UniversalUIConfig {
@@ -75,23 +71,6 @@ export function generateUniversalPrompt(config: UniversalPromptConfig): string {
       return 'Find the percentage equivalent on the number line';
     }
     return 'Use the number line to find the answer';
-  }
-  
-  // Text input activities (6.NS.1.d fraction conversions)
-  if (type === 'text-input') {
-    if (config.interactiveText) {
-      return config.interactiveText;
-    }
-    if (lessonTitle?.includes('simplify') || lessonTitle?.includes('lowest terms')) {
-      return 'Enter the simplified fraction';
-    }
-    if (lessonTitle?.includes('mixed numbers')) {
-      return 'Enter your answer';
-    }
-    if (lessonTitle?.includes('convert')) {
-      return 'Enter the converted value';
-    }
-    return 'Enter your answer';
   }
   
   // Comparison activities

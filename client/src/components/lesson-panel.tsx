@@ -12,14 +12,12 @@ import FractionOperationComponent from "./FractionOperationComponent";
 import ScalingComponent from "./ScalingComponent";
 import GridComponent from "./GridComponent";
 import StripComponent from "./StripComponent";
-import FractionSimplificationComponent from "./FractionSimplificationComponent";
 import { DecimalPercentConversion } from "./interactive-lesson";
 import { analyzeLessonType, processLessonContent } from "../utils/lessonProcessor";
 // Removed legacy theme imports - now using universal system
 import AiHelpPopup from "./AiHelpPopup";
 import { TabLabelGenerator } from "../utils/tabLabelGenerator";
 import { generateUniversalPrompt, UniversalPromptConfig, handleUniversalAnswer, universalFeedbackMessages, universalFeedbackStyles, formatUniversalFeedbackMessage, universalCompletionStyles } from "../utils/universalRenderer";
-import TextInputComponent from "./TextInputComponent";
 
 // REMOVED: extractCorrectAnswer - now using universal system processedContent.correctAnswer
 
@@ -411,9 +409,9 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
   // REMOVED: isUsingUniversalSystem - now using pure universal analysis via analyzeLessonType
 
   const renderInteractiveContent = (lesson: Lesson) => {
-    const explanation = (lesson as any).explanation || lesson.description || '';
+    const explanation = lesson.explanation || '';
     const currentIndex = currentExampleIndex[lesson.id] || 0;
-    const examples = (lesson as any).examples || [];
+    const examples = lesson.examples || [];
     
     // If we've completed all examples, stay on the last example
     const safeIndex = Math.min(currentIndex, examples.length - 1);
@@ -586,85 +584,6 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
               resetTrigger={resetTrigger}
               standardCode={selectedStandard}
               lessonTitle={lesson.title}
-            />
-          )}
-          
-          {processedContent.componentType === 'text-input' && (
-            <TextInputComponent
-              key={`text-input-${lesson.id}-${safeIndex}`}
-              interactiveText={processedContent.interactiveText}
-              correctAnswer={processedContent.correctAnswer as string}
-              inputType={processedContent.inputType}
-              onAnswer={(answer) => {
-                const correctAnswer = processedContent.correctAnswer;
-                const isCorrect = answer.toString().trim() === correctAnswer.toString().trim();
-                
-                // UNIVERSAL SYSTEM: Use new universal answer handler
-                const inputKey = `lesson-${lesson.id}`;
-                const currentAttempts = attemptCounts[inputKey] || 0;
-                const correctCount = correctAnswerCount[inputKey] || 0;
-                
-                handleUniversalAnswer({
-                  lessonId: lesson.id,
-                  isCorrect,
-                  currentAttempts,
-                  correctCount,
-                  onSuccess: (animationType) => {
-                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
-                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
-                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
-                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
-                  },
-                  onError: (attemptMessage) => {
-                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
-                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
-                  },
-                  onAIHelp: (question, context) => {
-                    setAiHelpData({ question, context });
-                    setShowAiHelpPopup(true);
-                    requestAiHelp(lesson.id, correctAnswer);
-                  },
-                  onAdvanceExample: () => {
-                    // Advance to next example
-                    const nextIndex = currentIndex + 1;
-                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
-                    
-                    // Check if all examples are completed
-                    if (nextIndex >= examples.length) {
-                      // Set completion state for tab checkmarks
-                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
-                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
-                    } else {
-                      // Clear feedback for next example
-                      setShowFeedback(prev => {
-                        const newState = { ...prev };
-                        delete newState[inputKey];
-                        return newState;
-                      });
-                    }
-                    
-                    setShowAnimation(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                  },
-                  onResetLesson: () => {
-                    // Reset lesson state after AI help
-                    setShowFeedback(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                    setAttemptCounts(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                    setResetTrigger(prev => prev + 1);
-                  }
-                });
-              }}
             />
           )}
           
@@ -935,85 +854,6 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
               lessonTitle={lesson.title}
             />
           )}
-          
-          {processedContent.componentType === 'fraction-simplification' && (
-            <FractionSimplificationComponent
-              key={`fraction-simplification-${lesson.id}-${safeIndex}`}
-              fractionToSimplify={processedContent.fractionToSimplify!}
-              correctAnswer={processedContent.correctAnswer as string}
-              interactiveText={processedContent.interactiveText}
-              onAnswer={(answer) => {
-                const correctAnswer = processedContent.correctAnswer;
-                const isCorrect = answer.toString().trim() === correctAnswer.toString().trim();
-                
-                // UNIVERSAL SYSTEM: Use new universal answer handler
-                const inputKey = `lesson-${lesson.id}`;
-                const currentAttempts = attemptCounts[inputKey] || 0;
-                const correctCount = correctAnswerCount[inputKey] || 0;
-                
-                handleUniversalAnswer({
-                  lessonId: lesson.id,
-                  isCorrect,
-                  currentAttempts,
-                  correctCount,
-                  onSuccess: (animationType) => {
-                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
-                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
-                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
-                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
-                  },
-                  onError: (attemptMessage) => {
-                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
-                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
-                  },
-                  onAIHelp: (question, context) => {
-                    setAiHelpData({ question, context });
-                    setShowAiHelpPopup(true);
-                    requestAiHelp(lesson.id, correctAnswer);
-                  },
-                  onAdvanceExample: () => {
-                    // Advance to next example
-                    const nextIndex = currentIndex + 1;
-                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
-                    
-                    // Check if all examples are completed
-                    if (nextIndex >= examples.length) {
-                      // Set completion state for tab checkmarks
-                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
-                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
-                    } else {
-                      // Clear feedback for next example
-                      setShowFeedback(prev => {
-                        const newState = { ...prev };
-                        delete newState[inputKey];
-                        return newState;
-                      });
-                    }
-                    
-                    setShowAnimation(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                  },
-                  onResetLesson: () => {
-                    // Reset lesson state after AI help
-                    setShowFeedback(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                    setAttemptCounts(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                    setResetTrigger(prev => prev + 1);
-                  }
-                });
-              }}
-            />
-          )}
 
           {/* Progress indicator */}
           <div className="text-center mt-4">
@@ -1116,6 +956,190 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
           <p className="text-green-100 text-sm mt-2">{shadedParts} out of 5 parts shaded ({percentage}%)</p>
         </div>
       );
+    } else if (lesson.title.includes('Write fractions in lowest terms') || lesson.title.includes('simplify')) {
+      // 6.NS.1.d - Fraction simplification visualization
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+      const simplifiedMatch = currentExample.match(/simplified to (\d+)\/(\d+)/);
+      
+      if (fractionMatch && simplifiedMatch) {
+        const original = `${fractionMatch[1]}/${fractionMatch[2]}`;
+        const simplified = `${simplifiedMatch[1]}/${simplifiedMatch[2]}`;
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Simplify this fraction to lowest terms</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-3xl font-bold text-gray-800">{original}</div>
+                  <div className="text-lg text-gray-600">↓</div>
+                  <div className="text-2xl text-blue-600 font-semibold">= ?</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Find the simplified form</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Convert between improper fractions and mixed numbers')) {
+      // 6.NS.1.d - Mixed number conversions
+      const improperMatch = currentExample.match(/(\d+)\/(\d+)/);
+      const mixedMatch = currentExample.match(/(\d+)\s+(\d+)\/(\d+)/);
+      
+      if (improperMatch || mixedMatch) {
+        const fromValue = improperMatch ? `${improperMatch[1]}/${improperMatch[2]}` : 
+                         mixedMatch ? `${mixedMatch[1]} ${mixedMatch[2]}/${mixedMatch[3]}` : '';
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Convert between improper fraction and mixed number</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{fromValue}</div>
+                  <div className="text-lg text-gray-600">⟷</div>
+                  <div className="text-2xl text-blue-600 font-semibold">= ?</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Convert to the other form</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Convert decimals to fractions') || lesson.title.includes('Convert fractions to decimals')) {
+      // 6.NS.1.d - Decimal/fraction conversions
+      const decimalMatch = currentExample.match(/(\d+\.\d+)/);
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+      
+      if (decimalMatch || fractionMatch) {
+        const fromValue = decimalMatch ? decimalMatch[1] : 
+                         fractionMatch ? `${fractionMatch[1]}/${fractionMatch[2]}` : '';
+        const conversionType = decimalMatch ? 'to a fraction' : 'to a decimal';
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Convert {conversionType}</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{fromValue}</div>
+                  <div className="text-lg text-gray-600">⟷</div>
+                  <div className="text-2xl text-blue-600 font-semibold">= ?</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Enter the equivalent value</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Convert between percents, fractions, and decimals')) {
+      // 6.NS.1.d - Triple conversions
+      const percentMatch = currentExample.match(/(\d+(?:\.\d+)?)%/);
+      const decimalMatch = currentExample.match(/(\d+\.\d+)/);
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+      
+      const values = [];
+      if (percentMatch) values.push(`${percentMatch[1]}%`);
+      if (decimalMatch) values.push(decimalMatch[1]);
+      if (fractionMatch) values.push(`${fractionMatch[1]}/${fractionMatch[2]}`);
+      
+      if (values.length >= 2) {
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Convert between percent, fraction, and decimal</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-3">
+                  <div className="flex justify-around items-center">
+                    <div className="text-lg font-semibold text-gray-800">{values[0]}</div>
+                    <div className="text-lg text-gray-600">=</div>
+                    <div className="text-lg font-semibold text-gray-800">{values[1]}</div>
+                    <div className="text-lg text-gray-600">=</div>
+                    <div className="text-lg text-blue-600 font-semibold">?</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Find the missing equivalent form</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('repeating decimals')) {
+      // 6.NS.1.d - Repeating decimals
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+      const decimalMatch = currentExample.match(/(\d+\.\d+\.\.\.)/);
+      
+      if (fractionMatch && decimalMatch) {
+        const fraction = `${fractionMatch[1]}/${fractionMatch[2]}`;
+        const repeatingDecimal = decimalMatch[1];
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Convert between fraction and repeating decimal</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{fraction}</div>
+                  <div className="text-lg text-gray-600">⟷</div>
+                  <div className="text-2xl text-blue-600 font-semibold">{repeatingDecimal}</div>
+                  <div className="text-sm text-gray-600">Notice the repeating pattern</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Identify the repeating decimal pattern</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Equivalent fractions')) {
+      // 6.NS.1.d - Equivalent fractions
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+      const equivalentMatch = currentExample.match(/(\d+)\/(\d+).*=.*(\d+)\/(\d+)/);
+      
+      if (equivalentMatch) {
+        const original = `${equivalentMatch[1]}/${equivalentMatch[2]}`;
+        const equivalent = `${equivalentMatch[3]}/${equivalentMatch[4]}`;
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Find equivalent fractions</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{original}</div>
+                  <div className="text-lg text-gray-600">=</div>
+                  <div className="text-2xl text-blue-600 font-semibold">{equivalent}</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">These fractions are equivalent</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('mixed numbers')) {
+      // 6.NS.1.d - Mixed number decimals
+      const mixedMatch = currentExample.match(/(\d+)\s+(\d+)\/(\d+)/);
+      const decimalMatch = currentExample.match(/(\d+\.\d+)/);
+      
+      if (mixedMatch && decimalMatch) {
+        const mixed = `${mixedMatch[1]} ${mixedMatch[2]}/${mixedMatch[3]}`;
+        const decimal = decimalMatch[1];
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Convert between mixed number and decimal</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{mixed}</div>
+                  <div className="text-lg text-gray-600">⟷</div>
+                  <div className="text-2xl text-blue-600 font-semibold">{decimal}</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Convert between these forms</p>
+          </div>
+        );
+      }
     } else if (lesson.title.includes('Compare percents') || lesson.title.includes('Put a mix of') || lesson.title.includes('order')) {
       // 6.NS.1.e - Use InteractivePracticeRenderer for comparison and ordering activities
       return (
