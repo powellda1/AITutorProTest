@@ -110,43 +110,49 @@ Preferred communication style: Simple, everyday language.
 - This applies to ALL component types: grid, strip, decimal-percent, number-line, comparison, word-problem, etc.
 - No exceptions - all components must look and function identically regarding input/submit theming
 
-**PHASED DEVELOPMENT APPROACH RULE**: SYSTEMATIC DEBUGGING AND IMPLEMENTATION
+**UNIVERSAL PHASED DEVELOPMENT APPROACH RULE**: SYSTEMATIC DEBUGGING AND IMPLEMENTATION
 - Always use a methodical phased approach with clear steps when fixing complex issues
 - Test each step individually before proceeding to next phase
 - Use console logging to verify each step works correctly
 - Only proceed to next phase after current phase is confirmed working
 - This prevents assumptions and ensures systematic problem-solving
 
-**PHASE 1: Debug Logging and Root Cause Analysis**
-- Step 1: Add debug logging to track which code path each lesson takes
-- Step 2: Identify where lessons diverge from universal system
-- Step 3: Analyze completion state inconsistencies
-- Step 4: Use grep commands to find all hardcoded function references
-- Step 5: Document legacy import statements and commented-out functions
+**PHASE 0: Complete Scope Analysis (Universal)**
+- Step 1: Identify ALL sub-lesson types in the target standard before starting conversion
+- Step 2: Map each type to its current system (hardcoded vs universal)
+- Step 3: Plan conversion strategy for ALL types, not just one
+- Step 4: Ensure backward compatibility during transition period
 
-**PHASE 2: Ensure Universal System Routing**
-- Step 1: Verify both lessons have requiresInteraction: true
-- Step 2: Remove conditional logic intercepting lessons
-- Step 3: Ensure universal system block is only code path
-- Step 4: Remove old imports and add documentation comments
-- Step 5: Verify components use correct universal system code paths
+**PHASE 1: Enhanced Debug Logging (Universal)**
+- Step 1: Add debug logging for ALL sub-lesson types, not just one specific type
+- Step 2: Track which lessons use universal vs hardcoded systems
+- Step 3: Identify completion state inconsistencies across ALL types
+- Step 4: Document ALL component types that need conversion
 
-**PHASE 3: Standardize State Management**
-- Step 1: Make tab checkmarks use same completion logic
-- Step 2: Ensure both lessons set same completion state variables
-- Step 3: Test completion state consistency
-- Step 4: Replace all extractCorrectAnswer function calls with processedContent.correctAnswer
-- Step 5: Replace all getCorrectAnswer function calls with processedContent.correctAnswer
+**PHASE 2: Incremental Universal System Routing (Universal)**
+- Step 1: Convert one type at a time while maintaining others
+- Step 2: Add fallback logic to handle mixed conversion states
+- Step 3: Ensure non-converted lessons still display their visual components
+- Step 4: Test each conversion individually before proceeding
 
-**PHASE 4: Remove Duplicate Code Paths**
-- Step 1: Eliminate hardcoded bridge logic
-- Step 2: Remove all InteractivePracticeRenderer calls for converted lessons
-- Step 3: Make universal system single source of truth
-- Step 4: Remove isUsingUniversalSystem conditional logic and legacy input boxes
-- Step 5: Verify with grep commands that all hardcoded references are eliminated
-- Step 6: Conduct application testing to verify both tabs working correctly
-- Step 5: Verify with grep commands that all hardcoded references are eliminated
-- Step 6: Conduct application testing to verify both tabs working correctly
+**PHASE 3: Hybrid State Management (Universal)**
+- Step 1: Support both old and new completion tracking simultaneously
+- Step 2: Gradually migrate state management type by type
+- Step 3: Maintain tab completion for both converted and non-converted lessons
+- Step 4: Only remove old state logic after ALL types are converted
+
+**PHASE 4: Gradual Code Path Elimination (Universal)**
+- Step 1: Remove duplicate code only for fully converted lesson types
+- Step 2: Maintain old code paths for non-converted lessons
+- Step 3: Add clear documentation about mixed system state
+- Step 4: Only eliminate all legacy code after 100% conversion
+
+**Key Universal Principles:**
+1. Never Break Existing Functionality: All non-converted lessons must continue working throughout the process
+2. Incremental Conversion: One lesson type at a time, with full testing after each
+3. Hybrid System Support: Support both old and new systems simultaneously during transition
+4. Complete Before Cleanup: Only remove legacy code after ALL lessons are converted
+5. Systematic Documentation: Track conversion progress and mixed system states
 
 ## Changelog
 
