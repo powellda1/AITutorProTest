@@ -34,7 +34,7 @@ export default function TextInputComponent({
 
   // Generate universal prompt using the universal system
   const promptConfig: UniversalPromptConfig = {
-    componentType: 'text-input',
+    type: 'text-input',
     interactiveText,
     inputType: inputType as 'text' | 'number'
   };
