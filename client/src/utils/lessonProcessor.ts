@@ -3,7 +3,7 @@ import { NumberLineMode, NumberLineOrientation } from '../components/NumberLineC
 export interface ProcessedLessonContent {
   interactiveText: string;
   correctAnswer: number | string[] | string;
-  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'decimal-percent' | 'text-input';
+  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'decimal-percent' | 'text-input' | 'fraction-simplification' | 'strip';
   mode?: NumberLineMode;
   orientation?: NumberLineOrientation;
   range?: [number, number];
@@ -23,19 +23,21 @@ export interface ProcessedLessonContent {
   gridSize?: number;
   columns?: number;
   preShadedCells?: number[];
-  gridMode?: 'identify-percentage' | 'shade-percentage';
+  gridMode?: 'identify-percentage' | 'shade-percentage' | 'clickable';
   // Decimal-percent conversion properties
   value?: number;
   conversionType?: 'decimal' | 'percent';
   // Fraction conversion properties
   inputType?: 'text' | 'number';
+  // Fraction simplification properties
+  fractionToSimplify?: string;
   additionalData?: any;
 }
 
 export interface LessonAnalysis {
-  type: 'real-world-context' | 'point-identification' | 'plot-integers' | 'opposite-integers' | 'ordering-activity' | 'comparison-activity' | 'word-problem' | 'exponent-expression' | 'fraction-operation' | 'scaling-activity' | 'perfect-square' | 'grid-percentage' | 'strip-model' | 'decimal-percent-conversion' | 'fraction-conversion' | 'default';
+  type: 'real-world-context' | 'point-identification' | 'plot-integers' | 'opposite-integers' | 'ordering-activity' | 'comparison-activity' | 'word-problem' | 'exponent-expression' | 'fraction-operation' | 'scaling-activity' | 'perfect-square' | 'grid-percentage' | 'strip-model' | 'decimal-percent-conversion' | 'fraction-conversion' | 'fraction-simplification' | 'default';
   requiresInteraction: boolean;
-  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'strip' | 'decimal-percent' | 'text-input' | 'default';
+  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'strip' | 'decimal-percent' | 'text-input' | 'fraction-simplification' | 'default';
 }
 
 /**
@@ -95,10 +97,19 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
     };
   }
   
-  // 6.NS.1.d - Fraction conversion activities
+  // 6.NS.1.d - Fraction simplification activities (visual fraction display)
   if (titleLower.includes('write fractions in lowest terms') || 
-      titleLower.includes('simplify') ||
-      titleLower.includes('convert between improper fractions and mixed numbers') ||
+      titleLower.includes('simplify')) {
+    console.log('✅ analyzeLessonType: Detected FRACTION SIMPLIFICATION (6.NS.1.d - title-based)');
+    return {
+      type: 'fraction-simplification',
+      requiresInteraction: true,
+      componentType: 'fraction-simplification'
+    };
+  }
+  
+  // 6.NS.1.d - Other fraction conversion activities (text input only)
+  if (titleLower.includes('convert between improper fractions and mixed numbers') ||
       titleLower.includes('convert decimals to fractions') ||
       titleLower.includes('convert fractions to decimals') ||
       titleLower.includes('convert between percents, fractions, and decimals') ||
@@ -109,7 +120,7 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
     return {
       type: 'fraction-conversion',
       requiresInteraction: true,
-      componentType: 'fraction-operation'
+      componentType: 'text-input'
     };
   }
   
@@ -327,6 +338,9 @@ export function processLessonContent(
       
     case 'fraction-conversion':
       return processFractionConversion(originalExample);
+      
+    case 'fraction-simplification':
+      return processFractionSimplification(originalExample);
       
     default:
       return null;
@@ -692,11 +706,11 @@ function processGridPercentage(originalExample: string): ProcessedLessonContent 
     const result = {
       interactiveText,
       correctAnswer,
-      componentType: 'grid',
+      componentType: 'grid' as const,
       gridSize,
       columns,
       preShadedCells,
-      gridMode: 'clickable', // User can click/drag to shade cells
+      gridMode: 'clickable' as const, // User can click/drag to shade cells
       additionalData: { 
         fraction: `${numerator}/${denominator}`, 
         numerator, 
@@ -773,11 +787,11 @@ function processGridPercentage(originalExample: string): ProcessedLessonContent 
   const result = {
     interactiveText,
     correctAnswer,
-    componentType: 'grid',
+    componentType: 'grid' as const,
     gridSize,
     columns,
     preShadedCells,
-    gridMode: 'identify-percentage',
+    gridMode: 'identify-percentage' as const,
     additionalData: { shadedCount, totalCount, actualPercentage, originalExample }
   };
   
@@ -961,6 +975,79 @@ function processDecimalPercentConversion(originalExample: string): ProcessedLess
       conversionType
     }
   };
+}
+
+/**
+ * Process fraction simplification examples (e.g., "12/16 = 3/4")
+ * FULLY UNIVERSAL - NO HARDCODED VALUES
+ */
+function processFractionSimplification(originalExample: string): ProcessedLessonContent {
+  console.log('🔍 processFractionSimplification called with:', originalExample);
+  
+  // Enhanced regex patterns for fraction simplification
+  const patterns = [
+    /(\d+)\/(\d+)\s*=\s*(\d+)\/(\d+)/,  // "12/16 = 3/4"
+    /(\d+)\/(\d+)\s*in\s*lowest\s*terms?\s*is\s*(\d+)\/(\d+)/i,  // "12/16 in lowest terms is 3/4"
+    /(\d+)\/(\d+)\s*simplified\s*is\s*(\d+)\/(\d+)/i,  // "12/16 simplified is 3/4"
+    /(\d+)\/(\d+)/  // Just the fraction to simplify
+  ];
+  
+  let fractionToSimplify = '';
+  let correctAnswer = '';
+  let matchFound = false;
+  
+  for (const pattern of patterns) {
+    const match = originalExample.match(pattern);
+    console.log('🔍 Testing pattern:', pattern, 'Result:', match);
+    if (match) {
+      if (match[3] && match[4]) {
+        // Found both original and simplified fraction
+        fractionToSimplify = `${match[1]}/${match[2]}`;
+        correctAnswer = `${match[3]}/${match[4]}`;
+      } else if (match[1] && match[2]) {
+        // Found only fraction to simplify, need to calculate the simplified form
+        const numerator = parseInt(match[1]);
+        const denominator = parseInt(match[2]);
+        const gcd = findGCD(numerator, denominator);
+        const simplifiedNumerator = numerator / gcd;
+        const simplifiedDenominator = denominator / gcd;
+        
+        fractionToSimplify = `${numerator}/${denominator}`;
+        correctAnswer = `${simplifiedNumerator}/${simplifiedDenominator}`;
+      }
+      matchFound = true;
+      console.log('✅ Found fraction:', { fractionToSimplify, correctAnswer });
+      break;
+    }
+  }
+  
+  if (!matchFound) {
+    console.log('❌ No pattern matched for fraction simplification');
+    throw new Error(`Could not extract fraction from: ${originalExample}`);
+  }
+  
+  // USE UNIVERSAL SYSTEM - No hardcoded prompts
+  const interactiveText = ''; // Will be generated by universal system
+  
+  return {
+    interactiveText,
+    correctAnswer,
+    componentType: 'fraction-simplification',
+    fractionToSimplify,
+    additionalData: { 
+      originalExample,
+      fractionToSimplify,
+      correctAnswer
+    }
+  };
+}
+
+/**
+ * Helper function to find Greatest Common Divisor (GCD)
+ */
+function findGCD(a: number, b: number): number {
+  if (b === 0) return a;
+  return findGCD(b, a % b);
 }
 
 /**
