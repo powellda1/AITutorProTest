@@ -39,7 +39,9 @@ export default function TextInputComponent({
     inputType: inputType as 'text' | 'number'
   };
 
+  console.log('🔍 TextInputComponent: promptConfig:', promptConfig);
   const universalPrompt = generateUniversalPrompt(promptConfig);
+  console.log('🔍 TextInputComponent: universalPrompt result:', universalPrompt);
 
   return (
     <div className="bg-gradient-to-br from-gray-600 to-gray-800 p-6 rounded-lg border-2 border-green-400">

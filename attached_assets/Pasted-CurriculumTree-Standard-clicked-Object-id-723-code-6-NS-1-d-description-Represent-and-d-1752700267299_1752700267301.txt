@@ -1,0 +1,212 @@
+CurriculumTree: Standard clicked: 
+Object { id: 723, code: "6.NS.1.d", description: "Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.", contentAreaId: 66, order: 0 }
+​
+code: "6.NS.1.d"
+​
+contentAreaId: 66
+​
+description: "Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models."
+​
+id: 723
+​
+order: 0
+​
+<prototype>: Object { … }
+Console.js:61:14
+XHRGET
+https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/api/lessons/standard/723
+[HTTP/1.1 304 Not Modified 340ms]
+
+CurriculumTree: Lessons for standard: 
+Array(9) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.d Console.js:61:14
+Home: Lessons received: 
+Array(9) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3535, title: "Write fractions in lowest terms", code: "6-G.1", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", examples: (3) […], standardId: 723, order: 0 }
+​
+code: "6-G.1"
+​
+examples: Array(3) [ "6/12 simplified to 1/2.", "10/25 simplified to 2/5.", "8/24 simplified to 1/3." ]
+​​
+0: "6/12 simplified to 1/2."
+​​
+1: "10/25 simplified to 2/5."
+​​
+2: "8/24 simplified to 1/3."
+​​
+length: 3
+​​
+<prototype>: Array []
+​
+explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms."
+​
+id: 3535
+​
+order: 0
+​
+standardId: 723
+​
+title: "Write fractions in lowest terms"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+​
+lessonTitle: "Write fractions in lowest terms"
+​
+standardCode: "6.NS.1.d"
+​
+type: "word-problem"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Write fractions in lowest terms", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", standardCode: "6.NS.1.d" }
+​
+explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms."
+​
+standardCode: "6.NS.1.d"
+​
+title: "Write fractions in lowest terms"
+​
+<prototype>: Object { … }
+Console.js:61:14
+✅ analyzeLessonType: Detected FRACTION CONVERSION (6.NS.1.d - title-based) Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "fraction-conversion", requiresInteraction: true, componentType: "text-input" }
+​
+componentType: "text-input"
+​
+requiresInteraction: true
+​
+type: "fraction-conversion"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Write fractions in lowest terms Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "Simplify 6/12 to lowest terms.", correctAnswer: "1/2", componentType: "text-input", inputType: "text" }
+​
+componentType: "text-input"
+​
+correctAnswer: "1/2"
+​
+inputType: "text"
+​
+interactiveText: "Simplify 6/12 to lowest terms."
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+​
+lessonTitle: "Write fractions in lowest terms"
+​
+standardCode: "6.NS.1.d"
+​
+type: "word-problem"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "fraction-conversion", requiresInteraction: true, componentType: "text-input" }
+​
+componentType: "text-input"
+​
+requiresInteraction: true
+​
+type: "fraction-conversion"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Write fractions in lowest terms Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "Simplify 6/12 to lowest terms.", correctAnswer: "1/2", componentType: "text-input", inputType: "text" }
+​
+componentType: "text-input"
+​
+correctAnswer: "1/2"
+​
+inputType: "text"
+​
+interactiveText: "Simplify 6/12 to lowest terms."
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: undefined, standardCode: undefined, lessonTitle: undefined }
+Console.js:61:14
+XHRPOST
+https://replit.com/graphql
+[HTTP/2 200  98ms]
+
+XHRPOST
+https://sp.replit.com/v1/m
+[HTTP/2 200  88ms]
+
+Home: Lesson selected: 
+Object { id: 3536, title: "Convert between improper fractions and mixed numbers", code: "6-G.3", explanation: "Students rewrite improper fractions as mixed numbers by dividing and expressing remainders, and convert mixed numbers back to improper fractions.", examples: (3) […], standardId: 723, order: 1 }
+Console.js:61:14
+Home: Lesson title: Convert between improper fractions and mixed numbers Console.js:61:14
+Home: Lesson examples: undefined Console.js:61:14
+Home: Lesson description: undefined Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Convert between improper fractions and mixed numbers" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between improper fractions and mixed numbers", explanation: "Students rewrite improper fractions as mixed numbers by dividing and expressing remainders, and convert mixed numbers back to improper fractions.", standardCode: "6.NS.1.d" }
+Console.js:61:14
+✅ analyzeLessonType: Detected FRACTION CONVERSION (6.NS.1.d - title-based) Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Convert between improper fractions and mixed numbers : 
+Object { type: "fraction-conversion", requiresInteraction: true, componentType: "text-input" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert between improper fractions and mixed numbers Console.js:61:14
+✅ DEBUG processFractionConversion: Matched improper to mixed: 
+Object { originalExample: "11/4 = 2 3/4.", match: (4) […], correctAnswer: "2 3/4", interactiveText: "Convert 11/4 to a mixed number." }
+Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "Convert 11/4 to a mixed number.", correctAnswer: "2 3/4", componentType: "text-input", inputType: "text" }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Convert between improper fractions and mixed numbers" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Convert between improper fractions and mixed numbers : 
+Object { type: "fraction-conversion", requiresInteraction: true, componentType: "text-input" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert between improper fractions and mixed numbers Console.js:61:14
+✅ DEBUG processFractionConversion: Matched improper to mixed: 
+Object { originalExample: "11/4 = 2 3/4.", match: (4) […], correctAnswer: "2 3/4", interactiveText: "Convert 11/4 to a mixed number." }
+Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "Convert 11/4 to a mixed number.", correctAnswer: "2 3/4", componentType: "text-input", inputType: "text" }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: undefined, standardCode: undefined, lessonTitle: undefined }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Convert between improper fractions and mixed numbers" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Convert between improper fractions and mixed numbers : 
+Object { type: "fraction-conversion", requiresInteraction: true, componentType: "text-input" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert between improper fractions and mixed numbers Console.js:61:14
+✅ DEBUG processFractionConversion: Matched improper to mixed: 
+Object { originalExample: "11/4 = 2 3/4.", match: (4) […], correctAnswer: "2 3/4", interactiveText: "Convert 11/4 to a mixed number." }
+Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "Convert 11/4 to a mixed number.", correctAnswer: "2 3/4", componentType: "text-input", inputType: "text" }
