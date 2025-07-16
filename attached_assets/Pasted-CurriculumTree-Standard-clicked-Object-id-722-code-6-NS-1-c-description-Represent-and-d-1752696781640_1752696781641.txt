@@ -1,0 +1,117 @@
+CurriculumTree: Standard clicked: 
+Object { id: 722, code: "6.NS.1.c", description: "Represent and determine equivalencies among fractions (proper or improper) and mixed numbers that have denominators that are 12 or less or factors of 100 and percents incorporating the use of number lines, and concrete and pictorial models.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+XHRGET
+https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/api/lessons/standard/722
+[HTTP/1.1 304 Not Modified 150ms]
+
+CurriculumTree: Lessons for standard: 
+Array [ {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.c Console.js:61:14
+Home: Lessons received: 
+Array [ {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3534, title: "Convert fractions to percents using grid models", code: "6-U.3", explanation: "Students shade parts of a grid to represent a fraction, then convert the fraction to a percent by counting shaded parts out of 100 or scaling to a 100-based denominator.", examples: (3) […], standardId: 722, order: 0 }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.c", lessonTitle: "Convert fractions to percents using grid models" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert fractions to percents using grid models", explanation: "Students shade parts of a grid to represent a fraction, then convert the fraction to a percent by counting shaded parts out of 100 or scaling to a 100-based denominator.", standardCode: "6.NS.1.c" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Convert fractions to percents using grid models : 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert fractions to percents using grid models Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "Shade 2/5 of the Grid", correctAnswer: 40, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: [], gridMode: "clickable", additionalData: {…} }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.c", lessonTitle: "Convert fractions to percents using grid models" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Convert fractions to percents using grid models : 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert fractions to percents using grid models Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "Shade 2/5 of the Grid", correctAnswer: 40, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: [], gridMode: "clickable", additionalData: {…} }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.c", lessonTitle: "Convert fractions to percents using grid models" }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.c", lessonTitle: "Convert fractions to percents using grid models" }
+Console.js:61:14
+🎯 GridComponent rendered with universalPrompt: Shade the grid to represent the given fraction as a percentage Console.js:61:14
+🎯 GridComponent standardCode: 6.NS.1.c Console.js:61:14
+🎯 GridComponent lessonTitle: Convert fractions to percents using grid models Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.c", lessonTitle: "Convert fractions to percents using grid models" }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.c", lessonTitle: "Convert fractions to percents using grid models" }
+Console.js:61:14
+🎯 GridComponent rendered with universalPrompt: Shade the grid to represent the given fraction as a percentage Console.js:61:14
+🎯 GridComponent standardCode: 6.NS.1.c Console.js:61:14
+🎯 GridComponent lessonTitle: Convert fractions to percents using grid models Console.js:61:14
+XHRPOST
+https://replit.com/graphql
+[HTTP/2 200  80ms]
+
+XHRPOST
+https://replit.com/graphql
+[HTTP/2 200  64ms]
+
+GET
+https://replit.com/cdn-cgi/image/width=3840,quality=80,format=auto/https://storage.googleapis.com/screenshot-production-us-central1/8bc8f8cb-09cd-45ad-9734-0cee7467de77/a5a7f005-c0c0-4a47-9ced-62d482f1360d/yvlnBmA
+[HTTP/2 200  344ms]
+
+XHRPOST
+https://sp.replit.com/v1/t
+[HTTP/2 200  91ms]
+
+Cookie warnings 3
+GET
+https://www.google-analytics.com/collect?v=1&_v=j101&aip=1&a=1455283794&t=event&ni=0&_s=408&dl=https://replit.com/usage&dp=/@davidallenpowel/AITutorPro&ul=en-us&de=UTF-8&dt=replEnvironmentDesktop&sd=30-bit&sr=1920x1200&vp=1905x1088&je=0&ec=All&ea=Agent Used&ev=0&_u=SCCAgEAjQAAAAGgCIAD~&jid=&gjid=&cid=1706384770.1751992785&tid=UA-25629695-1&_gid=280569706.1752523577&z=831746161
+[HTTP/2 200  20ms]
+
+XHRPOST
+https://sp.replit.com/v1/t
+[HTTP/2 200  91ms]
+
+GET
+https://www.google-analytics.com/collect?v=1&_v=j101&aip=1&a=1455283794&t=event&ni=0&_s=409&dl=https://replit.com/usage&dp=/@davidallenpowel/AITutorPro&ul=en-us&de=UTF-8&dt=replEnvironmentDesktop&sd=30-bit&sr=1920x1200&vp=1905x1088&je=0&ec=All&ea=Tip System Used&ev=0&_u=SCCAgEAjQAAAAGgCIAD~&jid=&gjid=&cid=1706384770.1751992785&tid=UA-25629695-1&_gid=280569706.1752523577&z=1828212227
+[HTTP/2 200  22ms]
+
+MouseDown on cell 0 currentSelectedCells: 
+Array []
+Console.js:61:14
+Cell not shaded, adding to selection Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.c", lessonTitle: "Convert fractions to percents using grid models" }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.c", lessonTitle: "Convert fractions to percents using grid models" }
+Console.js:61:14
+🎯 GridComponent rendered with universalPrompt: Shade the grid to represent the given fraction as a percentage Console.js:61:14
+🎯 GridComponent standardCode: 6.NS.1.c Console.js:61:14
+🎯 GridComponent lessonTitle: Convert fractions to percents using grid models Console.js:61:14
+Starting drag mode Console.js:61:14
+Dragging - adding cell 1 Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.c", lessonTitle: "Convert fractions to percents using grid models" }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.c", lessonTitle: "Convert fractions to percents using grid models" }
+Console.js:61:14
+🎯 GridComponent rendered with universalPrompt: Shade the grid to represent the given fraction as a percentage Console.js:61:14
+🎯 GridComponent standardCode: 6.NS.1.c Console.js:61:14
+🎯 GridComponent lessonTitle: Convert fractions to percents using grid models Console.js:61:14

@@ -1,0 +1,94 @@
+CurriculumTree: Standard clicked: 
+Object { id: 720, code: "6.NS.1.a", description: "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+CurriculumTree: Lessons for standard: 
+Array [ {…}, {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.a Console.js:61:14
+Home: Lessons received: 
+Array [ {…}, {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3531, title: "What percentage is illustrated?", code: "6-U.1", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", examples: (3) […], standardId: 720, order: 0 }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6.NS.1.a" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6-U.1" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: A grid has 80 shaded squares out of 100, so the percent is 80%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "What percentage of this grid is shaded?", correctAnswer: 80, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (80) […], gridMode: "identify-percentage", additionalData: {…} }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6-U.1" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: A grid has 80 shaded squares out of 100, so the percent is 80%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "What percentage of this grid is shaded?", correctAnswer: 80, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (80) […], gridMode: "identify-percentage", additionalData: {…} }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6-U.1" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: A strip with 125 shaded parts out of 100 shows 125%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "What percentage of this grid is shaded?", correctAnswer: 125, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (100) […], gridMode: "identify-percentage", additionalData: {…} }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6-U.1" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: A strip with 125 shaded parts out of 100 shows 125%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "What percentage of this grid is shaded?", correctAnswer: 125, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (100) […], gridMode: "identify-percentage", additionalData: {…} }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6-U.1" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: A diagram has 0.7 shaded out of 100, so the percent is 0.7%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "What percentage of this grid is shaded? (Note: The shaded cell represents 0.7 out of 100)", correctAnswer: 0.7, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (1) […], gridMode: "identify-percentage", additionalData: {…} }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6-U.1" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: A diagram has 0.7 shaded out of 100, so the percent is 0.7%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "What percentage of this grid is shaded? (Note: The shaded cell represents 0.7 out of 100)", correctAnswer: 0.7, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (1) […], gridMode: "identify-percentage", additionalData: {…} }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6-U.1" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: A diagram has 0.7 shaded out of 100, so the percent is 0.7%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "What percentage of this grid is shaded? (Note: The shaded cell represents 0.7 out of 100)", correctAnswer: 0.7, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (1) […], gridMode: "identify-percentage", additionalData: {…} }

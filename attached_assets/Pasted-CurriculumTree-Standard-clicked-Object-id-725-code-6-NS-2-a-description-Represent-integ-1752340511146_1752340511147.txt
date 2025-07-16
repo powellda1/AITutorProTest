@@ -1,0 +1,46 @@
+CurriculumTree: Standard clicked: 
+Object { id: 725, code: "6.NS.2.a", description: "Represent integers, including models derived from contextual situations, and identify an integer represented by a point on a number line.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+CurriculumTree: Lessons for standard: 
+Array(4) [ {…}, {…}, {…}, {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.2.a Console.js:61:14
+Home: Lessons received: 
+Array(4) [ {…}, {…}, {…}, {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3549, title: "Understanding integers", code: "6-O.1", explanation: "Students learn to represent positive and negative integers in real-world contexts, such as temperature or debt, and place them on a number line.", examples: (3) […], standardId: 725, order: 0 }
+Console.js:61:14
+🔍 ANALYZING LESSON TYPE: 
+Object { title: "Integers on number lines", titleLower: "integers on number lines", explanation: "Students identify the integer corresponding to a point marked on a number line, understanding positive and negative values.", explanationLower: "students identify the integer corresponding to a point marked on a number line, understanding positive and negative values." }
+Console.js:61:14
+🔍 LESSON ANALYSIS DEBUG: 
+Object { title: "Integers on number lines", explanation: "Students identify the integer corresponding to a point marked on a number line, understanding positive and negative values.", lessonAnalysis: {…}, currentExample: "A point at -4 on a number line represents the integer -4.", requiresInteraction: true, componentType: "number-line", analysisType: "point-identification" }
+Console.js:61:14
+🎯 DYNAMIC CONTENT PROCESSING: 
+Object { processedContent: {…}, componentType: "number-line", mode: "marked-with-input", interactiveText: "What integer does this point represent?", correctAnswer: -4 }
+Console.js:61:14
+🔍 ANALYZING LESSON TYPE: 
+Object { title: "Integers on number lines", titleLower: "integers on number lines", explanation: "Students identify the integer corresponding to a point marked on a number line, understanding positive and negative values.", explanationLower: "students identify the integer corresponding to a point marked on a number line, understanding positive and negative values." }
+Console.js:61:14
+🔍 LESSON ANALYSIS DEBUG: 
+Object { title: "Integers on number lines", explanation: "Students identify the integer corresponding to a point marked on a number line, understanding positive and negative values.", lessonAnalysis: {…}, currentExample: "A point at -4 on a number line represents the integer -4.", requiresInteraction: true, componentType: "number-line", analysisType: "point-identification" }
+Console.js:61:14
+🎯 DYNAMIC CONTENT PROCESSING: 
+Object { processedContent: {…}, componentType: "number-line", mode: "marked-with-input", interactiveText: "What integer does this point represent?", correctAnswer: -4 }
+Console.js:61:14
+🔍 ANALYZING LESSON TYPE: 
+Object { title: "Integers on number lines", titleLower: "integers on number lines", explanation: "Students identify the integer corresponding to a point marked on a number line, understanding positive and negative values.", explanationLower: "students identify the integer corresponding to a point marked on a number line, understanding positive and negative values." }
+Console.js:61:14
+🔍 LESSON ANALYSIS DEBUG: 
+Object { title: "Integers on number lines", explanation: "Students identify the integer corresponding to a point marked on a number line, understanding positive and negative values.", lessonAnalysis: {…}, currentExample: "A point at -4 on a number line represents the integer -4.", requiresInteraction: true, componentType: "number-line", analysisType: "point-identification" }
+Console.js:61:14
+🎯 DYNAMIC CONTENT PROCESSING: 
+Object { processedContent: {…}, componentType: "number-line", mode: "marked-with-input", interactiveText: "What integer does this point represent?", correctAnswer: -4 }
+Console.js:61:14
+🎯 DYNAMIC CONTENT PROCESSING: 
+Object { processedContent: {…}, componentType: "number-line", mode: "marked-with-input", interactiveText: "What integer does this point represent?", correctAnswer: -4 }
+Console.js:61:14
+🎯 DYNAMIC CONTENT PROCESSING: 
+Object { processedContent: {…}, componentType: "number-line", mode: "marked-with-input", interactiveText: "What integer does this point represent?", correctAnswer: -4 }

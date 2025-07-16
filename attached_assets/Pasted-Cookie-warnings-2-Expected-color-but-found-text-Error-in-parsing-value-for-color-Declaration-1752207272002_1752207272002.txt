@@ -1,0 +1,102 @@
+Cookie warnings 2
+Expected color but found ‘text’.  Error in parsing value for ‘color’.  Declaration dropped. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:1:6237
+Elements matching selector: .luna-dom-highlighter-tooltip-content
+NodeList []
+​
+length: 0
+​
+<prototype>: NodeListPrototype { item: item(), keys: keys(), values: values(), … }
+Error in parsing value for ‘-webkit-text-size-adjust’.  Declaration dropped. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:141:29
+Elements matching selector: html, :host
+NodeList [ html
+]
+​
+0: <html lang="en">
+​
+length: 1
+​
+<prototype>: NodeListPrototype { item: item(), keys: keys(), values: values(), … }
+​​
+constructor: function NodeList()
+​​
+entries: function entries()
+​​
+forEach: function forEach()
+​​
+item: function item()
+​​
+keys: function keys()
+​​
+length: 
+​​
+values: function values()
+​​
+Symbol(Symbol.iterator): function values()
+​​
+Symbol(Symbol.toStringTag): "NodeList"
+​​
+<get length()>: function length()
+​​
+<prototype>: Object { … }
+Ruleset ignored due to bad selector. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:2357:27
+Unknown property ‘-moz-box-shadow’.  Declaration dropped. styles__ltr.css:1:49169
+Elements matching selector: .rc-anchor
+NodeList [ div.rc-anchor.rc-anchor-invisible.rc-anchor-light.rc-anchor-invisible-hover
+]
+​
+0: <div class="rc-anchor rc-anchor-invi…-anchor-invisible-hover">
+​
+length: 1
+​
+<prototype>: NodeListPrototype { item: item(), keys: keys(), values: values(), … }
+​​
+constructor: function NodeList()
+​​
+entries: function entries()
+​​
+forEach: function forEach()
+​​
+item: function item()
+​​
+keys: function keys()
+​​
+length: 
+​​
+values: function values()
+​​
+Symbol(Symbol.iterator): function values()
+​​
+Symbol(Symbol.toStringTag): "NodeList"
+​​
+<get length()>: function length()
+​​
+<prototype>: Object { … }
+Expected ‘none’, URL, or filter function but found ‘progid’.  Error in parsing value for ‘filter’.  Declaration dropped. styles__ltr.css:1:51017
+Elements matching selector: .rc-anchor-logo-img-ie8
+NodeList []
+​
+length: 0
+​
+<prototype>: NodeListPrototype { item: item(), keys: keys(), values: values(), … }
+​​
+constructor: function NodeList()
+​​
+entries: function entries()
+​​
+forEach: function forEach()
+​​
+item: function item()
+​​
+keys: function keys()
+​​
+length: 
+​​
+values: function values()
+​​
+Symbol(Symbol.iterator): function values()
+​​
+Symbol(Symbol.toStringTag): "NodeList"
+​​
+<get length()>: function length()
+​​
+<prototype>: Object { … }

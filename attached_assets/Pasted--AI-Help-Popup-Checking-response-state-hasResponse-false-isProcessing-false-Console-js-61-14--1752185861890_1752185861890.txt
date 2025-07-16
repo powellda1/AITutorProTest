@@ -1,0 +1,30 @@
+🔍 AI Help Popup: Checking response state - hasResponse: false isProcessing: false Console.js:61:14
+🔵 showAiHelpPopup state changed: false Console.js:61:14
+🟡 hasAiResponse state changed: false Console.js:61:14
+🔍 AI Help Popup: Checking response state - hasResponse: false isProcessing: false Console.js:61:14
+🔵 showAiHelpPopup state changed: false Console.js:61:14
+🟡 hasAiResponse state changed: false Console.js:61:14
+🔍 AI Help Popup: Checking response state - hasResponse: false isProcessing: false Console.js:61:14
+🔵 showAiHelpPopup state changed: false Console.js:61:14
+🟡 hasAiResponse state changed: false Console.js:61:14
+🔴 Interactive Lesson: Checking auto-close conditions - hasAiResponse: false showAiHelpPopup: false Console.js:61:14
+Content-Security-Policy warnings 4
+Ignoring unsupported entryTypes: longtask. recaptcha__en.js:249:468
+Partitioned cookie or storage access was provided to “https://www.google.com/recaptcha/enterprise/anchor?ar=2&k=6LdqhwwoAAAAAFPdw8jCuvY3PaHQItGj3RzOS4fW&co=aHR0cHM6Ly9yZXBsaXQuY29tOjQ0Mw..&hl=en&v=_cn5mBoBXIA0_T7xBjxkUqUA&size=invisible&cb=q8tywdfxbuhw” because it is loaded in the third-party context and dynamic state partitioning is enabled.
+recaptcha__en.js:155:262
+Expected color but found ‘text’.  Error in parsing value for ‘color’.  Declaration dropped. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:1:6237
+Error in parsing value for ‘-webkit-text-size-adjust’.  Declaration dropped. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:141:29
+Ruleset ignored due to bad selector. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:2316:27
+Unknown property ‘-moz-box-shadow’.  Declaration dropped. styles__ltr.css:1:49169
+Expected ‘none’, URL, or filter function but found ‘progid’.  Error in parsing value for ‘filter’.  Declaration dropped. styles__ltr.css:1:51017
+🔵 handleWrongAnswer: Setting showAiHelpPopup to true Console.js:61:14
+🔵 AI Help Popup: Starting processing Console.js:61:14
+🔵 showAiHelpPopup state changed: true Console.js:61:14
+Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}. Console.js:61:14
+🟢 Sub-standard Panel: AI response received, triggering panel update Console.js:61:14
+🟢 Sub-standard Panel: Notifying interactive lesson that AI response received Console.js:61:14
+🟡 Interactive Lesson: markAiResponseReceived called Console.js:61:14
+🔍 AI Help Popup: Checking response state - hasResponse: true isProcessing: false Console.js:61:14
+✅ AI Help Popup: Response received, parent will handle closing Console.js:61:14
+🟡 hasAiResponse state changed: true Console.js:61:14
+🔴 Interactive Lesson: Checking auto-close conditions - hasAiResponse: true showAiHelpPopup: false

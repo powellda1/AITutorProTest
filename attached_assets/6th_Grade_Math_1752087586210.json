@@ -1,0 +1,593 @@
+{
+  "6.NS": {
+    "description": "Number and Number Sense",
+    "standards": {
+      "6.NS.1": {
+        "description": "The student will reason and use multiple strategies to express equivalency, compare, and order numbers written as fractions, mixed numbers, decimals, and percents.",
+        "sub_standards": {
+          "6.NS.1.a": {
+            "description": "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.",
+            "examples": [
+              "What percentage is illustrated by a model showing 3 out of 200 squares shaded? (6-U.1)",
+              "Using a strip model, estimate the percent represented by 4 out of 5 equal sections (e.g., a strip divided into 5 parts with 4 shaded)."
+            ]
+          },
+          "6.NS.1.b": {
+            "description": "Represent and determine equivalencies among decimals (through the thousandths place) and percents incorporating the use of number lines, and concrete and pictorial models.",
+            "examples": [
+              "Convert 0.625 to a percent using a number line to show the relationship. (6)",
+              "Use a 10x10 grid to represent 45% as a decimal."
+            ]
+          },
+          "6.NS.1.c": {
+            "description": "Represent and determine equivalencies among fractions (proper or improper) and mixed numbers that have denominators that are 12 or less or factors of 100 and percents incorporating the use of number lines, and concrete and pictorial models.",
+            "examples": [
+              "Convert 3/4 to a percent using a 100-square grid model. (6-U.3)",
+              "Show how 1 1/3 can be represented as a percent on a number line."
+            ]
+          },
+          "6.NS.1.d": {
+            "description": "Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.",
+            "examples": [
+              "Convert 0.75 to a fraction in lowest terms and verify using a grid model. (6-G.1)",
+              "Express 150% as a mixed number and show the conversion using a number line. (6-U.4)"
+            ]
+          },
+          "6.NS.1.e": {
+            "description": "Use multiple strategies to compare and order no more than four positive rational numbers expressed as fractions (proper or improper), mixed numbers, decimals, and percents (decimals through thousandths, fractions with denominators of 12 or less or factors of 100) with and without models. Justify solutions orally, in writing or with a model. Ordering may be in ascending or descending order.",
+            "examples": [
+              "Order 0.6, 2/3, 75%, and 1/2 in ascending order using a number line. (6-G.9)",
+              "Compare 0.125 and 1/8 using a decimal-to-fraction conversion and justify your answer in writing. (6-U.6)"
+            ]
+          }
+        }
+      },
+      "6.NS.2": {
+        "description": "The student will reason and use multiple strategies to represent, compare, and order integers.",
+        "sub_standards": {
+          "6.NS.2.a": {
+            "description": "Represent integers, including models derived from contextual situations, and identify an integer represented by a point on a number line.",
+            "examples": [
+              "Represent -5 on a number line and describe a real-world situation it could model, such as a temperature drop. (6-O.1)",
+              "Identify the integer at point -3 on a horizontal number line. (6-O.2)"
+            ]
+          },
+          "6.NS.2.b": {
+            "description": "Compare and order integers using a number line.",
+            "examples": [
+              "Order -7, 2, -1, and 0 on a number line in ascending order. (6-O.8)",
+              "Compare -4 and -9 using a number line to show their positions relative to zero. (6-O.7)"
+            ]
+          },
+          "6.NS.2.c": {
+            "description": "Compare integers, using mathematical symbols (<, >, =).",
+            "examples": [
+              "Write a comparison statement for -3 and 5 using <, >, or =. (6-O.7)",
+              "Determine whether -8 > -2 is true or false and explain why."
+            ]
+          },
+          "6.NS.2.d": {
+            "description": "Identify and describe the absolute value of an integer as the distance from zero on the number line.",
+            "examples": [
+              "Find the absolute value of -6 and show its distance from zero on a number line. (6-O.6)",
+              "In a context where a diver is 10 feet below sea level, explain the absolute value of -10. (6-O.10)"
+            ]
+          }
+        }
+      },
+      "6.NS.3": {
+        "description": "The student will recognize and represent patterns with whole number exponents and perfect squares.",
+        "sub_standards": {
+          "6.NS.3.a": {
+            "description": "Recognize and represent patterns with bases and exponents that are whole numbers.",
+            "examples": [
+              "Write 4 x 4 x 4 as an expression with an exponent. (6-D.1)",
+              "Identify the pattern in the sequence 2, 4, 8, 16 and write the next term using exponents."
+            ]
+          },
+          "6.NS.3.b": {
+            "description": "Recognize and represent patterns of perfect squares not to exceed 20^2, by using concrete and pictorial models.",
+            "examples": [
+              "Use a grid model to show that 4^2 = 16.",
+              "Represent 9^2 as a square array of 81 units."
+            ]
+          },
+          "6.NS.3.c": {
+            "description": "Justify if a number between 0 and 400 is a perfect square through modeling or mathematical reasoning.",
+            "examples": [
+              "Determine if 144 is a perfect square by finding its square root. (6)",
+              "Use a model to show whether 200 is a perfect square."
+            ]
+          },
+          "6.NS.3.d": {
+            "description": "Recognize and represent powers of 10 with whole number exponents by examining patterns in place value.",
+            "examples": [
+              "Write 100,000 as a power of 10 with an exponent. (6-D.3)",
+              "Identify the pattern in 10^1, 10^2, 10^3 and predict the value of 10^4."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "6.CE": {
+    "description": "Computation and Estimation",
+    "standards": {
+      "6.CE.1": {
+        "description": "The student will estimate, demonstrate, solve, and justify solutions to problems using operations with fractions and mixed numbers, including those in context.",
+        "sub_standards": {
+          "6.CE.1.a": {
+            "description": "Demonstrate/model multiplication and division of fractions (proper or improper) and mixed numbers using multiple representations.",
+            "examples": [
+              "Use an area model to show 2/3 x 3/4. (6-L.5)",
+              "Model the division of 1/2 by 2 using a number line."
+            ]
+          },
+          "6.CE.1.b": {
+            "description": "Multiply and divide fractions (proper or improper) and mixed numbers that include denominators of 12 or less. Answers are expressed in simplest form.",
+            "examples": [
+              "Calculate 1 1/2 x 2/3 and simplify the result. (6)",
+              "Divide 3/4 by 1/2 and express the answer in simplest form."
+            ]
+          },
+          "6.CE.1.c": {
+            "description": "Investigate and explain the effect of multiplying or dividing a fraction, whole number, or mixed number by a number between zero and one.",
+            "examples": [
+              "Explain why multiplying 4 by 1/2 results in a smaller number, using a model. (6-L.8)",
+              "Show the effect of dividing 6 by 1/3 on a number line."
+            ]
+          },
+          "6.CE.1.d": {
+            "description": "Estimate, determine, and justify the solution to single-step and multistep problems in context that involve addition and subtraction with fractions (proper or improper) and mixed numbers, with and without regrouping, that include like and unlike denominators of 12 or less. Answers are expressed in simplest form.",
+            "examples": [
+              "Solve: A recipe calls for 2/3 cup of sugar and 3/4 cup of flour. How much more flour is needed than sugar? (6)",
+              "Add 1 1/4 + 2/3 and simplify the result, justifying with a model."
+            ]
+          },
+          "6.CE.1.e": {
+            "description": "Estimate, determine, and justify the solution to single-step and multistep problems in context that involve multiplication and division with fractions (proper or improper) and mixed numbers that include denominators of 12 or less. Answers are expressed in simplest form.",
+            "examples": [
+              "If a recipe requires 2/3 cup of sugar for 1 batch, how much is needed for 3 batches? (6)",
+              "Divide 1 1/2 cups of flour into 1/4 cup servings. How many servings are possible?"
+            ]
+          }
+        }
+      },
+      "6.CE.2": {
+        "description": "The student will estimate, demonstrate, solve, and justify solutions to problems using operations with integers, including those in context.",
+        "sub_standards": {
+          "6.CE.2.a": {
+            "description": "Demonstrate/model addition, subtraction, multiplication, and division of integers using pictorial representations or concrete manipulatives.",
+            "examples": [
+              "Use counters to model -3 + 5. (6-P.1)",
+              "Show -2 x 3 using a number line."
+            ]
+          },
+          "6.CE.2.b": {
+            "description": "Add, subtract, multiply, and divide two integers.",
+            "examples": [
+              "Calculate -7 + 4. (6-P.3)",
+              "Find the product of -5 and -3. (6-P.13)"
+            ]
+          },
+          "6.CE.2.c": {
+            "description": "Simplify an expression that contains absolute value bars | | and an operation with two integers and represent the result on a number line.",
+            "examples": [
+              "Simplify |-8| + 3 and show the result on a number line.",
+              "Evaluate |5 - 7| and represent it on a number line."
+            ]
+          },
+          "6.CE.2.d": {
+            "description": "Estimate, determine, and justify the solution to one and two-step contextual problems, involving addition, subtraction, multiplication, and division with integers.",
+            "examples": [
+              "If the temperature drops 5°C and then rises 3°C, what is the final change in temperature? (6-P.8)",
+              "A diver descends 10 feet and then ascends 4 feet. What is the diver’s final depth relative to sea level?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "6.MG": {
+    "description": "Measurement and Geometry",
+    "standards": {
+      "6.MG.1": {
+        "description": "The student will identify the characteristics of circles and solve problems, including those in context, involving circumference and area.",
+        "sub_standards": {
+          "6.MG.1.a": {
+            "description": "Identify and describe chord, diameter, radius, circumference, and area of a circle.",
+            "examples": [
+              "Label the radius and diameter on a given circle diagram. (6)",
+              "Describe the difference between a chord and a diameter in a circle."
+            ]
+          },
+          "6.MG.1.b": {
+            "description": "Investigate and describe the relationship between: diameter and radius; radius and circumference; and diameter and circumference.",
+            "examples": [
+              "Explain how the diameter is twice the radius using a circle model.",
+              "Measure the circumference and diameter of a circle to show their relationship."
+            ]
+          },
+          "6.MG.1.c": {
+            "description": "Develop an approximation for pi (3.14) by gathering data and comparing the circumference to the diameter of various circles, using concrete manipulatives or technological models.",
+            "examples": [
+              "Measure the circumference and diameter of three circular objects and estimate pi.",
+              "Use a digital tool to calculate the ratio of circumference to diameter for a circle."
+            ]
+          },
+          "6.MG.1.d": {
+            "description": "Develop the formula for circumference using the relationship between diameter, radius, and pi.",
+            "examples": [
+              "Derive the formula C = πd using a circle model and measurements.",
+              "Show how C = 2πr is equivalent to C = πd using a diagram."
+            ]
+          },
+          "6.MG.1.e": {
+            "description": "Solve problems, including those in context, involving circumference and area of a circle when given the length of the diameter or radius.",
+            "examples": [
+              "Find the circumference of a circle with a radius of 5 cm, using π ≈ 3.14. (6)",
+              "Calculate the area of a circular garden with a diameter of 10 meters. (6)"
+            ]
+          }
+        }
+      },
+      "6.MG.2": {
+        "description": "The student will reason mathematically to solve problems, including those in context, that involve the area and perimeter of triangles and parallelograms.",
+        "sub_standards": {
+          "6.MG.2.a": {
+            "description": "Develop the formula for determining the area of parallelograms and triangles using pictorial representations and concrete manipulatives.",
+            "examples": [
+              "Use a grid to show how the area of a parallelogram is base x height. (6-GG.3)",
+              "Demonstrate the area formula for a triangle by cutting a parallelogram in half."
+            ]
+          },
+          "6.MG.2.b": {
+            "description": "Solve problems, including those in context, involving the perimeter and area of triangles and parallelograms.",
+            "examples": [
+              "Find the area of a triangle with a base of 6 cm and height of 4 cm. (6-GG.6)",
+              "Calculate the perimeter of a parallelogram with sides of 5 cm and 8 cm. (6)"
+            ]
+          }
+        }
+      },
+      "6.MG.3": {
+        "description": "The student will describe the characteristics of the coordinate plane and graph ordered pairs.",
+        "sub_standards": {
+          "6.MG.3.a": {
+            "description": "Identify and label the axes, origin, and quadrants of a coordinate plane.",
+            "examples": [
+              "Label the x-axis, y-axis, and origin on a coordinate plane diagram. (6-R.1)",
+              "Identify the four quadrants on a given coordinate plane."
+            ]
+          },
+          "6.MG.3.b": {
+            "description": "Identify and describe the location (quadrant or the axis) of a point given as an ordered pair. Ordered pairs will be limited to coordinates expressed as integers.",
+            "examples": [
+              "Determine the quadrant of the point (-3, 4). (6-R.4)",
+              "Describe the location of (0, 5) on the coordinate plane."
+            ]
+          },
+          "6.MG.3.c": {
+            "description": "Graph ordered pairs in the four quadrants and on the axes of a coordinate plane. Ordered pairs will be limited to coordinates expressed as integers.",
+            "examples": [
+              "Graph the point (-2, 3) on a coordinate plane. (6)",
+              "Plot the points (4, 0) and (0, -5) on a coordinate grid."
+            ]
+          },
+          "6.MG.3.d": {
+            "description": "Identify ordered pairs represented by points in the four quadrants and on the axes of the coordinate plane. Ordered pairs will be limited to coordinates expressed as integers.",
+            "examples": [
+              "Identify the ordered pair for a point located at the intersection of x = 2 and y = -3. (6)",
+              "Name the coordinates of a point on the y-axis at y = 4."
+            ]
+          },
+          "6.MG.3.e": {
+            "description": "Relate the coordinates of a point to the distance from each axis and relate the coordinates of a single point to another point on the same horizontal or vertical line. Ordered pairs will be limited to coordinates expressed as integers.",
+            "examples": [
+              "Find the distance of the point (3, -2) from the x-axis and y-axis. (6-R.6)",
+              "Given the point (-1, 4), identify another point on the same horizontal line."
+            ]
+          },
+          "6.MG.3.f": {
+            "description": "Draw polygons in the coordinate plane given coordinates for the vertices; use coordinates to determine the length of a side joining points with the same first coordinate or the same second coordinate. Ordered pairs will be limited to coordinates expressed as integers. Apply these techniques in the context of solving contextual and mathematical problems.",
+            "examples": [
+              "Graph a triangle with vertices at (1, 1), (4, 1), and (4, 3) and find the length of the base. (6-EE.6)",
+              "Plot a rectangle with vertices at (-2, -2), (-2, 2), (3, 2), and (3, -2) and calculate its perimeter. (6-R.9)"
+            ]
+          }
+        }
+      },
+      "6.MG.4": {
+        "description": "The student will determine congruence of segments, angles, and polygons.",
+        "sub_standards": {
+          "6.MG.4.a": {
+            "description": "Identify regular polygons.",
+            "examples": [
+              "Identify whether a given shape with 6 equal sides is a regular polygon. (6-EE.1)",
+              "Name a regular polygon with 8 sides and equal angles."
+            ]
+          },
+          "6.MG.4.b": {
+            "description": "Draw lines of symmetry to divide regular polygons into two congruent parts.",
+            "examples": [
+              "Draw all lines of symmetry for a regular pentagon. (6-EE.11)",
+              "Show how a square can be divided into two congruent parts using a line of symmetry."
+            ]
+          },
+          "6.MG.4.c": {
+            "description": "Determine the congruence of segments, angles, and polygons given their properties.",
+            "examples": [
+              "Determine if two segments of lengths 5 cm and 5 cm are congruent.",
+              "Compare two triangles with given angle measures to determine congruence."
+            ]
+          },
+          "6.MG.4.d": {
+            "description": "Determine whether polygons are congruent or noncongruent according to the measures of their sides and angles.",
+            "examples": [
+              "Are two triangles with sides 3, 4, 5 and angles 30°, 60°, 90° congruent? (6)",
+              "Compare a square and a rectangle with different side lengths to determine congruence."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "6.PS": {
+    "description": "Probability and Statistics",
+    "standards": {
+      "6.PS.1": {
+        "description": "The student will apply the data cycle (formulate questions; collect or acquire data; organize and represent data; and analyze data and communicate results) with a focus on circle graphs.",
+        "sub_standards": {
+          "6.PS.1.a": {
+            "description": "Formulate questions that require the collection or acquisition of data with a focus on circle graphs.",
+            "examples": [
+              "Formulate a question about favorite sports that can be answered using a circle graph. (6-JJ.1)",
+              "Write a question to collect data on preferred ice cream flavors for a circle graph."
+            ]
+          },
+          "6.PS.1.b": {
+            "description": "Determine the data needed to answer a formulated question and collect the data (or acquire existing data) using various methods.",
+            "examples": [
+              "List the data needed to answer 'What percentage of students prefer pizza?' and describe a survey method.",
+              "Collect data on favorite hobbies from 20 students to create a circle graph."
+            ]
+          },
+          "6.PS.1.c": {
+            "description": "Determine the factors that will ensure that the data collected is a sample that is representative of a larger population.",
+            "examples": [
+              "Explain why a random sample of 50 students from a school is representative. (6)",
+              "Identify factors to ensure a survey on pet ownership is representative of a town."
+            ]
+          },
+          "6.PS.1.d": {
+            "description": "Organize and represent data using circle graphs, with and without the use of technology tools. The number of data values should be limited to allow for comparisons that have denominators of 12 or less or those that are factors of 100.",
+            "examples": [
+              "Create a circle graph for data showing 6 out of 12 students prefer soccer.",
+              "Use a digital tool to represent data where 25 out of 100 people chose blue as their favorite color."
+            ]
+          },
+          "6.PS.1.e": {
+            "description": "Analyze data represented in a circle graph by making observations and drawing conclusions.",
+            "examples": [
+              "Interpret a circle graph showing 40% prefer dogs and 60% prefer cats to conclude pet preference. (6-II.14)",
+              "Analyze a circle graph of favorite fruits to determine the most popular choice."
+            ]
+          },
+          "6.PS.1.f": {
+            "description": "Compare data represented in a circle graph with the same data represented in other graphs, including but not limited to bar graphs, pictographs, and line plots (dot plots), and justify which graphical representation best represents the data.",
+            "examples": [
+              "Compare a circle graph and a bar graph of the same data on favorite seasons and justify which is clearer.",
+              "Determine if a pictograph or circle graph better shows data on favorite books."
+            ]
+          }
+        }
+      },
+      "6.PS.2": {
+        "description": "The student will represent the mean as a balance point and determine the effect on statistical measures when a data point is added, removed, or changed.",
+        "sub_standards": {
+          "6.PS.2.a": {
+            "description": "Represent the mean of a set of data graphically as the balance point represented in a line plot (dot plot).",
+            "examples": [
+              "Create a line plot for the data set {2, 3, 3, 4, 8} and show the mean as the balance point. (6)",
+              "Use a dot plot to find the mean of {1, 2, 2, 3, 7} and mark the balance point."
+            ]
+          },
+          "6.PS.2.b": {
+            "description": "Determine the effect on measures of center when a single value of a data set is added, removed, or changed.",
+            "examples": [
+              "If 10 is added to the data set {5, 6, 7}, how does the mean change? (6)",
+              "Remove 2 from {2, 4, 6, 8} and calculate the new median."
+            ]
+          },
+          "6.PS.2.c": {
+            "description": "Observe patterns in data to identify outliers and determine their effect on mean, median, mode, or range.",
+            "examples": [
+              "Identify the outlier in {3, 4, 5, 5, 20} and describe its effect on the mean. (6-JJ.9)",
+              "Analyze the data set {1, 2, 2, 3, 10} to find the outlier and its impact on the range."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "6.PFA": {
+    "description": "Patterns, Functions, and Algebra",
+    "standards": {
+      "6.PFA.1": {
+        "description": "The student will use ratios to represent relationships between quantities, including those in context.",
+        "sub_standards": {
+          "6.PFA.1.a": {
+            "description": "Represent a relationship between two quantities using ratios.",
+            "examples": [
+              "Write the ratio of 3 cats to 5 dogs using a colon. (6-S.1)",
+              "Express the ratio of 4 apples to 6 oranges as a fraction. (6-S.2)"
+            ]
+          },
+          "6.PFA.1.b": {
+            "description": "Represent a relationship in context that makes a comparison by using the notations a/b, a:b, and a to b.",
+            "examples": [
+              "Write the ratio of 2 boys to 3 girls in a class using all three notations. (6)",
+              "In a recipe with 1 cup of sugar to 2 cups of flour, express the ratio using a:b."
+            ]
+          },
+          "6.PFA.1.c": {
+            "description": "Represent different comparisons within the same quantity or between different quantities.",
+            "examples": [
+              "Compare the number of red marbles (4) to blue marbles (6) in a bag as a ratio.",
+              "Express the ratio of 5 pencils to 10 pens in a store."
+            ]
+          },
+          "6.PFA.1.d": {
+            "description": "Create a relationship in words for a given ratio expressed symbolically.",
+            "examples": [
+              "Describe the ratio 3:2 as '3 cups of juice for every 2 cups of water.'",
+              "Write a sentence for the ratio 4/5 representing books to magazines."
+            ]
+          },
+          "6.PFA.1.e": {
+            "description": "Create a table of equivalent ratios to represent a proportional relationship between two quantities, when given a ratio.",
+            "examples": [
+              "Create a table of equivalent ratios for 2:3. (6-S.6)",
+              "Given the ratio 1:4, list three equivalent ratios in a table."
+            ]
+          },
+          "6.PFA.1.f": {
+            "description": "Create a table of equivalent ratios to represent a proportional relationship between two quantities, when given a contextual situation.",
+            "examples": [
+              "For a recipe with 2 cups of flour for every 3 eggs, create a table of equivalent ratios. (6-S.8)",
+              "If a car travels 100 miles in 2 hours, make a table of equivalent ratios for distance and time."
+            ]
+          }
+        }
+      },
+      "6.PFA.2": {
+        "description": "The student will identify and represent proportional relationships between two quantities, including those in context (unit rates are limited to positive values).",
+        "sub_standards": {
+          "6.PFA.2.a": {
+            "description": "Identify the unit rate of a proportional relationship represented by a table of values, a contextual situation, or a graph.",
+            "examples": [
+              "Find the unit rate for a car traveling 120 miles in 2 hours. (6-S.9)",
+              "From a table showing 3 books cost $12, determine the cost per book."
+            ]
+          },
+          "6.PFA.2.b": {
+            "description": "Determine a missing value in a ratio table that represents a proportional relationship between two quantities using a unit rate.",
+            "examples": [
+              "Complete a ratio table for 2:5 if the second quantity is 15. (6-S.7)",
+              "Find the missing value in a table where 4 apples cost $2 and the cost for 12 apples is needed."
+            ]
+          },
+          "6.PFA.2.c": {
+            "description": "Determine whether a proportional relationship exists between two quantities, when given a table of values, context, or graph.",
+            "examples": [
+              "Do the ratios 2:3 and 4:6 form a proportion? (6-S.17)",
+              "From a graph of time vs. distance, determine if the relationship is proportional. (6-T.1)"
+            ]
+          },
+          "6.PFA.2.d": {
+            "description": "When given a contextual situation representing a proportional relationship, find the unit rate and create a table of values or a graph.",
+            "examples": [
+              "If 5 notebooks cost $10, find the unit rate and create a table of values.",
+              "Graph the proportional relationship for a car traveling at 60 miles per hour."
+            ]
+          },
+          "6.PFA.2.e": {
+            "description": "Make connections between and among multiple representations of the same proportional relationship using verbal descriptions, ratio tables, and graphs.",
+            "examples": [
+              "For a ratio of 3:2, create a table and graph, and describe the relationship in words. (6-S.12)",
+              "Given a graph of a proportional relationship, write a verbal description and complete a ratio table. (6-T.4)"
+            ]
+          }
+        }
+      },
+      "6.PFA.3": {
+        "description": "The student will write and solve one-step linear equations in one variable, including contextual problems that require the solution of a one-step linear equation in one variable.",
+        "sub_standards": {
+          "6.PFA.3.a": {
+            "description": "Identify and develop examples of the following algebraic vocabulary: equation, variable, expression, term, and coefficient.",
+            "examples": [
+              "Identify the coefficient in the expression 4x + 3. (6-Y.8)",
+              "Write an example of an equation with one variable and label its terms."
+            ]
+          },
+          "6.PFA.3.b": {
+            "description": "Represent and solve one-step linear equations in one variable, using a variety of concrete manipulatives and pictorial representations.",
+            "examples": [
+              "Use algebra tiles to solve x + 3 = 7. (6-AA.5)",
+              "Model 2x = 8 using a diagram and solve for x. (6-AA.6)"
+            ]
+          },
+          "6.PFA.3.c": {
+            "description": "Apply properties of real numbers and properties of equality to solve a one-step equation in one variable. Coefficients are limited to integers and unit fractions. Numeric terms are limited to integers.",
+            "examples": [
+              "Solve x + 5 = 12 using the subtraction property of equality. (6-AA.8)",
+              "Solve (1/2)x = 6 using the multiplication property of equality. (6-AA.9)"
+            ]
+          },
+          "6.PFA.3.d": {
+            "description": "Confirm solutions to one-step linear equations in one variable using a variety of concrete manipulatives and pictorial representations.",
+            "examples": [
+              "Verify that x = 4 satisfies x + 3 = 7 using a number line. (6)",
+              "Use algebra tiles to confirm that x = 10 is the solution to x/2 = 5."
+            ]
+          },
+          "6.PFA.3.e": {
+            "description": "Write a one-step linear equation in one variable to represent a verbal situation, including those in context.",
+            "examples": [
+              "Write an equation for 'A number increased by 7 equals 12.' (6-AA.3)",
+              "If a shirt costs x dollars and a $5 discount makes it $20, write the equation. (6-AA.15)"
+            ]
+          },
+          "6.PFA.3.f": {
+            "description": "Create a verbal situation in context given a one-step linear equation in one variable.",
+            "examples": [
+              "Write a word problem for the equation x - 4 = 9. (6-AA.17)",
+              "Create a context for 3x = 15 involving buying apples."
+            ]
+          }
+        }
+      },
+      "6.PFA.4": {
+        "description": "The student will represent a contextual situation using a linear inequality in one variable with symbols and graphs on a number line.",
+        "sub_standards": {
+          "6.PFA.4.a": {
+            "description": "Given the graph of a linear inequality in one variable on a number line, represent the inequality in two equivalent ways using symbols. Symbols include <, >, ≤, ≥.",
+            "examples": [
+              "For a number line showing x > 3, write two equivalent inequalities, e.g., x ≥ 4 or x > 2. (6-BB.3)",
+              "Express the number line graph of x ≤ -2 in two symbolic forms."
+            ]
+          },
+          "6.PFA.4.b": {
+            "description": "Write a linear inequality in one variable to represent a given constraint or condition in context or given a graph on a number line.",
+            "examples": [
+              "Write an inequality for 'You need more than $10 to buy a book.' (6-BB.4)",
+              "Given a number line showing x < 5, write the corresponding inequality."
+            ]
+          },
+          "6.PFA.4.c": {
+            "description": "Given a linear inequality in one variable, create a corresponding contextual situation or create a number line graph.",
+            "examples": [
+              "Graph x ≥ 2 on a number line. (6-BB.2)",
+              "Create a word problem for the inequality x < 7, such as a speed limit."
+            ]
+          },
+          "6.PFA.4.d": {
+            "description": "Use substitution or a number line graph to justify whether a given number in a specified set makes a linear inequality in one variable true.",
+            "examples": [
+              "Check if x = 3 satisfies x > 1 using substitution. (6-BB.1)",
+              "Use a number line to verify if -2 satisfies x ≤ 0."
+            ]
+          },
+          "6.PFA.4.e": {
+            "description": "Identify a numerical value(s) that is part of the solution set of a given inequality in one variable.",
+            "examples": [
+              "List three values that satisfy x < 4. (6-BB.1)",
+              "Identify a number that satisfies x ≥ -1 from the set {-2, 0, 2}."
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+

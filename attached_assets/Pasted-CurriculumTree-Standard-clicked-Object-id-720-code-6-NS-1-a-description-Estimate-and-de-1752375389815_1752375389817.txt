@@ -1,0 +1,86 @@
+CurriculumTree: Standard clicked: 
+Object { id: 720, code: "6.NS.1.a", description: "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+CurriculumTree: Lessons for standard: 
+Array [ {…}, {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.a Console.js:61:14
+Home: Lessons received: 
+Array [ {…}, {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3531, title: "What percentage is illustrated?", code: "6-U.1", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", examples: (3) […], standardId: 720, order: 0 }
+Console.js:61:14
+Tab rendering: 
+Object { lesson: "What percentage is illustrated?", tabLabel: "Identify Percents", isActive: true, index: 0 }
+Console.js:61:14
+Tab rendering: 
+Object { lesson: "Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50", tabLabel: "Benchmark Percents", isActive: false, index: 1 }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6.NS.1.a" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+Tab rendering: 
+Object { lesson: "What percentage is illustrated?", tabLabel: "Identify Percents", isActive: true, index: 0 }
+Console.js:61:14
+Tab rendering: 
+Object { lesson: "Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50", tabLabel: "Benchmark Percents", isActive: false, index: 1 }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6-U.1" }
+Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: A grid has 80 shaded squares out of 100, so the percent is 80%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "What percentage of this grid is shaded?", correctAnswer: 80, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (80) […], gridMode: "identify-percentage", additionalData: {…} }
+Console.js:61:14
+Home: Lesson selected: 
+Object { id: 3532, title: "Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50", code: "6-U.2", explanation: "Students use known benchmark percents (like 10%, 25%, 50%) to quickly estimate the shaded part of a strip model.", examples: (3) […], standardId: 720, order: 1 }
+Console.js:61:14
+Home: Lesson title: Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50 Console.js:61:14
+Home: Lesson examples: undefined Console.js:61:14
+Home: Lesson description: undefined Console.js:61:14
+Tab rendering: 
+Object { lesson: "What percentage is illustrated?", tabLabel: "Identify Percents", isActive: false, index: 0 }
+Console.js:61:14
+Tab rendering: 
+Object { lesson: "Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50", tabLabel: "Benchmark Percents", isActive: true, index: 1 }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50", explanation: "Students use known benchmark percents (like 10%, 25%, 50%) to quickly estimate the shaded part of a strip model.", standardCode: "6.NS.1.a" }
+Console.js:61:14
+✅ analyzeLessonType: Detected STRIP MODEL (title-based) Console.js:61:14
+Tab rendering: 
+Object { lesson: "What percentage is illustrated?", tabLabel: "Identify Percents", isActive: false, index: 0 }
+Console.js:61:14
+Tab rendering: 
+Object { lesson: "Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50", tabLabel: "Benchmark Percents", isActive: true, index: 1 }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50", explanation: "Students use known benchmark percents (like 10%, 25%, 50%) to quickly estimate the shaded part of a strip model.", standardCode: "6-U.2" }
+Console.js:61:14
+✅ analyzeLessonType: Detected STRIP MODEL (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "strip-model", requiresInteraction: true, componentType: "strip" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: A strip with about one-fifth shaded is approximately 20%. Console.js:61:14
+🔍 processStripModel called with: A strip with about one-fifth shaded is approximately 20%. Console.js:61:14
+🔍 Testing pattern: 
+/strip.*?one-fifth.*?(\d+(?:\.\d+)?)%/i
+ Result: 
+Array [ "strip with about one-fifth shaded is approximately 20%", "20" ]
+Console.js:61:14
+✅ Found percentage: 20 Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "What percentage is approximately one-fifth?", correctAnswer: 20, componentType: "strip", additionalData: {…} }
+Console.js:61:14
+Tab rendering: 
+Object { lesson: "What percentage is illustrated?", tabLabel: "Identify Percents", isActive: false, index: 0 }
+Console.js:61:14
+Tab rendering: 
+Object { lesson: "Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50", tabLabel: "Benchmark Percents", isActive: true, index: 1 }

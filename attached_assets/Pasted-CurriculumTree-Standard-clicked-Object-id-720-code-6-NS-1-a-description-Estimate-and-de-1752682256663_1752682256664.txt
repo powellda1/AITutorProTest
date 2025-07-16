@@ -1,0 +1,65 @@
+CurriculumTree: Standard clicked: 
+Object { id: 720, code: "6.NS.1.a", description: "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+XHRGET
+https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/api/lessons/standard/720
+[HTTP/1.1 304 Not Modified 331ms]
+
+CurriculumTree: Lessons for standard: 
+Array [ {…}, {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.a Console.js:61:14
+Home: Lessons received: 
+Array [ {…}, {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3531, title: "What percentage is illustrated?", code: "6-U.1", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", examples: (3) […], standardId: 720, order: 0 }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "strip-percentage", standardCode: "6-U.1", lessonTitle: "What percentage is illustrated?" }
+Console.js:61:14
+🚨 DUPLICATE CALL DETECTED - STACK TRACE: LessonPanel/<.children<.children<.children<.children<.children<.children<.children<.children<@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/lesson-panel.tsx:2683:26
+LessonPanel@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/lesson-panel.tsx:2684:19
+renderWithHooks@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WERSD76P.js?v=4873d7ee:11548:35
+mountIndeterminateComponent@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WERSD76P.js?v=4873d7ee:14926:21
+beginWork@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WERSD76P.js?v=4873d7ee:15914:22 Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6.NS.1.a" }
+Console.js:61:14
+🚨 SPECIAL DEBUG: Processing "What percentage is illustrated?" lesson Console.js:61:14
+🚨 Title includes "percentage is illustrated": true Console.js:61:14
+🚨 Should detect as GRID MODEL Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: 80, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (80) […], gridMode: "identify-percentage", additionalData: {…} }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "strip-percentage", standardCode: "6-U.1", lessonTitle: "What percentage is illustrated?" }
+Console.js:61:14
+🚨 DUPLICATE CALL DETECTED - STACK TRACE: LessonPanel/<.children<.children<.children<.children<.children<.children<.children<.children<@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/lesson-panel.tsx:2683:26
+LessonPanel@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/lesson-panel.tsx:2684:19
+renderWithHooks@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WERSD76P.js?v=4873d7ee:11568:26
+mountIndeterminateComponent@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WERSD76P.js?v=4873d7ee:14926:21
+beginWork@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-WERSD76P.js?v=4873d7ee:15914:22 Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: 80, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (80) […], gridMode: "identify-percentage", additionalData: {…} }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.a", lessonTitle: "What percentage is illustrated?" }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.a", lessonTitle: "What percentage is illustrated?" }
+Console.js:61:14
+🎯 GridComponent rendered with universalPrompt: 🔥 UNIVERSAL SYSTEM 🔥 What percentage of this grid is shaded? Console.js:61:14
+🎯 GridComponent standardCode: 6.NS.1.a Console.js:61:14
+🎯 GridComponent lessonTitle: What percentage is illustrated? Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.a", lessonTitle: "What percentage is illustrated?" }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "grid-percentage", standardCode: "6.NS.1.a", lessonTitle: "What percentage is illustrated?" }
+Console.js:61:14
+🎯 GridComponent rendered with universalPrompt: 🔥 UNIVERSAL SYSTEM 🔥 What percentage of this grid is shaded? Console.js:61:14
+🎯 GridComponent standardCode: 6.NS.1.a Console.js:61:14
+🎯 GridComponent lessonTitle: What percentage is illustrated?

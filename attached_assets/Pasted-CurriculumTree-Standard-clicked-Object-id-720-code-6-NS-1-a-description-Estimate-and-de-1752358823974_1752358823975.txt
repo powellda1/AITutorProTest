@@ -1,0 +1,63 @@
+CurriculumTree: Standard clicked: 
+Object { id: 720, code: "6.NS.1.a", description: "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+CurriculumTree: Lessons for standard: 
+Array [ {…}, {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.a Console.js:61:14
+Home: Lessons received: 
+Array [ {…}, {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3531, title: "What percentage is illustrated?", code: "6-U.1", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", examples: (3) […], standardId: 720, order: 0 }
+Console.js:61:14
+🔍 InteractivePracticeRenderer: Component called with: 
+Object { lesson: undefined, currentExample: undefined, subLesson: {…} }
+Console.js:61:14
+🔍 InteractivePracticeRenderer: actualLesson: 
+Object { id: 3531, title: "What percentage is illustrated?", code: "6-U.1", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", examples: (3) […], standardId: 720, order: 0 }
+Console.js:61:14
+🔍 InteractivePracticeRenderer: actualExample: A grid has 80 shaded squares out of 100, so the percent is 80%. Console.js:61:14
+🔍 InteractivePracticeRenderer: Processing lesson: what percentage is illustrated? Console.js:61:14
+🔍 GridComponent: handleSubmit called, mode: identify-percentage Console.js:61:14
+🔍 GridComponent: userAnswer: 80 Console.js:61:14
+🔍 GridComponent: onAnswer function exists: true Console.js:61:14
+🔍 GridComponent: Calling onAnswer with: 80 Console.js:61:14
+🔍 InteractivePracticeRenderer: handleAnswer called with: 80 Console.js:61:14
+🔍 InteractivePracticeRenderer: onAnswerSubmitted exists: false Console.js:61:14
+🔍 InteractivePracticeRenderer: onActivityComplete exists: true Console.js:61:14
+🔍 InteractivePracticeRenderer: Component called with: 
+Object { lesson: undefined, currentExample: undefined, subLesson: {…} }
+Console.js:61:14
+🔍 InteractivePracticeRenderer: actualLesson: 
+Object { id: 3531, title: "What percentage is illustrated?", code: "6-U.1", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", examples: (3) […], standardId: 720, order: 0 }
+​
+code: "6-U.1"
+​
+examples: Array(3) [ "A grid has 80 shaded squares out of 100, so the percent is 80%.", "A strip with 125 shaded parts out of 100 shows 125%.", "A diagram has 0.7 shaded out of 100, so the percent is 0.7%." ]
+​​
+0: "A grid has 80 shaded squares out of 100, so the percent is 80%."
+​​
+1: "A strip with 125 shaded parts out of 100 shows 125%."
+​​
+2: "A diagram has 0.7 shaded out of 100, so the percent is 0.7%."
+​​
+length: 3
+​​
+<prototype>: Array []
+​
+explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded."
+​
+id: 3531
+​
+order: 0
+​
+standardId: 720
+​
+title: "What percentage is illustrated?"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 InteractivePracticeRenderer: actualExample: A grid has 80 shaded squares out of 100, so the percent is 80%. Console.js:61:14
+🔍 InteractivePracticeRenderer: Processing lesson: what percentage is illustrated?

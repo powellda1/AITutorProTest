@@ -1,0 +1,45 @@
+CurriculumTree: Standard clicked: 
+Object { id: 720, code: "6.NS.1.a", description: "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+XHRGET
+https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/api/lessons/standard/720
+[HTTP/1.1 304 Not Modified 388ms]
+
+GET
+data:image/png;base64,iVBORw0KGgBX2EQZQBOnoDD2UcBhW1sSiNmRQ8RLXQFNGEeygBY2c9ObVv9U1t63RNBc6wgU2VvBPuEb0HRObDgBXlGjaztkBWm8aGJkATRZZa3RzU6xhDAwBuFJvGDokk0hlRv6FSghlBGdtzcqF6RQBVwudRzWvBcGFXHkxMO6F5Dx0B0GGK82EPKTobIlQ1OwBag4xQGEuQbhhZExTpOMDBdWcMLJAH6z05bpVM3n1yIHoBny71Em5nBb3FFaA1IB1nQYk269fH5kcxBuVnl2DwBHU8DmmdyZWV0Kp9/B/utvhXIgX65veQBbxxyTBBhPIp43wBuV2HH3NWZDvKaRUBcaWcBYwCccgG1CS5ayvpLA+VaS2AoJEGZWOY/OJHry+PRBih8RohtGaoLIEyGBdlheMvRrX9ddH3tfKX9eyhoEy/2dl3sqLyixil0zXIrepVxUhxsq0CN8YypdBCrZLgz43ZCkKTB8Pqf4WkFkNSU3fTWFahPQLh42Bv853YXR2dHIBo7Vtbh5kR3Jm/t/o8WUBb4M/nElvLlCkb4TpsrVtByaN2YWM35OlwBOjsdc8PAB01o/BdE5l9unUdAooYXA74zIBawZfP8ccRU+Gb5hvUABVU0zkLigyABoG7f6XMOZHcTVVMBdAFk3zQB1G/Ea9NwaXQnBZnF2RxZlSI96RQBI89vGAM3C9I9p4U+RXPsBdJjXfmUB/Nt6pN2ZX3cUin0lWs98YnyzBaWA3ZOr3R7hqBfatk020qBfBoRLHL6KHIBakhwo3XdbxkBUh6HRnEkfhv+fV1Zrn87g80uFFbUIA9Qtsxx+4pcPURUGvI/BHxZG75dkfdfKKVTm1OlkAQZD1Hb7EeEgylwBdHIenSyS95xEYe5pbgQBYZV2E255ZTuaZHo
+
+GET
+https://www.gstatic.com/recaptcha/api2/logo_48.png
+[HTTP/2 200  0ms]
+
+CurriculumTree: Lessons for standard: 
+Array [ {…}, {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.a Console.js:61:14
+Home: Lessons received: 
+Array [ {…}, {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3531, title: "What percentage is illustrated?", code: "6-U.1", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", examples: (3) […], standardId: 720, order: 0 }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6.NS.1.a" }
+Console.js:61:14
+🚨 SPECIAL DEBUG: Processing "What percentage is illustrated?" lesson Console.js:61:14
+🚨 Title includes "percentage is illustrated": true Console.js:61:14
+🚨 Should detect as GRID MODEL Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "What percentage is illustrated?", explanation: "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.", standardCode: "6-U.1" }
+Console.js:61:14
+🚨 SPECIAL DEBUG: Processing "What percentage is illustrated?" lesson Console.js:61:14
+🚨 Title includes "percentage is illustrated": true Console.js:61:14
+🚨 Should detect as GRID MODEL Console.js:61:14
+✅ analyzeLessonType: Detected GRID MODEL (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "grid-percentage", requiresInteraction: true, componentType: "grid" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: A grid has 80 shaded squares out of 100, so the percent is 80%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "", correctAnswer: 80, componentType: "grid", gridSize: 100, columns: 10, preShadedCells: (80) […], gridMode: "identify-percentage", additionalData: 

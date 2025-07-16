@@ -1,0 +1,265 @@
+CurriculumTree: Standard clicked: 
+Object { id: 584, code: "6.NS.2.a", description: "Represent integers, including models derived from contextual situations, and identify an integer represented by a point on a number line.", contentAreaId: 32, order: 5 }
+​
+code: "6.NS.2.a"
+​
+contentAreaId: 32
+​
+description: "Represent integers, including models derived from contextual situations, and identify an integer represented by a point on a number line."
+​
+id: 584
+​
+order: 5
+​
+<prototype>: Object { … }
+​​
+__defineGetter__: function __defineGetter__()
+​​
+__defineSetter__: function __defineSetter__()
+​​
+__lookupGetter__: function __lookupGetter__()
+​​
+__lookupSetter__: function __lookupSetter__()
+​​
+__proto__: 
+​​
+constructor: function Object()
+​​​
+assign: function assign()
+​​​​
+length: 2
+​​​​
+name: "assign"
+​​​​
+<prototype>: function ()
+​​​
+create: function create()
+​​​​
+length: 2
+​​​​
+name: "create"
+​​​​
+<prototype>: function ()
+​​​
+defineProperties: function defineProperties()
+​​​​
+length: 2
+​​​​
+name: "defineProperties"
+​​​​
+<prototype>: function ()
+​​​
+defineProperty: function defineProperty()
+​​​​
+length: 3
+​​​​
+name: "defineProperty"
+​​​​
+<prototype>: function ()
+​​​
+entries: function entries()
+​​​​
+length: 1
+​​​​
+name: "entries"
+​​​​
+<prototype>: function ()
+​​​
+freeze: function freeze()
+​​​​
+length: 1
+​​​​
+name: "freeze"
+​​​​
+<prototype>: function ()
+​​​
+fromEntries: function fromEntries()
+​​​​
+length: 1
+​​​​
+name: "fromEntries"
+​​​​
+<prototype>: function ()
+​​​
+getOwnPropertyDescriptor: function getOwnPropertyDescriptor()
+​​​​
+length: 2
+​​​​
+name: "getOwnPropertyDescriptor"
+​​​​
+<prototype>: function ()
+​​​
+getOwnPropertyDescriptors: function getOwnPropertyDescriptors()
+​​​
+getOwnPropertyNames: function getOwnPropertyNames()
+​​​
+getOwnPropertySymbols: function getOwnPropertySymbols()
+​​​
+getPrototypeOf: function getPrototypeOf()
+​​​
+groupBy: function groupBy()
+​​​
+hasOwn: function hasOwn()
+​​​
+is: function is()
+​​​
+isExtensible: function isExtensible()
+​​​
+isFrozen: function isFrozen()
+​​​
+isSealed: function isSealed()
+​​​
+keys: function keys()
+​​​
+length: 1
+​​​
+name: "Object"
+​​​
+preventExtensions: function preventExtensions()
+​​​
+prototype: Object { … }
+​​​
+seal: function seal()
+​​​
+setPrototypeOf: function setPrototypeOf()
+​​​
+values: function values()
+​​​
+<prototype>: function ()
+​​
+hasOwnProperty: function hasOwnProperty()
+​​​
+length: 1
+​​​
+name: "hasOwnProperty"
+​​​
+<prototype>: function ()
+​​
+isPrototypeOf: function isPrototypeOf()
+​​​
+length: 1
+​​​
+name: "isPrototypeOf"
+​​​
+<prototype>: function ()
+​​
+propertyIsEnumerable: function propertyIsEnumerable()
+​​​
+length: 1
+​​​
+name: "propertyIsEnumerable"
+​​​
+<prototype>: function ()
+​​
+toLocaleString: function toLocaleString()
+​​​
+length: 0
+​​​
+name: "toLocaleString"
+​​​
+<prototype>: function ()
+​​
+toString: function toString()
+​​​
+length: 0
+​​​
+name: "toString"
+​​​
+<prototype>: function ()
+​​
+valueOf: function valueOf()
+​​​
+length: 0
+​​​
+name: "valueOf"
+​​​
+<prototype>: function ()
+​​
+<get __proto__()>: function __proto__()
+​​​
+length: 0
+​​​
+name: "get __proto__"
+​​​
+<prototype>: function ()
+​​
+<set __proto__()>: function __proto__()
+Console.js:61:14
+CurriculumTree: Lessons for standard: 
+Array(4) [ {…}, {…}, {…}, {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.2.a Console.js:61:14
+Home: Lessons received: 
+Array(4) [ {…}, {…}, {…}, {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3096, title: "Understanding integers", code: "6-O.1", explanation: "Students learn to represent positive and negative integers in real-world contexts, such as temperature or debt, and place them on a number line.", examples: (3) […], standardId: 584, order: 0 }
+​
+code: "6-O.1"
+​
+examples: Array(3) [ "A temperature of -3°C is shown as -3 on a number line.", "A gain of 5 points is represented as +5 on a number line.", "A debt of $10 is shown as -10 on a number line." ]
+​​
+0: "A temperature of -3°C is shown as -3 on a number line."
+​​
+1: "A gain of 5 points is represented as +5 on a number line."
+​​
+2: "A debt of $10 is shown as -10 on a number line."
+​​
+length: 3
+​​
+<prototype>: Array []
+​
+explanation: "Students learn to represent positive and negative integers in real-world contexts, such as temperature or debt, and place them on a number line."
+​
+id: 3096
+​
+order: 0
+​
+standardId: 584
+​
+title: "Understanding integers"
+​
+<prototype>: Object { … }
+​​
+__defineGetter__: function __defineGetter__()
+​​
+__defineSetter__: function __defineSetter__()
+​​
+__lookupGetter__: function __lookupGetter__()
+​​
+__lookupSetter__: function __lookupSetter__()
+​​
+__proto__: 
+​​
+constructor: function Object()
+​​
+hasOwnProperty: function hasOwnProperty()
+​​
+isPrototypeOf: function isPrototypeOf()
+​​
+propertyIsEnumerable: function propertyIsEnumerable()
+​​
+toLocaleString: function toLocaleString()
+​​
+toString: function toString()
+​​
+valueOf: function valueOf()
+​​
+<get __proto__()>: function __proto__()
+​​
+<set __proto__()>: function __proto__()
+Console.js:61:14
+🔍 renderInteractiveContent called for lesson: Understanding integers Console.js:61:14
+🔍 Current example: A temperature of -3°C is shown as -3 on a number line. Console.js:61:14
+🔍 Checking if title includes "Understanding integers": true Console.js:61:14
+🔍 renderInteractiveContent called for lesson: Integers on number lines Console.js:61:14
+🔍 Current example: A point at -4 on a number line represents the integer -4. Console.js:61:14
+🔍 Checking if title includes "Understanding integers": false Console.js:61:14
+🔍 renderInteractiveContent called for lesson: Graph integers on horizontal and vertical number lines Console.js:61:14
+🔍 Current example: Graph -5 on a horizontal number line by marking 5 units left of zero. Console.js:61:14
+🔍 Checking if title includes "Understanding integers": false Console.js:61:14
+🔍 renderInteractiveContent called for lesson: Understanding opposite integers Console.js:61:14
+🔍 Current example: The opposite of 4 is -4, shown as equidistant from zero on opposite sides. Console.js:61:14
+🔍 Checking if title includes "Understanding integers": false Console.js:61:14
+🎬 SuccessAnimation render - isVisible: false animationType: smiley

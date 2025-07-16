@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animation Test</title>
+    <style>
+        .test-animation {
+            width: 120px;
+            height: 120px;
+            background: yellow;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: floatUp 5s ease-out forwards;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateX(-50%) translateY(0) scale(1);
+                opacity: 1;
+            }
+            70% {
+                transform: translateX(-50%) translateY(-300px) scale(2);
+                opacity: 1;
+            }
+            85% {
+                transform: translateX(-50%) translateY(-350px) scale(2.2);
+                opacity: 1;
+            }
+            95% {
+                transform: translateX(-50%) translateY(-380px) scale(2.4);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateX(-50%) translateY(-400px) scale(2.5);
+                opacity: 0;
+            }
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border: 2px solid black;
+            margin: 20px;
+        }
+        
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="startAnimation()">Test 5 Second Animation</button>
+    <div class="container" id="container">
+        
+    </div>
+    
+    <script>
+        function startAnimation() {
+            const container = document.getElementById('container');
+            container.innerHTML = '';
+            
+            const circle = document.createElement('div');
+            circle.className = 'test-animation';
+            container.appendChild(circle);
+            
+            setTimeout(() => {
+                circle.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

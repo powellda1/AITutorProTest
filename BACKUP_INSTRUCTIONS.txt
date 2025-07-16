@@ -1,0 +1,46 @@
+CODE BACKUP INSTRUCTIONS - Save This File First
+
+TO BACKUP YOUR CODE TO LOCAL COMPUTER:
+
+1. Right-click on each file below and select "Download"
+2. Save all files in a folder on your computer
+3. Keep the folder structure (server/, client/, shared/)
+
+CRITICAL FILES TO DOWNLOAD:
+
+Main Configuration:
+- package.json
+- replit.md (project documentation)
+- drizzle.config.ts
+- vite.config.ts
+- tailwind.config.ts
+- tsconfig.json
+
+Database & Backend (server/ folder):
+- server/storage.ts
+- server/routes.ts
+- server/db.ts
+- server/index.ts
+- server/services/openai.ts
+
+Frontend (client/ folder):
+- client/src/components/lesson-panel.tsx
+- client/src/components/curriculum-tree.tsx
+- client/src/components/NumberLineComponent.tsx
+- client/src/components/interactive-lesson.tsx
+- client/src/App.tsx
+- client/src/main.tsx
+
+Data Structure:
+- shared/schema.ts
+
+FOLDER STRUCTURE TO MAINTAIN:
+backup_folder/
+├── server/
+├── client/
+├── shared/
+├── package.json
+├── replit.md
+└── config files
+
+After downloading, you'll have a complete backup of your code!

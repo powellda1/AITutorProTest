@@ -1,0 +1,21 @@
+Recognize and represent powers of 10 with whole number exponents by examining patterns in place value.
+The student will reason and use multiple strategies to express equivalency, compare, and order numbers written as fractions, mixed numbers, decimals, and percents.
+6.NS.1.b - Represent and determine equivalencies among decimals (through the thousandths place) and percents incorporating the use of number lines, and concrete and pictorial models.
+6.NS.1.c - Represent and determine equivalencies among fractions (proper or improper) and mixed numbers that have denominators that are 12 or less or factors of 100 and percents incorporating the use of number lines, and concrete and pictorial models.
+6.NS.1.d - Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.
+6.NS.1.e - Use multiple strategies to compare and order no more than four positive rational numbers expressed as fractions (proper or improper), mixed numbers, decimals, and percents (decimals through thousandths, fractions with denominators of 12 or less or factors of 100) with and without models. Justify solutions orally, in writing or with a model. Ordering may be in ascending or descending order.
+6.NS.1.a - Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.
+The student will reason and use multiple strategies to represent, compare, and order integers.
+The student will recognize and represent patterns with whole number exponents and perfect squares.
+Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.
+Represent and determine equivalencies among decimals (through the thousandths place) and percents incorporating the use of number lines, and concrete and pictorial models.
+Represent and determine equivalencies among fractions (proper or improper) and mixed numbers that have denominators that are 12 or less or factors of 100 and percents incorporating the use of number lines, and concrete and pictorial models.
+Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.
+Justify if a number between 0 and 400 is a perfect square through modeling or mathematical reasoning.
+Use multiple strategies to compare and order no more than four positive rational numbers expressed as fractions (proper or improper), mixed numbers, decimals, and percents (decimals through thousandths, fractions with denominators of 12 or less or factors of 100) with and without models. Justify solutions orally, in writing or with a model. Ordering may be in ascending or descending order.
+Represent integers, including models derived from contextual situations, and identify an integer represented by a point on a number line.
+Compare and order integers using a number line.
+Compare integers, using mathematical symbols (<, >, =).
+Identify and describe the absolute value of an integer as the distance from zero on the number line.
+Recognize and represent patterns with bases and exponents that are whole numbers.
+Recognize and represent patterns of perfect squares not to exceed 20^2, by using concrete and pictorial models.

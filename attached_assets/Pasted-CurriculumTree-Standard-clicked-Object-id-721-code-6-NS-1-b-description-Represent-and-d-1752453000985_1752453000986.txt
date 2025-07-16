@@ -1,0 +1,130 @@
+CurriculumTree: Standard clicked: 
+Object { id: 721, code: "6.NS.1.b", description: "Represent and determine equivalencies among decimals (through the thousandths place) and percents incorporating the use of number lines, and concrete and pictorial models.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+XHRGET
+https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/api/lessons/standard/721
+[HTTP/1.1 304 Not Modified 139ms]
+
+CurriculumTree: Lessons for standard: 
+Array [ {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.b Console.js:61:14
+Home: Lessons received: 
+Array [ {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3533, title: "Convert between percents and decimals", code: "6", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", examples: (3) […], standardId: 721, order: 0 }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6.NS.1.b" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "decimal-percent-conversion", requiresInteraction: true, componentType: "number-line" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: 0.35 = 35%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "Convert 0.35 to percent", correctAnswer: 35, componentType: "number-line", type: "decimal", value: 0.35, originalExample: "0.35 = 35%." }
+Console.js:61:14
+🔍 NumberLineComponent: Component is rendering with props: 
+Object { mode: "decimal-percent-conversion", orientation: "horizontal", range: (2) […], preMarkedPositions: [], correctAnswer: 35, promptText: "Convert 0.35 to percent", selectedValue: undefined }
+Console.js:61:14
+🔍 NumberLineComponent: Component is rendering with props: 
+Object { mode: "decimal-percent-conversion", orientation: "horizontal", range: (2) […], preMarkedPositions: [], correctAnswer: 35, promptText: "Convert 0.35 to percent", selectedValue: undefined }
+Console.js:61:14
+XHRPOST
+https://replit.com/graphql
+[HTTP/3 200  58ms]
+
+🔍 NumberLineComponent: Component is rendering with props: 
+Object { mode: "decimal-percent-conversion", orientation: "horizontal", range: (2) […], preMarkedPositions: [], correctAnswer: 35, promptText: "Convert 0.35 to percent", selectedValue: undefined }
+Console.js:61:14
+XHRPOST
+https://events.launchdarkly.com/events/bulk/62b35a865152ab14c5942820
+[HTTP/2 202  48ms]
+
+🔍 NumberLineComponent handleSubmit: 
+Object { inputValue: "35", answer: 35, correctAnswer: 35, type: "decimal", value: 0.35 }
+Console.js:61:14
+🔍 Answer validation: 
+Object { answer: 35, correctAnswer: 35, isCorrect: true, answerType: "number", correctType: "number" }
+Console.js:61:14
+🔍 LessonPanel validation: 
+Object { answer: 35, correctAnswer: "35", isCorrect: true, answerType: "number" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "decimal-percent-conversion", requiresInteraction: true, componentType: "number-line" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: 0.35 = 35%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "Convert 0.35 to percent", correctAnswer: 35, componentType: "number-line", type: "decimal", value: 0.35, originalExample: "0.35 = 35%." }
+Console.js:61:14
+🔍 NumberLineComponent: Component is rendering with props: 
+Object { mode: "decimal-percent-conversion", orientation: "horizontal", range: (2) […], preMarkedPositions: [], correctAnswer: 35, promptText: "Convert 0.35 to percent", selectedValue: undefined }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "decimal-percent-conversion", requiresInteraction: true, componentType: "number-line" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: 75% = 0.75. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "Convert 75% to decimal", correctAnswer: 0.75, componentType: "number-line", type: "percent", value: 75, originalExample: "75% = 0.75." }
+Console.js:61:14
+🔍 NumberLineComponent: Component is rendering with props: 
+Object { mode: "decimal-percent-conversion", orientation: "horizontal", range: (2) […], preMarkedPositions: [], correctAnswer: 0.75, promptText: "Convert 75% to decimal", selectedValue: undefined }
+Console.js:61:14
+🔍 NumberLineComponent: Component is rendering with props: 
+Object { mode: "decimal-percent-conversion", orientation: "horizontal", range: (2) […], preMarkedPositions: [], correctAnswer: 0.75, promptText: "Convert 75% to decimal", selectedValue: undefined }
+Console.js:61:14
+🔍 NumberLineComponent: Component is rendering with props: 
+Object { mode: "decimal-percent-conversion", orientation: "horizontal", range: (2) […], preMarkedPositions: [], correctAnswer: 0.75, promptText: "Convert 75% to decimal", selectedValue: undefined }
+Console.js:61:14
+🔍 NumberLineComponent handleSubmit: 
+Object { inputValue: ".75", answer: 0.75, correctAnswer: 0.75, type: "percent", value: 75 }
+Console.js:61:14
+🔍 Answer validation: 
+Object { answer: 0.75, correctAnswer: 0.75, isCorrect: true, answerType: "number", correctType: "number" }
+Console.js:61:14
+🔍 LessonPanel validation: 
+Object { answer: 0.75, correctAnswer: "75", isCorrect: false, answerType: "number" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "decimal-percent-conversion", requiresInteraction: true, componentType: "number-line" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: 75% = 0.75. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "Convert 75% to decimal", correctAnswer: 0.75, componentType: "number-line", type: "percent", value: 75, originalExample: "75% = 0.75." }
+Console.js:61:14
+🔍 NumberLineComponent: Component is rendering with props: 
+Object { mode: "decimal-percent-conversion", orientation: "horizontal", range: (2) […], preMarkedPositions: [], correctAnswer: 0.75, promptText: "Convert 75% to decimal", selectedValue: undefined }
+Console.js:61:14
+🔍 NumberLineComponent: Component is rendering with props: 
+Object { mode: "decimal-percent-conversion", orientation: "horizontal", range: (2) […], preMarkedPositions: [], correctAnswer: 0.75, promptText: "Convert 75% to decimal", selectedValue: undefined }
+Console.js:61:14
+🔍 NumberLineComponent handleSubmit: 
+Object { inputValue: "0.75", answer: 0.75, correctAnswer: 0.75, type: "percent", value: 75 }
+Console.js:61:14
+🔍 Answer validation: 
+Object { answer: 0.75, correctAnswer: 0.75, isCorrect: true, answerType: "number", correctType: "number" }
+Console.js:61:14
+🔍 LessonPanel validation: 
+Object { answer: 0.75, correctAnswer: "75", isCorrect: false, answerType: "number" }
+Console.js:61:14
+🔍 NumberLineComponent: Component is rendering with props: 
+Object { mode: "decimal-percent-conversion", orientation: "horizontal", range: (2) […], preMarkedPositions: [], correctAnswer: 0.75, promptText: "Convert 75% to decimal", selectedValue: undefined }

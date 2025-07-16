@@ -1,0 +1,76 @@
+Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+InteractiveLesson@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/interactive-lesson.tsx:3931:42
+div
+div
+div
+SubStandardPanel@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/sub-standard-panel.tsx:22:41
+div
+div
+div
+Home@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/pages/home.tsx:26:55
+Route@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3fa0b26b:323:13
+Switch@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3fa0b26b:379:14
+Router
+div
+Provider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-TXVMU6VQ.js?v=3fa0b26b:55:47
+TooltipProvider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=3fa0b26b:2247:7
+QueryClientProvider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=3fa0b26b:2804:27
+App 178 Console.js:61:14
+Animation started: smiley at 1752182588734 Console.js:61:14
+Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+InteractiveLesson@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/interactive-lesson.tsx:3931:42
+div
+div
+div
+SubStandardPanel@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/sub-standard-panel.tsx:22:41
+div
+div
+div
+Home@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/pages/home.tsx:26:55
+Route@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3fa0b26b:323:13
+Switch@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3fa0b26b:379:14
+Router
+div
+Provider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-TXVMU6VQ.js?v=3fa0b26b:55:47
+TooltipProvider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=3fa0b26b:2247:7
+QueryClientProvider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=3fa0b26b:2804:27
+App 266 Console.js:61:14
+Expected color but found ‘text’.  Error in parsing value for ‘color’.  Declaration dropped. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:1:6237
+Error in parsing value for ‘-webkit-text-size-adjust’.  Declaration dropped. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:141:29
+Ruleset ignored due to bad selector. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:2316:27
+Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+InteractiveLesson@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/interactive-lesson.tsx:3931:42
+div
+div
+div
+SubStandardPanel@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/sub-standard-panel.tsx:22:41
+div
+div
+div
+Home@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/pages/home.tsx:26:55
+Route@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3fa0b26b:323:13
+Switch@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3fa0b26b:379:14
+Router
+div
+Provider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-TXVMU6VQ.js?v=3fa0b26b:55:47
+TooltipProvider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=3fa0b26b:2247:7
+QueryClientProvider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=3fa0b26b:2804:27
+App 131 Console.js:61:14
+Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+InteractiveLesson@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/interactive-lesson.tsx:3931:42
+div
+div
+div
+SubStandardPanel@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/sub-standard-panel.tsx:22:41
+div
+div
+div
+Home@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/pages/home.tsx:26:55
+Route@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3fa0b26b:323:13
+Switch@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3fa0b26b:379:14
+Router
+div
+Provider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-TXVMU6VQ.js?v=3fa0b26b:55:47
+TooltipProvider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=3fa0b26b:2247:7
+QueryClientProvider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=3fa0b26b:2804:27
+App

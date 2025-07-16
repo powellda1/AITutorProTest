@@ -1,0 +1,1857 @@
+{
+  "grade": "6",
+  "subject": "Mathematics",
+  "state": "Virginia",
+  "strands": [
+    {
+      "strand_code": "6.NS",
+      "strand_name": "Number and Number Sense",
+      "standards": [
+        {
+          "standard": "6.NS.1.a",
+          "standard_text": "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.",
+          "sub_lessons": [
+            {
+              "title": "What percentage is illustrated?",
+              "code": "6-U.1",
+              "explanation": "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.",
+              "examples": [
+                "A grid has 80 shaded squares out of 100, so the percent is 80%.",
+                "A strip with 125 shaded parts out of 100 shows 125%.",
+                "A diagram has 0.7 shaded out of 100, so the percent is 0.7%."
+              ]
+            },
+            {
+              "title": "Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50",
+              "code": "6-U.2",
+              "explanation": "Students use known benchmark percents (like 10%, 25%, 50%) to quickly estimate the shaded part of a strip model.",
+              "examples": [
+                "A strip with about one-fifth shaded is approximately 20%.",
+                "A strip with about one-third shaded is approximately 33%.",
+                "A strip with half shaded is 50%."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.1.b",
+          "standard_text": "Represent and determine equivalencies among decimals (through the thousandths place) and percents incorporating the use of number lines, and concrete and pictorial models.",
+          "sub_lessons": [
+            {
+              "title": "Convert between percents and decimals",
+              "code": "6",
+              "explanation": "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.",
+              "examples": [
+                "0.35 = 35%.",
+                "75% = 0.75.",
+                "0.008 = 0.8%."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.1.c",
+          "standard_text": "Represent and determine equivalencies among fractions (proper or improper) and mixed numbers that have denominators that are 12 or less or factors of 100 and percents incorporating the use of number lines, and concrete and pictorial models.",
+          "sub_lessons": [
+            {
+              "title": "Convert fractions to percents using grid models",
+              "code": "6-U.3",
+              "explanation": "Students shade parts of a grid to represent a fraction, then convert the fraction to a percent by counting shaded parts out of 100 or scaling to a 100-based denominator.",
+              "examples": [
+                "2/5 = 40 shaded squares out of 100 = 40%.",
+                "5/6 = 83.33... shaded squares ≈ 83.33%.",
+                "1/4 = 25 shaded squares = 25%."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.1.d",
+          "standard_text": "Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.",
+          "sub_lessons": [
+            {
+              "title": "Write fractions in lowest terms",
+              "code": "6-G.1",
+              "explanation": "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.",
+              "examples": [
+                "6/12 simplified to 1/2.",
+                "10/25 simplified to 2/5.",
+                "8/24 simplified to 1/3."
+              ]
+            },
+            {
+              "title": "Convert between improper fractions and mixed numbers",
+              "code": "6-G.3",
+              "explanation": "Students rewrite improper fractions as mixed numbers by dividing and expressing remainders, and convert mixed numbers back to improper fractions.",
+              "examples": [
+                "11/4 = 2 3/4.",
+                "4 1/3 = 13/3.",
+                "8/5 = 1 3/5."
+              ]
+            },
+            {
+              "title": "Convert decimals to fractions",
+              "code": "6",
+              "explanation": "Students express a decimal as a fraction with a denominator that is a power of 10, then simplify to lowest terms.",
+              "examples": [
+                "0.6 = 6/10 = 3/5.",
+                "0.25 = 25/100 = 1/4.",
+                "0.375 = 375/1000 = 3/8."
+              ]
+            },
+            {
+              "title": "Convert between fractions and repeating decimals",
+              "code": "6-G.6",
+              "explanation": "Students convert fractions to their decimal form, recognizing repeating patterns for certain denominators.",
+              "examples": [
+                "1/3 = 0.333...",
+                "4/9 = 0.444...",
+                "5/11 = 0.454545..."
+              ]
+            },
+            {
+              "title": "Convert between percents, fractions, and decimals",
+              "code": "6-U.4",
+              "explanation": "Students practice converting among fractions, decimals, and percents using equivalent forms and models like number lines or grids.",
+              "examples": [
+                "2/5 = 0.4 = 40%.",
+                "0.8 = 4/5 = 80%.",
+                "25% = 1/4 = 0.25."
+              ]
+            },
+            {
+              "title": "Convert between percents, fractions, and decimals: word problems",
+              "code": "6-U.5",
+              "explanation": "Students apply conversion skills to solve real-world problems involving percents, fractions, and decimals.",
+              "examples": [
+                "A shirt is discounted by 30%. If the original price is $20, the discount is 0.3 × 20 = $6.",
+                "If 2/5 of a class is 10 students, the class size is 25 students (2/5 = 0.4, 10 ÷ 0.4 = 25).",
+                "0.15 of a budget is $30, so the total budget is $200 (30 ÷ 0.15 = 200)."
+              ]
+            },
+            {
+              "title": "Equivalent fractions review",
+              "code": "6",
+              "explanation": "Students practice finding equivalent fractions by multiplying or dividing numerator and denominator by the same number.",
+              "examples": [
+                "2/3 = 4/6.",
+                "5/10 = 1/2.",
+                "3/9 = 1/3."
+              ]
+            },
+            {
+              "title": "Convert fractions to decimals",
+              "code": "6",
+              "explanation": "Students divide the numerator by the denominator to express a fraction as a decimal, recognizing terminating or repeating decimals.",
+              "examples": [
+                "3/5 = 0.6.",
+                "1/8 = 0.125.",
+                "2/3 = 0.666..."
+              ]
+            },
+            {
+              "title": "Convert between decimals and mixed numbers",
+              "code": "6",
+              "explanation": "Students convert decimals greater than 1 to mixed numbers and vice versa, using place value or division.",
+              "examples": [
+                "2.5 = 2 1/2.",
+                "1.75 = 1 3/4.",
+                "3 2/5 = 3.4."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.1.e",
+          "standard_text": "Use multiple strategies to compare and order no more than four positive rational numbers expressed as fractions (proper or improper), mixed numbers, decimals, and percents (decimals through thousandths, fractions with denominators of 12 or less or factors of 100) with and without models. Justify solutions orally, in writing or with a model. Ordering may be in ascending or descending order.",
+          "sub_lessons": [
+            {
+              "title": "Put a mix of decimals and fractions in order",
+              "code": "6-G.9",
+              "explanation": "Students convert decimals and fractions to a common form (e.g., decimals) or use a number line to order them from least to greatest or vice versa.",
+              "examples": [
+                "0.4, 1/2, 0.75 ordered: 0.4, 1/2 (0.5), 0.75.",
+                "2/5, 0.3, 3/4 ordered: 0.3, 2/5 (0.4), 3/4 (0.75).",
+                "0.2, 1/3, 0.25 ordered: 0.2, 0.25, 1/3 (0.333...)."
+              ]
+            },
+            {
+              "title": "Put a mix of decimals, fractions, and mixed numbers in order",
+              "code": "6-G.10",
+              "explanation": "Students order a combination of decimals, fractions, and mixed numbers by converting to a common form or using visual models.",
+              "examples": [
+                "0.6, 1 1/4, 2/3 ordered: 0.6, 2/3 (0.666...), 1 1/4 (1.25).",
+                "1/2, 0.45, 1 1/2 ordered: 0.45, 1/2 (0.5), 1 1/2 (1.5).",
+                "0.8, 4/5, 1 ordered: 4/5 (0.8), 0.8, 1."
+              ]
+            },
+            {
+              "title": "Compare percents to each other and to fractions",
+              "code": "6-U.6",
+              "explanation": "Students compare percents and fractions by converting to a common form (e.g., decimals or percents) or using models to determine relative size.",
+              "examples": [
+                "60% vs 2/3: 2/3 = 66.67%, so 2/3 > 60%.",
+                "25% vs 1/4: 1/4 = 25%, equal.",
+                "10% vs 1/8: 1/8 = 12.5%, so 1/8 > 10%."
+              ]
+            },
+            {
+              "title": "Compare percents and fractions: word problems",
+              "code": "6-U.7",
+              "explanation": "Students solve contextual problems requiring comparison of percents and fractions, often converting to a common form.",
+              "examples": [
+                "Is 20% of a $50 item or 1/4 of a $40 item more? (20% of 50 = 10, 1/4 of 40 = 10, equal).",
+                "Compare 1/3 of 60 students to 30% of 80 students (1/3 of 60 = 20, 30% of 80 = 24, 30% is more).",
+                "Is 2/5 of 50 or 45% of 40 greater? (2/5 of 50 = 20, 45% of 40 = 18, 2/5 is greater)."
+              ]
+            },
+            {
+              "title": "Compare percents to fractions and decimals",
+              "code": "6",
+              "explanation": "Students compare percents, fractions, and decimals by converting to a common form or using number lines to visualize relationships.",
+              "examples": [
+                "40% vs 0.5: 40% = 0.4, so 0.5 > 40%.",
+                "3/4 vs 70%: 3/4 = 75%, so 3/4 > 70%.",
+                "0.2 vs 15%: 15% = 0.15, so 0.2 > 15%."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.2.a",
+          "standard_text": "Represent integers, including models derived from contextual situations, and identify an integer represented by a point on a number line.",
+          "sub_lessons": [
+            {
+              "title": "Understanding integers",
+              "code": "6-O.1",
+              "explanation": "Students learn to represent positive and negative integers in real-world contexts, such as temperature or debt, and place them on a number line.",
+              "examples": [
+                "A temperature of -3°C is shown as -3 on a number line.",
+                "A gain of 5 points is represented as +5 on a number line.",
+                "A debt of $10 is shown as -10 on a number line."
+              ]
+            },
+            {
+              "title": "Integers on number lines",
+              "code": "6-O.2",
+              "explanation": "Students identify the integer corresponding to a point marked on a number line, understanding positive and negative values.",
+              "examples": [
+                "A point at -4 on a number line represents the integer -4.",
+                "A point at 2 on a number line represents the integer 2.",
+                "A point at 0 on a number line represents the integer 0."
+              ]
+            },
+            {
+              "title": "Graph integers on horizontal and vertical number lines",
+              "code": "6-O.3",
+              "explanation": "Students plot given integers on both horizontal and vertical number lines, recognizing their positions relative to zero.",
+              "examples": [
+                "Graph -5 on a horizontal number line by marking 5 units left of zero.",
+                "Plot 3 on a vertical number line 3 units above zero.",
+                "Graph -2 on a vertical number line 2 units below zero."
+              ]
+            },
+            {
+              "title": "Understanding opposite integers",
+              "code": "6-O.4",
+              "explanation": "Students identify the opposite of an integer (e.g., the opposite of 3 is -3) and represent both on a number line.",
+              "examples": [
+                "The opposite of 4 is -4, shown as equidistant from zero on opposite sides.",
+                "The opposite of -7 is 7, plotted on a number line.",
+                "The opposite of 0 is 0, as it is its own opposite."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.2.b",
+          "standard_text": "Compare and order integers using a number line.",
+          "sub_lessons": [
+            {
+              "title": "Compare integers",
+              "code": "6-O.7",
+              "explanation": "Students use a number line to compare integers, determining which is greater or less based on their positions.",
+              "examples": [
+                "-3 vs -7: On a number line, -3 is to the right of -7, so -3 > -7.",
+                "2 vs -1: 2 is to the right of -1, so 2 > -1.",
+                "0 vs -5: 0 is to the right of -5, so 0 > -5."
+              ]
+            },
+            {
+              "title": "Put integers in order",
+              "code": "6-O.8",
+              "explanation": "Students order a set of integers from least to greatest or greatest to least using a number line for visualization.",
+              "examples": [
+                "-4, 1, -2, 0 ordered: -4, -2, 0, 1.",
+                "3, -5, -1, 2 ordered: -5, -1, 2, 3.",
+                "-6, -3, 4, 0 ordered: -6, -3, 0, 4."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.2.c",
+          "standard_text": "Compare integers, using mathematical symbols (<, >, =).",
+          "sub_lessons": [
+            {
+              "title": "Compare integers",
+              "code": "6-O.7",
+              "explanation": "Students use inequality symbols to express the relationship between two integers, often verified with a number line.",
+              "examples": [
+                "-2 < 3.",
+                "-8 > -10.",
+                "0 = 0."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.2.d",
+          "standard_text": "Identify and describe the absolute value of an integer as the distance from zero on the number line.",
+          "sub_lessons": [
+            {
+              "title": "Understanding absolute value",
+              "code": "6-O.5",
+              "explanation": "Students learn that the absolute value of an integer is its distance from zero, always a non-negative number.",
+              "examples": [
+                "|-6| = 6, as it is 6 units from zero.",
+                "|4| = 4, as it is 4 units from zero.",
+                "|0| = 0, as it is at zero."
+              ]
+            },
+            {
+              "title": "Absolute value",
+              "code": "6-O.6",
+              "explanation": "Students calculate the absolute value of given integers and interpret it as a distance on a number line.",
+              "examples": [
+                "|-9| = 9 units from zero.",
+                "|7| = 7 units from zero.",
+                "|-3| = 3 units from zero."
+              ]
+            },
+            {
+              "title": "Absolute value and integers: word problems",
+              "code": "6-O.10",
+              "explanation": "Students apply absolute value to contextual problems, such as distances or differences, using number lines to visualize.",
+              "examples": [
+                "A diver at -15 feet has an absolute depth of |-15| = 15 feet.",
+                "The difference between 5°C and -5°C is |5 - (-5)| = 10°C.",
+                "A bank balance of -$20 has an absolute value of |-$20| = $20."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.3.a",
+          "standard_text": "Recognize and represent patterns with bases and exponents that are whole numbers.",
+          "sub_lessons": [
+            {
+              "title": "Write multiplication expressions using exponents",
+              "code": "6-D.1",
+              "explanation": "Students convert repeated multiplication into exponential form and recognize patterns in exponents.",
+              "examples": [
+                "3 × 3 × 3 = 3^3.",
+                "5 × 5 = 5^2.",
+                "2 × 2 × 2 × 2 = 2^4."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.3.b",
+          "standard_text": "Recognize and represent patterns of perfect squares not to exceed 20^2, by using concrete and pictorial models.",
+          "sub_lessons": [
+            {
+              "title": "Recognize perfect squares",
+              "code": "6",
+              "explanation": "Students identify perfect squares by modeling them as square arrays or grids, up to 20^2 (400).",
+              "examples": [
+                "4^2 = 16, shown as a 4x4 grid.",
+                "10^2 = 100, shown as a 10x10 grid.",
+                "15^2 = 225, modeled as a 15x15 array."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.3.c",
+          "standard_text": "Justify if a number between 0 and 400 is a perfect square through modeling or mathematical reasoning.",
+          "sub_lessons": [
+            {
+              "title": "Square numbers",
+              "code": "6",
+              "explanation": "Students determine if a number is a perfect square by finding its square root or using a model to check if it forms a square.",
+              "examples": [
+                "81 is a perfect square because 9 × 9 = 81.",
+                "200 is not a perfect square; the square root is not a whole number.",
+                "144 is a perfect square because 12 × 12 = 144."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.NS.3.d",
+          "standard_text": "Recognize and represent powers of 10 with whole number exponents by examining patterns in place value.",
+          "sub_lessons": [
+            {
+              "title": "Write powers of ten with exponents",
+              "code": "6-D.3",
+              "explanation": "Students identify patterns in powers of 10 (e.g., 10^1 = 10, 10^2 = 100) and express them using exponents.",
+              "examples": [
+                "10,000 = 10^4.",
+                "1,000 = 10^3.",
+                "100 = 10^2."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strand_code": "6.CE",
+      "strand_name": "Computation and Estimation",
+      "standards": [
+        {
+          "standard": "6.CE.1.a",
+          "standard_text": "Demonstrate/model multiplication and division of fractions (proper or improper) and mixed numbers using multiple representations.",
+          "sub_lessons": [
+            {
+              "title": "Multiply a mixed number by a whole number using a model",
+              "code": "6",
+              "explanation": "Students use area models or number lines to show multiplication of a mixed number by a whole number.",
+              "examples": [
+                "2 × 1 1/2 = 3, shown as two 1 1/2 rectangles.",
+                "3 × 2/3 = 2, shown on a number line with three jumps of 2/3.",
+                "4 × 1 1/4 = 5, modeled as four 1 1/4 sections."
+              ]
+            },
+            {
+              "title": "Multiply with mixed numbers using area models",
+              "code": "6",
+              "explanation": "Students use area models to represent multiplication of mixed numbers, breaking them into whole and fractional parts.",
+              "examples": [
+                "1 1/2 × 1 1/3 = 2, shown as a grid split into parts.",
+                "2 1/4 × 2 = 4 1/2, modeled as two 2 1/4 rectangles.",
+                "1 1/3 × 3 = 4, shown as three 1 1/3 sections."
+              ]
+            },
+            {
+              "title": "Divide unit fractions and whole numbers using area models",
+              "code": "6",
+              "explanation": "Students model division of a unit fraction by a whole number or vice versa using area models.",
+              "examples": [
+                "1/2 ÷ 2 = 1/4, shown by splitting 1/2 into two equal parts.",
+                "3 ÷ 1/3 = 9, shown as three wholes divided into thirds.",
+                "1/4 ÷ 2 = 1/8, modeled by dividing 1/4 into two parts."
+              ]
+            },
+            {
+              "title": "Multiply two fractions using models",
+              "code": "6-L.5",
+              "explanation": "Students use area models or number lines to visualize multiplying two fractions.",
+              "examples": [
+                "2/3 × 3/4 = 1/2, shown as a 2/3 by 3/4 rectangle.",
+                "1/2 × 1/3 = 1/6, modeled on a number line.",
+                "3/5 × 2/3 = 2/5, shown as overlapping fractions in a grid."
+              ]
+            },
+            {
+              "title": "Divide whole numbers by unit fractions using models",
+              "code": "6-M.1",
+              "explanation": "Students model division of whole numbers by unit fractions, showing how many unit fractions fit into the whole.",
+              "examples": [
+                "2 ÷ 1/2 = 4, shown as two wholes split into halves.",
+                "3 ÷ 1/3 = 9, modeled as three wholes divided into thirds.",
+                "4 ÷ 1/4 = 16, shown as four wholes split into fourths."
+              ]
+            },
+            {
+              "title": "Divide whole numbers and fractions using models",
+              "code": "6",
+              "explanation": "Students use models to divide whole numbers by fractions or fractions by whole numbers.",
+              "examples": [
+                "2 ÷ 2/3 = 3, shown as two wholes divided into 2/3 parts.",
+                "3/4 ÷ 2 = 3/8, modeled by splitting 3/4 into two parts.",
+                "5 ÷ 1/5 = 25, shown as five wholes divided into fifths."
+              ]
+            },
+            {
+              "title": "Divide fractions using models",
+              "code": "6",
+              "explanation": "Students use area models or number lines to show division of one fraction by another.",
+              "examples": [
+                "2/3 ÷ 1/3 = 2, shown as how many 1/3 fit into 2/3.",
+                "3/4 ÷ 1/2 = 1 1/2, modeled as dividing 3/4 by 1/2.",
+                "1/2 ÷ 1/4 = 2, shown as two 1/4 parts in 1/2."
+              ]
+            },
+            {
+              "title": "Divide fractions and mixed numbers using models",
+              "code": "6",
+              "explanation": "Students model division involving mixed numbers and fractions using visual representations.",
+              "examples": [
+                "1 1/2 ÷ 1/2 = 3, shown as three 1/2 parts in 1 1/2.",
+                "2/3 ÷ 1/3 = 2, modeled on a number line.",
+                "2 ÷ 2/3 = 3, shown as two wholes divided into 2/3 parts."
+              ]
+            },
+            {
+              "title": "Divide fractions and mixed numbers using models: word problems",
+              "code": "6",
+              "explanation": "Students apply fraction division to contextual problems, using models to visualize solutions.",
+              "examples": [
+                "If 2/3 yard of fabric is divided into 1/3 yard pieces, you get 2 pieces.",
+                "1 1/2 pizzas divided into 1/4 servings yields 6 servings.",
+                "3 yards of ribbon divided into 1/2 yard pieces gives 6 pieces."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.CE.1.b",
+          "standard_text": "Multiply and divide fractions (proper or improper) and mixed numbers that include denominators of 12 or less. Answers are expressed in simplest form.",
+          "sub_lessons": [
+            {
+              "title": "Multiply mixed numbers",
+              "code": "6",
+              "explanation": "Students convert mixed numbers to improper fractions, multiply, and simplify the result.",
+              "examples": [
+                "1 1/2 × 2 = 3/2 × 2 = 3.",
+                "2 1/3 × 3 = 7/3 × 3 = 7.",
+                "1 1/4 × 2 = 5/4 × 2 = 5/2 = 2 1/2."
+              ]
+            },
+            {
+              "title": "Multiply fractions and whole numbers",
+              "code": "6",
+              "explanation": "Students multiply a fraction by a whole number, expressing the result in simplest form.",
+              "examples": [
+                "2/3 × 6 = 4.",
+                "3/4 × 8 = 6.",
+                "1/5 × 10 = 2."
+              ]
+            },
+            {
+              "title": "Estimate products of fractions and whole numbers",
+              "code": "6-L.4",
+              "explanation": "Students estimate the product of a fraction and a whole number by rounding or using benchmarks.",
+              "examples": [
+                "2/3 × 7 ≈ 2/3 × 6 = 4.",
+                "3/4 × 9 ≈ 3/4 × 8 = 6.",
+                "1/6 × 11 ≈ 1/6 × 12 = 2."
+              ]
+            },
+            {
+              "title": "Multiply two fractions",
+              "code": "6",
+              "explanation": "Students multiply numerators and denominators, then simplify the product.",
+              "examples": [
+                "2/3 × 3/4 = 6/12 = 1/2.",
+                "1/2 × 2/5 = 2/10 = 1/5.",
+                "3/5 × 2/3 = 6/15 = 2/5."
+              ]
+            },
+            {
+              "title": "Multiply three or more fractions and whole numbers",
+              "code": "6",
+              "explanation": "Students multiply multiple fractions and whole numbers, simplifying the result.",
+              "examples": [
+                "1/2 × 2/3 × 6 = 2/3.",
+                "2/5 × 3/4 × 2 = 6/20 = 3/10.",
+                "1/3 × 2 × 3/5 = 6/15 = 2/5."
+              ]
+            },
+            {
+              "title": "Estimate products of mixed numbers",
+              "code": "6",
+              "explanation": "Students estimate products by rounding mixed numbers to the nearest whole number or fraction.",
+              "examples": [
+                "1 1/2 × 2 1/3 ≈ 1 × 2 = 2.",
+                "2 2/3 × 3 ≈ 3 × 3 = 9.",
+                "1 3/4 × 2 ≈ 2 × 2 = 4."
+              ]
+            },
+            {
+              "title": "Multiply a mixed number by a whole number",
+              "code": "6",
+              "explanation": "Students convert the mixed number to an improper fraction, multiply by the whole number, and simplify.",
+              "examples": [
+                "1 1/3 × 3 = 4/3 × 3 = 4.",
+                "2 1/2 × 2 = 5/2 × 2 = 5.",
+                "1 1/4 × 4 = 5/4 × 4 = 5."
+              ]
+            },
+            {
+              "title": "Multiply three or more mixed numbers, fractions, and/or whole numbers",
+              "code": "6",
+              "explanation": "Students multiply a combination of mixed numbers, fractions, and whole numbers, simplifying the result.",
+              "examples": [
+                "1 1/2 × 2/3 × 2 = 3/2 × 2/3 × 2 = 2.",
+                "2 × 1/4 × 3 = 6/4 = 1 1/2.",
+                "1 1/3 × 2 × 1/2 = 4/3 × 1 = 4/3."
+              ]
+            },
+            {
+              "title": "Divide whole numbers and unit fractions",
+              "code": "6-M.3",
+              "explanation": "Students divide whole numbers by unit fractions or vice versa, often using the reciprocal.",
+              "examples": [
+                "3 ÷ 1/2 = 3 × 2 = 6.",
+                "1/3 ÷ 2 = 1/3 × 1/2 = 1/6.",
+                "4 ÷ 1/4 = 4 × 4 = 16."
+              ]
+            },
+            {
+              "title": "Divide fractions",
+              "code": "6",
+              "explanation": "Students divide fractions by multiplying by the reciprocal and simplifying the result.",
+              "examples": [
+                "2/3 ÷ 1/4 = 2/3 × 4/1 = 8/3 = 2 2/3.",
+                "3/5 ÷ 2/3 = 3/5 × 3/2 = 9/10.",
+                "1/2 ÷ 1/3 = 1/2 × 3/1 = 3/2 = 1 1/2."
+              ]
+            },
+            {
+              "title": "Divide fractions and mixed numbers",
+              "code": "6",
+              "explanation": "Students convert mixed numbers to improper fractions, divide by multiplying by the reciprocal, and simplify.",
+              "examples": [
+                "1 1/2 ÷ 1/2 = 3/2 ÷ 1/2 = 3/2 × 2 = 3.",
+                "2/3 ÷ 1 1/3 = 2/3 ÷ 4/3 = 2/3 × 3/4 = 1/2.",
+                "2 ÷ 2/3 = 2 × 3/2 = 3."
+              ]
+            },
+            {
+              "title": "Fractions of a number: word problems",
+              "code": "6",
+              "explanation": "Students solve real-world problems involving fractions of a number, often requiring multiplication.",
+              "examples": [
+                "2/3 of 12 cookies is 2/3 × 12 = 8 cookies.",
+                "3/4 of 20 students is 3/4 × 20 = 15 students.",
+                "1/5 of 25 meters is 1/5 × 25 = 5 meters."
+              ]
+            },
+            {
+              "title": "Divide fractions and whole numbers",
+              "code": "6",
+              "explanation": "Students divide fractions by whole numbers or whole numbers by fractions, using reciprocals.",
+              "examples": [
+                "2/3 ÷ 2 = 2/3 × 1/2 = 1/3.",
+                "4 ÷ 1/2 = 4 × 2 = 8.",
+                "3/5 ÷ 3 = 3/5 × 1/3 = 1/5."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.CE.1.c",
+          "standard_text": "Investigate and explain the effect of multiplying or dividing a fraction, whole number, or mixed number by a number between zero and one.",
+          "sub_lessons": [
+            {
+              "title": "Scaling whole numbers by fractions: justify your answer",
+              "code": "6-L.8",
+              "explanation": "Students explore how multiplying by a fraction between 0 and 1 reduces the value, using models to justify.",
+              "examples": [
+                "4 × 1/2 = 2, smaller because 1/2 scales down.",
+                "6 × 2/3 = 4, reduced as 2/3 is less than 1.",
+                "10 × 1/4 = 2.5, smaller due to scaling by 1/4."
+              ]
+            },
+            {
+              "title": "Scaling by fractions and mixed numbers",
+              "code": "6-L.9",
+              "explanation": "Students analyze the effect of multiplying or dividing by fractions or mixed numbers less than 1, explaining the result.",
+              "examples": [
+                "8 ÷ 1/2 = 16, larger because dividing by a fraction less than 1 increases the value.",
+                "3 × 2/3 = 2, smaller because 2/3 is less than 1.",
+                "1 1/2 × 1/2 = 3/4, reduced due to scaling by 1/2."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.CE.1.d",
+          "standard_text": "Estimate, determine, and justify the solution to single-step and multistep problems in context that involve addition and subtraction with fractions (proper or improper) and mixed numbers, with and without regrouping, that include like and unlike denominators of 12 or less. Answers are expressed in simplest form.",
+          "sub_lessons": [
+            {
+              "title": "Add and subtract fractions with like denominators: word problems",
+              "code": "6",
+              "explanation": "Students solve contextual problems by adding or subtracting fractions with the same denominator, simplifying results.",
+              "examples": [
+                "If you use 2/5 cup of sugar and add 1/5 cup more, you have 3/5 cup.",
+                "Subtract 3/8 yard of fabric from 7/8 yard to get 4/8 = 1/2 yard.",
+                "Add 1/6 hour and 2/6 hour to get 3/6 = 1/2 hour."
+              ]
+            },
+            {
+              "title": "Maps with fractional distances",
+              "code": "6-K.9",
+              "explanation": "Students solve problems involving fractional distances on maps, adding or subtracting fractions.",
+              "examples": [
+                "A map shows 3/4 mile + 1/4 mile = 1 mile between two points.",
+                "Subtract 2/5 km from 4/5 km to find 2/5 km remaining.",
+                "Add 1/3 mile and 1/3 mile to get 2/3 mile total distance."
+              ]
+            },
+            {
+              "title": "Add, subtract, multiply, or divide two fractions: word problems",
+              "code": "6",
+              "explanation": "Students solve multistep problems involving addition and subtraction of fractions in context.",
+              "examples": [
+                "Add 1/2 cup of flour and 1/3 cup, finding a common denominator: 3/6 + 2/6 = 5/6 cup.",
+                "Subtract 2/3 hour from 1 1/3 hours: 4/3 - 2/3 = 2/3 hour.",
+                "A recipe needs 3/4 cup sugar and 1/6 cup more: 9/12 + 2/12 = 11/12 cup."
+              ]
+            },
+            {
+              "title": "Add, subtract, multiply, or divide fractions and mixed numbers: word problems",
+              "code": "6",
+              "explanation": "Students solve problems with mixed numbers and fractions, often requiring regrouping or common denominators.",
+              "examples": [
+                "1 1/4 + 2/3 = 5/4 + 2/3 = 15/12 + 8/12 = 23/12 = 1 11/12.",
+                "2 1/2 - 3/4 = 5/2 - 3/4 = 10/4 - 3/4 = 7/4 = 1 3/4.",
+                "Add 1 1/3 + 1/6 = 4/3 + 1/6 = 8/6 + 1/6 = 9/6 = 1 1/2."
+              ]
+            },
+            {
+              "title": "Add, subtract, multiply, or divide fractions in recipes",
+              "code": "6",
+              "explanation": "Students apply fraction operations to recipe-related problems, ensuring results are simplified.",
+              "examples": [
+                "Add 2/3 cup flour and 1/4 cup: 8/12 + 3/12 = 11/12 cup.",
+                "Subtract 1/2 cup sugar from 1 1/4 cups: 5/4 - 1/2 = 5/4 - 2/4 = 3/4 cup.",
+                "Combine 3/8 cup and 5/8 cup milk: 8/8 = 1 cup."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.CE.1.e",
+          "standard_text": "Estimate, determine, and justify the solution to single-step and multistep problems in context that involve multiplication and division with fractions (proper or improper) and mixed numbers that include denominators of 12 or less. Answers are expressed in simplest form.",
+          "sub_lessons": [
+            {
+              "title": "Multiply fractions and whole numbers: word problems",
+              "code": "6",
+              "explanation": "Students solve contextual problems by multiplying fractions and whole numbers, simplifying results.",
+              "examples": [
+                "2/3 of 12 apples = 2/3 × 12 = 8 apples.",
+                "3/4 of 8 cups = 3/4 × 8 = 6 cups.",
+                "1/5 of 15 meters = 1/5 × 15 = 3 meters."
+              ]
+            },
+            {
+              "title": "Multiply fractions: word problems",
+              "code": "6",
+              "explanation": "Students multiply fractions in real-world scenarios, ensuring answers are in simplest form.",
+              "examples": [
+                "1/2 of 2/3 yard = 1/2 × 2/3 = 1/3 yard.",
+                "2/5 of 3/4 hour = 2/5 × 3/4 = 6/20 = 3/10 hour.",
+                "3/8 of 2/3 cup = 3/8 × 2/3 = 6/24 = 1/4 cup."
+              ]
+            },
+            {
+              "title": "Multiply mixed numbers: word problems",
+              "code": "6",
+              "explanation": "Students solve problems involving multiplication of mixed numbers, converting to improper fractions first.",
+              "examples": [
+                "1 1/2 × 2 cups = 3/2 × 2 = 3 cups.",
+                "2 1/3 × 3 = 7/3 × 3 = 7.",
+                "1 1/4 × 2 = 5/4 × 2 = 5/2 = 2 1/2."
+              ]
+            },
+            {
+              "title": "Divide fractions by whole numbers in recipes",
+              "code": "6",
+              "explanation": "Students divide fractions by whole numbers in recipe contexts, using reciprocals.",
+              "examples": [
+                "2/3 cup ÷ 2 servings = 2/3 × 1/2 = 1/3 cup per serving.",
+                "3/4 cup ÷ 3 = 3/4 × 1/3 = 1/4 cup.",
+                "1/2 cup ÷ 4 = 1/2 × 1/4 = 1/8 cup."
+              ]
+            },
+            {
+              "title": "Divide fractions and mixed numbers using models: word problems",
+              "code": "6",
+              "explanation": "Students use models to solve division problems involving fractions and mixed numbers in context.",
+              "examples": [
+                "1 1/2 ÷ 1/2 = 3 servings, shown as three 1/2 parts in 1 1/2.",
+                "2/3 ÷ 1/3 = 2 pieces, modeled on a number line.",
+                "2 ÷ 2/3 = 3, shown as three 2/3 parts in 2 wholes."
+              ]
+            },
+            {
+              "title": "Divide fractions and mixed numbers: word problems",
+              "code": "6",
+              "explanation": "Students solve contextual division problems with fractions and mixed numbers, using reciprocals.",
+              "examples": [
+                "1 1/4 ÷ 1/2 = 5/4 × 2 = 5/2 = 2 1/2 servings.",
+                "2/3 ÷ 1/4 = 2/3 × 4 = 8/3 = 2 2/3 pieces.",
+                "3 ÷ 3/4 = 3 × 4/3 = 4 sections."
+              ]
+            },
+            {
+              "title": "Add, subtract, multiply, or divide two fractions: word problems",
+              "code": "6",
+              "explanation": "Students solve multistep problems involving multiple operations with fractions in context.",
+              "examples": [
+                "Take 2/3 cup, add 1/4 cup, then divide by 2: (8/12 + 3/12) ÷ 2 = 11/12 ÷ 2 = 11/24 cup.",
+                "Multiply 1/2 by 3/4, then add 1/4: (1/2 × 3/4) + 1/4 = 3/8 + 1/4 = 5/8.",
+                "Divide 3/5 by 2, then add 1/3: (3/5 ÷ 2) + 1/3 = 3/10 + 1/3 = 19/30."
+              ]
+            },
+            {
+              "title": "Add, subtract, multiply, or divide fractions in recipes",
+              "code": "6",
+              "explanation": "Students apply multiple operations to fractions in recipe-related problems, simplifying results.",
+              "examples": [
+                "Add 1/3 cup and 1/4 cup, then multiply by 2: (4/12 + 3/12) × 2 = 7/12 × 2 = 7/6 = 1 1/6 cups.",
+                "Divide 2/3 cup by 2, then add 1/2 cup: (2/3 ÷ 2) + 1/2 = 1/3 + 1/2 = 5/6 cup.",
+                "Multiply 3/4 by 2/3, then subtract 1/6: (3/4 × 2/3) - 1/6 = 1/2 - 1/6 = 1/3 cup."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.CE.2.a",
+          "standard_text": "Demonstrate/model addition, subtraction, multiplication, and division of integers using pictorial representations or concrete manipulatives.",
+          "sub_lessons": [
+            {
+              "title": "Add integers using counters",
+              "code": "6-P.1",
+              "explanation": "Students use counters to model addition of integers, pairing positive and negative counters to find the sum.",
+              "examples": [
+                "-3 + 5 = 2, shown by canceling 3 negative counters with 3 positive, leaving 2 positive.",
+                "4 + (-2) = 2, modeled with 4 positive and 2 negative counters.",
+                "-2 + (-3) = -5, shown with 5 negative counters."
+              ]
+            },
+            {
+              "title": "Add integers using number lines",
+              "code": "6-P.2",
+              "explanation": "Students model integer addition on a number line, moving right for positive and left for negative.",
+              "examples": [
+                "-4 + 6 = 2, start at -4, move 6 right to 2.",
+                "3 + (-5) = -2, start at 3, move 5 left to -2.",
+                "-1 + 3 = 2, start at -1, move 3 right to 2."
+              ]
+            },
+            {
+              "title": "Subtract integers using counters",
+              "code": "6-P.4",
+              "explanation": "Students use counters to model subtraction by adding the opposite, pairing positive and negative counters.",
+              "examples": [
+                "5 - (-3) = 5 + 3 = 8, shown with 5 positive and 3 more positive counters.",
+                "-2 - 4 = -2 + (-4) = -6, modeled with 6 negative counters.",
+                "3 - 5 = 3 + (-5) = -2, shown with 2 negative counters."
+              ]
+            },
+            {
+              "title": "Subtract integers using number lines",
+              "code": "6-P.5",
+              "explanation": "Students model subtraction on a number line by adding the opposite, moving left for negative numbers.",
+              "examples": [
+                "4 - 6 = 4 + (-6) = -2, start at 4, move 6 left to -2.",
+                "-3 - (-5) = -3 + 5 = 2, start at -3, move 5 right to 2.",
+                "-1 - 3 = -1 + (-3) = -4, start at -1, move 3 left to -4."
+              ]
+            },
+            {
+              "title": "Understand multiplying by a negative integer using a number line",
+              "code": "6-P.11",
+              "explanation": "Students use number lines to visualize multiplication of integers, especially with negative numbers, showing direction changes.",
+              "examples": [
+                "-2 × 3 = -6, shown as three jumps of -2 on a number line.",
+                "2 × (-3) = -6, shown as three jumps of -2.",
+                "-3 × (-2) = 6, shown as two jumps of 3 (opposite direction)."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.CE.2.b",
+          "standard_text": "Add, subtract, multiply, and divide two integers.",
+          "sub_lessons": [
+            {
+              "title": "Add integers",
+              "code": "6-P.3",
+              "explanation": "Students add integers using rules: same signs add and keep the sign, different signs subtract and take the larger sign.",
+              "examples": [
+                "-4 + (-3) = -7.",
+                "5 + (-2) = 3.",
+                "-1 + 6 = 5."
+              ]
+            },
+            {
+              "title": "Subtract integers",
+              "code": "6-P.6",
+              "explanation": "Students subtract integers by adding the opposite, applying addition rules.",
+              "examples": [
+                "5 - (-3) = 5 + 3 = 8.",
+                "-4 - 2 = -4 + (-2) = -6.",
+                "3 - 7 = 3 + (-7) = -4."
+              ]
+            },
+            {
+              "title": "Add and subtract integers: find the sign",
+              "code": "6-P.7",
+              "explanation": "Students determine the sign of the result when adding or subtracting integers based on rules.",
+              "examples": [
+                "-5 + (-3) = -8 (negative, same signs).",
+                "6 - 8 = -2 (negative, larger number negative).",
+                "-2 + 7 = 5 (positive, larger number positive)."
+              ]
+            },
+            {
+              "title": "Add and subtract integers: input/output tables",
+              "code": "6-P.9",
+              "explanation": "Students complete tables by applying addition or subtraction rules to integer inputs.",
+              "examples": [
+                "Input: -3, rule: add 5, output: -3 + 5 = 2.",
+                "Input: 4, rule: subtract 6, output: 4 - 6 = -2.",
+                "Input: -1, rule: add -2, output: -1 + (-2) = -3."
+              ]
+            },
+            {
+              "title": "Multiply integers: find the sign",
+              "code": "6-P.12",
+              "explanation": "Students determine the sign of the product: positive if signs are the same, negative if different.",
+              "examples": [
+                "-4 × 3 = negative.",
+                "-2 × (-5) = positive.",
+                "6 × 2 = positive."
+              ]
+            },
+            {
+              "title": "Multiply integers",
+              "code": "6-P.13",
+              "explanation": "Students multiply integers, applying sign rules and computing the product.",
+              "examples": [
+                "-3 × 4 = -12.",
+                "-2 × (-6) = 12.",
+                "5 × (-3) = -15."
+              ]
+            },
+            {
+              "title": "Divide integers: find the sign",
+              "code": "6-P.14",
+              "explanation": "Students determine the sign of the quotient using the same sign rules as multiplication.",
+              "examples": [
+                "-12 ÷ 3 = negative.",
+                "-15 ÷ (-5) = positive.",
+                "10 ÷ 2 = positive."
+              ]
+            },
+            {
+              "title": "Divide integers",
+              "code": "6-P.15",
+              "explanation": "Students divide integers, applying sign rules and computing the quotient.",
+              "examples": [
+                "-18 ÷ 3 = -6.",
+                "-20 ÷ (-4) = 5.",
+                "15 ÷ (-5) = -3."
+              ]
+            },
+            {
+              "title": "Add, subtract, multiply, or divide two integers",
+              "code": "6-P.16",
+              "explanation": "Students perform various operations with integers, following appropriate rules for each.",
+              "examples": [
+                "-7 + 4 = -3.",
+                "-8 ÷ 2 = -4.",
+                "3 × (-5) = -15."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.CE.2.c",
+          "standard_text": "Simplify an expression that contains absolute value bars | | and an operation with two integers and represent the result on a number line.",
+          "sub_lessons": [
+            {
+              "title": "Simplify absolute value expressions",
+              "code": "6",
+              "explanation": "Students evaluate expressions with absolute values and integers, then show the result on a number line.",
+              "examples": [
+                "|-5| + 3 = 5 + 3 = 8, plotted at 8 on a number line.",
+                "|7 - 10| = |-3| = 3, shown at 3 on a number line.",
+                "|-4| - 2 = 4 - 2 = 2, plotted at 2 on a number line."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.CE.2.d",
+          "standard_text": "Estimate, determine, and justify the solution to one and two-step contextual problems, involving addition, subtraction, multiplication, and division with integers.",
+          "sub_lessons": [
+            {
+              "title": "Add and subtract integers: word problems",
+              "code": "6-P.8",
+              "explanation": "Students solve real-world problems involving addition and subtraction of integers, justifying with number lines or rules.",
+              "examples": [
+                "A temperature drops 4°C then rises 2°C: -4 + 2 = -2°C.",
+                "A bank balance of -$10 gains $15: -10 + 15 = 5.",
+                "A diver descends 6 feet then ascends 3 feet: -6 + 3 = -3 feet."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strand_code": "6.MG",
+      "strand_name": "Measurement and Geometry",
+      "standards": [
+        {
+          "standard": "6.MG.1.a",
+          "standard_text": "Identify and describe chord, diameter, radius, circumference, and area of a circle.",
+          "sub_lessons": [
+            {
+              "title": "Parts of a circle",
+              "code": "6",
+              "explanation": "Students identify and describe key components of a circle, such as radius, diameter, and chord, using diagrams.",
+              "examples": [
+                "The radius is half the diameter, e.g., a 10 cm diameter has a 5 cm radius.",
+                "A chord connects two points on a circle, e.g., a line from (1,0) to (-1,0).",
+                "The circumference is the distance around the circle, measured as π times the diameter."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.1.b",
+          "standard_text": "Investigate and describe the relationship between: diameter and radius; radius and circumference; and diameter and circumference.",
+          "sub_lessons": [
+            {
+              "title": "Relationships in circles",
+              "code": "6",
+              "explanation": "Students explore that the diameter is twice the radius and that circumference is related to both via π.",
+              "examples": [
+                "A radius of 3 cm means a diameter of 6 cm.",
+                "Circumference = 2π × radius, so a 5 cm radius gives 10π cm circumference.",
+                "Circumference = π × diameter, so a 4 cm diameter gives 4π cm circumference."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.1.c",
+          "standard_text": "Develop an approximation for pi (3.14) by gathering data and comparing the circumference to the diameter of various circles, using concrete manipulatives or technological models.",
+          "sub_lessons": [
+            {
+              "title": "Approximating pi",
+              "code": "6",
+              "explanation": "Students measure the circumference and diameter of circles to estimate π as their ratio, approximately 3.14.",
+              "examples": [
+                "A circle with circumference 31.4 cm and diameter 10 cm gives π ≈ 31.4 ÷ 10 = 3.14.",
+                "A wheel with circumference 62.8 cm and diameter 20 cm gives π ≈ 62.8 ÷ 20 = 3.14.",
+                "A plate with circumference 25.12 cm and diameter 8 cm gives π ≈ 25.12 ÷ 8 = 3.14."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.1.d",
+          "standard_text": "Develop the formula for circumference using the relationship between diameter, radius, and pi.",
+          "sub_lessons": [
+            {
+              "title": "Circumference formula",
+              "code": "6",
+              "explanation": "Students derive C = πd or C = 2πr by understanding the relationship between circumference, diameter, and radius.",
+              "examples": [
+                "C = π × diameter, so a 6 cm diameter gives C = 6π cm.",
+                "C = 2π × radius, so a 4 cm radius gives C = 8π cm.",
+                "A 10 cm diameter circle has C = π × 10 = 10π cm."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.1.e",
+          "standard_text": "Solve problems, including those in context, involving circumference and area of a circle when given the length of the diameter or radius.",
+          "sub_lessons": [
+            {
+              "title": "Circumference of circles",
+              "code": "6",
+              "explanation": "Students calculate the circumference using C = πd or C = 2πr, often with π ≈ 3.14.",
+              "examples": [
+                "A circle with radius 5 cm has C = 2 × 3.14 × 5 = 31.4 cm.",
+                "A circle with diameter 8 cm has C = 3.14 × 8 = 25.12 cm.",
+                "A wheel with radius 3 cm has C = 2 × 3.14 × 3 = 18.84 cm."
+              ]
+            },
+            {
+              "title": "Area of circles",
+              "code": "6",
+              "explanation": "Students calculate the area using A = πr^2, with π ≈ 3.14.",
+              "examples": [
+                "A circle with radius 4 cm has A = 3.14 × 4^2 = 50.24 cm².",
+                "A circle with radius 2 cm has A = 3.14 × 2^2 = 12.56 cm².",
+                "A circle with diameter 10 cm has radius 5 cm, so A = 3.14 × 5^2 = 78.5 cm²."
+              ]
+            },
+            {
+              "title": "Circles: word problems",
+              "code": "6",
+              "explanation": "Students solve real-world problems involving circumference or area of circles.",
+              "examples": [
+                "A circular garden with radius 3 m has area 3.14 × 3^2 = 28.26 m².",
+                "A bike wheel with diameter 70 cm has circumference 3.14 × 70 = 219.8 cm.",
+                "A round table with radius 2 m has area 3.14 × 2^2 = 12.56 m²."
+              ]
+            },
+            {
+              "title": "Area between two circles",
+              "code": "6",
+              "explanation": "Students find the area between concentric circles by subtracting the smaller circle’s area from the larger.",
+              "examples": [
+                "Large circle radius 5 cm (A = 78.5 cm²), small circle radius 3 cm (A = 28.26 cm²), difference = 50.24 cm².",
+                "Large radius 4 cm (A = 50.24 cm²), small radius 2 cm (A = 12.56 cm²), difference = 37.68 cm².",
+                "Large diameter 10 cm (A = 78.5 cm²), small diameter 6 cm (A = 28.26 cm²), difference = 50.24 cm²."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.2.a",
+          "standard_text": "Develop the formula for determining the area of parallelograms and triangles using pictorial representations and concrete manipulatives.",
+          "sub_lessons": [
+            {
+              "title": "Understanding area of a parallelogram",
+              "code": "6-GG.3",
+              "explanation": "Students derive the area formula (A = base × height) by rearranging a parallelogram into a rectangle using manipulatives.",
+              "examples": [
+                "A parallelogram with base 6 cm and height 4 cm has A = 6 × 4 = 24 cm².",
+                "Base 5 m, height 3 m gives A = 5 × 3 = 15 m².",
+                "A parallelogram with base 8 cm and height 2 cm has A = 8 × 2 = 16 cm²."
+              ]
+            },
+            {
+              "title": "Understanding area of a triangle",
+              "code": "6-GG.5",
+              "explanation": "Students derive the area formula (A = 1/2 × base × height) by showing a triangle as half a parallelogram.",
+              "examples": [
+                "A triangle with base 6 cm and height 4 cm has A = 1/2 × 6 × 4 = 12 cm².",
+                "Base 10 m, height 3 m gives A = 1/2 × 10 × 3 = 15 m².",
+                "A triangle with base 8 cm and height 5 cm has A = 1/2 × 8 × 5 = 20 cm²."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.2.b",
+          "standard_text": "Solve problems, including those in context, involving the perimeter and area of triangles and parallelograms.",
+          "sub_lessons": [
+            {
+              "title": "Area of parallelograms",
+              "code": "6-GG.4",
+              "explanation": "Students calculate the area of parallelograms using A = base × height in various contexts.",
+              "examples": [
+                "A parallelogram with base 7 cm and height 4 cm has A = 7 × 4 = 28 cm².",
+                "Base 6 m, height 5 m gives A = 6 × 5 = 30 m².",
+                "A parallelogram with base 9 cm and height 2 cm has A = 9 × 2 = 18 cm²."
+              ]
+            },
+            {
+              "title": "Area of triangles",
+              "code": "6-GG.6",
+              "explanation": "Students calculate the area of triangles using A = 1/2 × base × height in real-world scenarios.",
+              "examples": [
+                "A triangle with base 10 cm and height 6 cm has A = 1/2 × 10 × 6 = 30 cm².",
+                "Base 8 m, height 4 m gives A = 1/2 × 8 × 4 = 16 m².",
+                "A triangle with base 12 cm and height 3 cm has A = 1/2 × 12 × 3 = 18 cm²."
+              ]
+            },
+            {
+              "title": "Area between two triangles",
+              "code": "6-GG.14",
+              "explanation": "Students find the area between two triangles by subtracting the smaller triangle’s area from the larger.",
+              "examples": [
+                "Large triangle base 10 cm, height 6 cm (A = 30 cm²), small base 5 cm, height 3 cm (A = 7.5 cm²), difference = 22.5 cm².",
+                "Large base 8 cm, height 4 cm (A = 16 cm²), small base 4 cm, height 2 cm (A = 4 cm²), difference = 12 cm².",
+                "Large base 12 cm, height 5 cm (A = 30 cm²), small base 6 cm, height 3 cm (A = 9 cm²), difference = 21 cm²."
+              ]
+            },
+            {
+              "title": "Area and perimeter of rectangles and squares: word problems",
+              "code": "6",
+              "explanation": "Students solve contextual problems involving the area and perimeter of rectangles and squares (special parallelograms).",
+              "examples": [
+                "A rectangle with length 5 m and width 3 m has perimeter 2(5 + 3) = 16 m, area 5 × 3 = 15 m².",
+                "A square with side 4 cm has perimeter 4 × 4 = 16 cm, area 4 × 4 = 16 cm².",
+                "A garden 6 m by 2 m has perimeter 2(6 + 2) = 16 m, area 6 × 2 = 12 m²."
+              ]
+            },
+            {
+              "title": "Perimeter of triangles and parallelograms",
+              "code": "6",
+              "explanation": "Students calculate the perimeter by summing the lengths of all sides of triangles or parallelograms.",
+              "examples": [
+                "A triangle with sides 3 cm, 4 cm, 5 cm has perimeter 3 + 4 + 5 = 12 cm.",
+                "A parallelogram with sides 6 cm and 4 cm has perimeter 2(6 + 4) = 20 cm.",
+                "A triangle with sides 5 cm, 5 cm, 6 cm has perimeter 5 + 5 + 6 = 16 cm."
+              ]
+            },
+            {
+              "title": "Area of squares, rectangles, and triangles: word problems",
+              "code": "6",
+              "explanation": "Students solve real-world problems involving the area of squares, rectangles, and triangles.",
+              "examples": [
+                "A triangular sail with base 8 m and height 6 m has area 1/2 × 8 × 6 = 24 m².",
+                "A square plot with side 5 m has area 5 × 5 = 25 m².",
+                "A rectangular room 7 m by 4 m has area 7 × 4 = 28 m²."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.3.a",
+          "standard_text": "Identify and label the axes, origin, and quadrants of a coordinate plane.",
+          "sub_lessons": [
+            {
+              "title": "Describe the coordinate plane",
+              "code": "6-R.1",
+              "explanation": "Students identify the x-axis, y-axis, origin (0,0), and the four quadrants of a coordinate plane.",
+              "examples": [
+                "The origin is at (0,0), where the x- and y-axes intersect.",
+                "Quadrant I has positive x and y values, e.g., (3, 4).",
+                "The x-axis includes points like (5, 0) and (-2, 0)."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.3.b",
+          "standard_text": "Identify and describe the location (quadrant or the axis) of a point given as an ordered pair. Ordered pairs will be limited to coordinates expressed as integers.",
+          "sub_lessons": [
+            {
+              "title": "Describe the coordinate plane",
+              "code": "6-R.1",
+              "explanation": "Students determine whether a point lies in a quadrant or on an axis based on its coordinates.",
+              "examples": [
+                "(2, 3) is in Quadrant I (positive x, positive y).",
+                "(-4, 0) lies on the x-axis.",
+                "(0, -5) lies on the y-axis."
+              ]
+            },
+            {
+              "title": "Quadrants",
+              "code": "6-R.4",
+              "explanation": "Students identify the quadrant of a given ordered pair based on the signs of its coordinates.",
+              "examples": [
+                "(-3, 2) is in Quadrant II (negative x, positive y).",
+                "(4, -1) is in Quadrant IV (positive x, negative y).",
+                "(-2, -3) is in Quadrant III (negative x, negative y)."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.3.c",
+          "standard_text": "Graph ordered pairs in the four quadrants and on the axes of a coordinate plane. Ordered pairs will be limited to coordinates expressed as integers.",
+          "sub_lessons": [
+            {
+              "title": "Graph points on a coordinate plane: integers only",
+              "code": "6",
+              "explanation": "Students plot points given as ordered pairs on a coordinate plane, moving along the x- and y-axes.",
+              "examples": [
+                "Plot (3, -2): move 3 right, 2 down.",
+                "Plot (-4, 1): move 4 left, 1 up.",
+                "Plot (0, 5): move 0 on x-axis, 5 up on y-axis."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.3.d",
+          "standard_text": "Identify ordered pairs represented by points in the four quadrants and on the axes of the coordinate plane. Ordered pairs will be limited to coordinates expressed as integers.",
+          "sub_lessons": [
+            {
+              "title": "Objects on a coordinate plane",
+              "code": "6",
+              "explanation": "Students identify the coordinates of points plotted on a coordinate plane, including those on the axes.",
+              "examples": [
+                "A point 2 right and 3 up is (2, 3).",
+                "A point 4 left and 0 on y-axis is (-4, 0).",
+                "A point 0 on x-axis and 5 down is (0, -5)."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.3.e",
+          "standard_text": "Relate the coordinates of a point to the distance from each axis and relate the coordinates of a single point to another point on the same horizontal or vertical line. Ordered pairs will be limited to coordinates expressed as integers.",
+          "sub_lessons": [
+            {
+              "title": "Coordinate planes as maps",
+              "code": "6-R.6",
+              "explanation": "Students use coordinates to determine distances from axes and identify points on the same horizontal or vertical line.",
+              "examples": [
+                "(3, -2) is 3 units from y-axis and 2 units from x-axis.",
+                "(2, 4) shares y=4 with (5, 4), a horizontal line.",
+                "(-1, 3) shares x=-1 with (-1, 0), a vertical line."
+              ]
+            },
+            {
+              "title": "Distance between two points: integers only",
+              "code": "6",
+              "explanation": "Students calculate the distance between points with the same x- or y-coordinate by subtracting coordinates.",
+              "examples": [
+                "Distance between (2, 3) and (2, -1) is |3 - (-1)| = 4 units.",
+                "Distance between (-3, 2) and (4, 2) is |-3 - 4| = 7 units.",
+                "Distance between (0, 5) and (0, -2) is |5 - (-2)| = 7 units."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.MG.3.f",
+          "standard_text": "Draw polygons in the coordinate plane given coordinates for the vertices; use coordinates to determine the length of a side joining points with the same first coordinate or the same second coordinate. Ordered pairs will be limited to coordinates expressed as integers. Apply these techniques in the context of solving contextual and mathematical problems.",
+          "sub_lessons": [
+            {
+              "title": "Area and perimeter of squares and rectangles on the coordinate plane",
+              "code": "6-R.9",
+              "explanation": "Students plot vertices to form squares or rectangles, then calculate side lengths, perimeter, and area.",
+              "examples": [
+                "Rectangle vertices (0, 0), (0, 3), (4, 3), (4, 0): perimeter = 2(4 + 3) = 14, area = 4 × 3 = 12.",
+                "Square vertices (1, 1), (1, 5), (5, 5), (5, 1): perimeter = 4 × 4 = 16, area = 4 × 4 = 16.",
+                "Rectangle vertices (-2, -1), (-2, 3), (3, 3), (3, -1): perimeter = 2(5 + 4) = 18, area = 5 × 4 = 20."
+              ]
+            },
+            {
+              "title": "Graph triangles and quadrilaterals",
+              "code": "6-EE.6",
+              "explanation": "Students graph polygons using given coordinates and calculate side lengths for those sharing x- or y-coordinates.",
+              "examples": [
+                "Triangle vertices (0, 0), (0, 4), (3, 0): side lengths 4, 3, 5 (by distance formula or counting).",
+                "Quadrilateral vertices (-2, 1), (-2, 3), (2, 3), (2, 1): side lengths 2, 4, 2, 4.",
+                "Triangle vertices (1, -1), (1, 2), (4, -1): side lengths 3, 3, 5."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strand_code": "6.PS",
+      "strand_name": "Probability and Statistics",
+      "standards": [
+        {
+          "standard": "6.PS.1.a",
+          "standard_text": "Collect, organize, and represent data using tables, frequency tables, line plots, picture graphs, and bar graphs including those with fractional increments of 1/2, 1/4, or 1/10. Data may be collected from cross-curricular sources or topics of interest.",
+          "sub_lessons": [
+            {
+              "title": "Interpret line plots",
+              "code": "6-X.1",
+              "explanation": "Students read and interpret line plots, identifying data points and their frequencies, including fractional increments.",
+              "examples": [
+                "A line plot shows 5 students with 1/2 hour of homework, 3 with 3/4 hour, and 2 with 1 hour.",
+                "A line plot of pet weights shows 4 pets at 1/4 kg, 6 at 1/2 kg, and 2 at 3/4 kg.",
+                "A line plot of rainfall shows 3 days with 1/10 inch, 5 with 2/10 inch, and 1 with 3/10 inch."
+              ]
+            },
+            {
+              "title": "Create line plots",
+              "code": "6-X.2",
+              "explanation": "Students create line plots to represent data sets with fractional increments, such as 1/2, 1/4, or 1/10.",
+              "examples": [
+                "Data: 1/2, 1/2, 3/4, 1/4 plotted with X’s above 1/4 (1), 1/2 (2), 3/4 (1).",
+                "Data: 1/10, 2/10, 2/10, 3/10 plotted with X’s above 1/10 (1), 2/10 (2), 3/10 (1).",
+                "Data: 1/4, 1/2, 1/2, 3/4 plotted with X’s above 1/4 (1), 1/2 (2), 3/4 (1)."
+              ]
+            },
+            {
+              "title": "Create bar graphs",
+              "code": "6-X.7",
+              "explanation": "Students construct bar graphs to display categorical data, ensuring accurate scaling for fractional increments.",
+              "examples": [
+                "A bar graph shows 5 votes for 1/2 hour, 3 for 3/4 hour, and 2 for 1 hour of TV time.",
+                "A bar graph of fruit choices: 4 for 1/4 kg apples, 6 for 1/2 kg oranges, 3 for 3/4 kg bananas.",
+                "A bar graph of rainfall: 3 days at 1/10 inch, 5 at 2/10 inch, 2 at 3/10 inch."
+              ]
+            },
+            {
+              "title": "Create picture graphs",
+              "code": "6",
+              "explanation": "Students create picture graphs where each symbol represents a fractional unit, such as 1/2 or 1/4.",
+              "examples": [
+                "A picture graph with a star = 1/2 student shows 10 stars for 5 students.",
+                "A picture graph with a fruit = 1/4 kg shows 8 fruits for 2 kg.",
+                "A picture graph with a drop = 1/10 inch shows 20 drops for 2 inches."
+              ]
+            },
+            {
+              "title": "Create frequency tables",
+              "code": "6",
+              "explanation": "Students organize data into frequency tables, tallying occurrences of values including fractions.",
+              "examples": [
+                "Table: 1/2 hour (5 tallies), 3/4 hour (3 tallies), 1 hour (2 tallies).",
+                "Table: 1/4 kg (4 tallies), 1/2 kg (6 tallies), 3/4 kg (2 tallies).",
+                "Table: 1/10 inch (3 tallies), 2/10 inch (5 tallies), 3/10 inch (1 tally)."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PS.1.b",
+          "standard_text": "Interpret data represented in tables, frequency tables, line plots, picture graphs, and bar graphs including those with fractional increments of 1/2, 1/4, or 1/10 and use the information to solve problems in context (e.g., determine the most/least common, compare data, make predictions).",
+          "sub_lessons": [
+            {
+              "title": "Interpret bar graphs",
+              "code": "6-X.8",
+              "explanation": "Students analyze bar graphs to answer questions about data, such as most/least common or comparisons.",
+              "examples": [
+                "A bar graph shows 6 votes for soccer, 4 for basketball: soccer is most common.",
+                "A bar graph of rainfall: 1/10 inch (3 days), 2/10 inch (5 days); 2/10 inch is most frequent.",
+                "A bar graph of snacks: 1/4 kg apples (5), 1/2 kg oranges (3); apples are more popular."
+              ]
+            },
+            {
+              "title": "Interpret picture graphs",
+              "code": "6",
+              "explanation": "Students interpret picture graphs to solve problems, accounting for fractional units per symbol.",
+              "examples": [
+                "A picture graph with star = 1/2 vote shows 8 stars; total votes = 4.",
+                "A picture graph with fruit = 1/4 kg shows 12 fruits; total weight = 3 kg.",
+                "A picture graph with drop = 1/10 inch shows 15 drops; total rainfall = 1.5 inches."
+              ]
+            },
+            {
+              "title": "Interpret line plots",
+              "code": "6-X.1",
+              "explanation": "Students use line plots to answer questions about frequency, comparisons, or predictions.",
+              "examples": [
+                "A line plot shows 5 X’s at 1/2 hour, 3 at 3/4 hour; most common is 1/2 hour.",
+                "A line plot of weights: 1/4 kg (2), 1/2 kg (4); predict more at 1/2 kg.",
+                "A line plot of rainfall: 1/10 inch (3), 2/10 inch (5); 2/10 inch is most common."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PS.2.a",
+          "standard_text": "Compare and contrast the mean, median, and mode of a data set as measures of center.",
+          "sub_lessons": [
+            {
+              "title": "Calculate mean, median, mode, and range",
+              "code": "6-Z.1",
+              "explanation": "Students calculate mean (average), median (middle value), and mode (most frequent) for a data set, comparing their uses.",
+              "examples": [
+                "Data: 2, 3, 3, 4, 5; mean = 17/5 = 3.4, median = 3, mode = 3.",
+                "Data: 1/2, 1/2, 3/4, 1; mean = 2.5/4 = 5/8, median = 5/8, mode = 1/2.",
+                "Data: 1, 2, 2, 2, 3; mean = 10/5 = 2, median = 2, mode = 2."
+              ]
+            },
+            {
+              "title": "Describe mean, median, and mode",
+              "code": "6",
+              "explanation": "Students explain how mean, median, and mode describe the center of a data set and when each is most appropriate.",
+              "examples": [
+                "Mean is best for balanced data, e.g., average test scores: 80, 85, 90 = 85.",
+                "Median is better for skewed data, e.g., incomes: 20, 30, 100; median = 30.",
+                "Mode is useful for frequent values, e.g., shoe sizes: 7, 7, 8; mode = 7."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PS.2.b",
+          "standard_text": "Determine the mean, median, and mode of a data set and describe what each measure indicates about the data set.",
+          "sub_lessons": [
+            {
+              "title": "Calculate mean, median, mode, and range",
+              "code": "6-Z.1",
+              "explanation": "Students compute mean, median, and mode, and interpret what each reveals about the data’s center.",
+              "examples": [
+                "Data: 1, 2, 2, 3, 4; mean = 12/5 = 2.4, median = 2, mode = 2; mean shows average, mode shows most common.",
+                "Data: 1/4, 1/2, 1/2, 3/4; mean = 2/4 = 1/2, median = 1/2, mode = 1/2; all indicate central tendency.",
+                "Data: 5, 6, 6, 7, 10; mean = 34/5 = 6.8, median = 6, mode = 6; median and mode show typical value."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PS.2.c",
+          "standard_text": "Describe how the addition or subtraction of a data point affects the measures of center (mean, median, mode) of a data set.",
+          "sub_lessons": [
+            {
+              "title": "Effects on mean, median, and mode",
+              "code": "6-Z.2",
+              "explanation": "Students analyze how adding or removing a data point changes the mean, median, and mode of a data set.",
+              "examples": [
+                "Data: 2, 3, 3, 4; mean = 3, median = 3, mode = 3. Add 5: mean = 17/5 = 3.4, median = 3, mode = 3.",
+                "Data: 1/2, 1/2, 3/4; mean = 7/12, median = 1/2, mode = 1/2. Remove 1/2: mean = 5/8, median = 5/8, no mode.",
+                "Data: 1, 2, 2, 3; mean = 2, median = 2, mode = 2. Add 2: mean = 10/5 = 2, median = 2, mode = 2."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PS.3.a",
+          "standard_text": "Represent the probability of an event as a fraction or decimal from 0 to 1 or as a percent from 0% to 100%.",
+          "sub_lessons": [
+            {
+              "title": "Introduction to probability",
+              "code": "6-CC.1",
+              "explanation": "Students express the probability of an event as a fraction, decimal, or percent, based on possible outcomes.",
+              "examples": [
+                "Probability of rolling a 3 on a die: 1/6 ≈ 0.167 ≈ 16.7%.",
+                "Probability of drawing a red card from a deck: 26/52 = 1/2 = 0.5 = 50%.",
+                "Probability of rain this afternoon: 3/5 = 0.6 = 60%."
+              ]
+            },
+            {
+              "title": "Probability of simple events",
+              "code": "6-CC.2",
+              "explanation": "Students calculate the probability of a single event by dividing favorable outcomes by total outcomes.",
+              "examples": [
+                "Probability of picking a blue marble from 3 blue, 2 red: 3/5 = 0.6 = 60%.",
+                "Probability of spinning a 4 on a 6-section spinner: 1/6 ≈ 0.167 ≈ 16.7%.",
+                "Probability of choosing a vowel from ‘CAT’: 1/3 ≈ 0.333 ≈ 33.3%."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PS.3.b",
+          "standard_text": "Determine the probability of simple events, including those in context, using a variety of methods including sample spaces, organized lists, and tree diagrams.",
+          "sub_lessons": [
+            {
+              "title": "Probability of simple events",
+              "code": "6-CC.2",
+              "explanation": "Students use sample spaces or lists to find the probability of simple events.",
+              "examples": [
+                "Sample space for a coin flip: {H, T}; probability of heads = 1/2 = 0.5 = 50%.",
+                "Sample space for rolling a die: {1, 2, 3, 4, 5, 6}; probability of even = 3/6 = 50%.",
+                "List for choosing a color (red, blue): probability of red = 1/2 = 50%."
+              ]
+            },
+            {
+              "title": "Make predictions",
+              "code": "6-CC.4",
+              "explanation": "Students use probability to predict outcomes based on sample spaces or organized lists.",
+              "examples": [
+                "A spinner with 4 equal sections (1 red, 3 blue): predict 25% red (1/4).",
+                "A bag with 2 red, 3 blue marbles: predict 40% blue (2/5).",
+                "A die: predict 50% chance of rolling 1, 2, or 3 (3/6)."
+              ]
+            },
+            {
+              "title": "Tree diagrams",
+              "code": "6",
+              "explanation": "Students use tree diagrams to list outcomes and calculate probabilities for simple events.",
+              "examples": [
+                "Tree diagram for coin and die: 12 outcomes (2 × 6); probability of heads and 3 = 1/12.",
+                "Tree diagram for 2 coin flips: 4 outcomes; probability of two heads = 1/4.",
+                "Tree diagram for red/blue shirt and pants/shorts: 4 outcomes; probability of red shirt and shorts = 1/4."
+              ]
+            },
+            {
+              "title": "Probability of simple events: word problems",
+              "code": "6",
+              "explanation": "Students solve contextual problems by determining probabilities using sample spaces or lists.",
+              "examples": [
+                "A bag has 3 red, 2 blue marbles; probability of red = 3/5 = 60%.",
+                "A spinner with 5 sections (2 green, 3 yellow); probability of green = 2/5 = 40%.",
+                "A deck with 10 cards (4 hearts, 6 spades); probability of heart = 4/10 = 40%."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PS.3.c",
+          "standard_text": "Compare and contrast theoretical and experimental probability in the context of simple and compound events.",
+          "sub_lessons": [
+            {
+              "title": "Theoretical probability",
+              "code": "6-CC.3",
+              "explanation": "Students calculate theoretical probability based on all possible outcomes for simple or compound events.",
+              "examples": [
+                "Theoretical probability of rolling a 4: 1/6 ≈ 16.7%.",
+                "Theoretical probability of heads on two coin flips: 1/4 = 25%.",
+                "Theoretical probability of drawing a red card: 26/52 = 50%."
+              ]
+            },
+            {
+              "title": "Experimental probability",
+              "code": "6-CC.5",
+              "explanation": "Students calculate experimental probability based on observed outcomes from experiments.",
+              "examples": [
+                "Rolled a die 12 times, got 4 three times: experimental probability = 3/12 = 25%.",
+                "Flipped a coin 20 times, got heads 12 times: experimental probability = 12/20 = 60%.",
+                "Drew 10 cards, 3 were hearts: experimental probability = 3/10 = 30%."
+              ]
+            },
+            {
+              "title": "Compare experimental and theoretical probability",
+              "code": "6",
+              "explanation": "Students compare experimental results to theoretical probabilities, noting differences due to sample size.",
+              "examples": [
+                "Theoretical probability of heads = 50%; experimental (10 flips, 6 heads) = 60%; experimental is higher.",
+                "Theoretical probability of rolling a 2 = 1/6 ≈ 16.7%; experimental (12 rolls, 3 twos) = 25%; experimental is higher.",
+                "Theoretical probability of red marble = 2/5 = 40%; experimental (10 draws, 5 red) = 50%; experimental is higher."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strand_code": "6.PFA",
+      "strand_name": "Patterns, Functions, and Algebra",
+      "standards": [
+        {
+          "standard": "6.PFA.1.a",
+          "standard_text": "Identify, describe, and represent arithmetic and geometric sequences, with and without technology, using a variety of representations, including tables, graphs, and algebraic expressions.",
+          "sub_lessons": [
+            {
+              "title": "Identify arithmetic sequences",
+              "code": "6-BB.1",
+              "explanation": "Students identify arithmetic sequences by checking for a constant difference between terms and represent them in tables or graphs.",
+              "examples": [
+                "Sequence 2, 5, 8, 11: constant difference of +3, arithmetic.",
+                "Sequence 10, 7, 4, 1: constant difference of -3, arithmetic.",
+                "Sequence 1, 3, 5, 7: plotted as points (1,1), (2,3), (3,5), (4,7) on a graph."
+              ]
+            },
+            {
+              "title": "Identify geometric sequences",
+              "code": "6-BB.2",
+              "explanation": "Students identify geometric sequences by checking for a constant ratio between terms and represent them in tables or graphs.",
+              "examples": [
+                "Sequence 3, 6, 12, 24: constant ratio of ×2, geometric.",
+                "Sequence 16, 8, 4, 2: constant ratio of ÷2, geometric.",
+                "Sequence 2, 6, 18, 54: plotted as points (1,2), (2,6), (3,18), (4,54) on a graph."
+              ]
+            },
+            {
+              "title": "Extend arithmetic sequences",
+              "code": "6",
+              "explanation": "Students extend arithmetic sequences by adding the common difference to find subsequent terms.",
+              "examples": [
+                "Sequence 4, 7, 10, 13: next term is 13 + 3 = 16.",
+                "Sequence 20, 17, 14, 11: next term is 11 - 3 = 8.",
+                "Sequence 1, 5, 9, 13: next term is 13 + 4 = 17."
+              ]
+            },
+            {
+              "title": "Extend geometric sequences",
+              "code": "6",
+              "explanation": "Students extend geometric sequences by multiplying by the common ratio to find subsequent terms.",
+              "examples": [
+                "Sequence 5, 10, 20, 40: next term is 40 × 2 = 80.",
+                "Sequence 81, 27, 9, 3: next term is 3 ÷ 3 = 1.",
+                "Sequence 2, 8, 32, 128: next term is 128 × 4 = 512."
+              ]
+            },
+            {
+              "title": "Write an equation for an arithmetic sequence",
+              "code": "6",
+              "explanation": "Students write an equation for an arithmetic sequence in the form a_n = a_1 + (n-1)d, where d is the common difference.",
+              "examples": [
+                "Sequence 3, 7, 11, 15 (d=4): a_n = 3 + (n-1)×4.",
+                "Sequence 10, 8, 6, 4 (d=-2): a_n = 10 + (n-1)×(-2).",
+                "Sequence 2, 5, 8, 11 (d=3): a_n = 2 + (n-1)×3."
+              ]
+            },
+            {
+              "title": "Write an equation for a geometric sequence",
+              "code": "6",
+              "explanation": "Students write an equation for a geometric sequence in the form a_n = a_1 × r^(n-1), where r is the common ratio.",
+              "examples": [
+                "Sequence 2, 6, 18, 54 (r=3): a_n = 2 × 3^(n-1).",
+                "Sequence 16, 8, 4, 2 (r=1/2): a_n = 16 × (1/2)^(n-1).",
+                "Sequence 3, 12, 48, 192 (r=4): a_n = 3 × 4^(n-1)."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PFA.1.b",
+          "standard_text": "Extend arithmetic and geometric sequences to determine the nth term, with and without technology, using a variety of representations, including algebraic expressions.",
+          "sub_lessons": [
+            {
+              "title": "Find the nth term of an arithmetic sequence",
+              "code": "6",
+              "explanation": "Students use the formula a_n = a_1 + (n-1)d to find the nth term of an arithmetic sequence.",
+              "examples": [
+                "Sequence 2, 5, 8, 11 (d=3): 5th term = 2 + (5-1)×3 = 14.",
+                "Sequence 10, 7, 4, 1 (d=-3): 6th term = 10 + (6-1)×(-3) = -5.",
+                "Sequence 1, 3, 5, 7 (d=2): 4th term = 1 + (4-1)×2 = 7."
+              ]
+            },
+            {
+              "title": "Find the nth term of a geometric sequence",
+              "code": "6",
+              "explanation": "Students use the formula a_n = a_1 × r^(n-1) to find the nth term of a geometric sequence.",
+              "examples": [
+                "Sequence 3, 6, 12, 24 (r=2): 5th term = 3 × 2^(5-1) = 48.",
+                "Sequence 32, 16, 8, 4 (r=1/2): 6th term = 32 × (1/2)^(6-1) = 1.",
+                "Sequence 2, 8, 32, 128 (r=4): 4th term = 2 × 4^(4-1) = 128."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PFA.2.a",
+          "standard_text": "Represent and determine equivalencies among expressions that include fractions and mixed numbers with denominators that are 12 or less or factors of 100.",
+          "sub_lessons": [
+            {
+              "title": "Write equivalent expressions using the distributive property",
+              "code": "6",
+              "explanation": "Students rewrite expressions with fractions using the distributive property to show equivalence.",
+              "examples": [
+                "2 × (1/3 + 1/2) = 2/3 + 1 = 1 2/3.",
+                "3 × (1/4 + 2/3) = 3/4 + 2 = 2 3/4.",
+                "4 × (1/6 + 1/2) = 4/6 + 2 = 2 2/3."
+              ]
+            },
+            {
+              "title": "Identify equivalent expressions",
+              "code": "6",
+              "explanation": "Students determine if two expressions with fractions or mixed numbers are equivalent by simplifying or computing.",
+              "examples": [
+                "1/2 + 1/4 = 3/4 and 3 × 1/4 are equivalent.",
+                "2/3 + 1/6 = 5/6 and 5 × 1/6 are equivalent.",
+                "1 1/2 + 1/3 = 1 5/6 and 11/6 are equivalent."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PFA.2.b",
+          "standard_text": "Represent and solve single-step and multistep practical problems involving addition and subtraction with fractions (proper or improper) and mixed numbers, with and without regrouping, that include like and unlike denominators of 12 or less.",
+          "sub_lessons": [
+            {
+              "title": "Add and subtract fractions with like denominators: word problems",
+              "code": "6",
+              "explanation": "Students solve practical problems by adding or subtracting fractions with like denominators, simplifying results.",
+              "examples": [
+                "Add 2/5 cup sugar and 1/5 cup: 2/5 + 1/5 = 3/5 cup.",
+                "Subtract 3/8 yard fabric from 7/8 yard: 7/8 - 3/8 = 4/8 = 1/2 yard.",
+                "Add 1/6 hour and 2/6 hour: 1/6 + 2/6 = 3/6 = 1/2 hour."
+              ]
+            },
+            {
+              "title": "Add and subtract fractions with unlike denominators: word problems",
+              "code": "6",
+              "explanation": "Students solve problems by finding common denominators to add or subtract fractions.",
+              "examples": [
+                "Add 1/3 cup and 1/4 cup: 4/12 + 3/12 = 7/12 cup.",
+                "Subtract 2/5 hour from 1/2 hour: 5/10 - 4/10 = 1/10 hour.",
+                "Add 1/6 mile and 1/3 mile: 1/6 + 2/6 = 3/6 = 1/2 mile."
+              ]
+            },
+            {
+              "title": "Add and subtract mixed numbers: word problems",
+              "code": "6",
+              "explanation": "Students solve problems with mixed numbers, using regrouping or common denominators as needed.",
+              "examples": [
+                "Add 1 1/3 + 2/3 = 2 cups of flour.",
+                "Subtract 2 1/4 - 1/2 = 7/4 = 1 3/4 yards of ribbon.",
+                "Add 1 1/6 + 2/3 = 1 5/6 hours of time."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PFA.2.c",
+          "standard_text": "Represent a one-step equation or inequality involving addition or subtraction with models, such as algebra tiles, and with mathematical symbols. Numbers will include whole numbers, integers, and fractions with denominators that are 12 or less or factors of 100.",
+          "sub_lessons": [
+            {
+              "title": "Model and solve equations using algebra tiles",
+              "code": "6-V.1",
+              "explanation": "Students use algebra tiles to model and solve one-step equations with whole numbers, integers, or fractions.",
+              "examples": [
+                "x + 3 = 5: model with 3 positive tiles and x, remove 3 to get x = 2.",
+                "x - 2 = -4: model with x and 2 negative tiles, add 2 to get x = -2.",
+                "x + 1/2 = 3/4: model with fraction tiles, remove 1/2 to get x = 1/4."
+              ]
+            },
+            {
+              "title": "Write and solve one-step equations: word problems",
+              "code": "6",
+              "explanation": "Students write and solve one-step equations from contextual problems, using models or symbols.",
+              "examples": [
+                "A box plus 5 kg is 12 kg: x + 5 = 12, x = 7 kg.",
+                "A temperature minus 3°C is -1°C: x - 3 = -1, x = 2°C.",
+                "A recipe with 1/3 cup sugar plus x is 1/2 cup: x + 1/3 = 1/2, x = 1/6 cup."
+              ]
+            },
+            {
+              "title": "Solve one-step equations",
+              "code": "6-V.2",
+              "explanation": "Students solve one-step equations by isolating the variable using inverse operations.",
+              "examples": [
+                "x + 4 = 7: x = 7 - 4 = 3.",
+                "x - (-2) = 5: x + 2 = 5, x = 3.",
+                "x + 1/4 = 3/4: x = 3/4 - 1/4 = 1/2."
+              ]
+            },
+            {
+              "title": "Write inequalities",
+              "code": "6-W.1",
+              "explanation": "Students write inequalities to represent constraints in problems, using whole numbers, integers, or fractions.",
+              "examples": [
+                "A budget less than $10: x < 10.",
+                "A temperature at least -2°C: x ≥ -2.",
+                "A length no more than 3/4 meter: x ≤ 3/4."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PFA.2.d",
+          "standard_text": "Solve one-step linear equations involving addition or subtraction. Numbers will include whole numbers, integers, and fractions with denominators that are 12 or less or factors of 100.",
+          "sub_lessons": [
+            {
+              "title": "Solve one-step equations",
+              "code": "6-V.2",
+              "explanation": "Students solve one-step equations by isolating the variable with addition or subtraction, including fractions and integers.",
+              "examples": [
+                "x + 3 = 8: x = 8 - 3 = 5.",
+                "x - 4 = -6: x = -6 + 4 = -2.",
+                "x + 1/3 = 2/3: x = 2/3 - 1/3 = 1/3."
+              ]
+            },
+            {
+              "title": "Solve one-step equations: word problems",
+              "code": "6",
+              "explanation": "Students solve contextual problems by writing and solving one-step equations.",
+              "examples": [
+                "A weight plus 5 kg is 12 kg: x + 5 = 12, x = 7 kg.",
+                "A bank balance minus $10 is -$15: x - 10 = -15, x = -5.",
+                "A recipe with 1/4 cup plus x is 3/4 cup: x + 1/4 = 3/4, x = 1/2 cup."
+              ]
+            }
+          ]
+        },
+        {
+          "standard": "6.PFA.2.e",
+          "standard_text": "Solve one-step linear inequalities involving addition or subtraction and represent solutions on a number line. Numbers will include whole numbers, integers, and fractions with denominators that are 12 or less or factors of 100.",
+          "sub_lessons": [
+            {
+              "title": "Solutions to inequalities",
+              "code": "6-W.2",
+              "explanation": "Students solve one-step inequalities and graph the solutions on a number line, indicating direction with an arrow.",
+              "examples": [
+                "x + 2 < 5: x < 3, graph with an open circle at 3 and arrow left.",
+                "x - 3 ≥ -1: x ≥ 2, graph with a closed circle at 2 and arrow right.",
+                "x + 1/4 ≤ 3/4: x ≤ 1/2, graph with a closed circle at 1/2 and arrow left."
+              ]
+            },
+            {
+              "title": "Graph inequalities on number lines",
+              "code": "6-W.3",
+              "explanation": "Students represent solutions to inequalities on a number line, using open or closed circles.",
+              "examples": [
+                "x > 4: open circle at 4, arrow right.",
+                "x ≤ -2: closed circle at -2, arrow left.",
+                "x < 2/3: open circle at 2/3, arrow left."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

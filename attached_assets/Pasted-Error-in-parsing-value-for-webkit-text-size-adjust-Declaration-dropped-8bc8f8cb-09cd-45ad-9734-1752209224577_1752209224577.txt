@@ -1,0 +1,60 @@
+Error in parsing value for ‘-webkit-text-size-adjust’.  Declaration dropped. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:141:29
+Ruleset ignored due to bad selector. 8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev:2357:27
+LessonPanel: Received lesson: null Console.js:61:14
+LessonPanel: Lesson is null/undefined? true Console.js:61:14
+LessonPanel: No lesson - showing placeholder Console.js:61:14
+Cookie warnings 2
+LessonPanel: Received lesson: null Console.js:61:14
+LessonPanel: Lesson is null/undefined? true Console.js:61:14
+LessonPanel: No lesson - showing placeholder Console.js:61:14
+CurriculumTree: Lesson clicked: 
+Object { id: 1, title: "6.NS.1.a - Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", description: "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", content: {…}, category: "Number and Number Sense", order: 0, strandCode: "6.NS", strandName: "Number and Number Sense", standard: "6.NS.1", standardText: "The student will reason and use multiple strategies to express equivalency, compare, and order numbers written as fractions, mixed numbers, decimals, and percents.", … }
+Console.js:61:14
+CurriculumTree: Lesson structure: {
+  "id": 1,
+  "title": "6.NS.1.a - Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.",
+  "description": "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.",
+  "content": {
+    "examples": [
+      "What percentage is illustrated by a model showing 3 out of 200 squares shaded? (6-U.1)",
+      "Using a strip model, estimate the percent represented by 4 out of 5 equal sections (e.g., a strip divided into 5 parts with 4 shaded)."
+    ]
+  },
+  "category": "Number and Number Sense",
+  "order": 0,
+  "strandCode": "6.NS",
+  "strandName": "Number and Number Sense",
+  "standard": "6.NS.1",
+  "standardText": "The student will reason and use multiple strategies to express equivalency, compare, and order numbers written as fractions, mixed numbers, decimals, and percents.",
+  "subStandard": "6.NS.1.a",
+  "subStandardText": "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.",
+  "examples": [
+    "What percentage is illustrated by a model showing 3 out of 200 squares shaded? (6-U.1)",
+    "Using a strip model, estimate the percent represented by 4 out of 5 equal sections (e.g., a strip divided into 5 parts with 4 shaded)."
+  ],
+  "grade": null,
+  "subject": null,
+  "state": null,
+  "contentAreaId": 1
+} Console.js:61:14
+Home: Lesson selected: 
+Object { id: 1, title: "6.NS.1.a - Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", description: "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", content: {…}, category: "Number and Number Sense", order: 0, strandCode: "6.NS", strandName: "Number and Number Sense", standard: "6.NS.1", standardText: "The student will reason and use multiple strategies to express equivalency, compare, and order numbers written as fractions, mixed numbers, decimals, and percents.", … }
+Console.js:61:14
+Home: Lesson title: 6.NS.1.a - Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%. Console.js:61:14
+Home: Lesson examples: 
+Array [ "What percentage is illustrated by a model showing 3 out of 200 squares shaded? (6-U.1)", "Using a strip model, estimate the percent represented by 4 out of 5 equal sections (e.g., a strip divided into 5 parts with 4 shaded)." ]
+Console.js:61:14
+Home: Lesson description: Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%. Console.js:61:14
+LessonPanel: Received lesson: 
+Object { id: 1, title: "6.NS.1.a - Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", description: "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.", content: {…}, category: "Number and Number Sense", order: 0, strandCode: "6.NS", strandName: "Number and Number Sense", standard: "6.NS.1", standardText: "The student will reason and use multiple strategies to express equivalency, compare, and order numbers written as fractions, mixed numbers, decimals, and percents.", … }
+Console.js:61:14
+LessonPanel: Lesson is null/undefined? false Console.js:61:14
+LessonPanel: Rendering lesson content Console.js:61:14
+LessonPanel: Lesson title: 6.NS.1.a - Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%. Console.js:61:14
+LessonPanel: Lesson description: Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%. Console.js:61:14
+LessonPanel: Lesson examples: 
+Array [ "What percentage is illustrated by a model showing 3 out of 200 squares shaded? (6-U.1)", "Using a strip model, estimate the percent represented by 4 out of 5 equal sections (e.g., a strip divided into 5 parts with 4 shaded)." ]
+Console.js:61:14
+LessonPanel: Received lesson: null Console.js:61:14
+LessonPanel: Lesson is null/undefined? true Console.js:61:14
+LessonPanel: No lesson - showing placeholder

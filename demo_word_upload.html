@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Document Upload Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .upload-area {
+            border: 2px dashed #ccc;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .upload-area:hover {
+            border-color: #007bff;
+            background-color: #f8f9fa;
+        }
+        .result {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+            border-left: 4px solid #4caf50;
+        }
+        .error {
+            background-color: #ffebee;
+            border-left-color: #f44336;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            border-left: 4px solid #2196f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enhanced Curriculum Upload Demo</h1>
+        <p>Test the Word document upload functionality with your Grade 6 Mathematics Instructional Guide.</p>
+        
+        <div class="step">
+            <h3>Step 1: Upload Word Document</h3>
+            <div class="upload-area">
+                <input type="file" id="fileInput" accept=".docx,.doc" style="display: none">
+                <button class="btn" onclick="document.getElementById('fileInput').click()">
+                    Choose Word Document
+                </button>
+                <p>Select your Grade 6 Mathematics Instructional Guide (.docx)</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>Step 2: Process & Parse</h3>
+            <button class="btn" id="uploadBtn" onclick="uploadDocument()" disabled>
+                Upload & Parse Document
+            </button>
+        </div>
+        
+        <div class="step">
+            <h3>Step 3: Review Results</h3>
+            <div id="results"></div>
+        </div>
+        
+        <div class="step">
+            <h3>Demo: Pre-loaded Test Data</h3>
+            <button class="btn" onclick="loadTestData()">
+                Load Sample Mathematics Curriculum
+            </button>
+            <p>This will load a sample curriculum structure to demonstrate the system.</p>
+        </div>
+    </div>
+
+    <script>
+        let selectedFile = null;
+        
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            selectedFile = e.target.files[0];
+            if (selectedFile) {
+                document.getElementById('uploadBtn').disabled = false;
+                showResult(`✅ Selected: ${selectedFile.name} (${(selectedFile.size / 1024 / 1024).toFixed(2)} MB)`);
+            }
+        });
+        
+        async function uploadDocument() {
+            if (!selectedFile) {
+                showResult('❌ Please select a file first', true);
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+            
+            try {
+                showResult('🔄 Parsing Word document...');
+                
+                const response = await fetch('/api/curriculum/parse-word', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showResult(`✅ Document parsed successfully!
+                    
+📊 Curriculum Structure Detected:
+   - Subject: ${result.metadata?.subjectHint || 'Mathematics'}
+   - Grade Level: ${result.metadata?.gradeLevel || 'Grade 6'}
+   - Hierarchy: ${result.metadata?.hierarchyPattern || 'strand -> standard -> subStandard'}
+   - Content Areas: ${result.metadata?.contentAreas?.length || 0}
+   - Standards: ${result.data ? Object.keys(result.data).length : 0}
+   
+🎯 Ready for curriculum loading!`);
+                    
+                    // Show sample of parsed data
+                    if (result.data && Object.keys(result.data).length > 0) {
+                        const sampleData = Object.entries(result.data).slice(0, 2);
+                        showResult(`📋 Sample parsed content:\n${JSON.stringify(sampleData, null, 2)}`);
+                    }
+                } else {
+                    showResult(`❌ Upload failed: ${result.message}`, true);
+                }
+            } catch (error) {
+                showResult(`💥 Error: ${error.message}`, true);
+            }
+        }
+        
+        async function loadTestData() {
+            try {
+                showResult('🔄 Loading test curriculum data...');
+                
+                const testData = {
+                    curriculumData: {
+                        "6.NS": {
+                            "name": "Number and Number Sense",
+                            "description": "Grade 6 number concepts and operations",
+                            "standards": {
+                                "6.NS.1": {
+                                    "description": "Represent relationships between fractions, decimals, and percents",
+                                    "sub_lessons": [
+                                        {
+                                            "title": "Converting fractions to decimals",
+                                            "code": "6.NS.1.a", 
+                                            "explanation": "Students convert fractions with denominators of 2, 4, 5, 8, 10, 20, 25, and 100 to their decimal and percent equivalents",
+                                            "examples": ["1/2 = 0.5 = 50%", "3/4 = 0.75 = 75%", "1/5 = 0.2 = 20%"]
+                                        },
+                                        {
+                                            "title": "Identifying equivalent representations",
+                                            "code": "6.NS.1.b",
+                                            "explanation": "Students recognize equivalent representations of rational numbers (fractions, decimals, percents)",
+                                            "examples": ["0.25 = 1/4 = 25%", "0.6 = 3/5 = 60%"]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    subjectCode: "MATH_DEMO",
+                    frameworkCode: "VA_DOE_DEMO"
+                };
+                
+                const response = await fetch('/api/curriculum/load-generic', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showResult(`✅ Test curriculum loaded successfully!
+                    
+📊 Results:
+   - Subject: ${result.subjectCode}
+   - Framework: ${result.frameworkCode}
+   - Strands: ${result.strandsCount}
+   - Lessons: ${result.lessonsCount}
+   
+🎯 System ready for production use!`);
+                } else {
+                    showResult(`❌ Load failed: ${result.message}`, true);
+                }
+            } catch (error) {
+                showResult(`💥 Error: ${error.message}`, true);
+            }
+        }
+        
+        function showResult(message, isError = false) {
+            const resultsDiv = document.getElementById('results');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = 'result' + (isError ? ' error' : '');
+            resultDiv.innerHTML = `<pre>${message}</pre>`;
+            resultsDiv.appendChild(resultDiv);
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>

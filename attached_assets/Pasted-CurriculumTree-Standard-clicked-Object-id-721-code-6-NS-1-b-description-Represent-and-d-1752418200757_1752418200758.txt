@@ -1,0 +1,103 @@
+CurriculumTree: Standard clicked: 
+Object { id: 721, code: "6.NS.1.b", description: "Represent and determine equivalencies among decimals (through the thousandths place) and percents incorporating the use of number lines, and concrete and pictorial models.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+XHRGET
+https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/api/lessons/standard/721
+[HTTP/1.1 304 Not Modified 347ms]
+
+CurriculumTree: Lessons for standard: 
+Array [ {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.b Console.js:61:14
+Home: Lessons received: 
+Array [ {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3533, title: "Convert between percents and decimals", code: "6", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", examples: (3) […], standardId: 721, order: 0 }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6.NS.1.b" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "decimal-percent-conversion", requiresInteraction: true, componentType: "decimal-percent-conversion" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: 0.35 = 35%. Console.js:61:14
+🔍 Processing decimal-percent conversion: 0.35 = 35%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "Convert 0.35 to a percent", correctAnswer: 35, componentType: "decimal-percent-conversion", value: 0.35, conversionType: "decimal", additionalData: {…} }
+Console.js:61:14
+🔍 DecimalPercentConversion Debug: 
+Object { type: "decimal", value: 0.35, userAnswer: "35", answer: 35, correctAnswer: 35, difference: 0 }
+Console.js:61:14
+🔍 InteractivePracticeRenderer handleAnswer called with: 35 Console.js:61:14
+🔍 InteractivePracticeRenderer onAnswerSubmitted exists: true Console.js:61:14
+🔍 InteractivePracticeRenderer calling onAnswerSubmitted Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "decimal-percent-conversion", requiresInteraction: true, componentType: "decimal-percent-conversion" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: 0.35 = 35%. Console.js:61:14
+🔍 Processing decimal-percent conversion: 0.35 = 35%. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "Convert 0.35 to a percent", correctAnswer: 35, componentType: "decimal-percent-conversion", value: 0.35, conversionType: "decimal", additionalData: {…} }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "decimal-percent-conversion", requiresInteraction: true, componentType: "decimal-percent-conversion" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: 75% = 0.75. Console.js:61:14
+🔍 Processing decimal-percent conversion: 75% = 0.75. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "Convert 75% to a decimal", correctAnswer: 0.75, componentType: "decimal-percent-conversion", value: 75, conversionType: "percent", additionalData: {…} }
+Console.js:61:14
+🔍 DecimalPercentConversion Debug: 
+Object { type: "percent", value: 75, userAnswer: "0.75", answer: 0.75, correctAnswer: 0.75, difference: 0 }
+Console.js:61:14
+🔍 InteractivePracticeRenderer handleAnswer called with: 0.75 Console.js:61:14
+🔍 InteractivePracticeRenderer onAnswerSubmitted exists: true Console.js:61:14
+🔍 InteractivePracticeRenderer calling onAnswerSubmitted Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "decimal-percent-conversion", requiresInteraction: true, componentType: "decimal-percent-conversion" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: 75% = 0.75. Console.js:61:14
+🔍 Processing decimal-percent conversion: 75% = 0.75. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "Convert 75% to a decimal", correctAnswer: 0.75, componentType: "decimal-percent-conversion", value: 75, conversionType: "percent", additionalData: {…} }
+Console.js:61:14
+XHRPOST
+https://replit.com/graphql
+[HTTP/3 200  149ms]
+
+🔍 DecimalPercentConversion Debug: 
+Object { type: "percent", value: 75, userAnswer: ".75", answer: 0.75, correctAnswer: 0.75, difference: 0 }
+Console.js:61:14
+🔍 InteractivePracticeRenderer handleAnswer called with: 0.75 Console.js:61:14
+🔍 InteractivePracticeRenderer onAnswerSubmitted exists: true Console.js:61:14
+🔍 InteractivePracticeRenderer calling onAnswerSubmitted Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents and decimals", explanation: "Students learn to convert a percent to a decimal by dividing by 100, and a decimal to a percent by multiplying by 100, often using number lines or grids to visualize.", standardCode: "6" }
+Console.js:61:14
+✅ analyzeLessonType: Detected DECIMAL-PERCENT CONVERSION (title-based) Console.js:61:14
+🔍 InteractivePracticeRenderer lessonAnalysis: 
+Object { type: "decimal-percent-conversion", requiresInteraction: true, componentType: "decimal-percent-conversion" }
+Console.js:61:14
+🔍 InteractivePracticeRenderer actualExample: 75% = 0.75. Console.js:61:14
+🔍 Processing decimal-percent conversion: 75% = 0.75. Console.js:61:14
+🔍 InteractivePracticeRenderer processedContent: 
+Object { interactiveText: "Convert 75% to a decimal", correctAnswer: 0.75, componentType: "decimal-percent-conversion", value: 75, conversionType: "percent", additionalData: {…} }

@@ -1,0 +1,35 @@
+{
+  "message": "This is what I understand you want - please upload a JSON file with this structure:",
+  "expected_structure": {
+    "strand_code": "6.NS",
+    "strand_name": "Number and Number Sense",
+    "standards": {
+      "6.NS.1.a": {
+        "standard": "6.NS.1.a",
+        "standard_text": "Estimate and determine the percent represented by a given model, including percents greater than 100% and less than 1%.",
+        "sub_lessons": [
+          {
+            "title": "What percentage is illustrated?",
+            "code": "6-U.1",
+            "explanation": "Students look at shaded models, such as grids or strip diagrams, to find the percentage of the area that is shaded.",
+            "examples": [
+              "A grid has 80 shaded squares out of 100, so the percent is 80%.",
+              "A strip with 125 shaded parts out of 100 shows 125%.",
+              "A diagram has 0.7 shaded out of 100, so the percent is 0.7%."
+            ]
+          },
+          {
+            "title": "Benchmark percents with strip models: multiples of 10, 20, 25, 33, and 50",
+            "code": "6-U.2",
+            "explanation": "Students use known benchmark percents (like 10%, 25%, 50%) to quickly estimate the shaded part of a strip model.",
+            "examples": [
+              "A strip with about one-fifth shaded is approximately 20%.",
+              "A strip with about one-third shaded is approximately 33%.",
+              "A strip with half shaded is 50%."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
