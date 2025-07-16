@@ -12,6 +12,7 @@ import FractionOperationComponent from "./FractionOperationComponent";
 import ScalingComponent from "./ScalingComponent";
 import GridComponent from "./GridComponent";
 import StripComponent from "./StripComponent";
+import FractionSimplificationComponent from "./FractionSimplificationComponent";
 import { DecimalPercentConversion } from "./interactive-lesson";
 import { analyzeLessonType, processLessonContent } from "../utils/lessonProcessor";
 // Removed legacy theme imports - now using universal system
@@ -938,7 +939,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
           {processedContent.componentType === 'fraction-simplification' && (
             <FractionSimplificationComponent
               key={`fraction-simplification-${lesson.id}-${safeIndex}`}
-              fractionText={processedContent.fractionText!}
+              fractionText={processedContent.fractionToSimplify!}
               correctAnswer={processedContent.correctAnswer as string}
               onAnswer={(answer) => {
                 const correctAnswer = processedContent.correctAnswer;
