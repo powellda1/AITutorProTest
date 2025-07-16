@@ -588,6 +588,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
             />
           )}
           
+          {console.log('🔍 DEBUG RENDERING: processedContent.componentType:', processedContent.componentType, 'equals text-input?', processedContent.componentType === 'text-input')}
           {processedContent.componentType === 'text-input' && (
             <TextInputComponent
               key={`text-input-${lesson.id}-${safeIndex}`}
