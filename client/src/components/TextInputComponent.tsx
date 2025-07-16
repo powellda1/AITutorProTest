@@ -42,12 +42,12 @@ export default function TextInputComponent({
   const universalPrompt = generateUniversalPrompt(promptConfig);
 
   return (
-    <div className="bg-gradient-to-br from-gray-600 to-gray-800 p-6 rounded-lg border-2 border-green-400">
+    <div className="bg-gradient-to-br from-gray-600 to-gray-800 p-6 rounded-lg border-4 border-red-500 mb-6">
       <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg">
         <div className="text-center space-y-4">
           {/* Universal prompt display */}
           <div className="text-2xl font-bold text-black mb-4">
-            {universalPrompt}
+            {universalPrompt || 'TEST: Component is rendering'}
           </div>
           
           {/* Input field */}
