@@ -988,11 +988,12 @@ function processFractionConversion(originalExample: string): ProcessedLessonCont
     interactiveText = `Convert ${mixedToImproperMatch[1]} ${mixedToImproperMatch[2]} to an improper fraction.`;
   }
   
-  // Improper fraction to mixed number
+  // Improper fraction to mixed number (like "11/4 = 2 3/4")
   const improperToMixedMatch = originalExample.match(/(\d+\/\d+).*=.*(\d+)\s+(\d+\/\d+)/);
   if (improperToMixedMatch) {
     correctAnswer = `${improperToMixedMatch[2]} ${improperToMixedMatch[3]}`;
     interactiveText = `Convert ${improperToMixedMatch[1]} to a mixed number.`;
+    console.log('✅ DEBUG processFractionConversion: Matched improper to mixed:', { originalExample, match: improperToMixedMatch, correctAnswer, interactiveText });
   }
   
   // Decimal to fraction
@@ -1033,11 +1034,12 @@ function processFractionConversion(originalExample: string): ProcessedLessonCont
     interactiveText = `Convert ${repeatingMatch[1]} to a repeating decimal.`;
   }
   
-  // Equivalent fractions
+  // Equivalent fractions (only if not already matched by other patterns)
   const equivalentMatch = originalExample.match(/(\d+\/\d+).*=.*(\d+\/\d+)/);
-  if (equivalentMatch && !simplifiedMatch) {
+  if (equivalentMatch && !simplifiedMatch && !improperToMixedMatch && !mixedToImproperMatch) {
     correctAnswer = equivalentMatch[2];
     interactiveText = `Find the equivalent fraction for ${equivalentMatch[1]}.`;
+    console.log('✅ DEBUG processFractionConversion: Matched equivalent fractions:', { originalExample, match: equivalentMatch, correctAnswer, interactiveText });
   }
   
   // Fallback: extract any answer pattern
