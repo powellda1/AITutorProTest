@@ -2220,6 +2220,20 @@ const InteractivePracticeRenderer = ({
         );
       }
       
+      if (processedContent && processedContent.componentType === 'fraction-operation') {
+        return (
+          <div className="text-center mb-4">
+            <FractionOperationComponent
+              key={`fraction-operation-${actualLesson.id}-${subLessonIndex}`}
+              problem={processedContent.interactiveText}
+              correctAnswer={processedContent.correctAnswer}
+              onAnswer={handleAnswer}
+              onRequestHelp={onRequestHelp || (() => {})}
+            />
+          </div>
+        );
+      }
+      
       // If we processed content but it's not a supported component, return null to prevent fallback
       if (processedContent) {
         return null;
