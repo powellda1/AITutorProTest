@@ -109,7 +109,7 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
     return {
       type: 'fraction-conversion',
       requiresInteraction: true,
-      componentType: 'text-input'
+      componentType: 'fraction-operation'
     };
   }
   
