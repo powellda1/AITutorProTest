@@ -939,8 +939,9 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
           {processedContent.componentType === 'fraction-simplification' && (
             <FractionSimplificationComponent
               key={`fraction-simplification-${lesson.id}-${safeIndex}`}
-              fractionText={processedContent.fractionToSimplify!}
+              fractionToSimplify={processedContent.fractionToSimplify!}
               correctAnswer={processedContent.correctAnswer as string}
+              interactiveText={processedContent.interactiveText}
               onAnswer={(answer) => {
                 const correctAnswer = processedContent.correctAnswer;
                 const isCorrect = answer.toString().trim() === correctAnswer.toString().trim();
