@@ -3,7 +3,7 @@ import { NumberLineMode, NumberLineOrientation } from '../components/NumberLineC
 export interface ProcessedLessonContent {
   interactiveText: string;
   correctAnswer: number | string[] | string;
-  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'decimal-percent';
+  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'decimal-percent' | 'text-input';
   mode?: NumberLineMode;
   orientation?: NumberLineOrientation;
   range?: [number, number];
@@ -27,11 +27,13 @@ export interface ProcessedLessonContent {
   // Decimal-percent conversion properties
   value?: number;
   conversionType?: 'decimal' | 'percent';
+  // Fraction conversion properties
+  inputType?: 'text' | 'number';
   additionalData?: any;
 }
 
 export interface LessonAnalysis {
-  type: 'real-world-context' | 'point-identification' | 'plot-integers' | 'opposite-integers' | 'ordering-activity' | 'comparison-activity' | 'word-problem' | 'exponent-expression' | 'fraction-operation' | 'scaling-activity' | 'perfect-square' | 'grid-percentage' | 'strip-model' | 'decimal-percent-conversion' | 'default';
+  type: 'real-world-context' | 'point-identification' | 'plot-integers' | 'opposite-integers' | 'ordering-activity' | 'comparison-activity' | 'word-problem' | 'exponent-expression' | 'fraction-operation' | 'scaling-activity' | 'perfect-square' | 'grid-percentage' | 'strip-model' | 'decimal-percent-conversion' | 'fraction-conversion' | 'default';
   requiresInteraction: boolean;
   componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'strip' | 'decimal-percent' | 'text-input' | 'default';
 }
@@ -90,6 +92,24 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
       type: 'decimal-percent-conversion',
       requiresInteraction: true,
       componentType: 'decimal-percent'
+    };
+  }
+  
+  // 6.NS.1.d - Fraction conversion activities
+  if (titleLower.includes('write fractions in lowest terms') || 
+      titleLower.includes('simplify') ||
+      titleLower.includes('convert between improper fractions and mixed numbers') ||
+      titleLower.includes('convert decimals to fractions') ||
+      titleLower.includes('convert fractions to decimals') ||
+      titleLower.includes('convert between percents, fractions, and decimals') ||
+      titleLower.includes('repeating decimals') ||
+      titleLower.includes('equivalent fractions') ||
+      titleLower.includes('mixed numbers')) {
+    console.log('✅ analyzeLessonType: Detected FRACTION CONVERSION (6.NS.1.d - title-based)');
+    return {
+      type: 'fraction-conversion',
+      requiresInteraction: true,
+      componentType: 'text-input'
     };
   }
   
@@ -304,6 +324,9 @@ export function processLessonContent(
       
     case 'decimal-percent-conversion':
       return processDecimalPercentConversion(originalExample);
+      
+    case 'fraction-conversion':
+      return processFractionConversion(originalExample);
       
     default:
       return null;
@@ -937,5 +960,99 @@ function processDecimalPercentConversion(originalExample: string): ProcessedLess
       value,
       conversionType
     }
+  };
+}
+
+/**
+ * Process fraction conversion examples (6.NS.1.d activities)
+ */
+function processFractionConversion(originalExample: string): ProcessedLessonContent {
+  // Extract different types of answers based on the example content
+  let correctAnswer: string = '';
+  let interactiveText = '';
+  
+  // Fraction simplification
+  const simplifiedMatch = originalExample.match(/simplified to (\d+\/\d+)/);
+  if (simplifiedMatch) {
+    correctAnswer = simplifiedMatch[1];
+    const fractionMatch = originalExample.match(/(\d+\/\d+)/);
+    if (fractionMatch) {
+      interactiveText = `Simplify ${fractionMatch[1]} to lowest terms.`;
+    }
+  }
+  
+  // Mixed number to improper fraction
+  const mixedToImproperMatch = originalExample.match(/(\d+)\s+(\d+\/\d+).*=.*(\d+\/\d+)/);
+  if (mixedToImproperMatch) {
+    correctAnswer = mixedToImproperMatch[3];
+    interactiveText = `Convert ${mixedToImproperMatch[1]} ${mixedToImproperMatch[2]} to an improper fraction.`;
+  }
+  
+  // Improper fraction to mixed number
+  const improperToMixedMatch = originalExample.match(/(\d+\/\d+).*=.*(\d+)\s+(\d+\/\d+)/);
+  if (improperToMixedMatch) {
+    correctAnswer = `${improperToMixedMatch[2]} ${improperToMixedMatch[3]}`;
+    interactiveText = `Convert ${improperToMixedMatch[1]} to a mixed number.`;
+  }
+  
+  // Decimal to fraction
+  const decimalToFractionMatch = originalExample.match(/(\d+\.\d+).*=.*(\d+\/\d+)/);
+  if (decimalToFractionMatch) {
+    correctAnswer = decimalToFractionMatch[2];
+    interactiveText = `Convert ${decimalToFractionMatch[1]} to a fraction.`;
+  }
+  
+  // Fraction to decimal
+  const fractionToDecimalMatch = originalExample.match(/(\d+\/\d+).*=.*(\d+\.\d+)/);
+  if (fractionToDecimalMatch) {
+    correctAnswer = fractionToDecimalMatch[2];
+    interactiveText = `Convert ${fractionToDecimalMatch[1]} to a decimal.`;
+  }
+  
+  // Triple conversion (percent/fraction/decimal)
+  const tripleMatch = originalExample.match(/([\d.]+%|\d+\/\d+|\d+\.\d+)/g);
+  if (tripleMatch && tripleMatch.length >= 2) {
+    // Find the missing third value
+    const hasPercent = originalExample.includes('%');
+    const hasFraction = originalExample.includes('/');
+    const hasDecimal = originalExample.match(/\d+\.\d+/);
+    
+    if (hasPercent && hasFraction && !hasDecimal) {
+      const decimalMatch = originalExample.match(/(\d+\.\d+)/);
+      if (decimalMatch) {
+        correctAnswer = decimalMatch[1];
+        interactiveText = `Convert between percent, fraction, and decimal. Enter the missing decimal value.`;
+      }
+    }
+  }
+  
+  // Repeating decimals
+  const repeatingMatch = originalExample.match(/(\d+\/\d+).*(\d+\.\d+\.\.\.)/);
+  if (repeatingMatch) {
+    correctAnswer = repeatingMatch[2];
+    interactiveText = `Convert ${repeatingMatch[1]} to a repeating decimal.`;
+  }
+  
+  // Equivalent fractions
+  const equivalentMatch = originalExample.match(/(\d+\/\d+).*=.*(\d+\/\d+)/);
+  if (equivalentMatch && !simplifiedMatch) {
+    correctAnswer = equivalentMatch[2];
+    interactiveText = `Find the equivalent fraction for ${equivalentMatch[1]}.`;
+  }
+  
+  // Fallback: extract any answer pattern
+  if (!correctAnswer) {
+    const answerMatch = originalExample.match(/=\s*([^,\s]+)/);
+    if (answerMatch) {
+      correctAnswer = answerMatch[1];
+      interactiveText = `Based on the example, enter your answer.`;
+    }
+  }
+  
+  return {
+    interactiveText,
+    correctAnswer,
+    componentType: 'text-input',
+    inputType: 'text'
   };
 }
