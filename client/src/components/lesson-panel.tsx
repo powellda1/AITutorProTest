@@ -886,8 +886,10 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
                   },
                   onAIHelp: (question, context) => {
                     // Trigger AI help popup
+                    console.log('🔍 LESSON PANEL: FractionVisualInputComponent onAIHelp called with question:', question, 'context:', context);
                     setAiHelpData({ question, context });
                     setShowAiHelpPopup(true);
+                    console.log('🔍 LESSON PANEL: AI help popup state set, calling requestAiHelp');
                     requestAiHelp(lesson.id, correctAnswer);
                   },
                   onAdvanceExample: () => {
@@ -1944,6 +1946,8 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
         question={aiHelpData?.question || ''}
         context={aiHelpData?.context || ''}
         hasResponse={aiResponseReceived}
+        // Debug: Add explicit logging of hasResponse prop
+        {...(console.log('🔍 AI HELP DEBUG: Passing hasResponse to popup:', aiResponseReceived) || {})}
       />
     </div>
   );

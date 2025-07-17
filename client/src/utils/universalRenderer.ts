@@ -351,32 +351,40 @@ export interface UniversalAnswerHandlerConfig {
 export function handleUniversalAnswer(config: UniversalAnswerHandlerConfig): void {
   const { lessonId, isCorrect, currentAttempts, correctCount, onSuccess, onError, onAIHelp, onAdvanceExample, onResetLesson } = config;
   
+  console.log('🔍 HANDLE UNIVERSAL ANSWER: lessonId=', lessonId, ', isCorrect=', isCorrect, ', currentAttempts=', currentAttempts);
+  
   if (isCorrect) {
     // Success - trigger animation and advance
     const animationType = getUniversalAnimationType(correctCount);
+    console.log('🔍 HANDLE UNIVERSAL ANSWER: Answer correct, calling onSuccess with animationType:', animationType);
     onSuccess(animationType);
     
     // Advance to next example after animation (2 seconds like 6.NS.1.a)
     setTimeout(() => {
+      console.log('🔍 HANDLE UNIVERSAL ANSWER: Advancing to next example after 2 seconds');
       onAdvanceExample();
     }, 2000);
   } else {
     // Incorrect - handle attempts
     const newAttempts = currentAttempts + 1;
+    console.log('🔍 HANDLE UNIVERSAL ANSWER: Answer incorrect, newAttempts=', newAttempts);
     
     if (newAttempts >= 3) {
       // Trigger AI help after 3 attempts
+      console.log('🔍 HANDLE UNIVERSAL ANSWER: 3 attempts reached, triggering AI help');
       const question = `How do I solve this problem?`;
       const context = `The student is working on lesson ${lessonId}. They need help after 3 unsuccessful attempts.`;
       onAIHelp(question, context);
       
       // Reset lesson state after AI help (1 second like 6.NS.1.a)
       setTimeout(() => {
+        console.log('🔍 HANDLE UNIVERSAL ANSWER: Resetting lesson state after 1 second');
         onResetLesson();
       }, 1000);
     } else {
       // Show attempt counter message
       const attemptMessage = `Not quite. Try again! (Attempt ${newAttempts} of 3)`;
+      console.log('🔍 HANDLE UNIVERSAL ANSWER: Showing attempt counter:', attemptMessage);
       onError(attemptMessage);
     }
   }
