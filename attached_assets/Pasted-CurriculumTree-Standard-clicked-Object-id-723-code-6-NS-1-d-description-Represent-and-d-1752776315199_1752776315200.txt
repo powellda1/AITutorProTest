@@ -1,0 +1,64 @@
+CurriculumTree: Standard clicked: 
+Object { id: 723, code: "6.NS.1.d", description: "Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+XHRGET
+https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/api/lessons/standard/723
+[HTTP/1.1 304 Not Modified 2365ms]
+
+CurriculumTree: Lessons for standard: 
+Array(9) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.d Console.js:61:14
+Home: Lessons received: 
+Array(9) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3535, title: "Write fractions in lowest terms", code: "6-G.1", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", examples: (3) […], standardId: 723, order: 0 }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Write fractions in lowest terms", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", standardCode: "6.NS.1.d" }
+Console.js:61:14
+✅ PHASE 2: Detected fraction simplification lesson Console.js:61:14
+🔍 PHASE 2: Analyzing explanation for visual components: students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms. Console.js:61:14
+✅ PHASE 2: No visual elements found - using text input component Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "fraction-simplification", requiresInteraction: true, componentType: "text-input" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Write fractions in lowest terms Console.js:61:14
+🔍 processFractionSimplification called with: 6/12 simplified to 1/2. Console.js:61:14
+🔍 Testing fraction pattern: 
+/(\d+)\/(\d+) simplified to (\d+)\/(\d+)/i
+ Result: 
+Array(5) [ "6/12 simplified to 1/2", "6", "12", "1", "2" ]
+Console.js:61:14
+✅ Found simplified fraction: 1/2 Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "1/2", componentType: "text-input", additionalData: {…} }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "fraction-simplification", requiresInteraction: true, componentType: "text-input" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Write fractions in lowest terms Console.js:61:14
+🔍 processFractionSimplification called with: 6/12 simplified to 1/2. Console.js:61:14
+🔍 Testing fraction pattern: 
+/(\d+)\/(\d+) simplified to (\d+)\/(\d+)/i
+ Result: 
+Array(5) [ "6/12 simplified to 1/2", "6", "12", "1", "2" ]
+Console.js:61:14
+✅ Found simplified fraction: 1/2 Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "1/2", componentType: "text-input", additionalData: {…} }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "text-input", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }

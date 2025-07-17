@@ -435,7 +435,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
       if (lesson.id === 3549) {
         console.log('🔍 LESSON PANEL: Calling analyzeLessonType');
       }
-      lessonAnalysis = analyzeLessonType(explanation, lesson.title, selectedStandard);
+      lessonAnalysis = analyzeLessonType(explanation, lesson.title, selectedStandard, standardDescription);
       if (lesson.id === 3549) {
         console.log('🔍 LESSON PANEL: lessonAnalysis result:', lessonAnalysis);
       }

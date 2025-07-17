@@ -39,11 +39,12 @@ export interface LessonAnalysis {
 /**
  * Analyzes lesson explanation and title to determine the appropriate interaction type
  */
-export function analyzeLessonType(explanation: string, title: string, standardCode?: string): LessonAnalysis {
+export function analyzeLessonType(explanation: string, title: string, standardCode?: string, standardDescription?: string): LessonAnalysis {
   const explanationLower = explanation.toLowerCase();
   const titleLower = title.toLowerCase();
+  const standardDescriptionLower = standardDescription?.toLowerCase() || '';
   
-  console.log('🔍 analyzeLessonType called with:', { title, explanation, standardCode });
+  console.log('🔍 analyzeLessonType called with:', { title, explanation, standardCode, standardDescription });
   
   // SPECIFIC DEBUG for "What percentage is illustrated?"
   if (title === "What percentage is illustrated?") {
@@ -245,18 +246,26 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
       explanationLower.includes('greatest common factor')) {
     console.log('✅ PHASE 2: Detected fraction simplification lesson');
     console.log('🔍 PHASE 2: Analyzing explanation for visual components:', explanationLower);
+    console.log('🔍 PHASE 2: Analyzing standard description for visual components:', standardDescriptionLower);
     
-    // Analyze explanation to determine component type
-    if (explanationLower.includes('grid') || explanationLower.includes('shaded') || 
-        explanationLower.includes('squares') || explanationLower.includes('visual model')) {
-      console.log('✅ PHASE 2: Found visual elements in explanation - using grid component');
+    // Analyze both explanation AND standard description to determine component type
+    const hasVisualElements = explanationLower.includes('grid') || explanationLower.includes('shaded') || 
+                             explanationLower.includes('squares') || explanationLower.includes('visual model') ||
+                             standardDescriptionLower.includes('pictorial models') || standardDescriptionLower.includes('concrete') ||
+                             standardDescriptionLower.includes('visual') || standardDescriptionLower.includes('models');
+    
+    const hasNumberLine = explanationLower.includes('number line') || explanationLower.includes('line') ||
+                         standardDescriptionLower.includes('number line') || standardDescriptionLower.includes('number lines');
+    
+    if (hasVisualElements) {
+      console.log('✅ PHASE 2: Found visual/pictorial elements - using grid component');
       return {
         type: 'grid-percentage',
         requiresInteraction: true,
         componentType: 'grid'
       };
-    } else if (explanationLower.includes('number line') || explanationLower.includes('line')) {
-      console.log('✅ PHASE 2: Found number line elements in explanation - using number line component');
+    } else if (hasNumberLine) {
+      console.log('✅ PHASE 2: Found number line elements - using number line component');
       return {
         type: 'real-world-context',
         requiresInteraction: true,
