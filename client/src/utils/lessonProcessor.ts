@@ -96,6 +96,16 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
     };
   }
   
+  if (titleLower.includes('convert decimals to fractions') || 
+      titleLower.includes('decimal to fraction')) {
+    console.log('✅ analyzeLessonType: Detected DECIMAL TO FRACTION (lesson 3)');
+    return {
+      type: 'decimal-fraction-conversion',
+      requiresInteraction: true,
+      componentType: 'decimal-fraction'
+    };
+  }
+  
   // Grid-based activities - PRIORITIZE GRID DETECTION FIRST
   if (titleLower.includes('what percentage') || 
       titleLower.includes('percentage is illustrated') ||

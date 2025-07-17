@@ -445,8 +445,14 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
     // Cached lesson analysis complete
     
     // UNIVERSAL SYSTEM - Process lessons directly without InteractivePracticeRenderer
-    console.log('🔍 DEBUG STEP 1: Lesson analysis for', lesson.title, ':', lessonAnalysis);
-    console.log('🔍 DEBUG STEP 1: requiresInteraction =', lessonAnalysis.requiresInteraction);
+    console.log('🔍 COMPREHENSIVE DEBUG - LESSON DETAILS:');
+    console.log('  - Lesson ID:', lesson.id);
+    console.log('  - Lesson Title:', lesson.title);
+    console.log('  - Lesson Explanation:', lesson.explanation);
+    console.log('  - Current Example:', currentExample);
+    console.log('  - Lesson Analysis:', lessonAnalysis);
+    console.log('  - requiresInteraction =', lessonAnalysis.requiresInteraction);
+    console.log('  - componentType =', lessonAnalysis.componentType);
     console.log('🔍 DEBUG STEP 1: Will enter universal system?', lessonAnalysis.requiresInteraction);
     
     if (lessonAnalysis.requiresInteraction) {
