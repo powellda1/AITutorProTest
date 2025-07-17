@@ -1,0 +1,206 @@
+
+CurriculumTree: Standard clicked: 
+Object { id: 723, code: "6.NS.1.d", description: "Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Convert decimals to fractions : 
+Object { type: "decimal-fraction-conversion", requiresInteraction: true, componentType: "decimal-fraction" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert decimals to fractions Console.js:61:14
+🔍 processDecimalFractionConversion called with: 0.6 = 6/10 = 3/5. Console.js:61:14
+🔍 Testing pattern: 
+/(\d+\.\d+) = (\d+)\/(\d+) = (\d+)\/(\d+)/i
+ Result: 
+Array(6) [ "0.6 = 6/10 = 3/5", "0.6", "6", "10", "3", "5" ]
+Console.js:61:14
+✅ Found conversion: 
+Object { decimal: 0.6, finalNumerator: 3, finalDenominator: 5 }
+Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "3/5", componentType: "decimal-fraction", additionalData: {…} }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Convert decimals to fractions" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Convert decimals to fractions : 
+Object { type: "decimal-fraction-conversion", requiresInteraction: true, componentType: "decimal-fraction" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert decimals to fractions Console.js:61:14
+🔍 processDecimalFractionConversion called with: 0.6 = 6/10 = 3/5. Console.js:61:14
+🔍 Testing pattern: 
+/(\d+\.\d+) = (\d+)\/(\d+) = (\d+)\/(\d+)/i
+ Result: 
+Array(6) [ "0.6 = 6/10 = 3/5", "0.6", "6", "10", "3", "5" ]
+Console.js:61:14
+✅ Found conversion: 
+Object { decimal: 0.6, finalNumerator: 3, finalDenominator: 5 }
+Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "3/5", componentType: "decimal-fraction", additionalData: {…} }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Convert decimals to fractions" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Convert decimals to fractions : 
+Object { type: "decimal-fraction-conversion", requiresInteraction: true, componentType: "decimal-fraction" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert decimals to fractions Console.js:61:14
+🔍 processDecimalFractionConversion called with: 0.6 = 6/10 = 3/5. Console.js:61:14
+🔍 Testing pattern: 
+/(\d+\.\d+) = (\d+)\/(\d+) = (\d+)\/(\d+)/i
+ Result: 
+Array(6) [ "0.6 = 6/10 = 3/5", "0.6", "6", "10", "3", "5" ]
+Console.js:61:14
+✅ Found conversion: 
+Object { decimal: 0.6, finalNumerator: 3, finalDenominator: 5 }
+Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "3/5", componentType: "decimal-fraction", additionalData: {…} }
+Console.js:61:14
+Home: Lesson selected: 
+Object { id: 3540, title: "Convert between percents, fractions, and decimals: word problems", code: "6-U.5", explanation: "Students apply conversion skills to solve real-world problems involving percents, fractions, and decimals.", examples: (3) […], standardId: 723, order: 5 }
+​
+code: "6-U.5"
+​
+examples: Array(3) [ "A shirt is discounted by 30%. If the original price is $20, the discount is 0.3 × 20 = $6.", "If 2/5 of a class is 10 students, the class size is 25 students (2/5 = 0.4, 10 ÷ 0.4 = 25).", "0.15 of a budget is $30, so the total budget is $200 (30 ÷ 0.15 = 200)." ]
+​​
+0: "A shirt is discounted by 30%. If the original price is $20, the discount is 0.3 × 20 = $6."
+​​
+1: "If 2/5 of a class is 10 students, the class size is 25 students (2/5 = 0.4, 10 ÷ 0.4 = 25)."
+​​
+2: "0.15 of a budget is $30, so the total budget is $200 (30 ÷ 0.15 = 200)."
+​​
+length: 3
+​​
+<prototype>: Array []
+​
+explanation: "Students apply conversion skills to solve real-world problems involving percents, fractions, and decimals."
+​
+id: 3540
+​
+order: 5
+​
+standardId: 723
+​
+title: "Convert between percents, fractions, and decimals: word problems"
+​
+<prototype>: Object { … }
+Console.js:61:14
+Home: Lesson title: Convert between percents, fractions, and decimals: word problems Console.js:61:14
+Home: Lesson examples: undefined Console.js:61:14
+Home: Lesson description: undefined Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Convert between percents, fractions, and decimals: word problems" }
+​
+lessonTitle: "Convert between percents, fractions, and decimals: word problems"
+​
+standardCode: "6.NS.1.d"
+​
+type: "word-problem"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between percents, fractions, and decimals: word problems", explanation: "Students apply conversion skills to solve real-world problems involving percents, fractions, and decimals.", standardCode: "6.NS.1.d" }
+​
+explanation: "Students apply conversion skills to solve real-world problems involving percents, fractions, and decimals."
+​
+standardCode: "6.NS.1.d"
+​
+title: "Convert between percents, fractions, and decimals: word problems"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 6.NS.1.d DEBUG: Processing lesson: Convert between percents, fractions, and decimals: word problems Console.js:61:14
+🔍 6.NS.1.d DEBUG: titleLower: convert between percents, fractions, and decimals: word problems Console.js:61:14
+🔍 MATCHED: conversion-word-problem pattern for: Convert between percents, fractions, and decimals: word problems Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Convert between percents, fractions, and decimals: word problems : 
+Object { type: "conversion-word-problem", requiresInteraction: true, componentType: "conversion-word-problem" }
+​
+componentType: "conversion-word-problem"
+​
+requiresInteraction: true
+​
+type: "conversion-word-problem"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert between percents, fractions, and decimals: word problems Console.js:61:14
+🔍 processConversionWordProblem called with: A shirt is discounted by 30%. If the original price is $20, the discount is 0.3 × 20 = $6. Console.js:61:14
+🔍 Testing pattern: 
+/discount is ([\d.]+) × (\d+) = \$(\d+)/i
+ Result: 
+Array(4) [ "discount is 0.3 × 20 = $6", "0.3", "20", "6" ]
+Console.js:61:14
+✅ Found answer: 6 Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "6", componentType: "conversion-word-problem", additionalData: {…} }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Convert between percents, fractions, and decimals: word problems" }
+​
+lessonTitle: "Convert between percents, fractions, and decimals: word problems"
+​
+standardCode: "6.NS.1.d"
+​
+type: "word-problem"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Convert between percents, fractions, and decimals: word problems : 
+Object { type: "conversion-word-problem", requiresInteraction: true, componentType: "conversion-word-problem" }
+​
+componentType: "conversion-word-problem"
+​
+requiresInteraction: true
+​
+type: "conversion-word-problem"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert between percents, fractions, and decimals: word problems Console.js:61:14
+🔍 processConversionWordProblem called with: A shirt is discounted by 30%. If the original price is $20, the discount is 0.3 × 20 = $6. Console.js:61:14
+🔍 Testing pattern: 
+/discount is ([\d.]+) × (\d+) = \$(\d+)/i
+ Result: 
+Array(4) [ "discount is 0.3 × 20 = $6", "0.3", "20", "6" ]
+​
+0: "discount is 0.3 × 20 = $6"
+​
+1: "0.3"
+​
+2: "20"
+​
+3: "6"
+​
+groups: undefined
+​
+index: 64
+​
+input: "A shirt is discounted by 30%. If the original price is $20, the discount is 0.3 × 20 = $6."
+​
+length: 4
+​
+<prototype>: Array []
+Console.js:61:14
+✅ Found answer: 6 Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "6", componentType: "conversion-word-problem", additionalData: {…} }
+Console.js:61:14
+XHRPOST
+https://sp.replit.com/v1/m
+[HTTP/2 200  87ms]
+
+1
+
+​
+
