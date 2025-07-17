@@ -854,8 +854,56 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
                   isCorrect,
                   currentAttempts,
                   correctCount,
-                  inputKey,
-                  correctAnswer
+                  onSuccess: (animationType) => {
+                    // Show success feedback
+                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
+                    
+                    // Trigger animation
+                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
+                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
+                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
+                  },
+                  onError: (attemptMessage) => {
+                    // Show error feedback with attempt counter
+                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
+                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
+                  },
+                  onAIHelp: (question, context) => {
+                    // Trigger AI help popup
+                    setAiHelpData({ question, context });
+                    setShowAiHelpPopup(true);
+                    requestAiHelp(lesson.id, correctAnswer);
+                  },
+                  onAdvanceExample: () => {
+                    // Advance to next example
+                    const nextIndex = currentIndex + 1;
+                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
+                    
+                    // Check if all examples are completed
+                    if (nextIndex >= examples.length) {
+                      // Set completion state for tab checkmarks
+                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
+                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
+                    } else {
+                      // Clear feedback for next example
+                      setShowFeedback(prev => {
+                        const newState = { ...prev };
+                        delete newState[inputKey];
+                        return newState;
+                      });
+                      setAttemptCounts(prev => ({...prev, [inputKey]: 0}));
+                    }
+                  },
+                  onResetLesson: () => {
+                    // Reset lesson state after AI help
+                    setShowFeedback(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setAttemptCounts(prev => ({...prev, [inputKey]: 0}));
+                    setShowAiHelpPopup(false);
+                  }
                 });
               }}
               standardCode={selectedStandard}
