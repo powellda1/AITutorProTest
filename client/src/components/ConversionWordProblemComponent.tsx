@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { generateUniversalPrompt, universalInputStyles, universalButtonStyles, universalFeedbackStyles, formatUniversalFeedbackMessage } from "../utils/universalRenderer";
 
 interface ConversionWordProblemComponentProps {
   problemText: string;
@@ -13,33 +12,13 @@ export default function ConversionWordProblemComponent({
   onAnswer
 }: ConversionWordProblemComponentProps) {
   const [userAnswer, setUserAnswer] = useState('');
-  const [feedback, setFeedback] = useState('');
-  const [attemptCount, setAttemptCount] = useState(0);
 
   const handleSubmit = () => {
     if (userAnswer.trim() === '') {
-      setFeedback('Please enter your answer');
       return;
     }
 
-    const newAttemptCount = attemptCount + 1;
-    setAttemptCount(newAttemptCount);
-
-    // Check if the answer is correct (handle both string and number comparisons)
-    const isCorrect = userAnswer.trim() === correctAnswer.toString() || 
-                     parseFloat(userAnswer.trim()) === parseFloat(correctAnswer.toString());
-
-    if (isCorrect) {
-      setFeedback('Correct!');
-      onAnswer(userAnswer);
-    } else {
-      const feedbackMessage = formatUniversalFeedbackMessage(newAttemptCount, false);
-      setFeedback(feedbackMessage);
-      
-      if (newAttemptCount >= 3) {
-        onAnswer(userAnswer); // Trigger AI help
-      }
-    }
+    onAnswer(userAnswer);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -64,22 +43,16 @@ export default function ConversionWordProblemComponent({
           onChange={(e) => setUserAnswer(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Enter your answer"
-          className={universalInputStyles}
+          className="w-32 px-3 py-2 border border-gray-600 rounded text-white bg-[#35373b] placeholder-gray-300"
         />
         <button
           onClick={handleSubmit}
           disabled={!userAnswer.trim()}
-          className={universalButtonStyles}
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400"
         >
           Submit Answer
         </button>
       </div>
-
-      {feedback && (
-        <div className={universalFeedbackStyles}>
-          {feedback}
-        </div>
-      )}
     </div>
   );
 }

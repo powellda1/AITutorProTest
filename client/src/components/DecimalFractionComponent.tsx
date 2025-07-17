@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { generateUniversalPrompt, universalInputStyles, universalButtonStyles, universalFeedbackStyles, formatUniversalFeedbackMessage } from "../utils/universalRenderer";
+import { generateUniversalCardHeader, generateUniversalComponentJSX } from '../utils/universalRenderer';
 
 interface DecimalFractionComponentProps {
   originalDecimal: number;
@@ -18,30 +18,14 @@ export default function DecimalFractionComponent({
 }: DecimalFractionComponentProps) {
   const [numeratorInput, setNumeratorInput] = useState('');
   const [denominatorInput, setDenominatorInput] = useState('');
-  const [feedback, setFeedback] = useState('');
-  const [attemptCount, setAttemptCount] = useState(0);
 
   const handleSubmit = () => {
     if (numeratorInput.trim() === '' || denominatorInput.trim() === '') {
-      setFeedback('Please enter both numerator and denominator');
       return;
     }
 
     const userAnswer = `${numeratorInput}/${denominatorInput}`;
-    const newAttemptCount = attemptCount + 1;
-    setAttemptCount(newAttemptCount);
-
-    if (userAnswer === correctAnswer) {
-      setFeedback('Correct!');
-      onAnswer(userAnswer);
-    } else {
-      const feedbackMessage = formatUniversalFeedbackMessage(newAttemptCount, false);
-      setFeedback(feedbackMessage);
-      
-      if (newAttemptCount >= 3) {
-        onAnswer(userAnswer); // Trigger AI help
-      }
-    }
+    onAnswer(userAnswer);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -52,6 +36,7 @@ export default function DecimalFractionComponent({
 
   return (
     <div className="p-6 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl shadow-2xl border border-gray-400/20">
+      {/* Universal Card Header */}
       <div className="text-center mb-6">
         <h3 className="text-2xl font-bold text-white mb-4">Convert Decimal to Fraction</h3>
         <div className="text-6xl font-bold text-blue-300 mb-4">
@@ -62,6 +47,7 @@ export default function DecimalFractionComponent({
         </p>
       </div>
 
+      {/* Universal Input/Submit Section */}
       <div className="flex items-center justify-center space-x-4 mb-6">
         <input
           type="text"
@@ -69,7 +55,7 @@ export default function DecimalFractionComponent({
           onChange={(e) => setNumeratorInput(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Numerator"
-          className={universalInputStyles}
+          className="w-32 px-3 py-2 border border-gray-600 rounded text-white bg-[#35373b] placeholder-gray-300"
         />
         <div className="text-4xl font-bold text-white">/</div>
         <input
@@ -78,7 +64,7 @@ export default function DecimalFractionComponent({
           onChange={(e) => setDenominatorInput(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Denominator"
-          className={universalInputStyles}
+          className="w-32 px-3 py-2 border border-gray-600 rounded text-white bg-[#35373b] placeholder-gray-300"
         />
       </div>
 
@@ -86,17 +72,11 @@ export default function DecimalFractionComponent({
         <button
           onClick={handleSubmit}
           disabled={!numeratorInput.trim() || !denominatorInput.trim()}
-          className={universalButtonStyles}
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400"
         >
           Submit Answer
         </button>
       </div>
-
-      {feedback && (
-        <div className={universalFeedbackStyles}>
-          {feedback}
-        </div>
-      )}
     </div>
   );
 }
