@@ -201,6 +201,29 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
     };
   }
   
+  // Decimal-fraction conversions (6.NS.1.d) - MOVED UP to prevent mis-categorization
+  if (titleLower.includes('convert decimals to fractions') ||
+      titleLower.includes('convert fractions to decimals') ||
+      titleLower.includes('decimal') && titleLower.includes('fraction') ||
+      titleLower.includes('decimal') && titleLower.includes('equivalent') ||
+      (explanationLower.includes('decimal') && explanationLower.includes('fraction'))) {
+    console.log('✅ UNIVERSAL: Detected decimal-fraction conversion lesson (moved up in priority)');
+    console.log('🔍 UNIVERSAL: Using examples-first analysis for visual component determination');
+    
+    // EXAMPLES-FIRST: Analyze the mathematical content being worked with
+    // For decimal-fraction conversions like "0.6 = 6/10 = 3/5", we need:
+    // - Text input for the answer (since it's a conversion problem)
+    // - Simple display of the question/conversion
+    // This requires a text input component
+    
+    console.log('✅ UNIVERSAL: Decimal-fraction conversion requires text input component');
+    return {
+      type: 'decimal-fraction-conversion',
+      requiresInteraction: true,
+      componentType: 'text-input'
+    };
+  }
+  
   // Exponent expressions (6.NS.2.b)
   if (titleLower.includes('exponent') || explanationLower.includes('exponent') || explanationLower.includes('power')) {
     return {
@@ -290,39 +313,6 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
       console.log('✅ PHASE 2: No visual elements found - using text input component');
       return {
         type: 'mixed-number-conversion',
-        requiresInteraction: true,
-        componentType: 'text-input'
-      };
-    }
-  }
-  
-  // Decimal-fraction conversions (6.NS.1.d)
-  if (titleLower.includes('convert decimals to fractions') ||
-      titleLower.includes('convert fractions to decimals') ||
-      explanationLower.includes('decimal') && explanationLower.includes('fraction')) {
-    console.log('✅ PHASE 2: Detected decimal-fraction conversion lesson');
-    console.log('🔍 PHASE 2: Analyzing explanation for visual components:', explanationLower);
-    
-    // Analyze explanation to determine component type
-    if (explanationLower.includes('grid') || explanationLower.includes('shaded') || 
-        explanationLower.includes('squares') || explanationLower.includes('visual model')) {
-      console.log('✅ PHASE 2: Found visual elements in explanation - using grid component');
-      return {
-        type: 'grid-percentage',
-        requiresInteraction: true,
-        componentType: 'grid'
-      };
-    } else if (explanationLower.includes('number line') || explanationLower.includes('line')) {
-      console.log('✅ PHASE 2: Found number line elements in explanation - using number line component');
-      return {
-        type: 'real-world-context',
-        requiresInteraction: true,
-        componentType: 'number-line'
-      };
-    } else {
-      console.log('✅ PHASE 2: No visual elements found - using text input component');
-      return {
-        type: 'decimal-fraction-conversion',
         requiresInteraction: true,
         componentType: 'text-input'
       };
