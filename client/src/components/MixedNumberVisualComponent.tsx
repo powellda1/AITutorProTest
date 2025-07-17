@@ -41,15 +41,31 @@ export default function MixedNumberVisualComponent({
   
   const universalPrompt = generateUniversalPrompt(promptConfig);
 
-  // Parse improper fraction
+  // Parse mixed number or improper fraction
   const parseFraction = (fraction: string) => {
-    const match = fraction.match(/(\d+)\/(\d+)/);
-    if (match) {
+    // Check if it's a mixed number (e.g., "4 1/3")
+    const mixedMatch = fraction.match(/(\d+) (\d+)\/(\d+)/);
+    if (mixedMatch) {
+      const whole = parseInt(mixedMatch[1]);
+      const num = parseInt(mixedMatch[2]);
+      const den = parseInt(mixedMatch[3]);
+      // Convert to improper fraction for visualization
+      const improperNumerator = (whole * den) + num;
       return {
-        numerator: parseInt(match[1]),
-        denominator: parseInt(match[2])
+        numerator: improperNumerator,
+        denominator: den
       };
     }
+    
+    // Check if it's just an improper fraction (e.g., "11/4")
+    const fractionMatch = fraction.match(/(\d+)\/(\d+)/);
+    if (fractionMatch) {
+      return {
+        numerator: parseInt(fractionMatch[1]),
+        denominator: parseInt(fractionMatch[2])
+      };
+    }
+    
     return { numerator: 11, denominator: 4 }; // fallback
   };
 
@@ -63,8 +79,8 @@ export default function MixedNumberVisualComponent({
         id: i,
         isGrouped: false,
         groupId: null,
-        x: 50 + (i % 6) * 60, // arrange in rows of 6
-        y: 50 + Math.floor(i / 6) * 60
+        x: 10 + (i % 6) * 50, // arrange in rows of 6 with tighter spacing
+        y: 10 + Math.floor(i / 6) * 40 // smaller row spacing
       });
     }
     setDragItems(items);
@@ -163,8 +179,8 @@ export default function MixedNumberVisualComponent({
       <div className="bg-gray-200 rounded-lg p-4 mb-6 min-h-[300px] relative">
         {/* Ungrouped items */}
         <div className="mb-4">
-          <h3 className="text-gray-800 font-semibold mb-2">Items to group ({numerator} total):</h3>
-          <div className="relative min-h-[120px]">
+          <h3 className="text-gray-800 font-semibold mb-1">Items to group ({numerator} total):</h3>
+          <div className="relative min-h-[80px]">
             {dragItems.filter(item => !item.isGrouped).map(item => (
               <div
                 key={item.id}
@@ -180,7 +196,7 @@ export default function MixedNumberVisualComponent({
         </div>
 
         {/* Group areas */}
-        <div>
+        <div className="mt-4">
           <h3 className="text-gray-800 font-semibold mb-2">Group areas (groups of {denominator}):</h3>
           <div className="flex flex-wrap gap-4">
             {[0, 1, 2, 3, 4].map(groupId => (
