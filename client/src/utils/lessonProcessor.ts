@@ -244,11 +244,32 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
       explanationLower.includes('simplify fractions') ||
       explanationLower.includes('greatest common factor')) {
     console.log('✅ PHASE 2: Detected fraction simplification lesson');
-    return {
-      type: 'fraction-simplification',
-      requiresInteraction: true,
-      componentType: 'text-input'
-    };
+    console.log('🔍 PHASE 2: Analyzing explanation for visual components:', explanationLower);
+    
+    // Analyze explanation to determine component type
+    if (explanationLower.includes('grid') || explanationLower.includes('shaded') || 
+        explanationLower.includes('squares') || explanationLower.includes('visual model')) {
+      console.log('✅ PHASE 2: Found visual elements in explanation - using grid component');
+      return {
+        type: 'grid-percentage',
+        requiresInteraction: true,
+        componentType: 'grid'
+      };
+    } else if (explanationLower.includes('number line') || explanationLower.includes('line')) {
+      console.log('✅ PHASE 2: Found number line elements in explanation - using number line component');
+      return {
+        type: 'real-world-context',
+        requiresInteraction: true,
+        componentType: 'number-line'
+      };
+    } else {
+      console.log('✅ PHASE 2: No visual elements found - using text input component');
+      return {
+        type: 'fraction-simplification',
+        requiresInteraction: true,
+        componentType: 'text-input'
+      };
+    }
   }
   
   // Mixed number conversions (6.NS.1.d)
@@ -256,11 +277,32 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
       titleLower.includes('improper') || 
       titleLower.includes('mixed number')) {
     console.log('✅ PHASE 2: Detected mixed number conversion lesson');
-    return {
-      type: 'mixed-number-conversion',
-      requiresInteraction: true,
-      componentType: 'text-input'
-    };
+    console.log('🔍 PHASE 2: Analyzing explanation for visual components:', explanationLower);
+    
+    // Analyze explanation to determine component type
+    if (explanationLower.includes('grid') || explanationLower.includes('shaded') || 
+        explanationLower.includes('squares') || explanationLower.includes('visual model')) {
+      console.log('✅ PHASE 2: Found visual elements in explanation - using grid component');
+      return {
+        type: 'grid-percentage',
+        requiresInteraction: true,
+        componentType: 'grid'
+      };
+    } else if (explanationLower.includes('number line') || explanationLower.includes('line')) {
+      console.log('✅ PHASE 2: Found number line elements in explanation - using number line component');
+      return {
+        type: 'real-world-context',
+        requiresInteraction: true,
+        componentType: 'number-line'
+      };
+    } else {
+      console.log('✅ PHASE 2: No visual elements found - using text input component');
+      return {
+        type: 'mixed-number-conversion',
+        requiresInteraction: true,
+        componentType: 'text-input'
+      };
+    }
   }
   
   // Decimal-fraction conversions (6.NS.1.d)
@@ -268,11 +310,32 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
       titleLower.includes('convert fractions to decimals') ||
       explanationLower.includes('decimal') && explanationLower.includes('fraction')) {
     console.log('✅ PHASE 2: Detected decimal-fraction conversion lesson');
-    return {
-      type: 'decimal-fraction-conversion',
-      requiresInteraction: true,
-      componentType: 'text-input'
-    };
+    console.log('🔍 PHASE 2: Analyzing explanation for visual components:', explanationLower);
+    
+    // Analyze explanation to determine component type
+    if (explanationLower.includes('grid') || explanationLower.includes('shaded') || 
+        explanationLower.includes('squares') || explanationLower.includes('visual model')) {
+      console.log('✅ PHASE 2: Found visual elements in explanation - using grid component');
+      return {
+        type: 'grid-percentage',
+        requiresInteraction: true,
+        componentType: 'grid'
+      };
+    } else if (explanationLower.includes('number line') || explanationLower.includes('line')) {
+      console.log('✅ PHASE 2: Found number line elements in explanation - using number line component');
+      return {
+        type: 'real-world-context',
+        requiresInteraction: true,
+        componentType: 'number-line'
+      };
+    } else {
+      console.log('✅ PHASE 2: No visual elements found - using text input component');
+      return {
+        type: 'decimal-fraction-conversion',
+        requiresInteraction: true,
+        componentType: 'text-input'
+      };
+    }
   }
   
   // Debug: Log when falling through to default
