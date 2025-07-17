@@ -45,6 +45,15 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
   
   console.log('🔍 analyzeLessonType called with:', { title, explanation, standardCode });
   
+  // Debug logging for 6.NS.1.d lessons specifically
+  if (titleLower.includes('convert decimals to fractions') || 
+      titleLower.includes('convert fractions to decimals') || 
+      titleLower.includes('convert between percents, fractions, and decimals') ||
+      titleLower.includes('word problem')) {
+    console.log('🔍 6.NS.1.d DEBUG: Processing lesson:', title);
+    console.log('🔍 6.NS.1.d DEBUG: titleLower:', titleLower);
+  }
+  
   // SPECIFIC DEBUG for "What percentage is illustrated?"
   if (title === "What percentage is illustrated?") {
     console.log('🚨 SPECIAL DEBUG: Processing "What percentage is illustrated?" lesson');
@@ -193,6 +202,7 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
   
   // Word problems with conversions (6.NS.1.d) - MORE SPECIFIC FIRST
   if (titleLower.includes('word problem') && (titleLower.includes('convert') || titleLower.includes('percent') || titleLower.includes('fraction') || titleLower.includes('decimal'))) {
+    console.log('🔍 MATCHED: conversion-word-problem pattern for:', title);
     return {
       type: 'conversion-word-problem',
       requiresInteraction: true,
@@ -206,6 +216,7 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
       titleLower.includes('convert between decimals and') ||
       titleLower.includes('convert between fractions and') ||
       (titleLower.includes('convert') && titleLower.includes('decimal') && titleLower.includes('fraction'))) {
+    console.log('🔍 MATCHED: decimal-fraction-conversion pattern for:', title);
     return {
       type: 'decimal-fraction-conversion',
       requiresInteraction: true,
