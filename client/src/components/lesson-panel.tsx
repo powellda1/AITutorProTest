@@ -66,6 +66,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
   const [aiHelpRequested, setAiHelpRequested] = useState<{[key: string]: boolean}>({});
   const [showAiHelpPopup, setShowAiHelpPopup] = useState(false);
   const [aiHelpData, setAiHelpData] = useState<{question: string; context: string} | null>(null);
+  const [aiResponseReceived, setAiResponseReceived] = useState(false);
   const [showAnimation, setShowAnimation] = useState<{[key: string]: boolean}>({});
   const [animationType, setAnimationType] = useState<{[key: string]: AnimationType}>({});
   const [correctAnswerCount, setCorrectAnswerCount] = useState<{[key: string]: number}>({});
@@ -168,6 +169,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
       
       setAiHelpData({ question: helpQuestion, context: helpContext });
       setShowAiHelpPopup(true);
+      setAiResponseReceived(false); // Reset response state for new request
       
       let prompt = '';
       
@@ -353,6 +355,23 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
         const problem = problemMatch ? problemMatch[1].trim() : 'What happens when you multiply by 3/4?';
         
         prompt = `A 6th grade student is working on scaling problems with fractions. They need to understand and justify their answer for: ${problem}. They have attempted this 3 times unsuccessfully. Make it clear and educational for a 6th grade student. Please provide a brief summary, the question, and a step-by-step explanation.`;
+      } else if (lesson?.title.includes('Convert between improper fractions and mixed numbers')) {
+        // 6.NS.1.d - Mixed number conversion
+        const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+        const mixedMatch = currentExample.match(/(\d+) (\d+)\/(\d+)/);
+        
+        let conversionText = '';
+        if (fractionMatch && mixedMatch) {
+          conversionText = `${fractionMatch[1]}/${fractionMatch[2]} to ${mixedMatch[1]} ${mixedMatch[2]}/${mixedMatch[3]}`;
+        } else if (fractionMatch) {
+          conversionText = `${fractionMatch[1]}/${fractionMatch[2]} to a mixed number`;
+        } else if (mixedMatch) {
+          conversionText = `${mixedMatch[1]} ${mixedMatch[2]}/${mixedMatch[3]} to an improper fraction`;
+        } else {
+          conversionText = 'between improper fractions and mixed numbers';
+        }
+        
+        prompt = `A 6th grade student is working on converting between improper fractions and mixed numbers using visual grouping models. They need to convert ${conversionText} using grouping strategies. They have attempted this 3 times unsuccessfully. Make it clear and educational for a 6th grade student. Please provide a brief summary, the question, and a step-by-step explanation.`;
       } else {
         // 6.NS.1.a - Percentage identification from shaded models
         const shadedMatch = currentExample.match(/(\d+)\s+shaded/);
@@ -375,6 +394,9 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
 
       if (response.ok) {
         const data = await response.json();
+        // Set response received state to true
+        setAiResponseReceived(true);
+        
         // Pass the AI response to the parent component
         if (onAiResponse) {
           // Extract the aiResponse from the data structure and format it properly
@@ -1912,7 +1934,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
         }}
         question={aiHelpData?.question || ''}
         context={aiHelpData?.context || ''}
-        hasResponse={false}
+        hasResponse={aiResponseReceived}
       />
     </div>
   );
