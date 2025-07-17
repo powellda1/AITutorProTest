@@ -148,6 +148,26 @@ Preferred communication style: Simple, everyday language.
 - Step 5: Verify with grep commands that all hardcoded references are eliminated
 - Step 6: Conduct application testing to verify both tabs working correctly
 
+## Future Tasks & Technical Debt
+
+### Database Architecture Cleanup (Priority: Medium)
+- **Task**: Implement Option 1 - Clean up unused database tables and legacy mapping code
+- **Details**: 
+  - Remove unused tables: `lessons`, `official_standards`, `sub_standards` (0 records each)
+  - Remove legacy mapping code from `loadCurriculumFromJson()` method in `server/storage.ts`
+  - Update schema to only include actively used tables: `content_areas`, `standards`, `sub_lessons`
+  - Clean up TypeScript types for removed tables
+  - Current active hierarchy: `content_areas` → `standards` → `sub_lessons` (works well)
+- **Reason**: Architectural inconsistency - tables exist but aren't populated or used by application
+- **Impact**: Simplified codebase, reduced confusion, cleaner database structure
+- **Status**: User approved but requested to defer implementation
+
+### Universal System Conversion (Priority: High)
+- **Task**: Continue systematic conversion of remaining 6.NS lessons to universal system
+- **Current Status**: 6.NS.1.a, 6.NS.1.b, 6.NS.1.c fully converted using 4-phase methodology
+- **Remaining**: 6.NS.1.d, 6.NS.1.e, 6.NS.2.a, 6.NS.2.b, 6.NS.2.c, 6.NS.3.a, 6.NS.3.b, 6.NS.3.c, 6.NS.3.d
+- **Methodology**: Use proven 4-phase approach documented in replit.md
+
 ## Changelog
 
 Changelog:
