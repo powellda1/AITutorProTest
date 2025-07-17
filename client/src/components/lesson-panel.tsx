@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import type { Lesson } from "@shared/schema";
-// REMOVED: InteractivePracticeRenderer - now using universal system components directly
+import { InteractivePracticeRenderer } from "./interactive-lesson";
 import SuccessAnimation, { type AnimationType } from "./SuccessAnimation";
 import NumberLineComponent from "./NumberLineComponent";
 import OrderingComponent from "./OrderingComponent";
