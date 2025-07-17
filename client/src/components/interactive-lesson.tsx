@@ -13,9 +13,6 @@ import PerfectSquareComponent from "./PerfectSquareComponent";
 import FractionOperationComponent from "./FractionOperationComponent";
 import ScalingComponent from "./ScalingComponent";
 import GridComponent from "./GridComponent";
-import FractionSimplificationComponent from "./FractionSimplificationComponent";
-import MixedNumberConversionComponent from "./MixedNumberConversionComponent";
-import DecimalFractionComponent from "./DecimalFractionComponent";
 import { generateUniversalCardHeader, generateUniversalComponentJSX, generateUniversalPrompt, UniversalPromptConfig, universalInputStyles, universalButtonStyles } from '../utils/universalRenderer';
 
 // StripComponent for strip model visualization
@@ -2218,53 +2215,6 @@ const InteractivePracticeRenderer = ({
               description={processedContent.interactiveText}
               onAnswer={handleAnswer}
               onRequestHelp={onRequestHelp || (() => {})}
-            />
-          </div>
-        );
-      }
-      
-      if (processedContent && processedContent.componentType === 'fraction-simplification') {
-        return (
-          <div className="text-center mb-4">
-            <FractionSimplificationComponent
-              key={`fraction-simplification-${actualLesson.id}-${subLessonIndex}`}
-              lesson={actualLesson}
-              promptText={processedContent.interactiveText}
-              correctAnswer={processedContent.correctAnswer as string}
-              onAnswer={handleAnswer}
-              onAdvanceExample={() => {}}
-            />
-          </div>
-        );
-      }
-      
-      if (processedContent && processedContent.componentType === 'mixed-number-conversion') {
-        return (
-          <div className="text-center mb-4">
-            <MixedNumberConversionComponent
-              key={`mixed-number-conversion-${actualLesson.id}-${subLessonIndex}`}
-              lesson={actualLesson}
-              promptText={processedContent.interactiveText}
-              correctAnswer={processedContent.correctAnswer as string}
-              onAnswer={handleAnswer}
-              onAdvanceExample={() => {}}
-            />
-          </div>
-        );
-      }
-      
-      if (processedContent && processedContent.componentType === 'fraction-to-decimal') {
-        return (
-          <div className="text-center mb-4">
-            <DecimalFractionComponent
-              key={`fraction-to-decimal-${actualLesson.id}-${subLessonIndex}`}
-              originalDecimal={processedContent.additionalData?.decimal || 0}
-              targetNumerator={processedContent.additionalData?.numerator || 0}
-              targetDenominator={processedContent.additionalData?.denominator || 1}
-              correctAnswer={processedContent.correctAnswer as string}
-              onAnswer={handleAnswer}
-              lesson={actualLesson}
-              promptText={processedContent.interactiveText}
             />
           </div>
         );

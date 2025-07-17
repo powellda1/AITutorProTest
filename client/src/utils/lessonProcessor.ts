@@ -3,7 +3,7 @@ import { NumberLineMode, NumberLineOrientation } from '../components/NumberLineC
 export interface ProcessedLessonContent {
   interactiveText: string;
   correctAnswer: number | string[] | string;
-  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'decimal-percent' | 'fraction-simplification' | 'mixed-number-conversion' | 'fraction-to-decimal';
+  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'decimal-percent';
   mode?: NumberLineMode;
   orientation?: NumberLineOrientation;
   range?: [number, number];
@@ -31,9 +31,9 @@ export interface ProcessedLessonContent {
 }
 
 export interface LessonAnalysis {
-  type: 'real-world-context' | 'point-identification' | 'plot-integers' | 'opposite-integers' | 'ordering-activity' | 'comparison-activity' | 'word-problem' | 'exponent-expression' | 'fraction-operation' | 'scaling-activity' | 'perfect-square' | 'grid-percentage' | 'strip-model' | 'decimal-percent-conversion' | 'fraction-simplification' | 'mixed-number-conversion' | 'fraction-to-decimal' | 'default';
+  type: 'real-world-context' | 'point-identification' | 'plot-integers' | 'opposite-integers' | 'ordering-activity' | 'comparison-activity' | 'word-problem' | 'exponent-expression' | 'fraction-operation' | 'scaling-activity' | 'perfect-square' | 'grid-percentage' | 'strip-model' | 'decimal-percent-conversion' | 'default';
   requiresInteraction: boolean;
-  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'strip' | 'decimal-percent' | 'fraction-simplification' | 'mixed-number-conversion' | 'fraction-to-decimal' | 'text-input' | 'default';
+  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'strip' | 'decimal-percent' | 'text-input' | 'default';
 }
 
 /**
@@ -45,15 +45,6 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
   
   console.log('🔍 analyzeLessonType called with:', { title, explanation, standardCode });
   
-  // Debug logging for 6.NS.1.d lessons specifically
-  if (titleLower.includes('convert decimals to fractions') || 
-      titleLower.includes('convert fractions to decimals') || 
-      titleLower.includes('convert between percents, fractions, and decimals') ||
-      titleLower.includes('word problem')) {
-    console.log('🔍 6.NS.1.d DEBUG: Processing lesson:', title);
-    console.log('🔍 6.NS.1.d DEBUG: titleLower:', titleLower);
-  }
-  
   // SPECIFIC DEBUG for "What percentage is illustrated?"
   if (title === "What percentage is illustrated?") {
     console.log('🚨 SPECIAL DEBUG: Processing "What percentage is illustrated?" lesson');
@@ -64,47 +55,6 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
   // Analyze content for visual models and interaction patterns
   
   // Use TITLE as primary indicator for more precise detection
-  
-  // 6.NS.1.d specific lessons - PRIORITIZE THESE FIRST
-  if (titleLower.includes('write fractions in lowest terms') || 
-      titleLower.includes('simplify fractions')) {
-    console.log('✅ analyzeLessonType: Detected FRACTION SIMPLIFICATION (lesson 1)');
-    return {
-      type: 'fraction-simplification',
-      requiresInteraction: true,
-      componentType: 'fraction-simplification'
-    };
-  }
-  
-  if (titleLower.includes('convert between improper fractions and mixed numbers') || 
-      titleLower.includes('mixed number')) {
-    console.log('✅ analyzeLessonType: Detected MIXED NUMBER CONVERSION (lesson 2)');
-    return {
-      type: 'mixed-number-conversion',
-      requiresInteraction: true,
-      componentType: 'mixed-number-conversion'
-    };
-  }
-  
-  if (titleLower.includes('convert fractions to decimals') || 
-      titleLower.includes('fraction to decimal')) {
-    console.log('✅ analyzeLessonType: Detected FRACTION TO DECIMAL (lesson 7)');
-    return {
-      type: 'fraction-to-decimal',
-      requiresInteraction: true,
-      componentType: 'fraction-to-decimal'
-    };
-  }
-  
-  if (titleLower.includes('convert decimals to fractions') || 
-      titleLower.includes('decimal to fraction')) {
-    console.log('✅ analyzeLessonType: Detected DECIMAL TO FRACTION (lesson 3)');
-    return {
-      type: 'decimal-fraction-conversion',
-      requiresInteraction: true,
-      componentType: 'decimal-fraction'
-    };
-  }
   
   // Grid-based activities - PRIORITIZE GRID DETECTION FIRST
   if (titleLower.includes('what percentage') || 
@@ -241,82 +191,7 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
     };
   }
   
-  // Word problems with conversions (6.NS.1.d) - MORE SPECIFIC FIRST
-  if (titleLower.includes('word problem') && (titleLower.includes('convert') || titleLower.includes('percent') || titleLower.includes('fraction') || titleLower.includes('decimal'))) {
-    console.log('🔍 MATCHED: conversion-word-problem pattern for:', title);
-    return {
-      type: 'conversion-word-problem',
-      requiresInteraction: true,
-      componentType: 'conversion-word-problem'
-    };
-  }
-  
-  // Fraction simplification (6.NS.1.d) - SPECIFIC PATTERN FOR LOWEST TERMS
-  if (titleLower.includes('write fractions in lowest terms') || 
-      titleLower.includes('lowest terms') || 
-      titleLower.includes('simplify fractions') ||
-      (titleLower.includes('simplify') && titleLower.includes('fraction'))) {
-    console.log('🔍 MATCHED: fraction-simplification pattern for:', title);
-    return {
-      type: 'fraction-simplification',
-      requiresInteraction: true,
-      componentType: 'fraction-simplification'
-    };
-  }
-  
-  // Mixed number conversion (6.NS.1.d) - SPECIFIC PATTERN FOR MIXED NUMBERS
-  if (titleLower.includes('convert between improper fractions and mixed numbers') || 
-      titleLower.includes('mixed numbers') || 
-      titleLower.includes('improper fractions') ||
-      (titleLower.includes('convert') && (titleLower.includes('mixed') || titleLower.includes('improper')))) {
-    console.log('🔍 MATCHED: mixed-number-conversion pattern for:', title);
-    return {
-      type: 'mixed-number-conversion',
-      requiresInteraction: true,
-      componentType: 'mixed-number-conversion'
-    };
-  }
-  
-  // Decimal-fraction conversion (6.NS.1.d) - SPECIFIC PATTERN FOR DECIMAL TO FRACTION
-  if (titleLower.includes('convert fractions to decimals') || 
-      titleLower.includes('fractions to decimals') || 
-      titleLower.includes('decimal to fraction') ||
-      (titleLower.includes('convert') && titleLower.includes('fraction') && titleLower.includes('decimal'))) {
-    console.log('🔍 MATCHED: decimal-fraction-conversion pattern for:', title);
-    return {
-      type: 'decimal-fraction-conversion',
-      requiresInteraction: true,
-      componentType: 'decimal-fraction'
-    };
-  }
-  
-  // Mixed number conversion (6.NS.1.d) - SPECIFIC PATTERN FOR MIXED NUMBERS
-  if (titleLower.includes('convert between improper fractions and mixed numbers') ||
-      titleLower.includes('improper fractions and mixed numbers') ||
-      (titleLower.includes('improper') && titleLower.includes('mixed'))) {
-    console.log('🔍 MATCHED: mixed-number-conversion pattern for:', title);
-    return {
-      type: 'mixed-number-conversion',
-      requiresInteraction: true,
-      componentType: 'mixed-number-conversion'
-    };
-  }
-  
-  // Fraction conversion patterns (6.NS.1.d) - ALL CONVERSION TYPES
-  if (titleLower.includes('convert decimals to fractions') || 
-      titleLower.includes('convert fractions to decimals') ||
-      titleLower.includes('convert between decimals and') ||
-      titleLower.includes('convert between fractions and') ||
-      (titleLower.includes('convert') && titleLower.includes('decimal') && titleLower.includes('fraction'))) {
-    console.log('🔍 MATCHED: decimal-fraction-conversion pattern for:', title);
-    return {
-      type: 'decimal-fraction-conversion',
-      requiresInteraction: true,
-      componentType: 'decimal-fraction'
-    };
-  }
-  
-  // Word problem activities (6.NS.1.e) - GENERAL PATTERN LAST
+  // Word problem activities (6.NS.1.e)
   if (titleLower.includes('word problem') || (titleLower.includes('compare') && titleLower.includes('word problem'))) {
     return {
       type: 'word-problem',
@@ -324,7 +199,7 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
       componentType: 'word-problem'
     };
   }
-
+  
   // Exponent expressions (6.NS.2.b)
   if (titleLower.includes('exponent') || explanationLower.includes('exponent') || explanationLower.includes('power')) {
     return {
@@ -429,21 +304,6 @@ export function processLessonContent(
       
     case 'decimal-percent-conversion':
       return processDecimalPercentConversion(originalExample);
-      
-    case 'decimal-fraction-conversion':
-      return processDecimalFractionConversion(originalExample);
-      
-    case 'fraction-simplification':
-      return processFractionSimplification(originalExample);
-      
-    case 'mixed-number-conversion':
-      return processMixedNumberConversion(originalExample);
-      
-    case 'conversion-word-problem':
-      return processConversionWordProblem(originalExample);
-      
-    case 'fraction-to-decimal':
-      return processFractionToDecimal(originalExample);
       
     default:
       return null;
@@ -1078,370 +938,4 @@ function processDecimalPercentConversion(originalExample: string): ProcessedLess
       conversionType
     }
   };
-}
-
-/**
- * Process decimal-to-fraction conversion examples (e.g., "0.6 = 6/10 = 3/5")
- */
-function processDecimalFractionConversion(originalExample: string): ProcessedLessonContent {
-  console.log('🔍 processDecimalFractionConversion called with:', originalExample);
-  
-  // Enhanced regex patterns for decimal-to-fraction conversion formats
-  const patterns = [
-    /(\d+\.\d+) = (\d+)\/(\d+) = (\d+)\/(\d+)/i,  // 0.6 = 6/10 = 3/5
-    /(\d+\.\d+) = (\d+)\/(\d+)/i,  // 0.25 = 1/4
-    /(\d+)\/(\d+) = (\d+\.\d+)/i,  // 1/4 = 0.25
-    /(\d+\.\d+)/i,  // Just decimal (assume convert to fraction)
-    /(\d+)\/(\d+)/i  // Just fraction (assume convert to decimal)
-  ];
-  
-  let decimal: number = 0;
-  let finalNumerator: number = 0;
-  let finalDenominator: number = 0;
-  let matchFound = false;
-  
-  for (const pattern of patterns) {
-    const match = originalExample.match(pattern);
-    console.log('🔍 Testing pattern:', pattern, 'Result:', match);
-    if (match) {
-      if (match[1] && match[4] && match[5]) {
-        // Full conversion: 0.6 = 6/10 = 3/5
-        decimal = parseFloat(match[1]);
-        finalNumerator = parseInt(match[4]);
-        finalDenominator = parseInt(match[5]);
-      } else if (match[1] && match[2] && match[3]) {
-        // Simple conversion: 0.25 = 1/4 or 1/4 = 0.25
-        if (match[1].includes('.')) {
-          decimal = parseFloat(match[1]);
-          finalNumerator = parseInt(match[2]);
-          finalDenominator = parseInt(match[3]);
-        } else {
-          // Fraction to decimal
-          finalNumerator = parseInt(match[1]);
-          finalDenominator = parseInt(match[2]);
-          decimal = parseFloat(match[3]);
-        }
-      } else if (match[1] && match[1].includes('.')) {
-        // Just decimal - convert to fraction
-        decimal = parseFloat(match[1]);
-        // Convert decimal to fraction (simplified)
-        const decimalString = decimal.toString();
-        const decimalPlaces = decimalString.split('.')[1]?.length || 0;
-        const denominator = Math.pow(10, decimalPlaces);
-        const numerator = decimal * denominator;
-        
-        // Simplify fraction by finding GCD
-        const gcd = (a: number, b: number): number => b === 0 ? a : gcd(b, a % b);
-        const commonDivisor = gcd(numerator, denominator);
-        
-        finalNumerator = numerator / commonDivisor;
-        finalDenominator = denominator / commonDivisor;
-      } else if (match[1] && match[2]) {
-        // Just fraction - convert to decimal
-        finalNumerator = parseInt(match[1]);
-        finalDenominator = parseInt(match[2]);
-        decimal = finalNumerator / finalDenominator;
-      }
-      matchFound = true;
-      console.log('✅ Found conversion:', { decimal, finalNumerator, finalDenominator });
-      break;
-    }
-  }
-  
-  if (!matchFound) {
-    console.log('❌ No pattern matched for decimal-fraction conversion');
-    throw new Error(`Could not extract decimal/fraction from: ${originalExample}`);
-  }
-  
-  // The correct answer is the simplified fraction in "numerator/denominator" format
-  const correctAnswer = `${finalNumerator}/${finalDenominator}`;
-  
-  return {
-    interactiveText: '',
-    correctAnswer,
-    componentType: 'decimal-fraction',
-    additionalData: { 
-      originalExample,
-      decimal,
-      numerator: finalNumerator,
-      denominator: finalDenominator
-    }
-  };
-}
-
-/**
- * Process conversion word problems (e.g., "A shirt is discounted by 30%...")
- */
-function processConversionWordProblem(originalExample: string): ProcessedLessonContent {
-  console.log('🔍 processConversionWordProblem called with:', originalExample);
-  
-  // Enhanced regex patterns for conversion word problems
-  const patterns = [
-    /discount is ([\d.]+) × (\d+) = \$(\d+)/i,  // "discount is 0.3 × 20 = $6"
-    /(\d+)\/(\d+) of a class is (\d+) students.*?(\d+) students/i,  // "2/5 of a class is 10 students, class size is 25"
-    /([\d.]+) of a budget is \$(\d+).*?\$(\d+)/i,  // "0.15 of a budget is $30, total is $200"
-    /\$(\d+)/i,  // Simple dollar amount extraction
-    /(\d+) students/i,  // Simple student count extraction
-    /(\d+)/i  // Simple number extraction
-  ];
-  
-  let correctAnswer: string = 'unknown';
-  let matchFound = false;
-  
-  for (const pattern of patterns) {
-    const match = originalExample.match(pattern);
-    console.log('🔍 Testing pattern:', pattern, 'Result:', match);
-    if (match) {
-      if (match[3] && pattern.toString().includes('discount')) {
-        // Discount problem: answer is the discount amount
-        correctAnswer = match[3];
-      } else if (match[4] && pattern.toString().includes('class')) {
-        // Class size problem: answer is the total class size
-        correctAnswer = match[4];
-      } else if (match[3] && pattern.toString().includes('budget')) {
-        // Budget problem: answer is the total budget
-        correctAnswer = match[3];
-      } else if (match[1]) {
-        // Fallback: use first captured group
-        correctAnswer = match[1];
-      }
-      matchFound = true;
-      console.log('✅ Found answer:', correctAnswer);
-      break;
-    }
-  }
-  
-  if (!matchFound) {
-    console.log('❌ No pattern matched for conversion word problem');
-    throw new Error(`Could not extract answer from word problem: ${originalExample}`);
-  }
-  
-  return {
-    interactiveText: '',
-    correctAnswer,
-    componentType: 'conversion-word-problem',
-    additionalData: { 
-      originalExample
-    }
-  };
-}
-
-/**
- * Process fraction simplification examples (e.g., "Write 6/8 in lowest terms")
- */
-function processFractionSimplification(originalExample: string): ProcessedLessonContent {
-  console.log('🔍 processFractionSimplification called with:', originalExample);
-  
-  // Enhanced regex patterns for fraction simplification
-  const patterns = [
-    /(\d+)\/(\d+).*?lowest terms.*?(\d+)\/(\d+)/i,  // "6/8 in lowest terms is 3/4"
-    /(\d+)\/(\d+).*?simplified.*?(\d+)\/(\d+)/i,    // "6/8 simplified is 3/4"
-    /(\d+)\/(\d+).*?equals.*?(\d+)\/(\d+)/i,        // "6/8 equals 3/4"
-    /(\d+)\/(\d+).*?=.*?(\d+)\/(\d+)/i,             // "6/8 = 3/4"
-    /(\d+)\/(\d+).*?(\d+)\/(\d+)/i,                 // "6/8 ... 3/4"
-    /(\d+)\/(\d+)/i                                 // Simple fraction extraction
-  ];
-  
-  let numerator: number = 0;
-  let denominator: number = 0;
-  let simplifiedNumerator: number = 0;
-  let simplifiedDenominator: number = 0;
-  let matchFound = false;
-  
-  for (const pattern of patterns) {
-    const match = originalExample.match(pattern);
-    console.log('🔍 Testing pattern:', pattern, 'Result:', match);
-    if (match) {
-      numerator = parseInt(match[1]);
-      denominator = parseInt(match[2]);
-      
-      if (match[3] && match[4]) {
-        // Answer is provided in the example
-        simplifiedNumerator = parseInt(match[3]);
-        simplifiedDenominator = parseInt(match[4]);
-      } else {
-        // Calculate the GCD and simplify
-        const gcd = findGCD(numerator, denominator);
-        simplifiedNumerator = numerator / gcd;
-        simplifiedDenominator = denominator / gcd;
-      }
-      
-      matchFound = true;
-      console.log('✅ Found fraction:', { numerator, denominator, simplifiedNumerator, simplifiedDenominator });
-      break;
-    }
-  }
-  
-  if (!matchFound) {
-    console.log('❌ No pattern matched for fraction simplification');
-    throw new Error(`Could not extract fraction from: ${originalExample}`);
-  }
-  
-  // The correct answer is the simplified fraction in "numerator/denominator" format
-  const correctAnswer = `${simplifiedNumerator}/${simplifiedDenominator}`;
-  
-  return {
-    interactiveText: '',
-    correctAnswer,
-    componentType: 'fraction-simplification',
-    additionalData: { 
-      originalExample,
-      originalNumerator: numerator,
-      originalDenominator: denominator,
-      simplifiedNumerator,
-      simplifiedDenominator
-    }
-  };
-}
-
-/**
- * Process mixed number conversion examples (e.g., "Convert 7/3 to a mixed number")
- */
-function processMixedNumberConversion(originalExample: string): ProcessedLessonContent {
-  console.log('🔍 processMixedNumberConversion called with:', originalExample);
-  
-  // Enhanced regex patterns for mixed number conversion
-  const patterns = [
-    // Improper to mixed: "7/3 = 2 1/3"
-    /(\d+)\/(\d+).*?=.*?(\d+)\s+(\d+)\/(\d+)/i,
-    // Mixed to improper: "2 1/3 = 7/3"
-    /(\d+)\s+(\d+)\/(\d+).*?=.*?(\d+)\/(\d+)/i,
-    // Convert improper fraction: "Convert 7/3 to mixed"
-    /convert\s+(\d+)\/(\d+)/i,
-    // Convert mixed number: "Convert 2 1/3 to improper"
-    /convert\s+(\d+)\s+(\d+)\/(\d+)/i,
-    // Simple patterns
-    /(\d+)\/(\d+)/i,
-    /(\d+)\s+(\d+)\/(\d+)/i
-  ];
-  
-  let correctAnswer: string = '';
-  let matchFound = false;
-  let originalFraction = '';
-  
-  for (const pattern of patterns) {
-    const match = originalExample.match(pattern);
-    console.log('🔍 Testing pattern:', pattern, 'Result:', match);
-    if (match) {
-      if (match[3] && match[4] && match[5]) {
-        // Mixed number result (improper to mixed)
-        correctAnswer = `${match[3]} ${match[4]}/${match[5]}`;
-        originalFraction = `${match[1]}/${match[2]}`;
-      } else if (match[4] && match[5]) {
-        // Improper fraction result (mixed to improper)
-        correctAnswer = `${match[4]}/${match[5]}`;
-        originalFraction = `${match[1]} ${match[2]}/${match[3]}`;
-      } else if (match[1] && match[2]) {
-        // Need to determine conversion type and calculate
-        const numerator = parseInt(match[1]);
-        const denominator = parseInt(match[2]);
-        
-        if (numerator > denominator) {
-          // Improper to mixed
-          const whole = Math.floor(numerator / denominator);
-          const remainder = numerator % denominator;
-          correctAnswer = `${whole} ${remainder}/${denominator}`;
-          originalFraction = `${numerator}/${denominator}`;
-        } else {
-          // This shouldn't happen for improper fractions
-          correctAnswer = `${numerator}/${denominator}`;
-          originalFraction = `${numerator}/${denominator}`;
-        }
-      } else if (match[1] && match[2] && match[3]) {
-        // Mixed number to improper
-        const whole = parseInt(match[1]);
-        const numerator = parseInt(match[2]);
-        const denominator = parseInt(match[3]);
-        const improperNumerator = (whole * denominator) + numerator;
-        correctAnswer = `${improperNumerator}/${denominator}`;
-        originalFraction = `${whole} ${numerator}/${denominator}`;
-      }
-      
-      matchFound = true;
-      console.log('✅ Found conversion:', { originalFraction, correctAnswer });
-      break;
-    }
-  }
-  
-  if (!matchFound) {
-    console.log('❌ No pattern matched for mixed number conversion');
-    throw new Error(`Could not extract mixed number conversion from: ${originalExample}`);
-  }
-  
-  return {
-    interactiveText: '',
-    correctAnswer,
-    componentType: 'mixed-number-conversion',
-    additionalData: { 
-      originalExample,
-      originalFraction
-    }
-  };
-}
-
-/**
- * Process fraction to decimal conversion examples (e.g., "3/4 = 0.75")
- */
-function processFractionToDecimal(originalExample: string): ProcessedLessonContent {
-  console.log('🔍 processFractionToDecimal called with:', originalExample);
-  
-  // Enhanced regex patterns for fraction to decimal conversion
-  const patterns = [
-    /(\d+)\/(\d+).*?=.*?(\d+\.\d+)/i,  // "3/4 = 0.75"
-    /(\d+)\/(\d+).*?(\d+\.\d+)/i,      // "3/4 equals 0.75"
-    /(\d+)\/(\d+)/i                    // Just fraction (calculate decimal)
-  ];
-  
-  let numerator: number = 0;
-  let denominator: number = 0;
-  let decimal: number = 0;
-  let matchFound = false;
-  
-  for (const pattern of patterns) {
-    const match = originalExample.match(pattern);
-    console.log('🔍 Testing pattern:', pattern, 'Result:', match);
-    if (match) {
-      numerator = parseInt(match[1]);
-      denominator = parseInt(match[2]);
-      
-      if (match[3]) {
-        // Decimal is provided in the example
-        decimal = parseFloat(match[3]);
-      } else {
-        // Calculate the decimal
-        decimal = numerator / denominator;
-      }
-      
-      matchFound = true;
-      console.log('✅ Found fraction to decimal:', { numerator, denominator, decimal });
-      break;
-    }
-  }
-  
-  if (!matchFound) {
-    console.log('❌ No pattern matched for fraction to decimal conversion');
-    throw new Error(`Could not extract fraction to decimal from: ${originalExample}`);
-  }
-  
-  // The correct answer is the decimal value as a string
-  const correctAnswer = decimal.toString();
-  
-  return {
-    interactiveText: '',
-    correctAnswer,
-    componentType: 'fraction-to-decimal',
-    additionalData: { 
-      originalExample,
-      numerator,
-      denominator,
-      decimal
-    }
-  };
-}
-
-/**
- * Helper function to find the greatest common divisor
- */
-function findGCD(a: number, b: number): number {
-  return b === 0 ? a : findGCD(b, a % b);
 }

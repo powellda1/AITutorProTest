@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import type { Lesson } from "@shared/schema";
-import { InteractivePracticeRenderer } from "./interactive-lesson";
+// REMOVED: InteractivePracticeRenderer - now using universal system components directly
 import SuccessAnimation, { type AnimationType } from "./SuccessAnimation";
 import NumberLineComponent from "./NumberLineComponent";
 import OrderingComponent from "./OrderingComponent";
@@ -13,10 +13,6 @@ import ScalingComponent from "./ScalingComponent";
 import GridComponent from "./GridComponent";
 import StripComponent from "./StripComponent";
 import { DecimalPercentConversion } from "./interactive-lesson";
-import DecimalFractionComponent from "./DecimalFractionComponent";
-import FractionSimplificationComponent from "./FractionSimplificationComponent";
-import MixedNumberConversionComponent from "./MixedNumberConversionComponent";
-import ConversionWordProblemComponent from "./ConversionWordProblemComponent";
 import { analyzeLessonType, processLessonContent } from "../utils/lessonProcessor";
 // Removed legacy theme imports - now using universal system
 import AiHelpPopup from "./AiHelpPopup";
@@ -447,14 +443,8 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
     // Cached lesson analysis complete
     
     // UNIVERSAL SYSTEM - Process lessons directly without InteractivePracticeRenderer
-    console.log('🔍 COMPREHENSIVE DEBUG - LESSON DETAILS:');
-    console.log('  - Lesson ID:', lesson.id);
-    console.log('  - Lesson Title:', lesson.title);
-    console.log('  - Lesson Explanation:', lesson.explanation);
-    console.log('  - Current Example:', currentExample);
-    console.log('  - Lesson Analysis:', lessonAnalysis);
-    console.log('  - requiresInteraction =', lessonAnalysis.requiresInteraction);
-    console.log('  - componentType =', lessonAnalysis.componentType);
+    console.log('🔍 DEBUG STEP 1: Lesson analysis for', lesson.title, ':', lessonAnalysis);
+    console.log('🔍 DEBUG STEP 1: requiresInteraction =', lessonAnalysis.requiresInteraction);
     console.log('🔍 DEBUG STEP 1: Will enter universal system?', lessonAnalysis.requiresInteraction);
     
     if (lessonAnalysis.requiresInteraction) {
@@ -680,162 +670,6 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
             />
           )}
           
-          {processedContent.componentType === 'decimal-fraction' && (
-            <DecimalFractionComponent
-              key={`decimal-fraction-${lesson.id}-${safeIndex}`}
-              originalDecimal={processedContent.additionalData?.decimal as number}
-              targetNumerator={processedContent.additionalData?.numerator as number}
-              targetDenominator={processedContent.additionalData?.denominator as number}
-              correctAnswer={processedContent.correctAnswer as string}
-              onAnswer={(answer) => {
-                const correctAnswer = processedContent.correctAnswer;
-                const isCorrect = answer.toString() === correctAnswer.toString();
-                
-                // UNIVERSAL SYSTEM: Use new universal answer handler
-                const inputKey = `lesson-${lesson.id}`;
-                const currentAttempts = attemptCounts[inputKey] || 0;
-                const correctCount = correctAnswerCount[inputKey] || 0;
-                
-                handleUniversalAnswer({
-                  lessonId: lesson.id,
-                  isCorrect,
-                  currentAttempts,
-                  correctCount,
-                  onSuccess: (animationType) => {
-                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
-                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
-                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
-                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
-                  },
-                  onError: (attemptMessage) => {
-                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
-                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
-                  },
-                  onAIHelp: (question, context) => {
-                    setAiHelpData({ question, context });
-                    setShowAiHelpPopup(true);
-                    requestAiHelp(lesson.id, correctAnswer);
-                  },
-                  onAdvanceExample: () => {
-                    // Advance to next example
-                    const nextIndex = currentIndex + 1;
-                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
-                    
-                    // Check if all examples are completed
-                    if (nextIndex >= examples.length) {
-                      // Set completion state for tab checkmarks
-                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
-                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
-                    } else {
-                      // Clear feedback for next example
-                      setShowFeedback(prev => {
-                        const newState = { ...prev };
-                        delete newState[inputKey];
-                        return newState;
-                      });
-                    }
-                    
-                    setShowAnimation(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                  },
-                  onResetLesson: () => {
-                    setShowFeedback(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                    setAttemptCounts(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                    setResetTrigger(prev => prev + 1);
-                  }
-                });
-              }}
-            />
-          )}
-          
-          {processedContent.componentType === 'conversion-word-problem' && (
-            <ConversionWordProblemComponent
-              key={`conversion-word-problem-${lesson.id}-${safeIndex}`}
-              problemText={processedContent.additionalData?.originalExample as string}
-              correctAnswer={processedContent.correctAnswer as string}
-              onAnswer={(answer) => {
-                const correctAnswer = processedContent.correctAnswer;
-                const isCorrect = answer.toString() === correctAnswer.toString();
-                
-                // UNIVERSAL SYSTEM: Use new universal answer handler
-                const inputKey = `lesson-${lesson.id}`;
-                const currentAttempts = attemptCounts[inputKey] || 0;
-                const correctCount = correctAnswerCount[inputKey] || 0;
-                
-                handleUniversalAnswer({
-                  lessonId: lesson.id,
-                  isCorrect,
-                  currentAttempts,
-                  correctCount,
-                  onSuccess: (animationType) => {
-                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
-                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
-                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
-                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
-                  },
-                  onError: (attemptMessage) => {
-                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
-                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
-                  },
-                  onAIHelp: (question, context) => {
-                    setAiHelpData({ question, context });
-                    setShowAiHelpPopup(true);
-                    requestAiHelp(lesson.id, correctAnswer);
-                  },
-                  onAdvanceExample: () => {
-                    // Advance to next example
-                    const nextIndex = currentIndex + 1;
-                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
-                    
-                    // Check if all examples are completed
-                    if (nextIndex >= examples.length) {
-                      // Set completion state for tab checkmarks
-                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
-                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
-                    } else {
-                      // Clear feedback for next example
-                      setShowFeedback(prev => {
-                        const newState = { ...prev };
-                        delete newState[inputKey];
-                        return newState;
-                      });
-                    }
-                    
-                    setShowAnimation(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                  },
-                  onResetLesson: () => {
-                    setShowFeedback(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                    setAttemptCounts(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                    setResetTrigger(prev => prev + 1);
-                  }
-                });
-              }}
-            />
-          )}
-          
           {processedContent.componentType === 'number-line' && (
             <NumberLineComponent
               key={`number-line-${lesson.id}-${safeIndex}`}
@@ -1027,186 +861,929 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
               {currentIndex + 1}/{examples.length}
             </span>
           </div>
-          
-          <div className="flex justify-center mt-2">
-            {examples.map((_, index) => (
-              <div
-                key={index}
-                className={`w-3 h-3 rounded-full mx-1 ${
-                  index < currentIndex
-                    ? 'bg-green-500'
-                    : index === currentIndex
-                    ? 'bg-orange-500'
-                    : 'bg-gray-400'
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Success animation */}
-          {showAnimation[`lesson-${lesson.id}`] && (
-            <div className="flex justify-center mt-4">
-              <SuccessAnimation 
-                type={animationType[`lesson-${lesson.id}`]} 
-                onComplete={() => {
-                  setShowAnimation(prev => {
-                    const newState = { ...prev };
-                    delete newState[`lesson-${lesson.id}`];
-                    return newState;
-                  });
-                }}
-              />
-            </div>
-          )}
-
-          {showFeedback[`lesson-${lesson.id}`] && showFeedback[`lesson-${lesson.id}`] !== 'completed' && (
-            <div className={`mt-4 p-3 rounded-lg ${
-              showFeedback[`lesson-${lesson.id}`] === 'correct' 
-                ? 'bg-green-800/20 border border-green-600 text-green-300' 
-                : 'bg-red-800/20 border border-red-600 text-red-300'
-            }`}>
-              {showFeedback[`lesson-${lesson.id}`]}
-            </div>
-          )}
-
-          {/* Completion message */}
-          {showFeedback[`lesson-${lesson.id}`] === 'completed' && (
-            <div className="mt-4 p-3 rounded-lg bg-blue-800/20 border border-blue-600 text-blue-300">
-              🎉 Lesson Completed! Great job!
-            </div>
-          )}
-
         </div>
+      );
+    }
+    
+    // Fall back to default display for non-interactive lessons
+    console.log('❌ DEBUG STEP 1: LESSON DID NOT ENTER UNIVERSAL SYSTEM:', lesson.title);
+    console.log('❌ DEBUG STEP 1: Falling back to legacy code paths - this should not happen for converted lessons');
+    console.log('🔍 LESSON PANEL: Checking lesson title:', lesson.title);
+    console.log('🔍 LESSON PANEL: Includes "Integers on number lines"?', lesson.title.includes('Integers on number lines'));
+    console.log('🔍 LESSON PANEL: Includes "Understanding integers"?', lesson.title.includes('Understanding integers'));
+    
+    if (lesson.title.includes('Integers on number lines') || lesson.title.includes('Understanding integers')) {
+      console.log('🔍 LESSON PANEL: About to call InteractivePracticeRenderer for lesson:', lesson.title);
+      // 6.NS.2.a - Use dynamic processing for understanding integers
+      return (
+        <InteractivePracticeRenderer
+          lesson={lesson}
+          currentExample={currentExample}
+          onAnswerSubmitted={(answer) => {
+            const correctAnswer = processedContent.correctAnswer;
+            const isCorrect = answer === correctAnswer;
+            
+            if (isCorrect) {
+              handleCorrectAnswer(lesson.id);
+            } else {
+              handleIncorrectAnswer(lesson.id);
+            }
+          }}
+        />
+      );
+    } else if (lesson.title.includes('Graph integers on horizontal and vertical number lines')) {
+      // 6.NS.2.a - Use dynamic processing for graphing integers
+      return (
+        <InteractivePracticeRenderer
+          lesson={lesson}
+          currentExample={currentExample}
+          onAnswerSubmitted={(answer) => {
+            const correctAnswer = processedContent.correctAnswer;
+            const isCorrect = answer === correctAnswer;
+            
+            if (isCorrect) {
+              handleCorrectAnswer(lesson.id);
+            } else {
+              handleIncorrectAnswer(lesson.id);
+            }
+          }}
+        />
+      );
+    } else if (lesson.title.includes('Understanding opposite integers')) {
+      // 6.NS.2.a - Use dynamic processing for opposite integers
+      return (
+        <InteractivePracticeRenderer
+          lesson={lesson}
+          currentExample={currentExample}
+          onAnswerSubmitted={(answer) => {
+            const correctAnswer = processedContent.correctAnswer;
+            const isCorrect = answer === correctAnswer;
+            
+            if (isCorrect) {
+              handleCorrectAnswer(lesson.id);
+            } else {
+              handleIncorrectAnswer(lesson.id);
+            }
+          }}
+        />
+      );
+
+
+
+    // 🔍 PHASE 2 DEBUG: Removed hardcoded conditional logic - now flows through universal system
+
+    } else if (explanation.includes('strip')) {
+      // Extract percentage from example for strip visualization
+      const match = currentExample.match(/(\d+)%/);
+      const percentage = match ? parseInt(match[1]) : 20;
+      const shadedParts = Math.round(percentage / 20); // Convert to 5-part strip
+      
+      return (
+        <div className="text-center mb-4">
+          <p className="text-green-100 mb-2">Look at this strip</p>
+          <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+            <div className="flex w-96 h-16 border-2 border-gray-400">
+              {Array.from({ length: 5 }, (_, i) => (
+                <div
+                  key={i}
+                  className={`flex-1 border-r-2 border-gray-300 ${
+                    i < shadedParts ? 'bg-blue-600' : 'bg-white'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+          <p className="text-green-100 text-sm mt-2">{shadedParts} out of 5 parts shaded ({percentage}%)</p>
+        </div>
+      );
+    } else if (lesson.title.includes('Write fractions in lowest terms') || lesson.title.includes('simplify')) {
+      // 6.NS.1.d - Fraction simplification visualization
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+      const simplifiedMatch = currentExample.match(/simplified to (\d+)\/(\d+)/);
+      
+      if (fractionMatch && simplifiedMatch) {
+        const original = `${fractionMatch[1]}/${fractionMatch[2]}`;
+        const simplified = `${simplifiedMatch[1]}/${simplifiedMatch[2]}`;
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Simplify this fraction to lowest terms</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-3xl font-bold text-gray-800">{original}</div>
+                  <div className="text-lg text-gray-600">↓</div>
+                  <div className="text-2xl text-blue-600 font-semibold">= ?</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Find the simplified form</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Convert between improper fractions and mixed numbers')) {
+      // 6.NS.1.d - Mixed number conversions
+      const improperMatch = currentExample.match(/(\d+)\/(\d+)/);
+      const mixedMatch = currentExample.match(/(\d+)\s+(\d+)\/(\d+)/);
+      
+      if (improperMatch || mixedMatch) {
+        const fromValue = improperMatch ? `${improperMatch[1]}/${improperMatch[2]}` : 
+                         mixedMatch ? `${mixedMatch[1]} ${mixedMatch[2]}/${mixedMatch[3]}` : '';
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Convert between improper fraction and mixed number</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{fromValue}</div>
+                  <div className="text-lg text-gray-600">⟷</div>
+                  <div className="text-2xl text-blue-600 font-semibold">= ?</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Convert to the other form</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Convert decimals to fractions') || lesson.title.includes('Convert fractions to decimals')) {
+      // 6.NS.1.d - Decimal/fraction conversions
+      const decimalMatch = currentExample.match(/(\d+\.\d+)/);
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+      
+      if (decimalMatch || fractionMatch) {
+        const fromValue = decimalMatch ? decimalMatch[1] : 
+                         fractionMatch ? `${fractionMatch[1]}/${fractionMatch[2]}` : '';
+        const conversionType = decimalMatch ? 'to a fraction' : 'to a decimal';
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Convert {conversionType}</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{fromValue}</div>
+                  <div className="text-lg text-gray-600">⟷</div>
+                  <div className="text-2xl text-blue-600 font-semibold">= ?</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Enter the equivalent value</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Convert between percents, fractions, and decimals')) {
+      // 6.NS.1.d - Triple conversions
+      const percentMatch = currentExample.match(/(\d+(?:\.\d+)?)%/);
+      const decimalMatch = currentExample.match(/(\d+\.\d+)/);
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+      
+      const values = [];
+      if (percentMatch) values.push(`${percentMatch[1]}%`);
+      if (decimalMatch) values.push(decimalMatch[1]);
+      if (fractionMatch) values.push(`${fractionMatch[1]}/${fractionMatch[2]}`);
+      
+      if (values.length >= 2) {
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Convert between percent, fraction, and decimal</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-3">
+                  <div className="flex justify-around items-center">
+                    <div className="text-lg font-semibold text-gray-800">{values[0]}</div>
+                    <div className="text-lg text-gray-600">=</div>
+                    <div className="text-lg font-semibold text-gray-800">{values[1]}</div>
+                    <div className="text-lg text-gray-600">=</div>
+                    <div className="text-lg text-blue-600 font-semibold">?</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Find the missing equivalent form</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('repeating decimals')) {
+      // 6.NS.1.d - Repeating decimals
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+      const decimalMatch = currentExample.match(/(\d+\.\d+\.\.\.)/);
+      
+      if (fractionMatch && decimalMatch) {
+        const fraction = `${fractionMatch[1]}/${fractionMatch[2]}`;
+        const repeatingDecimal = decimalMatch[1];
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Convert between fraction and repeating decimal</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{fraction}</div>
+                  <div className="text-lg text-gray-600">⟷</div>
+                  <div className="text-2xl text-blue-600 font-semibold">{repeatingDecimal}</div>
+                  <div className="text-sm text-gray-600">Notice the repeating pattern</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Identify the repeating decimal pattern</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Equivalent fractions')) {
+      // 6.NS.1.d - Equivalent fractions
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
+      const equivalentMatch = currentExample.match(/(\d+)\/(\d+).*=.*(\d+)\/(\d+)/);
+      
+      if (equivalentMatch) {
+        const original = `${equivalentMatch[1]}/${equivalentMatch[2]}`;
+        const equivalent = `${equivalentMatch[3]}/${equivalentMatch[4]}`;
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Find equivalent fractions</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{original}</div>
+                  <div className="text-lg text-gray-600">=</div>
+                  <div className="text-2xl text-blue-600 font-semibold">{equivalent}</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">These fractions are equivalent</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('mixed numbers')) {
+      // 6.NS.1.d - Mixed number decimals
+      const mixedMatch = currentExample.match(/(\d+)\s+(\d+)\/(\d+)/);
+      const decimalMatch = currentExample.match(/(\d+\.\d+)/);
+      
+      if (mixedMatch && decimalMatch) {
+        const mixed = `${mixedMatch[1]} ${mixedMatch[2]}/${mixedMatch[3]}`;
+        const decimal = decimalMatch[1];
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Convert between mixed number and decimal</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{mixed}</div>
+                  <div className="text-lg text-gray-600">⟷</div>
+                  <div className="text-2xl text-blue-600 font-semibold">{decimal}</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Convert between these forms</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Compare percents') || lesson.title.includes('Put a mix of') || lesson.title.includes('order')) {
+      // 6.NS.1.e - Use InteractivePracticeRenderer for comparison and ordering activities
+      return (
+        <InteractivePracticeRenderer
+          subLesson={lesson}
+          subLessonIndex={currentIndex}
+          onRequestHelp={(question, context) => {
+            // Show popup first, then make AI request
+            setAiHelpData({ question, context });
+            setShowAiHelpPopup(true);
+            
+            // Use the existing AI help request logic
+            requestAiHelp(lesson.id, processedContent.correctAnswer);
+          }}
+          onActivityComplete={(index) => {
+            const inputKey = `lesson-${lesson.id}`;
+            
+            // Check if this is the last example in the lesson
+            if (currentIndex >= examples.length - 1) {
+              // Mark lesson as completed only when all examples are done
+              setShowFeedback({...showFeedback, [inputKey]: 'completed'});
+            } else {
+              // Mark as correct and move to next example
+              setShowFeedback({...showFeedback, [inputKey]: 'correct'});
+              setCurrentExampleIndex({...currentExampleIndex, [lesson.id]: currentIndex + 1});
+            }
+          }}
+        />
+      );
+
+
+    } else if (lesson.title.includes('Understanding absolute value') || lesson.title.includes('Absolute value')) {
+      // 6.NS.2.d - Absolute value
+      const absoluteMatch = currentExample.match(/\|(-?\d+)\|/);
+      
+      if (absoluteMatch) {
+        const integer = parseInt(absoluteMatch[1]);
+        const absoluteValue = Math.abs(integer);
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Find the absolute value of {integer}</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">|{integer}| = ?</div>
+                  <div className="text-lg text-gray-600">Distance from zero:</div>
+                  <div className="text-2xl text-blue-600 font-semibold">{absoluteValue} units</div>
+                  {/* Number line showing distance */}
+                  <div className="mt-4">
+                    <div className="flex justify-center items-center space-x-1">
+                      {Array.from({ length: 11 }, (_, i) => {
+                        const value = i - 5;
+                        const isZero = value === 0;
+                        const isTarget = value === integer;
+                        return (
+                          <div key={i} className="flex flex-col items-center">
+                            <div className={`w-3 h-3 rounded-full ${
+                              isZero ? 'bg-green-500' : isTarget ? 'bg-red-500' : 'bg-gray-400'
+                            }`}></div>
+                            <div className="text-xs mt-1">{value}</div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className="mt-2 text-sm text-gray-600">
+                      <span className="text-green-600">■</span> Zero | 
+                      <span className="text-red-600">■</span> {integer}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Absolute value is always positive</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Compare integers')) {
+      // 6.NS.2.b/c - Integer comparison
+      const comparisonMatch = currentExample.match(/(-?\d+)\s*([<>=])\s*(-?\d+)/);
+      
+      if (comparisonMatch) {
+        const num1 = parseInt(comparisonMatch[1]);
+        const symbol = comparisonMatch[2];
+        const num2 = parseInt(comparisonMatch[3]);
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Compare the integers: {num1} ___ {num2}</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{num1} ___ {num2}</div>
+                  <div className="text-lg text-gray-600">Number line comparison:</div>
+                  {/* Number line showing comparison */}
+                  <div className="mt-4">
+                    <div className="flex justify-center items-center space-x-1">
+                      {Array.from({ length: 11 }, (_, i) => {
+                        const value = i - 5;
+                        const isNum1 = value === num1;
+                        const isNum2 = value === num2;
+                        return (
+                          <div key={i} className="flex flex-col items-center">
+                            <div className={`w-3 h-3 rounded-full ${
+                              isNum1 ? 'bg-blue-500' : isNum2 ? 'bg-red-500' : 'bg-gray-400'
+                            }`}></div>
+                            <div className="text-xs mt-1">{value}</div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className="mt-2 text-sm text-gray-600">
+                      <span className="text-blue-600">■</span> {num1} | 
+                      <span className="text-red-600">■</span> {num2}
+                    </div>
+                  </div>
+                  <div className="text-lg text-gray-600">
+                    {num1 < num2 ? `${num1} is left of ${num2}` : 
+                     num1 > num2 ? `${num1} is right of ${num2}` : 
+                     `${num1} is equal to ${num2}`}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Numbers to the right are greater</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Put integers in order')) {
+      // 6.NS.2.b - Ordering integers
+      const orderMatch = currentExample.match(/(-?\d+(?:,\s*-?\d+)*)/);
+      
+      if (orderMatch) {
+        const integers = orderMatch[1].split(',').map(n => parseInt(n.trim()));
+        const sortedIntegers = [...integers].sort((a, b) => a - b);
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Put integers in order from least to greatest</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-lg text-gray-600">Given:</div>
+                  <div className="text-2xl font-bold text-gray-800">{integers.join(', ')}</div>
+                  <div className="text-lg text-gray-600">↓</div>
+                  <div className="text-2xl text-blue-600 font-semibold">Ordered: {sortedIntegers.join(', ')}</div>
+                  {/* Number line showing ordering */}
+                  <div className="mt-4">
+                    <div className="flex justify-center items-center space-x-1">
+                      {Array.from({ length: 11 }, (_, i) => {
+                        const value = i - 5;
+                        const isInList = integers.includes(value);
+                        return (
+                          <div key={i} className="flex flex-col items-center">
+                            <div className={`w-3 h-3 rounded-full ${
+                              isInList ? 'bg-blue-500' : 'bg-gray-400'
+                            }`}></div>
+                            <div className="text-xs mt-1">{value}</div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Order from left to right on the number line</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Write multiplication expressions using exponents') || lesson.title.includes('exponents')) {
+      // 6.NS.2.b - Exponent expressions
+      const exponentMatch = currentExample.match(/(\d+)\^(\d+)/);
+      const baseMatch = currentExample.match(/(\d+)\s*×\s*(\d+)/g);
+      
+      if (exponentMatch || baseMatch) {
+        const base = exponentMatch ? exponentMatch[1] : '2';
+        const exponent = exponentMatch ? exponentMatch[2] : '3';
+        const expanded = baseMatch ? baseMatch.join(' × ') : '2 × 2 × 2';
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Write the multiplication expression using exponents</p>
+            <div className="interactive-card">
+              <div className="interactive-card-white">
+                <div className="text-center space-y-4">
+                  <div className="text-lg text-gray-600">Repeated multiplication:</div>
+                  <div className="text-2xl font-bold text-gray-800">{expanded}</div>
+                  <div className="text-lg text-gray-600">↓</div>
+                  <div className="text-2xl text-blue-600 font-semibold">Using exponents:</div>
+                  <div className="text-2xl text-blue-600 font-semibold">{base}^{exponent}</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Write as an exponential expression</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Multiply') && lesson.title.includes('mixed number') && lesson.title.includes('whole number')) {
+      // 6.NS.3.a - Mixed number multiplication with whole numbers
+      const mixedMatch = currentExample.match(/(\d+)\s+(\d+)\/(\d+)/);
+      const wholeMatch = currentExample.match(/×\s*(\d+)/);
+      
+      if (mixedMatch && wholeMatch) {
+        const wholePart = mixedMatch[1];
+        const numerator = mixedMatch[2];
+        const denominator = mixedMatch[3];
+        const multiplier = wholeMatch[1];
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Multiply mixed number by whole number</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{wholePart} {numerator}/{denominator} × {multiplier}</div>
+                  <div className="text-lg text-gray-600">Use area model or distribution</div>
+                  <div className="grid grid-cols-2 gap-4 mt-4">
+                    <div className="border-2 border-gray-400 p-2 rounded">
+                      <div className="text-sm text-gray-600">Whole part</div>
+                      <div className="text-lg font-semibold">{wholePart} × {multiplier}</div>
+                    </div>
+                    <div className="border-2 border-gray-400 p-2 rounded">
+                      <div className="text-sm text-gray-600">Fraction part</div>
+                      <div className="text-lg font-semibold">{numerator}/{denominator} × {multiplier}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Multiply each part separately</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Multiply') && lesson.title.includes('fraction') && lesson.title.includes('model')) {
+      // 6.NS.3.b/d - Fraction multiplication with models
+      const fractionMatch = currentExample.match(/(\d+)\/(\d+)\s*×\s*(\d+)\/(\d+)/);
+      
+      if (fractionMatch) {
+        const num1 = fractionMatch[1];
+        const den1 = fractionMatch[2];
+        const num2 = fractionMatch[3];
+        const den2 = fractionMatch[4];
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Multiply fractions using area model</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{num1}/{den1} × {num2}/{den2}</div>
+                  <div className="text-lg text-gray-600">Area Model</div>
+                  <div className="grid grid-cols-4 gap-1 w-32 h-32 mx-auto border-2 border-gray-400">
+                    {Array.from({ length: 16 }, (_, i) => {
+                      const row = Math.floor(i / 4);
+                      const col = i % 4;
+                      const isShaded = row < parseInt(num1) && col < parseInt(num2);
+                      return (
+                        <div
+                          key={i}
+                          className={`border border-gray-300 ${
+                            isShaded ? 'bg-blue-600' : 'bg-white'
+                          }`}
+                        />
+                      );
+                    })}
+                  </div>
+                  <div className="text-lg font-semibold text-blue-600">= {parseInt(num1) * parseInt(num2)}/{parseInt(den1) * parseInt(den2)}</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Count the shaded parts</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Divide') && lesson.title.includes('unit fraction') && lesson.title.includes('whole number')) {
+      // 6.NS.3.c - Division with unit fractions
+      const divisionMatch = currentExample.match(/(\d+)\s*÷\s*(\d+)\/(\d+)/);
+      
+      if (divisionMatch) {
+        const wholeNumber = divisionMatch[1];
+        const numerator = divisionMatch[2];
+        const denominator = divisionMatch[3];
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Divide whole number by unit fraction</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{wholeNumber} ÷ {numerator}/{denominator}</div>
+                  <div className="text-lg text-gray-600">Think: How many {numerator}/{denominator} fit into {wholeNumber}?</div>
+                  <div className="flex justify-center space-x-2">
+                    {Array.from({ length: parseInt(wholeNumber) }, (_, i) => (
+                      <div key={i} className="w-16 h-16 border-2 border-gray-400 bg-yellow-200 rounded">
+                        <div className="text-xs text-center pt-1">1 whole</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-lg font-semibold text-blue-600">= {wholeNumber} × {denominator}/{numerator}</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Use area model to visualize</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Write powers of ten with exponents') || lesson.title.includes('powers of ten')) {
+      // 6.NS.2.b - Powers of ten with exponents
+      const powerMatch = currentExample.match(/10\^(\d+)/);
+      const valueMatch = currentExample.match(/(\d+(?:,\d+)*)/);
+      
+      if (powerMatch || valueMatch) {
+        const exponent = powerMatch ? powerMatch[1] : '3';
+        const value = valueMatch ? valueMatch[1] : '1,000';
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Write powers of ten using exponents</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{value}</div>
+                  <div className="text-lg text-gray-600">⟷</div>
+                  <div className="text-2xl text-blue-600 font-semibold">10^{exponent}</div>
+                  <div className="text-sm text-gray-500">
+                    {exponent} zeros after 1
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Count the zeros to find the exponent</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Recognize perfect squares') || lesson.title.includes('perfect squares')) {
+      // 6.NS.2.c - Perfect squares
+      const squareMatch = currentExample.match(/(\d+)\^2/);
+      const resultMatch = currentExample.match(/=\s*(\d+)/);
+      
+      if (squareMatch || resultMatch) {
+        const base = squareMatch ? squareMatch[1] : '4';
+        const result = resultMatch ? resultMatch[1] : '16';
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Recognize perfect squares</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{base}^2</div>
+                  <div className="text-lg text-gray-600">= {base} × {base}</div>
+                  <div className="text-2xl text-blue-600 font-semibold">= {result}</div>
+                  <div className="grid grid-cols-4 gap-1 w-20 h-20 mx-auto mt-4">
+                    {Array.from({ length: 16 }, (_, i) => (
+                      <div
+                        key={i}
+                        className="bg-blue-600 border border-gray-300"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Perfect square forms a square shape</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Square numbers') || lesson.title.includes('square')) {
+      // 6.NS.2.d - Square numbers
+      const numberMatch = currentExample.match(/(\d+)/);
+      const squareMatch = currentExample.match(/(\d+)\^2/);
+      
+      if (numberMatch || squareMatch) {
+        const number = numberMatch ? numberMatch[1] : '5';
+        const square = squareMatch ? squareMatch[1] : '25';
+        
+        return (
+          <div className="text-center mb-4">
+            <p className="text-green-100 mb-2">Find the square of the number</p>
+            <div className="p-6 rounded-lg inline-block bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4 rounded-lg border-2 border-gray-400">
+                <div className="text-center space-y-4">
+                  <div className="text-2xl font-bold text-gray-800">{number}^2</div>
+                  <div className="text-lg text-gray-600">= {number} × {number}</div>
+                  <div className="text-2xl text-blue-600 font-semibold">= {square}</div>
+                </div>
+              </div>
+            </div>
+            <p className="text-green-100 text-sm mt-2">Multiply the number by itself</p>
+          </div>
+        );
+      }
+    } else if (lesson.title.includes('Multiply mixed numbers') || lesson.title.includes('Multiply fractions and whole numbers') || lesson.title.includes('Estimate products')) {
+      // 6.NS.3.b - Use InteractivePracticeRenderer for complex fraction operations
+      return (
+        <InteractivePracticeRenderer
+          subLesson={lesson}
+          subLessonIndex={currentIndex}
+          onRequestHelp={(question, context) => {
+            setAiHelpData({ question, context });
+            setShowAiHelpPopup(true);
+            requestAiHelp(lesson.id, processedContent.correctAnswer);
+          }}
+          onActivityComplete={(index) => {
+            const inputKey = `lesson-${lesson.id}`;
+            setShowFeedback({...showFeedback, [inputKey]: 'completed'});
+            if (currentIndex < examples.length - 1) {
+              setCurrentExampleIndex({...currentExampleIndex, [lesson.id]: currentIndex + 1});
+            }
+          }}
+        />
+      );
+    } else if (lesson.title.includes('Scaling') || lesson.title.includes('justify your answer')) {
+      // 6.NS.3.d - Use InteractivePracticeRenderer for scaling problems
+      return (
+        <InteractivePracticeRenderer
+          subLesson={lesson}
+          subLessonIndex={currentIndex}
+          onRequestHelp={(question, context) => {
+            setAiHelpData({ question, context });
+            setShowAiHelpPopup(true);
+            requestAiHelp(lesson.id, processedContent.correctAnswer);
+          }}
+          onActivityComplete={(index) => {
+            const inputKey = `lesson-${lesson.id}`;
+            setShowFeedback({...showFeedback, [inputKey]: 'completed'});
+            if (currentIndex < examples.length - 1) {
+              setCurrentExampleIndex({...currentExampleIndex, [lesson.id]: currentIndex + 1});
+            }
+          }}
+        />
+      );
+    } else {
+      // REMOVED: Old fallback to InteractivePracticeRenderer
+      // All lessons should now use the universal system above
+      console.log('❌ LESSON PANEL: Lesson fell through to default case:', lesson.title);
+      return null;
+    }
+  };
+
+  return (
+    <div 
+      className="bg-gray-800 border-b border-gray-700 overflow-y-auto"
+      style={{ height: `${height}px` }}
+    >
+      <div className="p-6">
+        {/* Standard Code and Description */}
+        <div className="mb-6">
+          <h1 className="text-3xl font-bold text-white mb-2 text-shadow-lg">{selectedStandard}</h1>
+          <p className="text-accent-info mb-4 text-xl font-semibold text-shadow">
+            {standardDescription || "Standard description"}
+          </p>
+          <p className="text-gray-400 text-sm mb-4">
+            This sub-standard includes {lessons.length} sub-lessons
+          </p>
+          
+
+
+          {/* Progress */}
+          <div className="flex items-center mb-6">
+            <span className="text-gray-300 mr-3 font-bold">Progress:</span>
+            <div className="flex space-x-1 pl-[3px] pr-[3px] pt-[3px] pb-[3px]">
+              {/* Calculate total examples across all lessons - 3 dots per lesson */}
+              {(() => {
+                const totalExamples = lessons.length * 3; // 3 dots per lesson
+                
+                const totalCompleted = lessons.reduce((total, lesson) => {
+                  const lessonIndex = currentExampleIndex[lesson.id] || 0;
+                  const maxExamples = lesson.examples?.length || 3;
+                  const isCompleted = showFeedback[`lesson-${lesson.id}`] === 'completed';
+                  return total + (isCompleted ? maxExamples : lessonIndex);
+                }, 0);
+                
+                return [...Array(totalExamples)].map((_, i) => (
+                  <div key={i} className={`w-2 h-2 rounded-full ${i < totalCompleted ? 'bg-green-400' : 'bg-gray-400'}`}></div>
+                ));
+              })()}
+            </div>
+            <span className="text-gray-400 text-sm ml-3">
+              {lessons.reduce((total, lesson) => {
+                const lessonIndex = currentExampleIndex[lesson.id] || 0;
+                const maxExamples = lesson.examples?.length || 3;
+                const isCompleted = showFeedback[`lesson-${lesson.id}`] === 'completed';
+                return total + (isCompleted ? maxExamples : lessonIndex);
+              }, 0)} / {lessons.length * 3} completed
+            </span>
+          </div>
+        </div>
+
+        {/* Tab Navigation */}
+        <div className="mb-0">
+          <div className="flex border-b border-gray-600">
+            {lessons.map((lesson, index) => {
+              const tabLabel = TabLabelGenerator.getTabLabel(lesson, selectedStandard || '');
+              const isActive = selectedTabIndex === index;
+              const isCompleted = showFeedback[`lesson-${lesson.id}`] === 'completed';
+              
+              return (
+                <div key={lesson.id} className="relative group">
+                  <button
+                    onClick={() => handleTabSelect(index)}
+                    className={`px-6 py-3 text-sm font-medium transition-all duration-200 relative ${
+                      isActive 
+                        ? 'bg-gradient-to-b from-blue-600 to-blue-700 text-white border-l border-r border-t border-blue-500 rounded-t-2xl -mb-px shadow-lg' 
+                        : 'text-gray-300 hover:text-white bg-gray-700/50 border-l border-r border-t border-transparent hover:border-gray-600 rounded-t-2xl'
+                    } ${
+                      isCompleted && !isActive
+                        ? 'bg-green-600/80 text-white border-green-500' 
+                        : ''
+                    } ${
+                      isCompleted && isActive
+                        ? 'bg-gradient-to-b from-blue-600 to-blue-700 text-white border-l border-r border-t border-blue-500 shadow-lg' 
+                        : ''
+                    }`}
+                  >
+                    {/* Completed checkmark icon */}
+                    {isCompleted && (
+                      <span className="inline-flex items-center justify-center w-4 h-4 bg-green-500 text-white rounded-full mr-2 text-xs">
+                        ✓
+                      </span>
+                    )}
+                    {tabLabel}
+                  </button>
+                  
+                  {/* Tooltip */}
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 border border-gray-700">
+                    {TabLabelGenerator.generateTooltip(lesson)}
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Current Lesson Content */}
+        {currentLesson && (
+          <div className="mb-8">
+            {/* Lesson Card */}
+            <div className="bg-gray-800 border border-gray-600 border-t-0 rounded-b-lg p-6 shadow-xl">
+              {/* Enhanced color-coded badge based on lesson type */}
+              <div className="mb-4">
+                <span className={`text-white px-3 py-1 rounded text-sm font-medium ${
+                  currentLesson.title.includes('Convert') ? 'bg-blue-600' :
+                  currentLesson.title.includes('percentage') || currentLesson.title.includes('percent') ? 'bg-green-600' :
+                  currentLesson.title.includes('fraction') ? 'bg-purple-600' :
+                  currentLesson.title.includes('decimal') ? 'bg-orange-600' :
+                  currentLesson.title.includes('Write') || currentLesson.title.includes('simplify') ? 'bg-red-600' :
+                  currentLesson.title.includes('mixed number') ? 'bg-indigo-600' :
+                  currentLesson.title.includes('word problem') ? 'bg-yellow-600' :
+                  'bg-green-600'
+                }`}>
+                  {currentLesson.code}
+                </span>
+              </div>
+
+
+
+              {/* Explanation Card */}
+              <div className="mb-6">
+                <p className="text-definition mb-3 font-bold text-lg text-shadow-sm">Explanation:</p>
+                <div className="bg-gray-700/80 border border-gray-300/20 rounded-lg p-4 shadow-md">
+                  <p className="text-gray-200 leading-relaxed">{currentLesson.explanation || currentLesson.description}</p>
+                </div>
+              </div>
+
+              {/* Interactive Practice Card */}
+              <div className="mb-6">
+                <p className="text-instruction font-bold text-lg mb-3 text-shadow-sm">Interactive Practice:</p>
+                <div className="border border-gray-300/25 p-2 rounded-lg bg-gray-600/80 shadow-lg">
+                  <div className="bg-gray-700/90 border border-green-600/50 p-6 rounded-lg relative">
+
+                    <p className="text-white text-2xl font-bold text-center mb-4">
+                      {(() => {
+                        const config: UniversalPromptConfig = {
+                          type: currentLesson.title.includes('Convert between percents and decimals') ? 'decimal-percent-conversion' : 
+                                currentLesson.title.includes('percentage is illustrated') ? 'grid-percentage' : 
+                                currentLesson.title.includes('Benchmark percents') ? 'strip-percentage' : 
+                                currentLesson.title.includes('Convert fractions to percents') ? 'grid-percentage' : 
+                                'word-problem',
+                          standardCode: selectedStandard || 'default',
+                          lessonTitle: currentLesson.title,
+                          context: currentLesson
+                        };
+                        return generateUniversalPrompt(config);
+                      })()}
+                    </p>
+                    
+                    {/* Render interactive content for current lesson */}
+                    {renderInteractiveContent(currentLesson)}
+                    
+                    {/* Success Animation */}
+                    <SuccessAnimation
+                      isVisible={showAnimation[`lesson-${currentLesson.id}`] || false}
+                      animationType={animationType[`lesson-${currentLesson.id}`] || 'smiley'}
+                      onComplete={() => handleAnimationComplete(currentLesson.id)}
+                    />
+                    
+                    {/* REMOVED: Legacy input box - all lessons now use universal system interactive components */}
+                    
+                    {/* Show feedback if available - UNIVERSAL SYSTEM */}
+                    {showFeedback[`lesson-${currentLesson.id}`] && (
+                      <div className={
+                        showFeedback[`lesson-${currentLesson.id}`] === 'correct' ? universalFeedbackStyles.correct : 
+                        showFeedback[`lesson-${currentLesson.id}`] === 'completed' ? universalFeedbackStyles.completed : 
+                        universalFeedbackStyles.incorrect
+                      }>
+                        <p>
+                          {showFeedback[`lesson-${currentLesson.id}`] === 'correct' ? universalFeedbackMessages.correct : 
+                           showFeedback[`lesson-${currentLesson.id}`] === 'completed' ? universalFeedbackMessages.completed : 
+                           (() => {
+                             const formatted = formatUniversalFeedbackMessage(showFeedback[`lesson-${currentLesson.id}`]);
+                             return formatted.fullText ? formatted.fullText : (
+                               <>
+                                 {formatted.beforeText} 
+                                 <span className={formatted.attemptClasses}>{formatted.attemptText}</span>
+                               </>
+                             );
+                           })()}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
+      
+      {/* AI Help Popup */}
+      <AiHelpPopup
+        isOpen={showAiHelpPopup}
+        onClose={() => setShowAiHelpPopup(false)}
+        onHelpRequested={(question, context) => {
+          if (onAiResponse) {
+            onAiResponse({ question, context });
+          }
+        }}
+        question={aiHelpData?.question || ''}
+        context={aiHelpData?.context || ''}
+        hasResponse={false}
+      />
     </div>
   );
-};
-
-// Calculate progress data
-const progressData = useMemo(() => {
-  if (!selectedStandard || !lessons) return null;
-  
-  const totalLessons = lessons.length;
-  const completedLessons = lessons.filter(lesson => 
-    showFeedback[`lesson-${lesson.id}`] === 'completed'
-  ).length;
-  
-  return {
-    completed: completedLessons,
-    total: totalLessons
-  };
-}, [selectedStandard, lessons, showFeedback]);
-
-// Main component return
-return (
-  <div className="w-full bg-gray-800 text-white p-4 rounded-lg">
-    {/* Progress bar */}
-    {progressData && (
-      <div className="mb-4">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-sm font-medium">Progress</span>
-          <span className="text-sm text-gray-400">{progressData.completed}/{progressData.total} completed</span>
-        </div>
-        <div className="w-full bg-gray-700 rounded-full h-2">
-          <div 
-            className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all duration-300"
-            style={{ width: `${(progressData.completed / progressData.total) * 100}%` }}
-          />
-        </div>
-      </div>
-    )}
-
-    {/* Tab system */}
-    <div className="mb-4">
-      <div className="flex border-b border-gray-600 overflow-x-auto">
-        {lessons.map((lesson) => {
-          const isCompleted = showFeedback[`lesson-${lesson.id}`] === 'completed';
-          const isSelected = selectedLesson?.id === lesson.id;
-          const tabLabel = TabLabelGenerator.generateTabLabel(lesson.title);
-          
-          return (
-            <button
-              key={lesson.id}
-              onClick={() => setSelectedLesson(lesson)}
-              className={`px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors duration-200 flex-shrink-0 rounded-t-2xl ${
-                isSelected
-                  ? 'bg-gradient-to-b from-blue-600 to-blue-700 text-white border-b-2 border-blue-600 shadow-lg'
-                  : 'text-gray-300 hover:text-white hover:bg-gray-700'
-              }`}
-              title={lesson.title}
-            >
-              {tabLabel}
-              {isCompleted && (
-                <span className="ml-2 text-green-400">✓</span>
-              )}
-            </button>
-          );
-        })}
-      </div>
-    </div>
-
-    {/* Lesson content */}
-    {selectedLesson && (
-      <>
-        {renderUniversalLesson(selectedLesson)}
-        {/* Legacy routing for non-converted lessons */}
-        {selectedLesson.standardCode === '6.NS.1.e' && (
-          <InteractivePracticeRenderer
-            key={`legacy-${selectedLesson.id}`}
-            lesson={selectedLesson}
-            onAnswer={(answer) => {
-              const inputKey = `lesson-${selectedLesson.id}`;
-              const currentAttempts = attemptCounts[inputKey] || 0;
-              const correctCount = correctAnswerCount[inputKey] || 0;
-              
-              handleUniversalAnswer({
-                lessonId: selectedLesson.id,
-                isCorrect: answer.toString() === '1', // placeholder
-                currentAttempts,
-                correctCount,
-                onSuccess: (animationType) => {
-                  setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
-                  setAnimationType(prev => ({...prev, [inputKey]: animationType}));
-                  setShowAnimation(prev => ({...prev, [inputKey]: true}));
-                  setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
-                },
-                onError: (attemptMessage) => {
-                  setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
-                  setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
-                },
-                onAIHelp: (question, context) => {
-                  setAiHelpData({ question, context });
-                  setShowAiHelpPopup(true);
-                  requestAiHelp(selectedLesson.id, '1');
-                },
-                onAdvanceExample: () => {
-                  // Legacy advance example handling
-                },
-                onResetLesson: () => {
-                  setResetTrigger(prev => prev + 1);
-                }
-              });
-            }}
-            resetTrigger={resetTrigger}
-            standardCode={selectedStandard}
-            lessonTitle={selectedLesson.title}
-          />
-        )}
-        {/* Add more legacy routing cases here */}
-      </>
-    )}
-
-    {/* AI Help Popup */}
-    {showAiHelpPopup && (
-      <AiHelpPopup
-        isVisible={showAiHelpPopup}
-        onClose={() => setShowAiHelpPopup(false)}
-        aiHelpData={aiHelpData}
-      />
-    )}
-  </div>
-);
-};
-              lesson={lesson}
-              promptText={processedContent.interactiveText}
-              correctAnswer={processedContent.correctAnswer as string}
+}
