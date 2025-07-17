@@ -6,7 +6,7 @@ import React from 'react';
  */
 
 export interface UniversalPromptConfig {
-  type: 'grid-percentage' | 'strip-percentage' | 'number-line' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'ordering' | 'decimal-percent-conversion';
+  type: 'grid-percentage' | 'strip-percentage' | 'number-line' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'ordering' | 'decimal-percent-conversion' | 'mixed-number-visual';
   standardCode?: string;
   lessonTitle?: string;
   context?: any;
@@ -142,6 +142,14 @@ export function generateUniversalPrompt(config: UniversalPromptConfig): string {
       return 'Look at the visual fraction and write it in its simplest form';
     }
     return 'Simplify the fraction shown above';
+  }
+  
+  // Mixed number visual activities - shows interactive division model
+  if (type === 'mixed-number-visual') {
+    if (lessonTitle?.includes('Convert between improper fractions and mixed numbers')) {
+      return 'Use the interactive division model to convert between improper fractions and mixed numbers';
+    }
+    return 'Convert the improper fraction to a mixed number using the visual model';
   }
   
   // Default fallback

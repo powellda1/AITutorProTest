@@ -14,6 +14,7 @@ import FractionOperationComponent from "./FractionOperationComponent";
 import ScalingComponent from "./ScalingComponent";
 import GridComponent from "./GridComponent";
 import FractionVisualInputComponent from "./FractionVisualInputComponent";
+import MixedNumberVisualComponent from "./MixedNumberVisualComponent";
 import { generateUniversalCardHeader, generateUniversalComponentJSX, generateUniversalPrompt, UniversalPromptConfig, universalInputStyles, universalButtonStyles } from '../utils/universalRenderer';
 
 // StripComponent for strip model visualization
@@ -2227,6 +2228,22 @@ const InteractivePracticeRenderer = ({
             <FractionVisualInputComponent
               key={`fraction-visual-${actualLesson.id}-${subLessonIndex}`}
               originalFraction={processedContent.additionalData?.originalFraction || '1/1'}
+              correctAnswer={processedContent.correctAnswer as string}
+              promptText={processedContent.interactiveText}
+              onAnswer={handleAnswer}
+              standardCode={actualLesson.code}
+              lessonTitle={actualLesson.title}
+            />
+          </div>
+        );
+      }
+      
+      if (processedContent && processedContent.componentType === 'mixed-number-visual') {
+        return (
+          <div className="text-center mb-4">
+            <MixedNumberVisualComponent
+              key={`mixed-number-visual-${actualLesson.id}-${subLessonIndex}`}
+              originalFraction={processedContent.additionalData?.originalFraction || '11/4'}
               correctAnswer={processedContent.correctAnswer as string}
               promptText={processedContent.interactiveText}
               onAnswer={handleAnswer}
