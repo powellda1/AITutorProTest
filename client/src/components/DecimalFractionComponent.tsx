@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { generateUniversalCardHeader, generateUniversalComponentJSX } from '../utils/universalRenderer';
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface DecimalFractionComponentProps {
   originalDecimal: number;
@@ -16,17 +18,13 @@ export default function DecimalFractionComponent({
   targetNumerator,
   targetDenominator,
   correctAnswer,
-  onAnswer
+  onAnswer,
+  lesson,
+  promptText
 }: DecimalFractionComponentProps) {
-  const [numeratorInput, setNumeratorInput] = useState('');
-  const [denominatorInput, setDenominatorInput] = useState('');
+  const [userAnswer, setUserAnswer] = useState('');
 
   const handleSubmit = () => {
-    if (numeratorInput.trim() === '' || denominatorInput.trim() === '') {
-      return;
-    }
-
-    const userAnswer = `${numeratorInput}/${denominatorInput}`;
     onAnswer(userAnswer);
   };
 
@@ -37,48 +35,46 @@ export default function DecimalFractionComponent({
   };
 
   return (
-    <div className="p-6 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl shadow-2xl border border-gray-400/20">
-      {/* Universal Card Header */}
-      <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold text-white mb-4">Convert Decimal to Fraction</h3>
-        <div className="text-6xl font-bold text-blue-300 mb-4">
-          {originalDecimal}
+    <Card className="rounded-lg border border-green-600 text-card-foreground shadow-sm mb-4 bg-[#14532d4d]">
+      <CardHeader>
+        <CardTitle className="text-lg text-white">Convert Fraction to Decimal</CardTitle>
+        <CardDescription className="text-gray-300">
+          Convert {originalDecimal} to a fraction in lowest terms
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-col items-center space-y-6">
+          <div className="bg-gray-100 p-6 rounded-lg border-2 border-gray-300">
+            <div className="text-center">
+              <div className="text-6xl font-bold text-gray-800 mb-2">{originalDecimal}</div>
+              <div className="text-2xl text-gray-600 my-4">↓</div>
+              <div className="text-xl text-gray-600">Convert to fraction</div>
+            </div>
+          </div>
+
+          <div className="text-sm text-gray-300 text-center">
+            <p>Write as a fraction over a power of 10, then simplify to lowest terms</p>
+          </div>
+          
+          <div className="flex items-center space-x-2">
+            <Input
+              type="text"
+              value={userAnswer}
+              onChange={(e) => setUserAnswer(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Enter fraction (e.g., 1/4)"
+              className="w-32 px-3 py-2 border border-gray-600 rounded text-white bg-[#35373b] placeholder-gray-300"
+            />
+            <Button
+              onClick={handleSubmit}
+              disabled={!userAnswer.trim()}
+              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400"
+            >
+              Submit
+            </Button>
+          </div>
         </div>
-        <p className="text-xl text-gray-300">
-          Convert this decimal to its simplest fraction form
-        </p>
-      </div>
-
-      {/* Universal Input/Submit Section */}
-      <div className="flex items-center justify-center space-x-4 mb-6">
-        <input
-          type="text"
-          value={numeratorInput}
-          onChange={(e) => setNumeratorInput(e.target.value)}
-          onKeyPress={handleKeyPress}
-          placeholder="Numerator"
-          className="w-32 px-3 py-2 border border-gray-600 rounded text-white bg-[#35373b] placeholder-gray-300"
-        />
-        <div className="text-4xl font-bold text-white">/</div>
-        <input
-          type="text"
-          value={denominatorInput}
-          onChange={(e) => setDenominatorInput(e.target.value)}
-          onKeyPress={handleKeyPress}
-          placeholder="Denominator"
-          className="w-32 px-3 py-2 border border-gray-600 rounded text-white bg-[#35373b] placeholder-gray-300"
-        />
-      </div>
-
-      <div className="text-center mb-6">
-        <button
-          onClick={handleSubmit}
-          disabled={!numeratorInput.trim() || !denominatorInput.trim()}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400"
-        >
-          Submit Answer
-        </button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
