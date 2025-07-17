@@ -31,7 +31,7 @@ export interface ProcessedLessonContent {
 }
 
 export interface LessonAnalysis {
-  type: 'real-world-context' | 'point-identification' | 'plot-integers' | 'opposite-integers' | 'ordering-activity' | 'comparison-activity' | 'word-problem' | 'exponent-expression' | 'fraction-operation' | 'scaling-activity' | 'perfect-square' | 'grid-percentage' | 'strip-model' | 'decimal-percent-conversion' | 'default';
+  type: 'real-world-context' | 'point-identification' | 'plot-integers' | 'opposite-integers' | 'ordering-activity' | 'comparison-activity' | 'word-problem' | 'exponent-expression' | 'fraction-operation' | 'scaling-activity' | 'perfect-square' | 'grid-percentage' | 'strip-model' | 'decimal-percent-conversion' | 'fraction-simplification' | 'mixed-number-conversion' | 'decimal-fraction-conversion' | 'default';
   requiresInteraction: boolean;
   componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'strip' | 'decimal-percent' | 'text-input' | 'default';
 }
@@ -233,6 +233,45 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
       type: 'scaling-activity',
       requiresInteraction: true,
       componentType: 'scaling'
+    };
+  }
+  
+  // PHASE 2 STEP 1: Add 6.NS.1.d lesson patterns for universal system routing
+  
+  // Fraction simplification (6.NS.1.d)
+  if (titleLower.includes('write fractions in lowest terms') || 
+      titleLower.includes('simplify') || 
+      explanationLower.includes('simplify fractions') ||
+      explanationLower.includes('greatest common factor')) {
+    console.log('✅ PHASE 2: Detected fraction simplification lesson');
+    return {
+      type: 'fraction-simplification',
+      requiresInteraction: true,
+      componentType: 'text-input'
+    };
+  }
+  
+  // Mixed number conversions (6.NS.1.d)
+  if (titleLower.includes('convert between improper fractions and mixed numbers') ||
+      titleLower.includes('improper') || 
+      titleLower.includes('mixed number')) {
+    console.log('✅ PHASE 2: Detected mixed number conversion lesson');
+    return {
+      type: 'mixed-number-conversion',
+      requiresInteraction: true,
+      componentType: 'text-input'
+    };
+  }
+  
+  // Decimal-fraction conversions (6.NS.1.d)
+  if (titleLower.includes('convert decimals to fractions') ||
+      titleLower.includes('convert fractions to decimals') ||
+      explanationLower.includes('decimal') && explanationLower.includes('fraction')) {
+    console.log('✅ PHASE 2: Detected decimal-fraction conversion lesson');
+    return {
+      type: 'decimal-fraction-conversion',
+      requiresInteraction: true,
+      componentType: 'text-input'
     };
   }
   

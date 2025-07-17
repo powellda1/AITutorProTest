@@ -966,7 +966,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
     } else if (lesson.title.includes('Write fractions in lowest terms') || lesson.title.includes('simplify')) {
       // 6.NS.1.d - Fraction simplification
       console.log('🔍 PHASE 1 DEBUG: Entering 6.NS.1.d hardcoded simplification path for:', lesson.title);
-      console.log('🔍 PHASE 1 DEBUG: This should be using universal system instead of hardcoded visual logic'); visualization
+      console.log('🔍 PHASE 1 DEBUG: This should be using universal system instead of hardcoded visual logic');
       const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
       const simplifiedMatch = currentExample.match(/simplified to (\d+)\/(\d+)/);
       

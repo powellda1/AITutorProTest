@@ -1,0 +1,131 @@
+
+CurriculumTree: Standard clicked: 
+Object { id: 723, code: "6.NS.1.d", description: "Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3535, title: "Write fractions in lowest terms", code: "6-G.1", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", examples: (3) […], standardId: 723, order: 0 }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Write fractions in lowest terms", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", standardCode: "6.NS.1.d" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "default", requiresInteraction: false, componentType: "default" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = false Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? false Console.js:61:14
+❌ DEBUG STEP 1: LESSON DID NOT ENTER UNIVERSAL SYSTEM: Write fractions in lowest terms Console.js:61:14
+❌ DEBUG STEP 1: Falling back to legacy code paths - this should not happen for converted lessons Console.js:61:14
+🔍 LESSON PANEL: Checking lesson title: Write fractions in lowest terms Console.js:61:14
+🔍 LESSON PANEL: Includes "Integers on number lines"? false Console.js:61:14
+🔍 LESSON PANEL: Includes "Understanding integers"? false Console.js:61:14
+🔍 PHASE 1 DEBUG: Entering 6.NS.1.d hardcoded simplification path for: Write fractions in lowest terms Console.js:61:14
+🔍 PHASE 1 DEBUG: This should be using universal system instead of hardcoded visual logic Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Write fractions in lowest terms", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", standardCode: "6.NS.1.d" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "default", requiresInteraction: false, componentType: "default" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = false Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? false Console.js:61:14
+❌ DEBUG STEP 1: LESSON DID NOT ENTER UNIVERSAL SYSTEM: Write fractions in lowest terms Console.js:61:14
+❌ DEBUG STEP 1: Falling back to legacy code paths - this should not happen for converted lessons Console.js:61:14
+🔍 LESSON PANEL: Checking lesson title: Write fractions in lowest terms Console.js:61:14
+🔍 LESSON PANEL: Includes "Integers on number lines"? false Console.js:61:14
+🔍 LESSON PANEL: Includes "Understanding integers"? false Console.js:61:14
+🔍 PHASE 1 DEBUG: Entering 6.NS.1.d hardcoded simplification path for: Write fractions in lowest terms Console.js:61:14
+🔍 PHASE 1 DEBUG: This should be using universal system instead of hardcoded visual logic Console.js:61:14
+Uncaught ReferenceError: visualization is not defined
+    renderInteractiveContent lesson-panel.tsx:969
+    LessonPanel lesson-panel.tsx:1747
+    React 11
+    workLoop scheduler.development.js:266
+    flushWork scheduler.development.js:239
+    performWorkUntilDeadline scheduler.development.js:533
+lesson-panel.tsx:969:112
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Write fractions in lowest terms", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", standardCode: "6.NS.1.d" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "default", requiresInteraction: false, componentType: "default" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = false Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? false Console.js:61:14
+❌ DEBUG STEP 1: LESSON DID NOT ENTER UNIVERSAL SYSTEM: Write fractions in lowest terms Console.js:61:14
+❌ DEBUG STEP 1: Falling back to legacy code paths - this should not happen for converted lessons Console.js:61:14
+🔍 LESSON PANEL: Checking lesson title: Write fractions in lowest terms Console.js:61:14
+🔍 LESSON PANEL: Includes "Integers on number lines"? false Console.js:61:14
+🔍 LESSON PANEL: Includes "Understanding integers"? false Console.js:61:14
+🔍 PHASE 1 DEBUG: Entering 6.NS.1.d hardcoded simplification path for: Write fractions in lowest terms Console.js:61:14
+🔍 PHASE 1 DEBUG: This should be using universal system instead of hardcoded visual logic Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Write fractions in lowest terms", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", standardCode: "6.NS.1.d" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "default", requiresInteraction: false, componentType: "default" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = false Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? false Console.js:61:14
+❌ DEBUG STEP 1: LESSON DID NOT ENTER UNIVERSAL SYSTEM: Write fractions in lowest terms Console.js:61:14
+❌ DEBUG STEP 1: Falling back to legacy code paths - this should not happen for converted lessons Console.js:61:14
+🔍 LESSON PANEL: Checking lesson title: Write fractions in lowest terms Console.js:61:14
+🔍 LESSON PANEL: Includes "Integers on number lines"? false Console.js:61:14
+🔍 LESSON PANEL: Includes "Understanding integers"? false Console.js:61:14
+🔍 PHASE 1 DEBUG: Entering 6.NS.1.d hardcoded simplification path for: Write fractions in lowest terms Console.js:61:14
+🔍 PHASE 1 DEBUG: This should be using universal system instead of hardcoded visual logic Console.js:61:14
+Uncaught ReferenceError: visualization is not defined
+    renderInteractiveContent lesson-panel.tsx:969
+    LessonPanel lesson-panel.tsx:1747
+    React 12
+    workLoop scheduler.development.js:266
+    flushWork scheduler.development.js:239
+    performWorkUntilDeadline scheduler.development.js:533
+lesson-panel.tsx:969:112
+The above error occurred in the <LessonPanel> component:
+
+LessonPanel@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/components/lesson-panel.tsx:35:36
+div
+div
+div
+Home@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/src/pages/home.tsx:26:55
+Route@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=4873d7ee:323:13
+Switch@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=4873d7ee:379:14
+Router
+div
+Provider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-PLT6GTVM.js?v=4873d7ee:38:47
+TooltipProvider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=4873d7ee:63:7
+QueryClientProvider@https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=4873d7ee:2804:27
+App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. Console.js:61:14
+    o Console.js:61
+    React 12
+    workLoop scheduler.development.js:266
+    flushWork scheduler.development.js:239
+    performWorkUntilDeadline scheduler.development.js:533
+Uncaught ReferenceError: visualization is not defined
+    renderInteractiveContent lesson-panel.tsx:969
+    LessonPanel lesson-panel.tsx:1747
+    React 9
+    workLoop scheduler.development.js:266
+    flushWork scheduler.development.js:239
+    performWorkUntilDeadline scheduler.development.js:533
+lesson-panel.tsx:969:112
+
+1
+
+​
+
