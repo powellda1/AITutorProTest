@@ -29,26 +29,14 @@ function runFourStepAnalysis() {
       'No visual cues mentioned';
     console.log(`* Step 2 - Explanation text: "${explanation}" - ${visualCueText}`);
     
-    // Step 3: Learning objectives analysis
-    const titleLower = lesson.title.toLowerCase();
-    let objectiveType = 'mathematical processing';
+    // Step 3: Learning objectives analysis (using official 6.NS.1.d description)
+    const officialDescription = "Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.";
     
-    if (titleLower.includes('convert between')) {
-      objectiveType = 'bidirectional conversion skills';
-    } else if (titleLower.includes('convert')) {
-      objectiveType = 'conversion skills';
-    } else if (titleLower.includes('simplify') || titleLower.includes('lowest terms')) {
-      objectiveType = 'fraction simplification';
-    } else if (titleLower.includes('equivalent')) {
-      objectiveType = 'equivalent form recognition';
-    } else if (titleLower.includes('word problem')) {
-      objectiveType = 'real-world application';
-    }
-    
-    console.log(`* Step 3 - Learning objectives: ${objectiveType}`);
+    console.log(`* Step 3 - Learning objectives: ${officialDescription}`);
     
     // Step 4: Title analysis and component decision
     const title = lesson.title;
+    const titleLower = title.toLowerCase();
     let componentType = 'text-input'; // default
     let reasoning = 'text-based conversion results';
     
@@ -68,8 +56,8 @@ function runFourStepAnalysis() {
       componentType = 'fraction-visual-input';
       reasoning = 'fraction simplification with visual representation';
     } else if (titleLower.includes('equivalent')) {
-      componentType = 'text-input';
-      reasoning = 'multiple equivalent forms';
+      componentType = 'fraction-visual-input';
+      reasoning = 'equivalent fractions with visual models (official description requires pictorial models)';
     } else if (titleLower.includes('percents, fractions, and decimals') && explanation.includes('models like number lines or grids')) {
       componentType = 'conversion-grid';
       reasoning = 'triple conversion with visual models mentioned in explanation';
