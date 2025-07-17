@@ -81,6 +81,13 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
     setSelectedTabIndex(0);
   }, [lessons]);
 
+  // Reset AI response state when tab changes
+  useEffect(() => {
+    setAiResponseReceived(false);
+    setShowAiHelpPopup(false);
+    setAiHelpData(null);
+  }, [selectedTabIndex]);
+
   // REMOVED: Legacy handleCorrectAnswerSimple function - universal system handles this;
 
   // REMOVED: Legacy handleIncorrectAnswerSimple function - universal system handles this;

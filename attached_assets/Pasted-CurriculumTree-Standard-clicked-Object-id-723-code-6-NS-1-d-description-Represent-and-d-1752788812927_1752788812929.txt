@@ -1,0 +1,115 @@
+CurriculumTree: Standard clicked: 
+Object { id: 723, code: "6.NS.1.d", description: "Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+XHRGET
+https://8bc8f8cb-09cd-45ad-9734-0cee7467de77-00-20p5t0e2kepqc.kirk.replit.dev/api/lessons/standard/723
+[HTTP/1.1 304 Not Modified 378ms]
+
+CurriculumTree: Lessons for standard: 
+Array(9) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
+Console.js:61:14
+Home: handleStandardSelect called with: 6.NS.1.d Console.js:61:14
+Home: Lessons received: 
+Array(9) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
+Console.js:61:14
+Home: Current selectedLesson: null Console.js:61:14
+Home: Setting selectedLesson to: 
+Object { id: 3535, title: "Write fractions in lowest terms", code: "6-G.1", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", examples: (3) […], standardId: 723, order: 0 }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Write fractions in lowest terms", explanation: "Students simplify fractions by dividing the numerator and denominator by their greatest common factor to find equivalent forms.", standardCode: "6.NS.1.d", standardDescription: "Identify and describe the location of points on a number line and in the coordinate plane." }
+Console.js:61:14
+✅ UNIVERSAL: Detected fraction simplification lesson Console.js:61:14
+🔍 UNIVERSAL: Using examples-first analysis for visual component determination Console.js:61:14
+✅ UNIVERSAL: Fraction simplification requires visual fraction + text input Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "fraction-simplification", requiresInteraction: true, componentType: "fraction-visual-input" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Write fractions in lowest terms Console.js:61:14
+🔍 processFractionSimplification called with: 6/12 simplified to 1/2. Console.js:61:14
+🔍 Testing fraction pattern: 
+/(\d+)\/(\d+) simplified to (\d+)\/(\d+)/i
+ Result: 
+Array(5) [ "6/12 simplified to 1/2", "6", "12", "1", "2" ]
+Console.js:61:14
+✅ Found simplified fraction: 1/2 Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "1/2", componentType: "fraction-visual-input", additionalData: {…} }
+Console.js:61:14
+🔍 AI HELP DEBUG: Passing hasResponse to popup: false Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "fraction-simplification", requiresInteraction: true, componentType: "fraction-visual-input" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Write fractions in lowest terms Console.js:61:14
+🔍 processFractionSimplification called with: 6/12 simplified to 1/2. Console.js:61:14
+🔍 Testing fraction pattern: 
+/(\d+)\/(\d+) simplified to (\d+)\/(\d+)/i
+ Result: 
+Array(5) [ "6/12 simplified to 1/2", "6", "12", "1", "2" ]
+Console.js:61:14
+✅ Found simplified fraction: 1/2 Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "1/2", componentType: "fraction-visual-input", additionalData: {…} }
+Console.js:61:14
+🔍 AI HELP DEBUG: Passing hasResponse to popup: false Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "fraction-visual-input", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 AI POPUP DEBUG: hasResponse= false , isProcessing= false Console.js:61:14
+🔍 AI POPUP DEBUG: Popup closed, resetting isProcessing=false Console.js:61:14
+XHRPOST
+https://replit.com/ai/auth
+[HTTP/2 200  186ms]
+
+GET
+wss://production-ai-chat.replit.com/river?auth_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQzNjEyMjk0LCJ1c2VyVGltZUNyZWF0ZWQiOiIyMDI1LTA2LTA4VDExOjQ4OjIyLjY0OVoiLCJyZXBsSWQiOiI4YmM4ZjhjYi0wOWNkLTQ1YWQtOTczNC0wY2VlNzQ2N2RlNzciLCJtZW1iZXJzaGlwIjoiY29yZSIsImlzc3VlciI6Imh0dHBzOi8vcmVwbGl0LXdlYi1wcm9kLnAucmVwbGl0LmNvbSIsInJvbGVzIjpbImludGVudF9wZXJzb25hbCJdLCJjYW5Xcml0ZSI6dHJ1ZSwiaGFzUmVwbGl0QWlQcm8iOnRydWUsImZsYWdnaW5nQ29udGV4dCI6IntcImtleVwiOlwidXNlcjo0MzYxMjI5NFwiLFwia2luZFwiOlwib3duZXJcIixcInJvbGVzXCI6W1wiaW50ZW50X3BlcnNvbmFsXCJdLFwiaXNfdGVhbVwiOmZhbHNlLFwiaGFzX2FnZW50X2JpbGxpbmdfdjJcIjp0cnVlLFwibWVtYmVyc2hpcFwiOlwiY29yZVwifSIsImlhdCI6MTc1Mjc4ODc4MCwiZXhwIjoxNzUyNzkyMzgwfQ.DiiKyDXo_IQ4WMsrecZUTGkUXrplNahGEY_dEr7ywcwl9j-HGcdXkxbqZiiMVs0m_Z9366kt6qJPhwj15zz_bBmSwFclGk8SS-ofFRY-YYcoizl3foYjFnmeC0fYf1WSvd7lmpjcWe92M3hwzWLXU-Qj3XzZWEloFz5u3M4X0fd8vLXKpm_Nw1gUKe5AI9wzr0S_59sbZSBmPuWFs4DTo_0kGLKFFowPPEYPc_37L4Kxu4XvMTbwmC5qxuuwcePt6GemePvLOzob_-_N6dClDxmz8syoPnu0z7mHBqFkHA4X_-sOoxm0HDZdeWWFr9nCpPvJmMM513KMfIvGKpRdsg
+[HTTP/1.1 101 Switching Protocols 214ms]
+
+GET
+https://replit.com/public/icons/favicon-prompt-agent-working-192.png
+[HTTP/3 200  0ms]
+
+GET
+https://replit.com/public/icons/favicon-prompt-agent-working-192.png
+[HTTP/3 200  0ms]
+
+XHRPOST
+https://replit.com/graphql
+[HTTP/2 200  78ms]
+
+🔍 generateUniversalPrompt called with: 
+Object { type: "fraction-visual-input", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 HANDLE UNIVERSAL ANSWER: lessonId= 3535 , isCorrect= false , currentAttempts= 0 Console.js:61:14
+🔍 HANDLE UNIVERSAL ANSWER: Answer incorrect, newAttempts= 1 Console.js:61:14
+🔍 HANDLE UNIVERSAL ANSWER: Showing attempt counter: Not quite. Try again! (Attempt 1 of 3) Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Write fractions in lowest terms" }
+Console.js:61:14
+🔍 DEBUG STEP 1: Lesson analysis for Write fractions in lowest terms : 
+Object { type: "fraction-simplification", requiresInteraction: true, componentType: "fraction-visual-input" }
+Console.js:61:14
+🔍 DEBUG STEP 1: requiresInteraction = true Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Write fractions in lowest terms Console.js:61:14
+🔍 processFractionSimplification called with: 6/12 simplified to 1/2. Console.js:61:14
+🔍 Testing fraction pattern: 
+/(\d+)\/(\d+) simplified to (\d+)\/(\d+)/i
+ Result: 
+Array(5) [ "6/12 simplified to 1/2", "6", "12", "1", "2" ]
+Console.js:61:14
+✅ Found simplified fraction: 1/2 Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "1/2", componentType: "fraction-visual-input", additionalData: {…} }
+Console.js:61:14
+🔍 AI HELP DEBUG: Passing hasResponse to popup: false Console.js:61:14

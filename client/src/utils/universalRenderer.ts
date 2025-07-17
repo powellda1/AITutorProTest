@@ -372,6 +372,7 @@ export function handleUniversalAnswer(config: UniversalAnswerHandlerConfig): voi
     if (newAttempts >= 3) {
       // Trigger AI help after 3 attempts
       console.log('🔍 HANDLE UNIVERSAL ANSWER: 3 attempts reached, triggering AI help');
+      console.log('🔍 HANDLE UNIVERSAL ANSWER: Calling onAIHelp with question and context');
       const question = `How do I solve this problem?`;
       const context = `The student is working on lesson ${lessonId}. They need help after 3 unsuccessful attempts.`;
       onAIHelp(question, context);
