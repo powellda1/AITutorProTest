@@ -131,44 +131,41 @@ Preferred communication style: Simple, everyday language.
 **PHASE 0: PRE-CONVERSION ANALYSIS (INVESTIGATION ONLY)**
 **Phase Gate**: Must document ALL findings before proceeding to Phase 1
 
-**Step 1: Identify ALL sub-lesson types in target standard**
-- List every lesson type found in the standard
-- Document current functionality state of each
-- **Evidence Required**: Complete list with lesson IDs and types
+**Step 1: Lesson Inventory**
+- List all lessons in target standard with IDs and titles
+- **Evidence Required**: Complete lesson list
+- **Purpose**: Know the scope of work
 
-**Step 2: Identify ALL existing visual interactive components**
-- Catalog all visual components currently in use
-- Document which lessons use which components
-- **Evidence Required**: Component inventory with usage mapping
+**Step 2: Examples-First Analysis**
+- Analyze mathematical content in each lesson's examples
+- Examine explanation text for visual cues
+- Review description for learning objectives
+- Determine required component type based on content
+- **Evidence Required**: Component justification for each lesson
+- **Purpose**: Know what to build for each lesson
 
-**Step 3: Test each sub-lesson individually**
-- Verify current functionality of each lesson
-- Document working/broken/partially working status
-- **Evidence Required**: Test results for each lesson
+**Step 3: Current State Documentation**
+- Document existing functionality state (working/broken/partial)
+- Identify current error patterns and console logs
+- Note any lessons that already work correctly
+- **Evidence Required**: Test results and error documentation
+- **Purpose**: Understand what problems conversion will solve
 
-**Step 4: Document current state analysis**
-- Detailed state assessment for each sub-lesson
-- Identify specific failure points and error messages
-- **Evidence Required**: Console logs, error messages, behavioral observations
+**Step 4: Risk Assessment**
+- Identify lessons that share components with non-target lessons
+- Document dependencies that must be preserved
+- Note any complex state management that could break
+- **Evidence Required**: Dependency map and risk list
+- **Purpose**: Prevent breaking existing functionality
 
-**Step 5: Document existing visual components to preserve**
-- List all visual components that must remain functional during conversion
-- Identify integration points with universal system
-- **Evidence Required**: Visual component preservation list
-
-**Step 6: Prioritize conversion order**
-- Based on complexity and dependencies
-- Consider any user-specified lesson priorities
+**Step 5: Conversion Roadmap**
+- Prioritize based on complexity from examples-first analysis
+- Group lessons that use same component types
+- Account for any user-specified priorities
 - **Evidence Required**: Prioritized conversion plan
+- **Purpose**: Efficient conversion order
 
-**Step 7: EXAMPLES-FIRST ANALYSIS FOR EACH LESSON**
-- **Sub-Step 7a**: Analyze actual mathematical content in lesson examples
-- **Sub-Step 7b**: Examine explanation text for visual cues and instructional approach
-- **Sub-Step 7c**: Review description for learning objectives and mathematical context
-- **Sub-Step 7d**: Determine visual component based on mathematical content requirements
-- **Evidence Required**: Mathematical content analysis and component justification for each lesson
-
-**PHASE 0 COMPLETION CHECK**: All 6 steps documented with evidence. No code changes allowed.
+**PHASE 0 COMPLETION CHECK**: All 5 steps documented with evidence. No code changes allowed.
 
 **PHASE 1: DEBUG LOGGING AND ROOT CAUSE ANALYSIS (INVESTIGATION ONLY)**
 **Phase Gate**: Must identify exact root cause before proceeding to Phase 2
