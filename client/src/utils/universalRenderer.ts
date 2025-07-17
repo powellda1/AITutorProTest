@@ -5,6 +5,116 @@ import React from 'react';
  * This system ensures consistent styling and behavior across all lesson types
  */
 
+/**
+ * Universal AI Help System - Self-contained AI help for universal system lessons
+ */
+export interface UniversalAIHelpState {
+  showPopup: boolean;
+  isProcessing: boolean;
+  hasResponse: boolean;
+  question: string;
+  context: string;
+  responseData: any;
+}
+
+export interface UniversalAIHelpConfig {
+  lessonId: number;
+  lessonTitle: string;
+  currentExample: string;
+  sessionId: string;
+  onAiResponse: (data: any) => void;
+}
+
+/**
+ * Universal AI Help Request - Self-contained AI help system for universal lessons
+ * This function replicates the working requestAiHelp() logic for universal system lessons
+ */
+export async function requestUniversalAiHelp(
+  config: UniversalAIHelpConfig,
+  setShowAiHelpPopup: (show: boolean) => void,
+  setAiResponseReceived: (received: boolean) => void,
+  setAiHelpData: (data: any) => void
+): Promise<void> {
+  try {
+    console.log('🔍 UNIVERSAL AI HELP: Starting AI help request for lesson:', config.lessonId);
+    
+    // Clear parent component's AI response data first (same as working requestAiHelp)
+    if (config.onAiResponse) {
+      config.onAiResponse({ question: '', response: '', explanation: '', examples: [] });
+    }
+    
+    // Set up popup state (same as working requestAiHelp)
+    const helpQuestion = `How do I solve this ${config.lessonTitle || 'problem'}?`;
+    const helpContext = `The student is working on ${config.lessonTitle || 'this lesson'} and needs help with: ${config.currentExample}`;
+    
+    setAiHelpData({ question: helpQuestion, context: helpContext });
+    setShowAiHelpPopup(true);
+    setAiResponseReceived(false);
+    
+    console.log('🔍 UNIVERSAL AI HELP: Popup state set - showAiHelpPopup=true, aiResponseReceived=false');
+    
+    // Generate lesson-specific prompt (same logic as working requestAiHelp)
+    let prompt = '';
+    
+    if (config.lessonTitle.includes('Write fractions in lowest terms')) {
+      const fractionMatch = config.currentExample.match(/(\d+)\/(\d+)/);
+      const fraction = fractionMatch ? `${fractionMatch[1]}/${fractionMatch[2]}` : '6/12';
+      prompt = `A 6th grade student is working on writing fractions in the lowest terms. They are having trouble determining the lowest term for ${fraction}. They have attempted this 3 times unsuccessfully. Make it clear and educational for a 6th grade student. Please provide a brief summary, the question, and a step-by-step explanation.`;
+    } else if (config.lessonTitle.includes('Convert between improper fractions and mixed numbers')) {
+      const improperMatch = config.currentExample.match(/(\d+)\/(\d+)/);
+      const mixedMatch = config.currentExample.match(/(\d+)\s+(\d+)\/(\d+)/);
+      
+      if (improperMatch) {
+        const fraction = `${improperMatch[1]}/${improperMatch[2]}`;
+        prompt = `A 6th grade student is working on converting improper fractions to mixed numbers. They need to convert ${fraction} to a mixed number. They have attempted this 3 times unsuccessfully. Make it clear and educational for a 6th grade student. Please provide a brief summary, the question, and a step-by-step explanation.`;
+      } else if (mixedMatch) {
+        const mixed = `${mixedMatch[1]} ${mixedMatch[2]}/${mixedMatch[3]}`;
+        prompt = `A 6th grade student is working on converting mixed numbers to improper fractions. They need to convert ${mixed} to an improper fraction. They have attempted this 3 times unsuccessfully. Make it clear and educational for a 6th grade student. Please provide a brief summary, the question, and a step-by-step explanation.`;
+      }
+    } else {
+      // Generic prompt for other 6.NS.1.d lessons
+      prompt = `A 6th grade student is working on ${config.lessonTitle}. They need help with: ${config.currentExample}. They have attempted this 3 times unsuccessfully. Make it clear and educational for a 6th grade student. Please provide a brief summary, the question, and a step-by-step explanation.`;
+    }
+    
+    // Make API request (same as working requestAiHelp)
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: prompt,
+        sender: 'user',
+        sessionId: config.sessionId || `lesson-help-${config.lessonId}-${Date.now()}`
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log('🔍 UNIVERSAL AI HELP: API response received, setting aiResponseReceived=true');
+      
+      // Set response received state to true (same as working requestAiHelp)
+      setAiResponseReceived(true);
+      
+      // Pass the AI response to the parent component (same as working requestAiHelp)
+      if (config.onAiResponse) {
+        const aiResponseData = {
+          question: data.userMessage?.message || prompt,
+          response: data.aiMessage?.message || data.aiResponse?.response || '',
+          explanation: data.aiResponse?.explanation || '',
+          examples: data.aiResponse?.examples || []
+        };
+        console.log('🔍 UNIVERSAL AI HELP: Calling onAiResponse with data:', aiResponseData);
+        config.onAiResponse(aiResponseData);
+      }
+      
+      console.log('🔍 UNIVERSAL AI HELP: AI help requested successfully, popup should close via AiHelpPopup component');
+    }
+  } catch (error) {
+    console.error('Universal AI Help Error:', error);
+  }
+}
+
 export interface UniversalPromptConfig {
   type: 'grid-percentage' | 'strip-percentage' | 'number-line' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'ordering' | 'decimal-percent-conversion' | 'mixed-number-visual';
   standardCode?: string;
@@ -346,10 +456,21 @@ export interface UniversalAnswerHandlerConfig {
   onAIHelp: (question: string, context: string) => void;
   onAdvanceExample: () => void;
   onResetLesson: () => void;
+  // New universal AI help parameters
+  lessonTitle?: string;
+  currentExample?: string;
+  sessionId?: string;
+  onAiResponse?: (data: any) => void;
+  setShowAiHelpPopup?: (show: boolean) => void;
+  setAiResponseReceived?: (received: boolean) => void;
+  setAiHelpData?: (data: any) => void;
 }
 
 export function handleUniversalAnswer(config: UniversalAnswerHandlerConfig): void {
-  const { lessonId, isCorrect, currentAttempts, correctCount, onSuccess, onError, onAIHelp, onAdvanceExample, onResetLesson } = config;
+  const { 
+    lessonId, isCorrect, currentAttempts, correctCount, onSuccess, onError, onAIHelp, onAdvanceExample, onResetLesson,
+    lessonTitle, currentExample, sessionId, onAiResponse, setShowAiHelpPopup, setAiResponseReceived, setAiHelpData
+  } = config;
   
   console.log('🔍 HANDLE UNIVERSAL ANSWER: lessonId=', lessonId, ', isCorrect=', isCorrect, ', currentAttempts=', currentAttempts);
   
@@ -372,16 +493,39 @@ export function handleUniversalAnswer(config: UniversalAnswerHandlerConfig): voi
     if (newAttempts >= 3) {
       // Trigger AI help after 3 attempts
       console.log('🔍 HANDLE UNIVERSAL ANSWER: 3 attempts reached, triggering AI help');
-      console.log('🔍 HANDLE UNIVERSAL ANSWER: Calling onAIHelp with question and context');
-      const question = `How do I solve this problem?`;
-      const context = `The student is working on lesson ${lessonId}. They need help after 3 unsuccessful attempts.`;
-      onAIHelp(question, context);
       
-      // Reset lesson state after AI help (1 second like 6.NS.1.a)
-      setTimeout(() => {
-        console.log('🔍 HANDLE UNIVERSAL ANSWER: Resetting lesson state after 1 second');
-        onResetLesson();
-      }, 1000);
+      // Check if universal AI help system is available
+      if (lessonTitle && currentExample && setShowAiHelpPopup && setAiResponseReceived && setAiHelpData) {
+        console.log('🔍 HANDLE UNIVERSAL ANSWER: Using universal AI help system');
+        const aiHelpConfig: UniversalAIHelpConfig = {
+          lessonId,
+          lessonTitle,
+          currentExample,
+          sessionId: sessionId || `lesson-help-${lessonId}-${Date.now()}`,
+          onAiResponse: onAiResponse || (() => {})
+        };
+        
+        // Use the self-contained universal AI help system
+        requestUniversalAiHelp(aiHelpConfig, setShowAiHelpPopup, setAiResponseReceived, setAiHelpData);
+        
+        // Reset lesson state after AI help (1 second like 6.NS.1.a)
+        setTimeout(() => {
+          console.log('🔍 HANDLE UNIVERSAL ANSWER: Resetting lesson state after 1 second');
+          onResetLesson();
+        }, 1000);
+      } else {
+        // Fallback to legacy AI help system for 6.NS.1.a, 6.NS.1.b, 6.NS.1.c
+        console.log('🔍 HANDLE UNIVERSAL ANSWER: Using legacy AI help system');
+        const question = `How do I solve this problem?`;
+        const context = `The student is working on lesson ${lessonId}. They need help after 3 unsuccessful attempts.`;
+        onAIHelp(question, context);
+        
+        // Reset lesson state after AI help (1 second like 6.NS.1.a)
+        setTimeout(() => {
+          console.log('🔍 HANDLE UNIVERSAL ANSWER: Resetting lesson state after 1 second');
+          onResetLesson();
+        }, 1000);
+      }
     } else {
       // Show attempt counter message
       const attemptMessage = `Not quite. Try again! (Attempt ${newAttempts} of 3)`;
