@@ -12,6 +12,7 @@ import FractionOperationComponent from "./FractionOperationComponent";
 import ScalingComponent from "./ScalingComponent";
 import GridComponent from "./GridComponent";
 import StripComponent from "./StripComponent";
+import TextInputComponent from "./TextInputComponent";
 import { DecimalPercentConversion } from "./interactive-lesson";
 import { analyzeLessonType, processLessonContent } from "../utils/lessonProcessor";
 // Removed legacy theme imports - now using universal system
@@ -795,68 +796,38 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
                   isCorrect,
                   currentAttempts,
                   correctCount,
-                  onSuccess: (animationType) => {
-                    // Show success feedback
-                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
-                    
-                    // Trigger animation
-                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
-                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
-                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
-                  },
-                  onError: (attemptMessage) => {
-                    // Show error feedback with attempt counter
-                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
-                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
-                  },
-                  onAIHelp: (question, context) => {
-                    // Trigger AI help popup
-                    setAiHelpData({ question, context });
-                    setShowAiHelpPopup(true);
-                    requestAiHelp(lesson.id, correctAnswer);
-                  },
-                  onAdvanceExample: () => {
-                    // Advance to next example
-                    const nextIndex = currentIndex + 1;
-                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
-                    
-                    // Check if all examples are completed
-                    if (nextIndex >= examples.length) {
-                      // Set completion state for tab checkmarks
-                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
-                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
-                    } else {
-                      // Clear feedback for next example
-                      setShowFeedback(prev => {
-                        const newState = { ...prev };
-                        delete newState[inputKey];
-                        return newState;
-                      });
-                    }
-                    
-                    setShowAnimation(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                  },
-                  onResetLesson: () => {
-                    // Reset lesson state after AI help
-                    setShowFeedback(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                    setAttemptCounts(prev => {
-                      const newState = { ...prev };
-                      delete newState[inputKey];
-                      return newState;
-                    });
-                    setResetTrigger(prev => prev + 1);
-                  }
+                  inputKey,
+                  correctAnswer
                 });
               }}
-              resetTrigger={resetTrigger}
+              standardCode={selectedStandard}
+              lessonTitle={lesson.title}
+            />
+          )}
+          
+          {processedContent.componentType === 'text-input' && (
+            <TextInputComponent
+              key={`text-input-${lesson.id}-${safeIndex}`}
+              correctAnswer={processedContent.correctAnswer as string}
+              promptText={processedContent.interactiveText}
+              onAnswer={(answer) => {
+                const correctAnswer = processedContent.correctAnswer;
+                const isCorrect = answer.toString() === correctAnswer.toString();
+                
+                // UNIVERSAL SYSTEM: Use new universal answer handler
+                const inputKey = `lesson-${lesson.id}`;
+                const currentAttempts = attemptCounts[inputKey] || 0;
+                const correctCount = correctAnswerCount[inputKey] || 0;
+                
+                handleUniversalAnswer({
+                  lessonId: lesson.id,
+                  isCorrect,
+                  currentAttempts,
+                  correctCount,
+                  inputKey,
+                  correctAnswer
+                });
+              }}
               standardCode={selectedStandard}
               lessonTitle={lesson.title}
             />
