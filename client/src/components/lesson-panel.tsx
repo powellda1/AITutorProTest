@@ -447,6 +447,13 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
     console.log('🔍 DEBUG STEP 1: requiresInteraction =', lessonAnalysis.requiresInteraction);
     console.log('🔍 DEBUG STEP 1: Will enter universal system?', lessonAnalysis.requiresInteraction);
     
+    // PHASE 1 DEBUG: Track 6.NS.1.d lesson processing paths
+    if (lesson.title.includes('6.NS.1.d')) {
+      console.log('🔍 PHASE 1 DEBUG: 6.NS.1.d lesson detected:', lesson.title);
+      console.log('🔍 PHASE 1 DEBUG: lessonAnalysis.requiresInteraction =', lessonAnalysis.requiresInteraction);
+      console.log('🔍 PHASE 1 DEBUG: Will use universal system?', lessonAnalysis.requiresInteraction);
+    }
+    
     if (lessonAnalysis.requiresInteraction) {
       console.log('✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson:', lesson.title);
       
@@ -957,7 +964,9 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
         </div>
       );
     } else if (lesson.title.includes('Write fractions in lowest terms') || lesson.title.includes('simplify')) {
-      // 6.NS.1.d - Fraction simplification visualization
+      // 6.NS.1.d - Fraction simplification
+      console.log('🔍 PHASE 1 DEBUG: Entering 6.NS.1.d hardcoded simplification path for:', lesson.title);
+      console.log('🔍 PHASE 1 DEBUG: This should be using universal system instead of hardcoded visual logic'); visualization
       const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
       const simplifiedMatch = currentExample.match(/simplified to (\d+)\/(\d+)/);
       
@@ -983,6 +992,8 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
       }
     } else if (lesson.title.includes('Convert between improper fractions and mixed numbers')) {
       // 6.NS.1.d - Mixed number conversions
+      console.log('🔍 PHASE 1 DEBUG: Entering 6.NS.1.d hardcoded mixed number path for:', lesson.title);
+      console.log('🔍 PHASE 1 DEBUG: This should be using universal system instead of hardcoded visual logic');
       const improperMatch = currentExample.match(/(\d+)\/(\d+)/);
       const mixedMatch = currentExample.match(/(\d+)\s+(\d+)\/(\d+)/);
       
@@ -1008,6 +1019,8 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
       }
     } else if (lesson.title.includes('Convert decimals to fractions') || lesson.title.includes('Convert fractions to decimals')) {
       // 6.NS.1.d - Decimal/fraction conversions
+      console.log('🔍 PHASE 1 DEBUG: Entering 6.NS.1.d hardcoded decimal-fraction path for:', lesson.title);
+      console.log('🔍 PHASE 1 DEBUG: This should be using universal system instead of hardcoded visual logic');
       const decimalMatch = currentExample.match(/(\d+\.\d+)/);
       const fractionMatch = currentExample.match(/(\d+)\/(\d+)/);
       
@@ -1142,6 +1155,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
       }
     } else if (lesson.title.includes('Compare percents') || lesson.title.includes('Put a mix of') || lesson.title.includes('order')) {
       // 6.NS.1.e - Use InteractivePracticeRenderer for comparison and ordering activities
+      console.log('🔍 PHASE 1 DEBUG: Entering 6.NS.1.e hardcoded path for:', lesson.title);
       return (
         <InteractivePracticeRenderer
           subLesson={lesson}
