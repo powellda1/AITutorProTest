@@ -110,51 +110,204 @@ Preferred communication style: Simple, everyday language.
 - This applies to ALL component types: grid, strip, decimal-percent, number-line, comparison, word-problem, etc.
 - No exceptions - all components must look and function identically regarding input/submit theming
 
-**PHASED DEVELOPMENT APPROACH RULE**: SYSTEMATIC DEBUGGING AND IMPLEMENTATION
-- Always use a methodical phased approach with clear steps when fixing complex issues
-- Test each step individually before proceeding to next phase
-- Use console logging to verify each step works correctly
-- Only proceed to next phase after current phase is confirmed working
-- This prevents assumptions and ensures systematic problem-solving
+**ENHANCED PHASED DEVELOPMENT APPROACH RULE: SYSTEMATIC DEBUGGING AND IMPLEMENTATION WITH ENFORCEMENT PROTOCOLS**
 
-**PHASE 0: PRE-CONVERSION ANALYSIS**
-- Step 1: Identify ALL sub-lesson types in the target standard before starting conversion
-- Step 2: Identify ALL existing visual interactive components in the target standard
-- Step 3: Test each sub-lesson to verify current functionality and identify which ones need conversion
-- Step 4: Document current state of each sub-lesson (working/broken/partially working)
-- Step 5: Document existing visual components that must be preserved during conversion
-- Step 6: Prioritize conversion order based on complexity and dependencies
+## Core Principles
+- **MANDATORY PHASE GATE CHECKS**: Cannot proceed to next phase without explicit completion documentation for ALL steps
+- **ERROR RESPONSE PROTOCOL**: Any error encountered = immediate revert to Phase 1 Step 1
+- **SCOPE BOUNDARY ENFORCEMENT**: Each phase has strict limitations on allowed actions
+- **SENIOR DEVELOPER MINDSET**: Extreme caution, individual testing, no sweeping changes
 
-**PHASE 1: Debug Logging and Root Cause Analysis**
-- Step 1: Add debug logging to track which code path each lesson takes
-- Step 2: Identify where lessons diverge from universal system
-- Step 3: Analyze completion state inconsistencies
-- Step 4: Use grep commands to find all hardcoded function references
-- Step 5: Document legacy import statements and commented-out functions
+## PHASE 0: PRE-CONVERSION ANALYSIS (INVESTIGATION ONLY)
 
-**PHASE 2: Ensure Universal System Routing**
-- Step 1: Verify both lessons have requiresInteraction: true
-- Step 2: Remove conditional logic intercepting lessons
-- Step 3: Ensure universal system block is only code path
-- Step 4: Remove old imports and add documentation comments
-- Step 5: Verify components use correct universal system code paths
+**Phase Gate**: Must document ALL findings before proceeding to Phase 1
 
-**PHASE 3: Standardize State Management**
-- Step 1: Make tab checkmarks use same completion logic
-- Step 2: Ensure both lessons set same completion state variables
-- Step 3: Test completion state consistency
-- Step 4: Replace all extractCorrectAnswer function calls with processedContent.correctAnswer
-- Step 5: Replace all getCorrectAnswer function calls with processedContent.correctAnswer
+**Step 1: Identify ALL sub-lesson types in target standard**
+- List every lesson type found in the standard
+- Document current functionality state of each
+- **Evidence Required**: Complete list with lesson IDs and types
 
-**PHASE 4: Remove Duplicate Code Paths**
-- Step 1: Eliminate hardcoded bridge logic
-- Step 2: Remove all InteractivePracticeRenderer calls for converted lessons
-- Step 3: Make universal system single source of truth
-- Step 4: Remove isUsingUniversalSystem conditional logic and legacy input boxes
-- Step 5: Verify with grep commands that all hardcoded references are eliminated
-- Step 6: Conduct application testing to verify both tabs working correctly
-- Step 5: Verify with grep commands that all hardcoded references are eliminated
-- Step 6: Conduct application testing to verify both tabs working correctly
+**Step 2: Identify ALL existing visual interactive components**
+- Catalog all visual components currently in use
+- Document which lessons use which components
+- **Evidence Required**: Component inventory with usage mapping
+
+**Step 3: Test each sub-lesson individually**
+- Verify current functionality of each lesson
+- Document working/broken/partially working status
+- **Evidence Required**: Test results for each lesson
+
+**Step 4: Document current state analysis**
+- Detailed state assessment for each sub-lesson
+- Identify specific failure points and error messages
+- **Evidence Required**: Console logs, error messages, behavioral observations
+
+**Step 5: Document existing visual components to preserve**
+- List all visual components that must remain functional during conversion
+- Identify integration points with universal system
+- **Evidence Required**: Visual component preservation list
+
+**Step 6: Prioritize conversion order**
+- Based on complexity and dependencies
+- Focus only on user-specified lessons (e.g., "1, 2, 7")
+- **Evidence Required**: Prioritized conversion plan
+
+**PHASE 0 COMPLETION CHECK**: All 6 steps documented with evidence. No code changes allowed.
+
+## PHASE 1: DEBUG LOGGING AND ROOT CAUSE ANALYSIS (INVESTIGATION ONLY)
+
+**Phase Gate**: Must identify exact root cause before proceeding to Phase 2
+
+**Step 1: Add comprehensive debug logging**
+- Track which code path each lesson takes
+- Log all function calls, component renderings, and state changes
+- **Evidence Required**: Debug logs showing lesson processing flow
+- **Scope Limitation**: Only add console.log statements, no functional changes
+
+**Step 2: Identify divergence from universal system**
+- Trace exactly where lessons fail to follow universal system path
+- Document conditional logic intercepting lessons
+- **Evidence Required**: Code path analysis with specific line numbers
+
+**Step 3: Analyze completion state inconsistencies**
+- Compare completion state handling between lessons
+- Document state variable usage patterns
+- **Evidence Required**: State management analysis
+
+**Step 4: Use grep commands to find hardcoded references**
+- Search for all hardcoded function references
+- Document legacy import statements
+- **Evidence Required**: Grep results with line numbers
+
+**Step 5: Document legacy references and commented code**
+- Catalog all commented-out functions and imports
+- Identify code that needs cleanup
+- **Evidence Required**: Legacy code inventory
+
+**ERROR RESPONSE PROTOCOL**: If any error encountered, document error and restart Phase 1 Step 1
+
+**PHASE 1 COMPLETION CHECK**: Root cause identified with evidence. No functional changes allowed.
+
+## PHASE 2: ENSURE UNIVERSAL SYSTEM ROUTING (ROUTING ONLY)
+
+**Phase Gate**: Must verify all lessons route through universal system before proceeding
+
+**Step 1: Verify requiresInteraction: true**
+- Confirm all target lessons have correct interaction flag
+- **Evidence Required**: Database/data verification
+- **Scope Limitation**: Only verify, no changes to lesson data
+
+**Step 2: Remove conditional logic intercepting lessons**
+- Eliminate code that prevents universal system routing
+- **Evidence Required**: Before/after code comparison
+- **Scope Limitation**: Only remove intercepting logic, no new functionality
+
+**Step 3: Ensure universal system as only code path**
+- Verify lessons flow through universal system block
+- **Evidence Required**: Debug logs showing universal system usage
+- **Scope Limitation**: Routing changes only, no component modifications
+
+**Step 4: Fix import/export issues**
+- Add missing imports for universal system components
+- **Evidence Required**: Import statement verification
+- **Scope Limitation**: Import statements only, no new components
+
+**Step 5: Verify completion state logic**
+- Ensure universal system components set completion state
+- **Evidence Required**: Completion state testing
+- **Scope Limitation**: State setting verification only
+
+**PHASE 2 COMPLETION CHECK**: All lessons route through universal system. No new components created.
+
+## PHASE 3: STANDARDIZE STATE MANAGEMENT (STATE MANAGEMENT ONLY)
+
+**Phase Gate**: Must achieve consistent state management before proceeding
+
+**Step 1: Standardize tab checkmark completion logic**
+- Ensure all lessons use same completion detection method
+- **Evidence Required**: Completion logic consistency verification
+- **Scope Limitation**: State management standardization only
+
+**Step 2: Ensure consistent completion state variables**
+- Verify all lessons set same completion state variables
+- **Evidence Required**: State variable usage verification
+- **Scope Limitation**: State variable standardization only
+
+**Step 3: Test completion state consistency**
+- Verify tab checkmarks work identically across lessons
+- **Evidence Required**: User interface testing results
+- **Scope Limitation**: Testing and verification only
+
+**Step 4: Replace extractCorrectAnswer function calls**
+- Replace with processedContent.correctAnswer
+- **Evidence Required**: Function replacement verification
+- **Scope Limitation**: Function call replacement only
+
+**Step 5: Replace getCorrectAnswer function calls**
+- Replace with processedContent.correctAnswer
+- **Evidence Required**: Function replacement verification
+- **Scope Limitation**: Function call replacement only
+
+**PHASE 3 COMPLETION CHECK**: State management standardized. No structural changes.
+
+## PHASE 4: REMOVE DUPLICATE CODE PATHS (CLEANUP ONLY)
+
+**Phase Gate**: Must eliminate all duplicate code while preserving functionality
+
+**Step 1: Eliminate hardcoded bridge logic**
+- Remove any hardcoded routing or processing
+- **Evidence Required**: Code cleanup verification
+- **Scope Limitation**: Code removal only, no new functionality
+
+**Step 2: Remove InteractivePracticeRenderer calls for converted lessons**
+- Only remove calls for lessons confirmed converted
+- **Evidence Required**: Selective removal verification
+- **Scope Limitation**: Removal of converted lesson calls only
+
+**Step 3: Make universal system single source of truth**
+- Ensure no parallel processing paths exist
+- **Evidence Required**: Single path verification
+- **Scope Limitation**: Path consolidation only
+
+**Step 4: Remove conditional logic and legacy components**
+- Clean up isUsingUniversalSystem conditions
+- **Evidence Required**: Conditional logic cleanup verification
+- **Scope Limitation**: Cleanup only, no new logic
+
+**Step 5: Verify with grep commands**
+- Confirm all hardcoded references eliminated
+- **Evidence Required**: Grep verification results
+- **Scope Limitation**: Verification only
+
+**Step 6: Conduct application testing**
+- Test all converted lessons work correctly
+- **Evidence Required**: User testing confirmation
+- **Scope Limitation**: Testing only, no fixes during this step
+
+**PHASE 4 COMPLETION CHECK**: All duplicate code paths eliminated, application tested.
+
+## MANDATORY COMPLIANCE PROTOCOLS
+
+**Before Any Code Change:**
+1. **Phase Compliance Check**: State current phase and verify action aligns with phase scope
+2. **User Instruction Verification**: Confirm change aligns with specific user instructions
+3. **Scope Boundary Check**: Verify action is allowed within current phase limitations
+
+**Error Response Protocol:**
+- Any error = immediate stop and revert to Phase 1 Step 1
+- Document error and restart systematic investigation
+- No assumptions about error meaning or solution
+
+**Senior Developer Mindset:**
+- Test each small change individually
+- No sweeping changes affecting multiple systems
+- Document all changes with evidence
+- Extreme caution when user says "Do not create backups"
+
+**Phase Gate Enforcement:**
+- Cannot proceed without completing ALL steps in current phase
+- Must provide evidence for each step completion
+- No exceptions for "obvious" fixes or shortcuts
 
 ## Future Tasks & Technical Debt
 
