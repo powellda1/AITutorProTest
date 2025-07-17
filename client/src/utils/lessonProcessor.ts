@@ -1156,19 +1156,14 @@ function processMixedNumberConversion(originalExample: string): ProcessedLessonC
   }
   
   // Extract original fraction for visual display
-  // For mixed-to-improper conversion, we want the mixed number (before =)
   // For improper-to-mixed conversion, we want the improper fraction (before =)
   let originalFraction = '11/4'; // fallback
   
-  // Try to find mixed number pattern first
-  const mixedNumberMatch = originalExample.match(/(\d+) (\d+\/\d+)/);
+  // Try to find improper fraction pattern first (before equals sign)
   const improperBeforeEquals = originalExample.match(/^(\d+\/\d+)/);
   
-  if (mixedNumberMatch) {
-    // Mixed-to-improper conversion: "4 1/3 = 13/3" - show the mixed number
-    originalFraction = `${mixedNumberMatch[1]} ${mixedNumberMatch[2]}`;
-  } else if (improperBeforeEquals) {
-    // Improper-to-mixed conversion: "11/4 = 2 3/4" - show the improper fraction
+  if (improperBeforeEquals) {
+    // Improper-to-mixed conversion: "13/3 = 4 1/3" - show the improper fraction
     originalFraction = improperBeforeEquals[1];
   } else {
     // Fallback to any fraction found

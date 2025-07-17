@@ -36,7 +36,8 @@ export default function MixedNumberVisualComponent({
   const promptConfig: UniversalPromptConfig = {
     type: 'mixed-number-visual',
     standardCode: standardCode || '',
-    lessonTitle: lessonTitle || ''
+    lessonTitle: lessonTitle || '',
+    context: { originalFraction }
   };
   
   const universalPrompt = generateUniversalPrompt(promptConfig);

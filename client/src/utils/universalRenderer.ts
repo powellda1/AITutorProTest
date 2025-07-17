@@ -147,7 +147,8 @@ export function generateUniversalPrompt(config: UniversalPromptConfig): string {
   // Mixed number visual activities - shows interactive division model
   if (type === 'mixed-number-visual') {
     if (lessonTitle?.includes('Convert between improper fractions and mixed numbers')) {
-      return 'Use the interactive division model to convert between improper fractions and mixed numbers';
+      const fraction = context?.originalFraction || 'the improper fraction';
+      return `Convert this improper fraction to a mixed number: ${fraction}`;
     }
     return 'Convert the improper fraction to a mixed number using the visual model';
   }
