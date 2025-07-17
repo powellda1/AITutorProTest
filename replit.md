@@ -101,6 +101,14 @@ Preferred communication style: Simple, everyday language.
 - Clean up any hardcoded values and duplicate functions
 - Build universal system as REPLACEMENT, not addition to existing code
 
+**EXAMPLES-FIRST ANALYSIS RULE**: MANDATORY 4-STEP PROCESS FOR ALL LESSON CONVERSIONS
+- Step 1: Analyze actual mathematical content in lesson examples to understand what students work with
+- Step 2: Examine explanation text for visual cues and instructional approach indicators
+- Step 3: Review description for learning objectives and mathematical context
+- Step 4: Determine visual component based on mathematical content requirements, not title keywords
+- NO title-based pattern matching shortcuts - content drives component selection
+- Every lesson must justify component choice through mathematical content analysis
+
 **UNIVERSAL STYLING RULE**: ALL COMPONENTS MUST USE GRIDCOMPONENT STYLING
 - Always use the exact same input/submit styling that GridComponent uses for ALL interactive components
 - Input styling: "w-32 px-3 py-2 border border-gray-600 rounded text-white bg-[#35373b] placeholder-gray-300"
@@ -152,6 +160,13 @@ Preferred communication style: Simple, everyday language.
 - Based on complexity and dependencies
 - Consider any user-specified lesson priorities
 - **Evidence Required**: Prioritized conversion plan
+
+**Step 7: EXAMPLES-FIRST ANALYSIS FOR EACH LESSON**
+- **Sub-Step 7a**: Analyze actual mathematical content in lesson examples
+- **Sub-Step 7b**: Examine explanation text for visual cues and instructional approach
+- **Sub-Step 7c**: Review description for learning objectives and mathematical context
+- **Sub-Step 7d**: Determine visual component based on mathematical content requirements
+- **Evidence Required**: Mathematical content analysis and component justification for each lesson
 
 **PHASE 0 COMPLETION CHECK**: All 6 steps documented with evidence. No code changes allowed.
 

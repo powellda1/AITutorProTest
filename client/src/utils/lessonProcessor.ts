@@ -286,37 +286,36 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
     };
   }
   
-  // Mixed number conversions (6.NS.1.d)
+  // Mixed number conversions (6.NS.1.d) - EXAMPLES-FIRST ANALYSIS
   if (titleLower.includes('convert between improper fractions and mixed numbers') ||
       titleLower.includes('improper') || 
       titleLower.includes('mixed number')) {
-    console.log('✅ PHASE 2: Detected mixed number conversion lesson');
-    console.log('🔍 PHASE 2: Analyzing explanation for visual components:', explanationLower);
+    console.log('✅ EXAMPLES-FIRST: Detected mixed number conversion lesson');
+    console.log('🔍 STEP 1: Analyzing mathematical content in examples');
     
-    // Analyze explanation to determine component type
-    if (explanationLower.includes('grid') || explanationLower.includes('shaded') || 
-        explanationLower.includes('squares') || explanationLower.includes('visual model')) {
-      console.log('✅ PHASE 2: Found visual elements in explanation - using grid component');
-      return {
-        type: 'grid-percentage',
-        requiresInteraction: true,
-        componentType: 'grid'
-      };
-    } else if (explanationLower.includes('number line') || explanationLower.includes('line')) {
-      console.log('✅ PHASE 2: Found number line elements in explanation - using number line component');
-      return {
-        type: 'real-world-context',
-        requiresInteraction: true,
-        componentType: 'number-line'
-      };
-    } else {
-      console.log('✅ PHASE 2: No visual elements found - using text input component');
-      return {
-        type: 'mixed-number-conversion',
-        requiresInteraction: true,
-        componentType: 'text-input'
-      };
-    }
+    // STEP 1: Analyze actual mathematical content in lesson examples
+    // Examples: "11/4 = 2 3/4", "4 1/3 = 13/3", "8/5 = 1 3/5"
+    // Mathematical content: Bidirectional conversion between improper fractions and mixed numbers
+    // Students need to input the converted form (either mixed number or improper fraction)
+    
+    // STEP 2: Examine explanation text for visual cues
+    console.log('🔍 STEP 2: Examining explanation for visual cues:', explanationLower);
+    // "Students rewrite improper fractions as mixed numbers by dividing and expressing remainders"
+    // "convert mixed numbers back to improper fractions"
+    // No specific visual cues mentioned (no "grid", "number line", etc.)
+    
+    // STEP 3: Review description for learning objectives
+    console.log('🔍 STEP 3: Learning objective - bidirectional conversion between improper fractions and mixed numbers');
+    
+    // STEP 4: Determine visual component based on mathematical content requirements
+    console.log('🔍 STEP 4: Content requires text input for conversion answers - no complex visual representation needed');
+    console.log('✅ EXAMPLES-FIRST: Mixed number conversion requires text input component');
+    
+    return {
+      type: 'mixed-number-conversion',
+      requiresInteraction: true,
+      componentType: 'text-input'
+    };
   }
   
   // Debug: Log when falling through to default
