@@ -191,17 +191,21 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
     };
   }
   
-  // Word problem activities (6.NS.1.e)
-  if (titleLower.includes('word problem') || (titleLower.includes('compare') && titleLower.includes('word problem'))) {
+  // Word problems with conversions (6.NS.1.d) - MORE SPECIFIC FIRST
+  if (titleLower.includes('word problem') && (titleLower.includes('convert') || titleLower.includes('percent') || titleLower.includes('fraction') || titleLower.includes('decimal'))) {
     return {
-      type: 'word-problem',
+      type: 'conversion-word-problem',
       requiresInteraction: true,
-      componentType: 'word-problem'
+      componentType: 'conversion-word-problem'
     };
   }
   
-  // Fraction conversion patterns (6.NS.1.d)
-  if (titleLower.includes('convert decimals to fractions') || titleLower.includes('convert fractions to decimals')) {
+  // Fraction conversion patterns (6.NS.1.d) - ALL CONVERSION TYPES
+  if (titleLower.includes('convert decimals to fractions') || 
+      titleLower.includes('convert fractions to decimals') ||
+      titleLower.includes('convert between decimals and') ||
+      titleLower.includes('convert between fractions and') ||
+      (titleLower.includes('convert') && titleLower.includes('decimal') && titleLower.includes('fraction'))) {
     return {
       type: 'decimal-fraction-conversion',
       requiresInteraction: true,
@@ -209,12 +213,12 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
     };
   }
   
-  // Word problems with conversions (6.NS.1.d)
-  if (titleLower.includes('word problem') && (titleLower.includes('convert') || titleLower.includes('percent') || titleLower.includes('fraction') || titleLower.includes('decimal'))) {
+  // Word problem activities (6.NS.1.e) - GENERAL PATTERN LAST
+  if (titleLower.includes('word problem') || (titleLower.includes('compare') && titleLower.includes('word problem'))) {
     return {
-      type: 'conversion-word-problem',
+      type: 'word-problem',
       requiresInteraction: true,
-      componentType: 'conversion-word-problem'
+      componentType: 'word-problem'
     };
   }
 
