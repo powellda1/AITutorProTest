@@ -1088,10 +1088,10 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
 
 
 
-    // 🔍 PHASE 2 DEBUG: Removed hardcoded conditional logic - now flows through universal system
+    // 🔍 PHASE 1 FIX: Removed intercepting strip condition - now flows through universal system for 6.NS.1.d lessons
 
-    } else if (explanation.includes('strip')) {
-      // Extract percentage from example for strip visualization
+    } else if (explanation.includes('strip') && !lesson.code?.includes('6.NS.1.d')) {
+      // ONLY for non-6.NS.1.d lessons - Extract percentage from example for strip visualization
       const match = currentExample.match(/(\d+)%/);
       const percentage = match ? parseInt(match[1]) : 20;
       const shadedParts = Math.round(percentage / 20); // Convert to 5-part strip
