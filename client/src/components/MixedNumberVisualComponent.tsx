@@ -164,7 +164,7 @@ export default function MixedNumberVisualComponent({
         {/* Ungrouped items */}
         <div className="mb-4">
           <h3 className="text-gray-800 font-semibold mb-2">Items to group ({numerator} total):</h3>
-          <div className="relative">
+          <div className="relative min-h-[120px]">
             {dragItems.filter(item => !item.isGrouped).map(item => (
               <div
                 key={item.id}
@@ -180,7 +180,7 @@ export default function MixedNumberVisualComponent({
         </div>
 
         {/* Group areas */}
-        <div className="mt-20">
+        <div>
           <h3 className="text-gray-800 font-semibold mb-2">Group areas (groups of {denominator}):</h3>
           <div className="flex flex-wrap gap-4">
             {[0, 1, 2, 3, 4].map(groupId => (
@@ -220,7 +220,7 @@ export default function MixedNumberVisualComponent({
 
       {/* Input field */}
       <div className="text-white text-lg mb-4 text-center">
-        Enter your answer as a mixed number (e.g., 2 3/4):
+        Enter your answer as a mixed number:
       </div>
       
       <div className="flex justify-center items-center space-x-4">
