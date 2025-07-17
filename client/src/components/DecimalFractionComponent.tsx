@@ -7,6 +7,8 @@ interface DecimalFractionComponentProps {
   targetDenominator: number;
   correctAnswer: string;
   onAnswer: (answer: string) => void;
+  lesson?: any;
+  promptText?: string;
 }
 
 export default function DecimalFractionComponent({
