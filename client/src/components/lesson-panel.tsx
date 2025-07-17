@@ -410,9 +410,9 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
           onAiResponse(aiResponseData);
         }
         
-        // Hide AI help popup when response comes back
-        setShowAiHelpPopup(false);
-        setAiHelpData(null);
+        // Don't close popup immediately - let AiHelpPopup component handle closing when response is ready
+        // setShowAiHelpPopup(false);
+        // setAiHelpData(null);
         console.log('AI help requested successfully');
       }
     } catch (error) {
@@ -1926,7 +1926,11 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
       {/* AI Help Popup */}
       <AiHelpPopup
         isOpen={showAiHelpPopup}
-        onClose={() => setShowAiHelpPopup(false)}
+        onClose={() => {
+          setShowAiHelpPopup(false);
+          setAiHelpData(null);
+          setAiResponseReceived(false);
+        }}
         onHelpRequested={(question, context) => {
           if (onAiResponse) {
             onAiResponse({ question, context });

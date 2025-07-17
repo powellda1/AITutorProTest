@@ -21,13 +21,12 @@ export default function AiHelpPopup({
   const [isProcessing, setIsProcessing] = useState(false);
 
   useEffect(() => {
-    if (isOpen && question && context && !isProcessing) {
+    if (isOpen && !isProcessing) {
       setIsProcessing(true);
-      
-      // Trigger the help request
-      onHelpRequested(question, context);
+      // NOTE: AI request is already triggered by lesson panel's requestAiHelp function
+      // No need to call onHelpRequested here to avoid double requests
     }
-  }, [isOpen, question, context, onHelpRequested, isProcessing]);
+  }, [isOpen, isProcessing]);
 
   // Close popup when response is ready
   useEffect(() => {
@@ -39,6 +38,13 @@ export default function AiHelpPopup({
       }, 500);
     }
   }, [hasResponse, isProcessing, onClose]);
+
+  // Reset processing state when popup closes
+  useEffect(() => {
+    if (!isOpen) {
+      setIsProcessing(false);
+    }
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
