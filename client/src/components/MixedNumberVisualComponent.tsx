@@ -87,6 +87,9 @@ export default function MixedNumberVisualComponent({
     setShowGroupingArea(true);
   }, [numerator]);
 
+  // Calculate dynamic height for the circles area
+  const circlesAreaHeight = Math.max(80, 50 + Math.ceil(numerator / 6) * 40);
+
   // Handle drag start
   const handleDragStart = (e: React.DragEvent, itemId: number) => {
     setDraggedItem(itemId);
@@ -176,11 +179,11 @@ export default function MixedNumberVisualComponent({
       </div>
 
       {/* Visual area */}
-      <div className="bg-gray-200 rounded-lg p-4 mb-6 min-h-[300px] relative">
+      <div className="bg-gray-200 rounded-lg p-4 mb-6 relative">
         {/* Ungrouped items */}
         <div className="mb-4">
           <h3 className="text-gray-800 font-semibold mb-1">Items to group ({numerator} total):</h3>
-          <div className="relative min-h-[80px]">
+          <div className="relative" style={{ minHeight: `${circlesAreaHeight}px` }}>
             {dragItems.filter(item => !item.isGrouped).map(item => (
               <div
                 key={item.id}
