@@ -14,6 +14,8 @@ import GridComponent from "./GridComponent";
 import StripComponent from "./StripComponent";
 import { DecimalPercentConversion } from "./interactive-lesson";
 import DecimalFractionComponent from "./DecimalFractionComponent";
+import FractionSimplificationComponent from "./FractionSimplificationComponent";
+import MixedNumberConversionComponent from "./MixedNumberConversionComponent";
 import ConversionWordProblemComponent from "./ConversionWordProblemComponent";
 import { analyzeLessonType, processLessonContent } from "../utils/lessonProcessor";
 // Removed legacy theme imports - now using universal system
@@ -1016,6 +1018,331 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
               resetTrigger={resetTrigger}
               standardCode={selectedStandard}
               lessonTitle={lesson.title}
+            />
+          )}
+
+          {processedContent.componentType === 'fraction-simplification' && (
+            <FractionSimplificationComponent
+              key={`fraction-simplification-${lesson.id}-${safeIndex}`}
+              lesson={lesson}
+              promptText={processedContent.interactiveText}
+              correctAnswer={processedContent.correctAnswer as string}
+              onAnswer={(answer) => {
+                const correctAnswer = processedContent.correctAnswer;
+                const isCorrect = answer.toString() === correctAnswer.toString();
+                
+                console.log('🔍 FRACTION SIMPLIFICATION: Answer submitted:', answer, 'Correct:', correctAnswer, 'Match:', isCorrect);
+                
+                // UNIVERSAL SYSTEM: Use new universal answer handler
+                const inputKey = `lesson-${lesson.id}`;
+                const currentAttempts = attemptCounts[inputKey] || 0;
+                const correctCount = correctAnswerCount[inputKey] || 0;
+                
+                handleUniversalAnswer({
+                  lessonId: lesson.id,
+                  isCorrect,
+                  currentAttempts,
+                  correctCount,
+                  onSuccess: (animationType) => {
+                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
+                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
+                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
+                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
+                  },
+                  onError: (attemptMessage) => {
+                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
+                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
+                  },
+                  onAIHelp: (question, context) => {
+                    setAiHelpData({ question, context });
+                    setShowAiHelpPopup(true);
+                    requestAiHelp(lesson.id, correctAnswer);
+                  },
+                  onAdvanceExample: () => {
+                    // Advance to next example
+                    const nextIndex = currentIndex + 1;
+                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
+                    
+                    // Check if all examples are completed
+                    if (nextIndex >= examples.length) {
+                      // Set completion state for tab checkmarks
+                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
+                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
+                    } else {
+                      // Clear feedback for next example
+                      setShowFeedback(prev => {
+                        const newState = { ...prev };
+                        delete newState[inputKey];
+                        return newState;
+                      });
+                    }
+                    
+                    setShowAnimation(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                  },
+                  onResetLesson: () => {
+                    setShowFeedback(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setAttemptCounts(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setResetTrigger(prev => prev + 1);
+                  }
+                });
+              }}
+              onAdvanceExample={() => {}}
+            />
+          )}
+
+          {processedContent.componentType === 'mixed-number-conversion' && (
+            <MixedNumberConversionComponent
+              key={`mixed-number-conversion-${lesson.id}-${safeIndex}`}
+              lesson={lesson}
+              promptText={processedContent.interactiveText}
+              correctAnswer={processedContent.correctAnswer as string}
+              onAnswer={(answer) => {
+                const correctAnswer = processedContent.correctAnswer;
+                const isCorrect = answer.toString() === correctAnswer.toString();
+                
+                console.log('🔍 MIXED NUMBER CONVERSION: Answer submitted:', answer, 'Correct:', correctAnswer, 'Match:', isCorrect);
+                
+                // UNIVERSAL SYSTEM: Use new universal answer handler
+                const inputKey = `lesson-${lesson.id}`;
+                const currentAttempts = attemptCounts[inputKey] || 0;
+                const correctCount = correctAnswerCount[inputKey] || 0;
+                
+                handleUniversalAnswer({
+                  lessonId: lesson.id,
+                  isCorrect,
+                  currentAttempts,
+                  correctCount,
+                  onSuccess: (animationType) => {
+                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
+                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
+                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
+                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
+                  },
+                  onError: (attemptMessage) => {
+                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
+                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
+                  },
+                  onAIHelp: (question, context) => {
+                    setAiHelpData({ question, context });
+                    setShowAiHelpPopup(true);
+                    requestAiHelp(lesson.id, correctAnswer);
+                  },
+                  onAdvanceExample: () => {
+                    // Advance to next example
+                    const nextIndex = currentIndex + 1;
+                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
+                    
+                    // Check if all examples are completed
+                    if (nextIndex >= examples.length) {
+                      // Set completion state for tab checkmarks
+                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
+                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
+                    } else {
+                      // Clear feedback for next example
+                      setShowFeedback(prev => {
+                        const newState = { ...prev };
+                        delete newState[inputKey];
+                        return newState;
+                      });
+                    }
+                    
+                    setShowAnimation(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                  },
+                  onResetLesson: () => {
+                    setShowFeedback(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setAttemptCounts(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setResetTrigger(prev => prev + 1);
+                  }
+                });
+              }}
+              onAdvanceExample={() => {}}
+            />
+          )}
+
+          {processedContent.componentType === 'fraction-to-decimal' && (
+            <DecimalFractionComponent
+              key={`fraction-to-decimal-${lesson.id}-${safeIndex}`}
+              lesson={lesson}
+              promptText={processedContent.interactiveText}
+              correctAnswer={processedContent.correctAnswer as string}
+              onAnswer={(answer) => {
+                const correctAnswer = processedContent.correctAnswer;
+                const isCorrect = answer.toString() === correctAnswer.toString();
+                
+                console.log('🔍 FRACTION TO DECIMAL: Answer submitted:', answer, 'Correct:', correctAnswer, 'Match:', isCorrect);
+                
+                // UNIVERSAL SYSTEM: Use new universal answer handler
+                const inputKey = `lesson-${lesson.id}`;
+                const currentAttempts = attemptCounts[inputKey] || 0;
+                const correctCount = correctAnswerCount[inputKey] || 0;
+                
+                handleUniversalAnswer({
+                  lessonId: lesson.id,
+                  isCorrect,
+                  currentAttempts,
+                  correctCount,
+                  onSuccess: (animationType) => {
+                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
+                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
+                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
+                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
+                  },
+                  onError: (attemptMessage) => {
+                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
+                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
+                  },
+                  onAIHelp: (question, context) => {
+                    setAiHelpData({ question, context });
+                    setShowAiHelpPopup(true);
+                    requestAiHelp(lesson.id, correctAnswer);
+                  },
+                  onAdvanceExample: () => {
+                    // Advance to next example
+                    const nextIndex = currentIndex + 1;
+                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
+                    
+                    // Check if all examples are completed
+                    if (nextIndex >= examples.length) {
+                      // Set completion state for tab checkmarks
+                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
+                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
+                    } else {
+                      // Clear feedback for next example
+                      setShowFeedback(prev => {
+                        const newState = { ...prev };
+                        delete newState[inputKey];
+                        return newState;
+                      });
+                    }
+                    
+                    setShowAnimation(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                  },
+                  onResetLesson: () => {
+                    setShowFeedback(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setAttemptCounts(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setResetTrigger(prev => prev + 1);
+                  }
+                });
+              }}
+              onAdvanceExample={() => {}}
+            />
+          )}
+
+          {/* Add handler for decimal-to-fraction (lesson 3) */}
+          {processedContent.componentType === 'decimal-fraction' && (
+            <DecimalFractionComponent
+              key={`decimal-fraction-${lesson.id}-${safeIndex}`}
+              lesson={lesson}
+              promptText={processedContent.interactiveText}
+              correctAnswer={processedContent.correctAnswer as string}
+              onAnswer={(answer) => {
+                const correctAnswer = processedContent.correctAnswer;
+                const isCorrect = answer.toString() === correctAnswer.toString();
+                
+                console.log('🔍 DECIMAL TO FRACTION: Answer submitted:', answer, 'Correct:', correctAnswer, 'Match:', isCorrect);
+                
+                // UNIVERSAL SYSTEM: Use new universal answer handler
+                const inputKey = `lesson-${lesson.id}`;
+                const currentAttempts = attemptCounts[inputKey] || 0;
+                const correctCount = correctAnswerCount[inputKey] || 0;
+                
+                handleUniversalAnswer({
+                  lessonId: lesson.id,
+                  isCorrect,
+                  currentAttempts,
+                  correctCount,
+                  onSuccess: (animationType) => {
+                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
+                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
+                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
+                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
+                  },
+                  onError: (attemptMessage) => {
+                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
+                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
+                  },
+                  onAIHelp: (question, context) => {
+                    setAiHelpData({ question, context });
+                    setShowAiHelpPopup(true);
+                    requestAiHelp(lesson.id, correctAnswer);
+                  },
+                  onAdvanceExample: () => {
+                    // Advance to next example
+                    const nextIndex = currentIndex + 1;
+                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
+                    
+                    // Check if all examples are completed
+                    if (nextIndex >= examples.length) {
+                      // Set completion state for tab checkmarks
+                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
+                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
+                    } else {
+                      // Clear feedback for next example
+                      setShowFeedback(prev => {
+                        const newState = { ...prev };
+                        delete newState[inputKey];
+                        return newState;
+                      });
+                    }
+                    
+                    setShowAnimation(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                  },
+                  onResetLesson: () => {
+                    setShowFeedback(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setAttemptCounts(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setResetTrigger(prev => prev + 1);
+                  }
+                });
+              }}
+              onAdvanceExample={() => {}}
             />
           )}
 

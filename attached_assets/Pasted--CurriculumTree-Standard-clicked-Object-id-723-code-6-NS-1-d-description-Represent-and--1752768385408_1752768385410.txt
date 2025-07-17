@@ -1,0 +1,249 @@
+
+CurriculumTree: Standard clicked: 
+Object { id: 723, code: "6.NS.1.d", description: "Represent and determine equivalencies among decimals, percents, fractions (proper or improper), and mixed numbers that have denominators that are 12 or less or factors of 100 incorporating the use of number lines, and concrete and pictorial models.", contentAreaId: 66, order: 0 }
+Console.js:61:14
+🔍 Testing pattern: 
+/(\d+)\/(\d+).*?simplified.*?(\d+)\/(\d+)/i
+ Result: 
+Array(5) [ "6/12 simplified to 1/2", "6", "12", "1", "2" ]
+​
+0: "6/12 simplified to 1/2"
+​
+1: "6"
+​
+2: "12"
+​
+3: "1"
+​
+4: "2"
+​
+groups: undefined
+​
+index: 0
+​
+input: "6/12 simplified to 1/2."
+​
+length: 5
+​
+<prototype>: Array []
+Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "1/2", componentType: "fraction-simplification", additionalData: {…} }
+​
+additionalData: Object { originalExample: "6/12 simplified to 1/2.", originalNumerator: 6, originalDenominator: 12, … }
+​
+componentType: "fraction-simplification"
+​
+correctAnswer: "1/2"
+​
+interactiveText: ""
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Convert between improper fractions and mixed numbers" }
+Console.js:61:14
+🔍 analyzeLessonType called with: 
+Object { title: "Convert between improper fractions and mixed numbers", explanation: "Students rewrite improper fractions as mixed numbers by dividing and expressing remainders, and convert mixed numbers back to improper fractions.", standardCode: "6.NS.1.d" }
+Console.js:61:14
+✅ analyzeLessonType: Detected MIXED NUMBER CONVERSION (lesson 2) Console.js:61:14
+🔍 COMPREHENSIVE DEBUG - LESSON DETAILS: Console.js:61:14
+  - Lesson ID: 3536 Console.js:61:14
+  - Lesson Title: Convert between improper fractions and mixed numbers Console.js:61:14
+  - Lesson Explanation: Students rewrite improper fractions as mixed numbers by dividing and expressing remainders, and convert mixed numbers back to improper fractions. Console.js:61:14
+  - Current Example: 11/4 = 2 3/4. Console.js:61:14
+  - Lesson Analysis: 
+Object { type: "mixed-number-conversion", requiresInteraction: true, componentType: "mixed-number-conversion" }
+Console.js:61:14
+  - requiresInteraction = true Console.js:61:14
+  - componentType = mixed-number-conversion Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert between improper fractions and mixed numbers Console.js:61:14
+🔍 processMixedNumberConversion called with: 11/4 = 2 3/4. Console.js:61:14
+🔍 Testing pattern: 
+/(\d+)\/(\d+).*?=.*?(\d+)\s+(\d+)\/(\d+)/i
+ Result: 
+Array(6) [ "11/4 = 2 3/4", "11", "4", "2", "3", "4" ]
+Console.js:61:14
+✅ Found conversion: 
+Object { originalFraction: "11/4", correctAnswer: "2 3/4" }
+Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "2 3/4", componentType: "mixed-number-conversion", additionalData: {…} }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Convert between improper fractions and mixed numbers" }
+Console.js:61:14
+🔍 COMPREHENSIVE DEBUG - LESSON DETAILS: Console.js:61:14
+  - Lesson ID: 3536 Console.js:61:14
+  - Lesson Title: Convert between improper fractions and mixed numbers Console.js:61:14
+  - Lesson Explanation: Students rewrite improper fractions as mixed numbers by dividing and expressing remainders, and convert mixed numbers back to improper fractions. Console.js:61:14
+  - Current Example: 11/4 = 2 3/4. Console.js:61:14
+  - Lesson Analysis: 
+Object { type: "mixed-number-conversion", requiresInteraction: true, componentType: "mixed-number-conversion" }
+Console.js:61:14
+  - requiresInteraction = true Console.js:61:14
+  - componentType = mixed-number-conversion Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert between improper fractions and mixed numbers Console.js:61:14
+🔍 processMixedNumberConversion called with: 11/4 = 2 3/4. Console.js:61:14
+🔍 Testing pattern: 
+/(\d+)\/(\d+).*?=.*?(\d+)\s+(\d+)\/(\d+)/i
+ Result: 
+Array(6) [ "11/4 = 2 3/4", "11", "4", "2", "3", "4" ]
+​
+0: "11/4 = 2 3/4"
+​
+1: "11"
+​
+2: "4"
+​
+3: "2"
+​
+4: "3"
+​
+5: "4"
+​
+groups: undefined
+​
+index: 0
+​
+input: "11/4 = 2 3/4."
+​
+length: 6
+​
+<prototype>: Array []
+Console.js:61:14
+✅ Found conversion: 
+Object { originalFraction: "11/4", correctAnswer: "2 3/4" }
+​
+correctAnswer: "2 3/4"
+​
+originalFraction: "11/4"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "2 3/4", componentType: "mixed-number-conversion", additionalData: {…} }
+​
+additionalData: Object { originalExample: "11/4 = 2 3/4.", originalFraction: "11/4" }
+​
+componentType: "mixed-number-conversion"
+​
+correctAnswer: "2 3/4"
+​
+interactiveText: ""
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 generateUniversalPrompt called with: 
+Object { type: "word-problem", standardCode: "6.NS.1.d", lessonTitle: "Convert between improper fractions and mixed numbers" }
+​
+lessonTitle: "Convert between improper fractions and mixed numbers"
+​
+standardCode: "6.NS.1.d"
+​
+type: "word-problem"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 COMPREHENSIVE DEBUG - LESSON DETAILS: Console.js:61:14
+  - Lesson ID: 3536 Console.js:61:14
+  - Lesson Title: Convert between improper fractions and mixed numbers Console.js:61:14
+  - Lesson Explanation: Students rewrite improper fractions as mixed numbers by dividing and expressing remainders, and convert mixed numbers back to improper fractions. Console.js:61:14
+  - Current Example: 11/4 = 2 3/4. Console.js:61:14
+  - Lesson Analysis: 
+Object { type: "mixed-number-conversion", requiresInteraction: true, componentType: "mixed-number-conversion" }
+​
+componentType: "mixed-number-conversion"
+​
+requiresInteraction: true
+​
+type: "mixed-number-conversion"
+​
+<prototype>: Object { … }
+Console.js:61:14
+  - requiresInteraction = true Console.js:61:14
+  - componentType = mixed-number-conversion Console.js:61:14
+🔍 DEBUG STEP 1: Will enter universal system? true Console.js:61:14
+✅ DEBUG STEP 1: ENTERING UNIVERSAL SYSTEM for lesson: Convert between improper fractions and mixed numbers Console.js:61:14
+🔍 processMixedNumberConversion called with: 11/4 = 2 3/4. Console.js:61:14
+🔍 Testing pattern: 
+/(\d+)\/(\d+).*?=.*?(\d+)\s+(\d+)\/(\d+)/i
+​
+dotAll: false
+​
+flags: "i"
+​
+global: false
+​
+hasIndices: false
+​
+ignoreCase: true
+​
+lastIndex: 0
+​
+multiline: false
+​
+source: "(\\d+)\\/(\\d+).*?=.*?(\\d+)\\s+(\\d+)\\/(\\d+)"
+​
+sticky: false
+​
+unicode: false
+​
+unicodeSets: false
+​
+<prototype>: RegExp.prototype { flags: "", source: "(?:)", … }
+ Result: 
+Array(6) [ "11/4 = 2 3/4", "11", "4", "2", "3", "4" ]
+Console.js:61:14
+✅ Found conversion: 
+Object { originalFraction: "11/4", correctAnswer: "2 3/4" }
+​
+correctAnswer: "2 3/4"
+​
+originalFraction: "11/4"
+​
+<prototype>: Object { … }
+Console.js:61:14
+🔍 LESSON PANEL: Using universal system with processedContent: 
+Object { interactiveText: "", correctAnswer: "2 3/4", componentType: "mixed-number-conversion", additionalData: {…} }
+​
+additionalData: Object { originalExample: "11/4 = 2 3/4.", originalFraction: "11/4" }
+​
+componentType: "mixed-number-conversion"
+​
+correctAnswer: "2 3/4"
+​
+interactiveText: ""
+​
+<prototype>: Object { … }
+Console.js:61:14
+XHRPOST
+https://replit.com/graphql
+[HTTP/2 200  97ms]
+
+XHRPOST
+https://replit.com/graphql
+[HTTP/2 200  121ms]
+
+POST
+https://r.stripe.com/b
+[HTTP/2 200  112ms]
+
+POST
+https://logs.browser-intake-us5-datadoghq.com/api/v2/logs?ddsource=browser&ddtags=sdk_version:4.46.0,api:beacon,env:production,service:website,version:67c8cb53&dd-api-key=pub31a5047a3a4692afb84a423db984dc57&dd-evp-origin-version=4.46.0&dd-evp-origin=browser&dd-request-id=5e7e3c15-b888-4c48-9366-1352389deee5
+NS_BINDING_ABORTED
+
+POST
+https://r.stripe.com/b
+[HTTP/2 200  117ms]
+
+XHRPOST
+https://replit.com/graphql
+[HTTP/2 200  81ms]
+
+1
+
+​
+
