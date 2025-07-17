@@ -229,6 +229,15 @@ export function generateUniversalUIConfig(config: UniversalPromptConfig): Univer
     };
   }
   
+  // Mixed number visual activities
+  if (type === 'mixed-number-visual') {
+    return {
+      ...baseConfig,
+      inputType: 'text',
+      textSize: 'large'
+    };
+  }
+  
   // All other activities use base config
   return baseConfig;
 }

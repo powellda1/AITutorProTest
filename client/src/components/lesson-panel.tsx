@@ -14,6 +14,7 @@ import GridComponent from "./GridComponent";
 import StripComponent from "./StripComponent";
 import TextInputComponent from "./TextInputComponent";
 import FractionVisualInputComponent from "./FractionVisualInputComponent";
+import MixedNumberVisualComponent from "./MixedNumberVisualComponent";
 import { DecimalPercentConversion } from "./interactive-lesson";
 import { analyzeLessonType, processLessonContent } from "../utils/lessonProcessor";
 // Removed legacy theme imports - now using universal system
@@ -827,6 +828,83 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
             <FractionVisualInputComponent
               key={`fraction-visual-input-${lesson.id}-${safeIndex}`}
               originalFraction={processedContent.additionalData?.originalFraction || "6/12"}
+              correctAnswer={processedContent.correctAnswer as string}
+              promptText={processedContent.interactiveText}
+              onAnswer={(answer) => {
+                const correctAnswer = processedContent.correctAnswer;
+                const isCorrect = answer.toString() === correctAnswer.toString();
+                
+                // UNIVERSAL SYSTEM: Use new universal answer handler
+                const inputKey = `lesson-${lesson.id}`;
+                const currentAttempts = attemptCounts[inputKey] || 0;
+                const correctCount = correctAnswerCount[inputKey] || 0;
+                
+                handleUniversalAnswer({
+                  lessonId: lesson.id,
+                  isCorrect,
+                  currentAttempts,
+                  correctCount,
+                  onSuccess: (animationType) => {
+                    // Show success feedback
+                    setShowFeedback(prev => ({...prev, [inputKey]: 'correct'}));
+                    
+                    // Trigger animation
+                    setAnimationType(prev => ({...prev, [inputKey]: animationType}));
+                    setShowAnimation(prev => ({...prev, [inputKey]: true}));
+                    setCorrectAnswerCount(prev => ({...prev, [inputKey]: correctCount + 1}));
+                  },
+                  onError: (attemptMessage) => {
+                    // Show error feedback with attempt counter
+                    setShowFeedback(prev => ({...prev, [inputKey]: attemptMessage}));
+                    setAttemptCounts(prev => ({...prev, [inputKey]: currentAttempts + 1}));
+                  },
+                  onAIHelp: (question, context) => {
+                    // Trigger AI help popup
+                    setAiHelpData({ question, context });
+                    setShowAiHelpPopup(true);
+                    requestAiHelp(lesson.id, correctAnswer);
+                  },
+                  onAdvanceExample: () => {
+                    // Advance to next example
+                    const nextIndex = currentIndex + 1;
+                    setCurrentExampleIndex(prev => ({...prev, [lesson.id]: nextIndex}));
+                    
+                    // Check if all examples are completed
+                    if (nextIndex >= examples.length) {
+                      // Set completion state for tab checkmarks
+                      setShowFeedback(prev => ({...prev, [inputKey]: 'completed'}));
+                      console.log('✅ DEBUG STEP 2: Set completion state for lesson:', lesson.id, 'to completed');
+                    } else {
+                      // Clear feedback for next example
+                      setShowFeedback(prev => {
+                        const newState = { ...prev };
+                        delete newState[inputKey];
+                        return newState;
+                      });
+                      setAttemptCounts(prev => ({...prev, [inputKey]: 0}));
+                    }
+                  },
+                  onResetLesson: () => {
+                    // Reset lesson state after AI help
+                    setShowFeedback(prev => {
+                      const newState = { ...prev };
+                      delete newState[inputKey];
+                      return newState;
+                    });
+                    setAttemptCounts(prev => ({...prev, [inputKey]: 0}));
+                    setShowAiHelpPopup(false);
+                  }
+                });
+              }}
+              standardCode={selectedStandard}
+              lessonTitle={lesson.title}
+            />
+          )}
+
+          {processedContent.componentType === 'mixed-number-visual' && (
+            <MixedNumberVisualComponent
+              key={`mixed-number-visual-${lesson.id}-${safeIndex}`}
+              originalFraction={processedContent.additionalData?.originalFraction || "11/4"}
               correctAnswer={processedContent.correctAnswer as string}
               promptText={processedContent.interactiveText}
               onAnswer={(answer) => {
