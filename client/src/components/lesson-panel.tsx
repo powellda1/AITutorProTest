@@ -13,6 +13,7 @@ import ScalingComponent from "./ScalingComponent";
 import GridComponent from "./GridComponent";
 import StripComponent from "./StripComponent";
 import TextInputComponent from "./TextInputComponent";
+import FractionVisualInputComponent from "./FractionVisualInputComponent";
 import { DecimalPercentConversion } from "./interactive-lesson";
 import { analyzeLessonType, processLessonContent } from "../utils/lessonProcessor";
 // Removed legacy theme imports - now using universal system
@@ -808,6 +809,35 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
           {processedContent.componentType === 'text-input' && (
             <TextInputComponent
               key={`text-input-${lesson.id}-${safeIndex}`}
+              correctAnswer={processedContent.correctAnswer as string}
+              promptText={processedContent.interactiveText}
+              onAnswer={(answer) => {
+                const correctAnswer = processedContent.correctAnswer;
+                const isCorrect = answer.toString() === correctAnswer.toString();
+                
+                // UNIVERSAL SYSTEM: Use new universal answer handler
+                const inputKey = `lesson-${lesson.id}`;
+                const currentAttempts = attemptCounts[inputKey] || 0;
+                const correctCount = correctAnswerCount[inputKey] || 0;
+                
+                handleUniversalAnswer({
+                  lessonId: lesson.id,
+                  isCorrect,
+                  currentAttempts,
+                  correctCount,
+                  inputKey,
+                  correctAnswer
+                });
+              }}
+              standardCode={selectedStandard}
+              lessonTitle={lesson.title}
+            />
+          )}
+          
+          {processedContent.componentType === 'fraction-visual-input' && (
+            <FractionVisualInputComponent
+              key={`fraction-visual-input-${lesson.id}-${safeIndex}`}
+              originalFraction={processedContent.additionalData?.originalFraction || "6/12"}
               correctAnswer={processedContent.correctAnswer as string}
               promptText={processedContent.interactiveText}
               onAnswer={(answer) => {

@@ -128,6 +128,22 @@ export function generateUniversalPrompt(config: UniversalPromptConfig): string {
     return 'Convert between decimal and percent';
   }
   
+  // Text input activities
+  if (type === 'text-input') {
+    if (lessonTitle?.includes('Write fractions in lowest terms')) {
+      return 'Write this fraction in its simplest form';
+    }
+    return 'Enter your answer';
+  }
+  
+  // Fraction visual input activities - shows visual fraction with text input
+  if (type === 'fraction-visual-input') {
+    if (lessonTitle?.includes('Write fractions in lowest terms')) {
+      return 'Look at the visual fraction and write it in its simplest form';
+    }
+    return 'Simplify the fraction shown above';
+  }
+  
   // Default fallback
   return 'Enter your answer';
 }
@@ -183,6 +199,24 @@ export function generateUniversalUIConfig(config: UniversalPromptConfig): Univer
     return {
       ...baseConfig,
       inputType: 'number',
+      textSize: 'large'
+    };
+  }
+  
+  // Text input activities
+  if (type === 'text-input') {
+    return {
+      ...baseConfig,
+      inputType: 'text',
+      textSize: 'large'
+    };
+  }
+  
+  // Fraction visual input activities
+  if (type === 'fraction-visual-input') {
+    return {
+      ...baseConfig,
+      inputType: 'text',
       textSize: 'large'
     };
   }
