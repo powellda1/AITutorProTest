@@ -159,6 +159,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
 
   const requestAiHelp = async (lessonId: number, correctAnswer: string) => {
     try {
+      console.log('🔍 AI HELP DEBUG: requestAiHelp called for lesson:', lessonId);
       const lesson = lessons.find(l => l.id === lessonId);
       const currentIndex = currentExampleIndex[lessonId] || 0;
       const currentExample = lesson?.examples?.[currentIndex] || '';
@@ -167,9 +168,11 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
       const helpQuestion = `How do I solve this ${lesson?.title || 'problem'}?`;
       const helpContext = `The student is working on ${lesson?.title || 'this lesson'} and needs help with: ${currentExample}`;
       
+      console.log('🔍 AI HELP DEBUG: Setting up popup state...');
       setAiHelpData({ question: helpQuestion, context: helpContext });
       setShowAiHelpPopup(true);
       setAiResponseReceived(false); // Reset response state for new request
+      console.log('🔍 AI HELP DEBUG: Popup state set - showAiHelpPopup=true, aiResponseReceived=false');
       
       let prompt = '';
       
@@ -394,6 +397,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
 
       if (response.ok) {
         const data = await response.json();
+        console.log('🔍 AI HELP DEBUG: API response received, setting aiResponseReceived=true');
         // Set response received state to true
         setAiResponseReceived(true);
         
@@ -406,14 +410,14 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
             explanation: data.aiResponse?.explanation || '',
             examples: data.aiResponse?.examples || []
           };
-          console.log('AI response data:', aiResponseData);
+          console.log('🔍 AI HELP DEBUG: Calling onAiResponse with data:', aiResponseData);
           onAiResponse(aiResponseData);
         }
         
         // Don't close popup immediately - let AiHelpPopup component handle closing when response is ready
         // setShowAiHelpPopup(false);
         // setAiHelpData(null);
-        console.log('AI help requested successfully');
+        console.log('🔍 AI HELP DEBUG: AI help requested successfully, popup should close via AiHelpPopup component');
       }
     } catch (error) {
       console.error('Error requesting AI help:', error);
@@ -1927,6 +1931,7 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
       <AiHelpPopup
         isOpen={showAiHelpPopup}
         onClose={() => {
+          console.log('🔍 AI HELP DEBUG: onClose called, cleaning up popup state');
           setShowAiHelpPopup(false);
           setAiHelpData(null);
           setAiResponseReceived(false);

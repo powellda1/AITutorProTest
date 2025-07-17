@@ -22,6 +22,7 @@ export default function AiHelpPopup({
 
   useEffect(() => {
     if (isOpen && !isProcessing) {
+      console.log('🔍 AI POPUP DEBUG: Popup opened, setting isProcessing=true');
       setIsProcessing(true);
       // NOTE: AI request is already triggered by lesson panel's requestAiHelp function
       // No need to call onHelpRequested here to avoid double requests
@@ -30,10 +31,13 @@ export default function AiHelpPopup({
 
   // Close popup when response is ready
   useEffect(() => {
+    console.log('🔍 AI POPUP DEBUG: hasResponse=', hasResponse, ', isProcessing=', isProcessing);
     if (hasResponse && isProcessing) {
+      console.log('🔍 AI POPUP DEBUG: Response ready, setting isProcessing=false and closing popup in 500ms');
       setIsProcessing(false);
       // Small delay to show the response is ready before closing
       setTimeout(() => {
+        console.log('🔍 AI POPUP DEBUG: Closing popup now');
         onClose();
       }, 500);
     }
@@ -42,6 +46,7 @@ export default function AiHelpPopup({
   // Reset processing state when popup closes
   useEffect(() => {
     if (!isOpen) {
+      console.log('🔍 AI POPUP DEBUG: Popup closed, resetting isProcessing=false');
       setIsProcessing(false);
     }
   }, [isOpen]);
