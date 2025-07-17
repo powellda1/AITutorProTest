@@ -2253,11 +2253,11 @@ const InteractivePracticeRenderer = ({
         );
       }
       
-      if (processedContent && processedContent.componentType === 'decimal-fraction') {
+      if (processedContent && processedContent.componentType === 'fraction-to-decimal') {
         return (
           <div className="text-center mb-4">
             <DecimalFractionComponent
-              key={`decimal-fraction-${actualLesson.id}-${subLessonIndex}`}
+              key={`fraction-to-decimal-${actualLesson.id}-${subLessonIndex}`}
               originalDecimal={processedContent.additionalData?.decimal || 0}
               targetNumerator={processedContent.additionalData?.numerator || 0}
               targetDenominator={processedContent.additionalData?.denominator || 1}

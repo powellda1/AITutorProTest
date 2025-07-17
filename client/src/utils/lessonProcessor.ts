@@ -3,7 +3,7 @@ import { NumberLineMode, NumberLineOrientation } from '../components/NumberLineC
 export interface ProcessedLessonContent {
   interactiveText: string;
   correctAnswer: number | string[] | string;
-  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'decimal-percent';
+  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'decimal-percent' | 'fraction-simplification' | 'mixed-number-conversion' | 'fraction-to-decimal';
   mode?: NumberLineMode;
   orientation?: NumberLineOrientation;
   range?: [number, number];
@@ -31,9 +31,9 @@ export interface ProcessedLessonContent {
 }
 
 export interface LessonAnalysis {
-  type: 'real-world-context' | 'point-identification' | 'plot-integers' | 'opposite-integers' | 'ordering-activity' | 'comparison-activity' | 'word-problem' | 'exponent-expression' | 'fraction-operation' | 'scaling-activity' | 'perfect-square' | 'grid-percentage' | 'strip-model' | 'decimal-percent-conversion' | 'default';
+  type: 'real-world-context' | 'point-identification' | 'plot-integers' | 'opposite-integers' | 'ordering-activity' | 'comparison-activity' | 'word-problem' | 'exponent-expression' | 'fraction-operation' | 'scaling-activity' | 'perfect-square' | 'grid-percentage' | 'strip-model' | 'decimal-percent-conversion' | 'fraction-simplification' | 'mixed-number-conversion' | 'fraction-to-decimal' | 'default';
   requiresInteraction: boolean;
-  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'strip' | 'decimal-percent' | 'text-input' | 'default';
+  componentType: 'number-line' | 'ordering' | 'comparison' | 'word-problem' | 'exponent' | 'fraction-operation' | 'scaling' | 'perfect-square' | 'grid' | 'strip' | 'decimal-percent' | 'fraction-simplification' | 'mixed-number-conversion' | 'fraction-to-decimal' | 'text-input' | 'default';
 }
 
 /**
@@ -64,6 +64,37 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
   // Analyze content for visual models and interaction patterns
   
   // Use TITLE as primary indicator for more precise detection
+  
+  // 6.NS.1.d specific lessons - PRIORITIZE THESE FIRST
+  if (titleLower.includes('write fractions in lowest terms') || 
+      titleLower.includes('simplify fractions')) {
+    console.log('✅ analyzeLessonType: Detected FRACTION SIMPLIFICATION (lesson 1)');
+    return {
+      type: 'fraction-simplification',
+      requiresInteraction: true,
+      componentType: 'fraction-simplification'
+    };
+  }
+  
+  if (titleLower.includes('convert between improper fractions and mixed numbers') || 
+      titleLower.includes('mixed number')) {
+    console.log('✅ analyzeLessonType: Detected MIXED NUMBER CONVERSION (lesson 2)');
+    return {
+      type: 'mixed-number-conversion',
+      requiresInteraction: true,
+      componentType: 'mixed-number-conversion'
+    };
+  }
+  
+  if (titleLower.includes('convert fractions to decimals') || 
+      titleLower.includes('fraction to decimal')) {
+    console.log('✅ analyzeLessonType: Detected FRACTION TO DECIMAL (lesson 7)');
+    return {
+      type: 'fraction-to-decimal',
+      requiresInteraction: true,
+      componentType: 'fraction-to-decimal'
+    };
+  }
   
   // Grid-based activities - PRIORITIZE GRID DETECTION FIRST
   if (titleLower.includes('what percentage') || 
@@ -400,6 +431,9 @@ export function processLessonContent(
       
     case 'conversion-word-problem':
       return processConversionWordProblem(originalExample);
+      
+    case 'fraction-to-decimal':
+      return processFractionToDecimal(originalExample);
       
     default:
       return null;
@@ -1331,6 +1365,66 @@ function processMixedNumberConversion(originalExample: string): ProcessedLessonC
     additionalData: { 
       originalExample,
       originalFraction
+    }
+  };
+}
+
+/**
+ * Process fraction to decimal conversion examples (e.g., "3/4 = 0.75")
+ */
+function processFractionToDecimal(originalExample: string): ProcessedLessonContent {
+  console.log('🔍 processFractionToDecimal called with:', originalExample);
+  
+  // Enhanced regex patterns for fraction to decimal conversion
+  const patterns = [
+    /(\d+)\/(\d+).*?=.*?(\d+\.\d+)/i,  // "3/4 = 0.75"
+    /(\d+)\/(\d+).*?(\d+\.\d+)/i,      // "3/4 equals 0.75"
+    /(\d+)\/(\d+)/i                    // Just fraction (calculate decimal)
+  ];
+  
+  let numerator: number = 0;
+  let denominator: number = 0;
+  let decimal: number = 0;
+  let matchFound = false;
+  
+  for (const pattern of patterns) {
+    const match = originalExample.match(pattern);
+    console.log('🔍 Testing pattern:', pattern, 'Result:', match);
+    if (match) {
+      numerator = parseInt(match[1]);
+      denominator = parseInt(match[2]);
+      
+      if (match[3]) {
+        // Decimal is provided in the example
+        decimal = parseFloat(match[3]);
+      } else {
+        // Calculate the decimal
+        decimal = numerator / denominator;
+      }
+      
+      matchFound = true;
+      console.log('✅ Found fraction to decimal:', { numerator, denominator, decimal });
+      break;
+    }
+  }
+  
+  if (!matchFound) {
+    console.log('❌ No pattern matched for fraction to decimal conversion');
+    throw new Error(`Could not extract fraction to decimal from: ${originalExample}`);
+  }
+  
+  // The correct answer is the decimal value as a string
+  const correctAnswer = decimal.toString();
+  
+  return {
+    interactiveText: '',
+    correctAnswer,
+    componentType: 'fraction-to-decimal',
+    additionalData: { 
+      originalExample,
+      numerator,
+      denominator,
+      decimal
     }
   };
 }
