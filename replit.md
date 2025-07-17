@@ -117,6 +117,14 @@ Preferred communication style: Simple, everyday language.
 - Only proceed to next phase after current phase is confirmed working
 - This prevents assumptions and ensures systematic problem-solving
 
+**PHASE 0: PRE-CONVERSION ANALYSIS**
+- Step 1: Identify ALL sub-lesson types in the target standard before starting conversion
+- Step 2: Identify ALL existing visual interactive components in the target standard
+- Step 3: Test each sub-lesson to verify current functionality and identify which ones need conversion
+- Step 4: Document current state of each sub-lesson (working/broken/partially working)
+- Step 5: Document existing visual components that must be preserved during conversion
+- Step 6: Prioritize conversion order based on complexity and dependencies
+
 **PHASE 1: Debug Logging and Root Cause Analysis**
 - Step 1: Add debug logging to track which code path each lesson takes
 - Step 2: Identify where lessons diverge from universal system
