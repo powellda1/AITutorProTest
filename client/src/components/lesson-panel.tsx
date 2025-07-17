@@ -176,6 +176,12 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
       const helpContext = `The student is working on ${lesson?.title || 'this lesson'} and needs help with: ${currentExample}`;
       
       console.log('🔍 AI HELP DEBUG: Setting up popup state...');
+      
+      // CRITICAL: Clear parent component's AI response data first
+      if (onAiResponse) {
+        onAiResponse({ question: '', response: '', explanation: '', examples: [] });
+      }
+      
       setAiHelpData({ question: helpQuestion, context: helpContext });
       setShowAiHelpPopup(true);
       setAiResponseReceived(false); // Reset response state for new request
