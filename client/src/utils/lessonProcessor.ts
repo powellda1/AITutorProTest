@@ -200,6 +200,24 @@ export function analyzeLessonType(explanation: string, title: string, standardCo
     };
   }
   
+  // Fraction conversion patterns (6.NS.1.d)
+  if (titleLower.includes('convert decimals to fractions') || titleLower.includes('convert fractions to decimals')) {
+    return {
+      type: 'decimal-fraction-conversion',
+      requiresInteraction: true,
+      componentType: 'decimal-fraction'
+    };
+  }
+  
+  // Word problems with conversions (6.NS.1.d)
+  if (titleLower.includes('word problem') && (titleLower.includes('convert') || titleLower.includes('percent') || titleLower.includes('fraction') || titleLower.includes('decimal'))) {
+    return {
+      type: 'conversion-word-problem',
+      requiresInteraction: true,
+      componentType: 'conversion-word-problem'
+    };
+  }
+
   // Exponent expressions (6.NS.2.b)
   if (titleLower.includes('exponent') || explanationLower.includes('exponent') || explanationLower.includes('power')) {
     return {
@@ -304,6 +322,12 @@ export function processLessonContent(
       
     case 'decimal-percent-conversion':
       return processDecimalPercentConversion(originalExample);
+      
+    case 'decimal-fraction-conversion':
+      return processDecimalFractionConversion(originalExample);
+      
+    case 'conversion-word-problem':
+      return processConversionWordProblem(originalExample);
       
     default:
       return null;
@@ -936,6 +960,152 @@ function processDecimalPercentConversion(originalExample: string): ProcessedLess
       originalExample,
       value,
       conversionType
+    }
+  };
+}
+
+/**
+ * Process decimal-to-fraction conversion examples (e.g., "0.6 = 6/10 = 3/5")
+ */
+function processDecimalFractionConversion(originalExample: string): ProcessedLessonContent {
+  console.log('🔍 processDecimalFractionConversion called with:', originalExample);
+  
+  // Enhanced regex patterns for decimal-to-fraction conversion formats
+  const patterns = [
+    /(\d+\.\d+) = (\d+)\/(\d+) = (\d+)\/(\d+)/i,  // 0.6 = 6/10 = 3/5
+    /(\d+\.\d+) = (\d+)\/(\d+)/i,  // 0.25 = 1/4
+    /(\d+)\/(\d+) = (\d+\.\d+)/i,  // 1/4 = 0.25
+    /(\d+\.\d+)/i,  // Just decimal (assume convert to fraction)
+    /(\d+)\/(\d+)/i  // Just fraction (assume convert to decimal)
+  ];
+  
+  let decimal: number = 0;
+  let finalNumerator: number = 0;
+  let finalDenominator: number = 0;
+  let matchFound = false;
+  
+  for (const pattern of patterns) {
+    const match = originalExample.match(pattern);
+    console.log('🔍 Testing pattern:', pattern, 'Result:', match);
+    if (match) {
+      if (match[1] && match[4] && match[5]) {
+        // Full conversion: 0.6 = 6/10 = 3/5
+        decimal = parseFloat(match[1]);
+        finalNumerator = parseInt(match[4]);
+        finalDenominator = parseInt(match[5]);
+      } else if (match[1] && match[2] && match[3]) {
+        // Simple conversion: 0.25 = 1/4 or 1/4 = 0.25
+        if (match[1].includes('.')) {
+          decimal = parseFloat(match[1]);
+          finalNumerator = parseInt(match[2]);
+          finalDenominator = parseInt(match[3]);
+        } else {
+          // Fraction to decimal
+          finalNumerator = parseInt(match[1]);
+          finalDenominator = parseInt(match[2]);
+          decimal = parseFloat(match[3]);
+        }
+      } else if (match[1] && match[1].includes('.')) {
+        // Just decimal - convert to fraction
+        decimal = parseFloat(match[1]);
+        // Convert decimal to fraction (simplified)
+        const decimalString = decimal.toString();
+        const decimalPlaces = decimalString.split('.')[1]?.length || 0;
+        const denominator = Math.pow(10, decimalPlaces);
+        const numerator = decimal * denominator;
+        
+        // Simplify fraction by finding GCD
+        const gcd = (a: number, b: number): number => b === 0 ? a : gcd(b, a % b);
+        const commonDivisor = gcd(numerator, denominator);
+        
+        finalNumerator = numerator / commonDivisor;
+        finalDenominator = denominator / commonDivisor;
+      } else if (match[1] && match[2]) {
+        // Just fraction - convert to decimal
+        finalNumerator = parseInt(match[1]);
+        finalDenominator = parseInt(match[2]);
+        decimal = finalNumerator / finalDenominator;
+      }
+      matchFound = true;
+      console.log('✅ Found conversion:', { decimal, finalNumerator, finalDenominator });
+      break;
+    }
+  }
+  
+  if (!matchFound) {
+    console.log('❌ No pattern matched for decimal-fraction conversion');
+    throw new Error(`Could not extract decimal/fraction from: ${originalExample}`);
+  }
+  
+  // The correct answer is the simplified fraction in "numerator/denominator" format
+  const correctAnswer = `${finalNumerator}/${finalDenominator}`;
+  
+  return {
+    interactiveText: '',
+    correctAnswer,
+    componentType: 'decimal-fraction',
+    additionalData: { 
+      originalExample,
+      decimal,
+      numerator: finalNumerator,
+      denominator: finalDenominator
+    }
+  };
+}
+
+/**
+ * Process conversion word problems (e.g., "A shirt is discounted by 30%...")
+ */
+function processConversionWordProblem(originalExample: string): ProcessedLessonContent {
+  console.log('🔍 processConversionWordProblem called with:', originalExample);
+  
+  // Enhanced regex patterns for conversion word problems
+  const patterns = [
+    /discount is ([\d.]+) × (\d+) = \$(\d+)/i,  // "discount is 0.3 × 20 = $6"
+    /(\d+)\/(\d+) of a class is (\d+) students.*?(\d+) students/i,  // "2/5 of a class is 10 students, class size is 25"
+    /([\d.]+) of a budget is \$(\d+).*?\$(\d+)/i,  // "0.15 of a budget is $30, total is $200"
+    /\$(\d+)/i,  // Simple dollar amount extraction
+    /(\d+) students/i,  // Simple student count extraction
+    /(\d+)/i  // Simple number extraction
+  ];
+  
+  let correctAnswer: string = 'unknown';
+  let matchFound = false;
+  
+  for (const pattern of patterns) {
+    const match = originalExample.match(pattern);
+    console.log('🔍 Testing pattern:', pattern, 'Result:', match);
+    if (match) {
+      if (match[3] && pattern.toString().includes('discount')) {
+        // Discount problem: answer is the discount amount
+        correctAnswer = match[3];
+      } else if (match[4] && pattern.toString().includes('class')) {
+        // Class size problem: answer is the total class size
+        correctAnswer = match[4];
+      } else if (match[3] && pattern.toString().includes('budget')) {
+        // Budget problem: answer is the total budget
+        correctAnswer = match[3];
+      } else if (match[1]) {
+        // Fallback: use first captured group
+        correctAnswer = match[1];
+      }
+      matchFound = true;
+      console.log('✅ Found answer:', correctAnswer);
+      break;
+    }
+  }
+  
+  if (!matchFound) {
+    console.log('❌ No pattern matched for conversion word problem');
+    throw new Error(`Could not extract answer from word problem: ${originalExample}`);
+  }
+  
+  return {
+    interactiveText: '',
+    correctAnswer,
+    componentType: 'conversion-word-problem',
+    additionalData: { 
+      originalExample
     }
   };
 }

@@ -173,11 +173,14 @@ Preferred communication style: Simple, everyday language.
 ### Universal System Conversion (Priority: High)
 - **Task**: Continue systematic conversion of remaining 6.NS lessons to universal system
 - **Current Status**: 6.NS.1.a, 6.NS.1.b, 6.NS.1.c fully converted using 4-phase methodology
-- **6.NS.1.d Status**: Phase 0 Steps 1-3 completed
+- **6.NS.1.d Status**: Phase 0 Steps 1-5 completed
   - 9 sub-lesson types identified
   - 6 visual interactive component types identified
   - Current state: 7 lessons working with visual components but missing textboxes/submit buttons
-  - 2 lessons producing errors (lesson 2: "Convert between improper fractions and mixed numbers", lesson 6: "Convert between percents, fractions, and decimals: word problems")
+  - 2 lessons producing errors:
+    - Lesson 3: "Convert decimals to fractions" - misprocessed as exponent expression
+    - Lesson 6: "Convert between percents, fractions, and decimals: word problems" - failing question extraction
+  - **Visual Components to Preserve**: All 7 working lessons have functional visual displays that must be integrated with universal system
 - **Remaining**: 6.NS.1.d (in progress), 6.NS.1.e, 6.NS.2.a, 6.NS.2.b, 6.NS.2.c, 6.NS.3.a, 6.NS.3.b, 6.NS.3.c, 6.NS.3.d
 - **Methodology**: Use proven 4-phase approach documented in replit.md
 
