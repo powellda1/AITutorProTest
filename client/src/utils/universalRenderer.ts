@@ -272,7 +272,7 @@ export const universalFeedbackMessages = {
  */
 export const universalFeedbackStyles = {
   correct: 'bg-green-600 text-white p-3 mb-4 text-center w-full', // Solid green bar, centered text, full width
-  incorrect: 'bg-red-800/20 border border-red-600 rounded-lg p-3 mb-4 text-red-300',
+  incorrect: 'bg-red-600 text-white p-3 mb-4 text-center w-full', // Solid red bar, centered text, full width
   completed: 'bg-green-600 text-white p-4 mb-4 text-center w-full', // Solid green bar like correct
   help: 'bg-yellow-800/20 border border-yellow-600 rounded-lg p-3 mb-4 text-yellow-300'
 };
