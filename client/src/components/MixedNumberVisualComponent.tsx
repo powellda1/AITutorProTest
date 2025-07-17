@@ -166,11 +166,6 @@ export default function MixedNumberVisualComponent({
     <div className="bg-gradient-to-br from-gray-600 to-gray-800 p-6 rounded-lg border border-gray-400/20 shadow-lg">
       {/* Universal prompt */}
       <div className="text-white text-2xl font-semibold mb-6 text-center">
-        {universalPrompt}
-      </div>
-      
-      {/* Fraction to convert */}
-      <div className="text-white text-xl mb-4 text-center">
         Convert this improper fraction to a mixed number: <span className="font-bold text-yellow-300">{originalFraction}</span>
       </div>
 
