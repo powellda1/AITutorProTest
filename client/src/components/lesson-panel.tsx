@@ -118,19 +118,8 @@ export default function LessonPanel({ lessons, selectedStandard, standardDescrip
     const inputKey = `lesson-${lessonId}`;
     setShowAnimation({...showAnimation, [inputKey]: false});
     
-    // Check if this lesson is complete and mark it as completed
-    const lesson = lessons.find(l => l.id === lessonId);
-    if (lesson && lesson.examples) {
-      const currentIndex = currentExampleIndex[lessonId] || 0;
-      const maxExamples = lesson.examples.length;
-      
-      if (currentIndex >= maxExamples - 1 && showFeedback[inputKey] === 'completed') {
-        setCompletedLessons(prev => ({
-          ...prev,
-          [lessonId]: true
-        }));
-      }
-    }
+    // Animation complete - no additional state management needed
+    // Completion state is already handled by the universal system via showFeedback
   };
 
   // Helper function to get the input placeholder for a lesson
