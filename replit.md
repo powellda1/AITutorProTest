@@ -136,13 +136,13 @@ Preferred communication style: Simple, everyday language.
 - **Evidence Required**: Complete lesson list
 - **Purpose**: Know the scope of work
 
-**Step 2: Examples-First Analysis**
-- Analyze mathematical content in each lesson's examples
-- Examine explanation text for visual cues
-- Review description for learning objectives
-- Determine required component type based on content
-- **Evidence Required**: Component justification for each lesson
-- **Purpose**: Know what to build for each lesson
+**Step 2: Examples-First Analysis (4-Variable Methodology)**
+- Variable 1: Analyze mathematical content in each lesson's examples
+- Variable 2: Examine explanation text for visual cues and instructional approach indicators
+- Variable 3: Review official standard description for learning objectives and visual model requirements
+- Variable 4: Analyze lesson title as decisive factor for component type selection
+- **Evidence Required**: Component justification for each lesson using all 4 variables
+- **Purpose**: Know what to build for each lesson based on comprehensive content analysis
 
 **Step 3: Current State Documentation**
 - Document existing functionality state (working/broken/partial)
