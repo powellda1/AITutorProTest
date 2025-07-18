@@ -101,13 +101,13 @@ Preferred communication style: Simple, everyday language.
 - Clean up any hardcoded values and duplicate functions
 - Build universal system as REPLACEMENT, not addition to existing code
 
-**EXAMPLES-FIRST ANALYSIS RULE**: MANDATORY 4-STEP PROCESS FOR ALL LESSON CONVERSIONS
-- Step 1: Analyze actual mathematical content in lesson examples to understand what students work with
-- Step 2: Examine explanation text for visual cues and instructional approach indicators
-- Step 3: Review description for learning objectives and mathematical context
-- Step 4: Determine visual component based on mathematical content requirements, not title keywords
-- NO title-based pattern matching shortcuts - content drives component selection
-- Every lesson must justify component choice through mathematical content analysis
+**EXAMPLES-FIRST ANALYSIS RULE**: MANDATORY 4-VARIABLE PROCESS FOR ALL LESSON CONVERSIONS
+- Variable 1: Analyze mathematical content in lesson examples to understand what students work with
+- Variable 2: Examine explanation text for visual cues and instructional approach indicators
+- Variable 3: Review official standard description for learning objectives and visual model requirements
+- Variable 4: Analyze lesson title as decisive factor for component type selection
+- Title analysis serves as primary decision factor, refined by Variables 1-3
+- Every lesson must justify component choice through comprehensive 4-variable analysis
 
 **UNIVERSAL STYLING RULE**: ALL COMPONENTS MUST USE GRIDCOMPONENT STYLING
 - Always use the exact same input/submit styling that GridComponent uses for ALL interactive components
